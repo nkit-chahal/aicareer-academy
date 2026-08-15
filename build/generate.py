@@ -212,10 +212,16 @@ def setup_assets():
     css_dir.mkdir(parents=True, exist_ok=True)
     js_dir.mkdir(parents=True, exist_ok=True)
 
-    # Copy base CSS from existing styles.css
     src_css = ROOT / "styles.css"
-    if src_css.exists():
-        shutil.copy(src_css, css_dir / "base.css")
+    css_text = src_css.read_text(encoding="utf-8") if src_css.exists() else ""
+    v5_css = ROOT / "site" / "experiments" / "v5" / "styles.css"
+    if v5_css.exists():
+        raw = v5_css.read_text(encoding="utf-8")
+        cut = raw.find(".ticker {")
+        if cut >= 0:
+            css_text += "\n\n/* === v5 chrome + home story === */\n" + raw[cut:]
+    css_text += V5_INNER_CSS
+    (css_dir / "base.css").write_text(css_text, encoding="utf-8")
 
     # Write program.css and content.css
     (css_dir / "program.css").write_text(PROGRAM_CSS, encoding="utf-8")
@@ -225,9 +231,8 @@ def setup_assets():
     (js_dir / "nav.js").write_text(NAV_JS, encoding="utf-8")
     (js_dir / "courses.js").write_text(_courses_js(), encoding="utf-8")
     (js_dir / "register.js").write_text(REGISTER_JS, encoding="utf-8")
-    (js_dir / "paths.js").write_text(PATHS_JS, encoding="utf-8")
+    (js_dir / "home.js").write_text(HOME_JS, encoding="utf-8")
 
-    # Favicon + social preview
     (assets / "favicon.svg").write_text(FAVICON_SVG, encoding="utf-8")
     og_src = BUILD / "og.png"
     if not og_src.exists():
@@ -275,7 +280,7 @@ def generate():
         wants_curriculum = page["type"] == "program" or str(page.get("id", "")).startswith("roadmap")
         curriculum = resolve_curriculum(page, data, program) if wants_curriculum else None
         list_programs = programs
-        if page["type"] == "courses-list":
+        if page["type"] in ("courses-list", "home"):
             list_programs = enrich_programs_with_fees(programs, manifest)
 
         page_title = format_seo_title(data.get("title", ""), page)
@@ -299,7 +304,7 @@ def generate():
             "salaries": salaries,
             "curriculum": curriculum,
             "jump_nav": build_jump_nav(fees, salaries, data, curriculum) if page["type"] == "program" else [],
-            "programs": list_programs if page["type"] in ("courses-list", "register") else [],
+            "programs": list_programs if page["type"] in ("courses-list", "register", "home") else [],
             "paths": load_json(BUILD / "career-paths.json") if page["type"] == "home" else None,
             "mentors": MENTORS,
             "brand": BRAND,
@@ -339,11 +344,13 @@ def generate():
 
 
 def _extra_css(page_type: str, page_id: str = "") -> list:
+    if page_type == "home":
+        return []
     if page_type == "register":
         return ["content.css"]
     if page_type == "program" or page_id.startswith("city-"):
         return ["program.css", "content.css"]
-    if page_type in ("content", "comparison", "blog", "mentors", "home"):
+    if page_type in ("content", "comparison", "blog", "mentors"):
         return ["content.css"]
     return []
 
@@ -354,7 +361,7 @@ def _extra_js(page_type: str) -> list:
     if page_type == "register":
         return ["register.js"]
     if page_type == "home":
-        return ["paths.js"]
+        return ["home.js"]
     return []
 
 
@@ -394,6 +401,55 @@ def rewrite_internal_links(html: str, base: str) -> str:
     return html
 
 
+V5_INNER_CSS = """
+.site-foot .footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1.2fr;
+  gap: 28px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+.site-foot .footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.site-foot .footer-col h4 {
+  margin: 0 0 4px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.site-foot .footer-brand p {
+  margin: 8px 0 0;
+  max-width: 28rem;
+  color: var(--muted);
+}
+.explore-card,
+.prog-salary-card,
+.mentor-card,
+.faq-item,
+.curriculum-list li {
+  border-radius: 0 !important;
+  border-width: 3px;
+}
+.explore-card:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+  transform: none;
+  box-shadow: none;
+}
+.form-group .required { color: var(--hot); }
+@media (max-width: 900px) {
+  .site-foot .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .site-foot .footer-grid { grid-template-columns: 1fr; }
+}
+"""
+
 PROGRAM_CSS = """
 /* Program hero */
 .prog-hero { padding: 56px 0 48px; background: var(--paper); border-bottom: 1px solid var(--line); }
@@ -406,9 +462,8 @@ PROGRAM_CSS = """
   position: sticky;
   top: var(--header-h);
   z-index: 40;
-  background: rgba(248, 250, 252, 0.94);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  border-bottom: var(--border) solid var(--fg);
 }
 .prog-jump-inner {
   display: flex;
@@ -433,7 +488,7 @@ PROGRAM_CSS = """
   align-items: center;
   min-height: 36px;
   padding: 6px 12px;
-  border-radius: 999px;
+  border-radius: 0;
   font-size: 13px;
   font-weight: 600;
   color: var(--ink-2);
@@ -464,8 +519,8 @@ PROGRAM_CSS = """
 .prog-fee-amt { flex-wrap: wrap; }
 .prog-fee-amt-wrap--original .prog-fee-num { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 500; text-decoration: line-through; color: var(--ink-3); opacity: 0.75; }
 .prog-fee-amt-wrap--original .prog-fee-symbol { font-size: 0.85em; opacity: 0.75; }
-.prog-fee-save { display: inline-flex; align-items: center; padding: 6px 12px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; background: var(--accent); border-radius: 999px; white-space: nowrap; }
-.prog-fee-save .prog-fee-symbol, .prog-fee-save .prog-fee-num { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: #fff; }
+.prog-fee-save { display: inline-flex; align-items: center; padding: 6px 12px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-ink); background: var(--accent); border-radius: 0; white-space: nowrap; }
+.prog-fee-save .prog-fee-symbol, .prog-fee-save .prog-fee-num { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: var(--accent-ink); }
 .prog-fee-display--tier { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
 .prog-fee-sep { font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--ink-3); align-self: center; padding: 0 2px; }
 .prog-fee-display--plan { display: flex; flex-direction: column; gap: 10px; }
@@ -523,7 +578,7 @@ PROGRAM_CSS = """
 .curriculum-list { list-style: none; margin: 20px 0; }
 .curriculum-list li { padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--radius-sm); margin-bottom: 8px; font-size: 15px; color: var(--ink-2); background: var(--card); }
 .curriculum-tree { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
-.curr-level { border: 1px solid var(--line); border-radius: 12px; background: var(--card); overflow: hidden; }
+.curr-level { border: var(--border) solid var(--line); border-radius: 0; background: var(--card); overflow: hidden; }
 .curr-level > summary, .curr-module > summary {
   list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px;
   padding: 16px 18px; font-weight: 700; font-size: 15px; color: var(--ink);
@@ -538,13 +593,13 @@ PROGRAM_CSS = """
 .curr-level[open] > summary::after, .curr-module[open] > summary::after { transform: rotate(225deg); translate: 0 3px; }
 .curr-level > summary { background: var(--chip); }
 .curr-level-body { padding: 8px 12px 14px; }
-.curr-module { border: 1px solid #BFDBFE; border-radius: 10px; margin: 8px 0; background: #fff; }
+.curr-module { border: var(--border) solid var(--line); border-radius: 0; margin: 8px 0; background: var(--card); }
 .curr-module > summary { font-size: 14px; font-weight: 600; }
-.curr-topics { list-style: none; margin: 0 16px 12px 28px; padding: 4px 0 8px; border-left: 2px solid #BFDBFE; }
+.curr-topics { list-style: none; margin: 0 16px 12px 28px; padding: 4px 0 8px; border-left: 2px solid var(--line); }
 .curr-topics li { position: relative; padding: 8px 0 8px 20px; font-size: 14px; color: var(--ink-2); line-height: 1.45; }
 .curr-topics li::before {
   content: ""; position: absolute; left: -5px; top: 14px; width: 8px; height: 8px;
-  border-radius: 50%; background: var(--accent); border: 2px solid #fff; box-shadow: 0 0 0 1px #BFDBFE;
+  border-radius: 0; background: var(--accent); border: 2px solid var(--bg); box-shadow: 0 0 0 1px var(--line);
 }
 
 /* FAQ */
@@ -595,8 +650,8 @@ CONTENT_CSS = """
 .mentors-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
 .mentor-card { padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); }
 .mentor-avatar {
-  width: 56px; height: 56px; border-radius: 50%; margin-bottom: 14px;
-  background: var(--accent-dark); color: #fff; font-weight: 700; font-size: 16px; letter-spacing: 0.04em;
+  width: 56px; height: 56px; border-radius: 0; margin-bottom: 14px;
+  background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: 16px; letter-spacing: 0.04em;
   display: flex; align-items: center; justify-content: center;
 }
 .mentor-name { font-size: 18px; font-weight: 700; margin-bottom: 4px; color: var(--ink); }
@@ -609,7 +664,7 @@ CONTENT_CSS = """
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-item p { padding: 0 20px 16px; font-size: 14px; color: var(--ink-2); line-height: 1.7; }
 .curriculum-tree { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
-.curr-level { border: 1px solid var(--line); border-radius: 12px; background: var(--card); overflow: hidden; }
+.curr-level { border: var(--border) solid var(--line); border-radius: 0; background: var(--card); overflow: hidden; }
 .curr-level > summary, .curr-module > summary {
   list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px;
   padding: 16px 18px; font-weight: 700; font-size: 15px; color: var(--ink);
@@ -624,16 +679,16 @@ CONTENT_CSS = """
 .curr-level[open] > summary::after, .curr-module[open] > summary::after { transform: rotate(225deg); translate: 0 3px; }
 .curr-level > summary { background: var(--chip); }
 .curr-level-body { padding: 8px 12px 14px; }
-.curr-module { border: 1px solid #BFDBFE; border-radius: 10px; margin: 8px 0; background: #fff; }
+.curr-module { border: var(--border) solid var(--line); border-radius: 0; margin: 8px 0; background: var(--card); }
 .curr-module > summary { font-size: 14px; font-weight: 600; }
-.curr-topics { list-style: none; margin: 0 16px 12px 28px; padding: 4px 0 8px; border-left: 2px solid #BFDBFE; }
+.curr-topics { list-style: none; margin: 0 16px 12px 28px; padding: 4px 0 8px; border-left: 2px solid var(--line); }
 .curr-topics li { position: relative; padding: 8px 0 8px 20px; font-size: 14px; color: var(--ink-2); line-height: 1.45; }
 .curr-topics li::before {
   content: ""; position: absolute; left: -5px; top: 14px; width: 8px; height: 8px;
-  border-radius: 50%; background: var(--accent); border: 2px solid #fff; box-shadow: 0 0 0 1px #BFDBFE;
+  border-radius: 0; background: var(--accent); border: 2px solid var(--bg); box-shadow: 0 0 0 1px var(--line);
 }
 .register-section { padding: 48px 0 72px; background: var(--paper); }
-.inquiry-form { max-width: 640px; margin: 0 auto; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; box-shadow: 0 8px 24px rgba(20, 18, 16, 0.04); }
+.inquiry-form { max-width: 640px; margin: 0 auto; background: var(--card); border: var(--border) solid var(--fg); border-radius: 0; padding: 32px; }
 @media (max-width: 600px) { .inquiry-form { padding: 24px 20px; } }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
@@ -642,7 +697,7 @@ CONTENT_CSS = """
 .form-group label { font-size: 14px; font-weight: 700; color: var(--ink); }
 .form-group .required { color: var(--accent); }
 .form-group .optional { font-weight: 400; color: var(--ink-3); font-size: 13px; }
-.form-group input, .form-group select, .form-group textarea { font-family: var(--font-sans); font-size: 15px; color: var(--ink); background: var(--paper); border: 1px solid var(--line-2); border-radius: var(--radius-sm); padding: 11px 14px; transition: border-color 0.15s; width: 100%; }
+.form-group input, .form-group select, .form-group textarea { font-family: var(--font-display); font-size: 15px; color: var(--ink); background: var(--bg); border: var(--border) solid var(--line); border-radius: 0; padding: 11px 14px; transition: border-color 0.15s; width: 100%; }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
 .form-group input.invalid, .form-group select.invalid { border-color: var(--accent); }
 .form-group textarea { resize: vertical; min-height: 96px; }
@@ -662,51 +717,116 @@ CONTENT_CSS = """
 NAV_JS = """
 (function () {
   var toggle = document.getElementById('navToggle');
-  var nav = document.getElementById('nav');
-  var header = document.getElementById('header');
+  var menu = document.getElementById('menu');
+  var closeBtn = document.getElementById('menuClose');
   var year = document.getElementById('year');
-  var explore = document.getElementById('navExplore');
-  var exploreBtn = document.getElementById('exploreToggle');
   if (year) year.textContent = new Date().getFullYear();
-  if (toggle && nav) {
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
+  if (!toggle || !menu) return;
+
+  function setOpen(open) {
+    menu.classList.toggle('is-open', open);
+    menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open && closeBtn) closeBtn.focus();
+    else toggle.focus();
+  }
+
+  toggle.addEventListener('click', function () {
+    setOpen(!menu.classList.contains('is-open'));
+  });
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function () { setOpen(false); });
+  }
+  menu.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') setOpen(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menu.classList.contains('is-open')) setOpen(false);
+  });
+})();
+"""
+
+HOME_JS = """
+(function () {
+  var stage = document.querySelector('.chart-stage');
+  var listbox = document.querySelector('.towers');
+  var towers = Array.prototype.slice.call(document.querySelectorAll('.tower'));
+  var readoutTitle = document.getElementById('readoutTitle');
+  var readoutBody = document.getElementById('readoutBody');
+  if (!towers.length) return;
+
+  var facts = {
+    ds: {
+      title: 'Data scientists · +33.5%',
+      body: 'U.S. BLS projects data scientist employment to grow 33.5% from 2024 to 2034 — among the fastest of all occupations, versus 3.1% for all jobs. That is a labour forecast, not an Indian placement promise. If this is the job you want, we map Excel/SQL/Python into a live program.'
+    },
+    sec: {
+      title: 'Information security analysts · +28.5%',
+      body: 'BLS: +28.5% employment change, 2024–34. Security is not our core catalog, but production AI work still needs people who can think about access, logs, and failure. A career call will say so if another path fits better.'
+    },
+    rs: {
+      title: 'Computer & information research scientists · +19.7%',
+      body: 'BLS: +19.7%, 2024–34. Research-scientist titles usually want a deeper academic track than a 3–6 month cohort. We still teach the engineering stack used next to that work — models, evaluation, shipping.'
+    },
+    sw: {
+      title: 'Software developers · +16%',
+      body: 'BLS: software developers +16% (2024–34); the broader developers / QA / testers group is +15%. Developers who can work with data, APIs, and LLMs are the people companies actually interview. That is the sequence we teach.'
+    },
+    all: {
+      title: 'All occupations · +3.1%',
+      body: 'The grey stub is the average. AI-adjacent roles sit far above it in this U.S. table. India does not publish an equivalent official series — so we refuse to invent one. Book a call if you want a role map, not a slogan.'
+    }
+  };
+
+  function selectTower(btn, focus) {
+    towers.forEach(function (t) {
+      t.classList.toggle('is-on', t === btn);
+      t.setAttribute('aria-selected', t === btn ? 'true' : 'false');
     });
-    nav.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        nav.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-        if (explore) {
-          explore.classList.remove('open');
-          if (exploreBtn) exploreBtn.setAttribute('aria-expanded', 'false');
+    var fact = facts[btn.getAttribute('data-id')];
+    if (fact && readoutTitle && readoutBody) {
+      readoutTitle.textContent = fact.title;
+      readoutBody.textContent = fact.body;
+    }
+    if (listbox) listbox.setAttribute('aria-activedescendant', btn.id);
+    if (focus) btn.focus();
+  }
+
+  towers.forEach(function (btn, i) {
+    btn.addEventListener('click', function () { selectTower(btn, false); });
+    btn.addEventListener('keydown', function (e) {
+      var next = i;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = (i + 1) % towers.length;
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = (i - 1 + towers.length) % towers.length;
+      else return;
+      e.preventDefault();
+      selectTower(towers[next], true);
+    });
+  });
+
+  function draw() {
+    if (stage) stage.classList.add('is-drawn');
+  }
+
+  if (!stage) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    draw();
+    return;
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          draw();
+          io.disconnect();
         }
       });
-    });
-  }
-  if (explore && exploreBtn) {
-    exploreBtn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var open = explore.classList.toggle('open');
-      exploreBtn.setAttribute('aria-expanded', String(open));
-    });
-    document.addEventListener('click', function (e) {
-      if (!explore.contains(e.target)) {
-        explore.classList.remove('open');
-        exploreBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        explore.classList.remove('open');
-        exploreBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-  if (header) {
-    window.addEventListener('scroll', function () {
-      header.classList.toggle('scrolled', window.scrollY > 8);
-    }, { passive: true });
+    }, { threshold: 0.25 });
+    io.observe(stage);
+  } else {
+    draw();
   }
 })();
 """
@@ -910,7 +1030,10 @@ PATHS_JS = """
 })();
 """
 
-FAVICON_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#1E3A8A"/><text x="16" y="22" font-family="Arial" font-size="16" font-weight="bold" fill="#EFF6FF" text-anchor="middle">A</text></svg>'
+FAVICON_SVG = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#DFE104"/>
+  <path fill="#09090B" d="M6 26V6h8.4c4.6 0 7.4 2.5 7.4 6.6 0 2.7-1.4 4.8-3.8 5.7L22 26h-5.1l-3.6-7.1H11V26H6zm5-11.2h3.1c2.1 0 3.3-1.1 3.3-2.8S16.2 9.2 14.1 9.2H11v5.6z"/>
+</svg>"""
 
 
 if __name__ == "__main__":

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The demand arrived first — AI Career Academy</title>
+  <meta name="description" content="A chart-led look at data science, analytics, and AI job demand from 2018 through 2026 — and what the line means if you are choosing a sequence in India." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#f4efe4" />
+  <link rel="icon" href="mark.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to story</a>
+  <div class="progress" id="read-progress" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="index.html">
+        <img src="mark.svg" width="28" height="28" alt="" />
+        <span class="brand-name">AI Career Academy</span>
+      </a>
+      <nav class="nav" id="site-nav">
+        <a href="#chart-story">The chart</a>
+        <a href="#india">India</a>
+        <a href="#sequence-chapter">The sequence</a>
+        <a href="../../courses/index.html">Programs</a>
+        <a class="btn btn-solid" href="../../register/index.html">Register</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="kicker-bar">
+      <span>Feature · Labour market, not a prospectus</span>
+      <span>Saturday 15 August 2026 · Gurugram</span>
+    </div>
+  </div>
+
+  <main id="main">
+    <header class="wrap lede">
+      <p class="eyebrow">Chart of the decade</p>
+      <h1>The jobs arrived first.<br /><em>The sequence came later.</em></h1>
+      <p class="dek">
+        From 2018 through 2026, postings for analytics, data science, and AI roles did not move as one line.
+        Analytics climbed steadily. Data-science titles boomed, then split. AI titles bent upward after generative models left the lab.
+        If you are in India deciding what to learn next, the chart is the argument — not a course list.
+      </p>
+      <div class="byline">
+        <span>AI Career Academy · aicareer.academy</span>
+        <span>Illustrative demand index · 2018 = 100 for analytics</span>
+      </div>
+    </header>
+
+    <section class="wrap scrolly" id="chart-story" aria-labelledby="chart-title">
+      <div class="chart-sticky">
+        <figure class="chart-card">
+          <div class="chart-head">
+            <h2 id="chart-title">Relative job-posting demand, 2018–2026 — with a look past 2026</h2>
+            <p class="chart-index">Index · 2018 analytics ≈ 100</p>
+          </div>
+          <div class="legend" role="group" aria-label="Toggle series">
+            <button type="button" data-series="an" aria-pressed="true"><span class="swatch an" aria-hidden="true"></span> Analytics roles (dashed)</button>
+            <button type="button" data-series="ds" aria-pressed="true"><span class="swatch ds" aria-hidden="true"></span> Data science titles</button>
+            <button type="button" data-series="ai" aria-pressed="true"><span class="swatch ai" aria-hidden="true"></span> AI / ML / GenAI titles</button>
+          </div>
+          <div class="chart-svg-wrap">
+            <div class="tooltip" id="chart-tooltip" role="status"></div>
+            <svg id="demand-chart" viewBox="0 0 720 420" role="img" aria-labelledby="chart-title chart-desc" tabindex="0">
+              <title>Illustrative relative demand for analytics, data science, and AI job titles</title>
+              <desc id="chart-desc">
+                Three series from 2018 to 2028. Analytics rises gradually from 100 to about 198 by 2026.
+                Data science titles rise sharply to 2022, dip slightly in 2023, then resume.
+                AI titles stay lower until 2022, then steepen through 2026. 2027–2028 are dashed projections.
+              </desc>
+              <g class="grid"></g>
+              <g class="axis-lines"></g>
+              <g class="xlabels"></g>
+              <line class="now-line" />
+              <text class="anno-label now-label"></text>
+              <path data-band="ai" class="band" d="" opacity="0"></path>
+              <path data-hist="an" class="series-an" d=""></path>
+              <path data-proj="an" class="series-proj series-an" d=""></path>
+              <path data-hist="ds" class="series-ds" d=""></path>
+              <path data-proj="ds" class="series-proj series-ds" d=""></path>
+              <path data-hist="ai" class="series-ai" d=""></path>
+              <path data-proj="ai" class="series-proj series-ai" d=""></path>
+              <g class="anno" opacity="0">
+                <circle class="anno-dot" r="5"></circle>
+                <text class="anno-label"></text>
+              </g>
+              <line class="hover-line" id="hover-line" y1="0" y2="0"></line>
+              <rect class="hit" x="0" y="0" width="100%" height="100%" fill="transparent" data-year="2026" tabindex="0" aria-label="Demand chart. Arrow keys move year by year."></rect>
+            </svg>
+          </div>
+          <figcaption class="caption">
+            <strong>Illustrative trend, not our placement numbers.</strong>
+            Composite relative index shaped by public labour and job-posting narratives (LinkedIn emerging-jobs reports, Indeed/Naukri-style posting indexes, NASSCOM and WEF skills outlooks).
+            2027–28 is a simple continuation with a wide band — a sketch of direction, not a forecast you should bet a salary on.
+            Hover or use arrow keys on the chart for yearly values.
+          </figcaption>
+          <button class="table-toggle" id="table-toggle" type="button" aria-expanded="false" aria-controls="data-table-wrap">View data table</button>
+          <div class="data-table-wrap" id="data-table-wrap">
+            <table>
+              <caption class="caption">Relative demand index by year</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Year</th>
+                  <th scope="col">Analytics</th>
+                  <th scope="col">Data science</th>
+                  <th scope="col">AI / ML</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </figure>
+      </div>
+
+      <div class="steps">
+        <article class="step is-active" data-step="0">
+          <div class="step-card">
+            <span class="step-n">01 · How to read it</span>
+            <h3>Three titles. Three slopes.</h3>
+            <p>
+              The vertical axis is a relative demand index, not openings in lakhs and not “seats filled.”
+              Analytics is the volume job: dashed, stubborn, still rising. Data science is the title that defined the late 2010s.
+              AI is the line that waited, then ran.
+            </p>
+          </div>
+        </article>
+        <article class="step" data-step="1">
+          <div class="step-card">
+            <span class="step-n">02 · 2018</span>
+            <h3>The floor was already analytics.</h3>
+            <p>
+              Before “prompt” was a job skill, companies were hiring people who could join tables and explain a number to a manager.
+              That work did not vanish when models got famous. It is still the widest on-ramp.
+            </p>
+          </div>
+        </article>
+        <article class="step" data-step="2">
+          <div class="step-card">
+            <span class="step-n">03 · 2020–21</span>
+            <h3>Digital work pulled the whole chart up.</h3>
+            <p>
+              Remote operations, e-commerce, and reporting stacks thickened demand for SQL, Python, and dashboards.
+              Data-science titles rode the same wave — often as a premium label on work that was still mostly analysis plus a model.
+            </p>
+          </div>
+        </article>
+        <article class="step" data-step="3">
+          <div class="step-card">
+            <span class="step-n">04 · 2023</span>
+            <h3>Generative AI bent one line, not all three.</h3>
+            <p>
+              After large language models became a consumer product, postings that said AI, ML, LLM, or GenAI steepened.
+              Data-scientist as a catch-all cooled and split: some work stayed science; some was relabelled engineering.
+              The chart’s dip-then-rise on the black line is that renaming, not a disappearance of the work.
+            </p>
+          </div>
+        </article>
+        <article class="step" data-step="4">
+          <div class="step-card">
+            <span class="step-n">05 · 2026</span>
+            <h3>You are choosing on a split market.</h3>
+            <p>
+              Today the red line is loud. The dashed line still hires more people.
+              A career is not “AI versus analytics.” It is which slope you can actually walk — given the Python you have, and the systems you are willing to own.
+            </p>
+          </div>
+        </article>
+        <article class="step" data-step="5">
+          <div class="step-card">
+            <span class="step-n">06 · Beyond 2026</span>
+            <h3>The projection is a band, not a promise.</h3>
+            <p>
+              Past 2026 the lines continue as a sketch: AI titles stay elevated, analytics keeps compounding, data science remains a real job if it means experiments and models rather than a synonym for Excel.
+              The shaded band is uncertainty. We are not counting our students on this axis.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="chapter" id="india">
+      <div class="wrap chapter-grid">
+        <p class="chapter-label">India</p>
+        <div class="prose">
+          <h2>What the chart means if you live here</h2>
+          <p class="drop">
+            The index is not an India-only census. Job-posting series mix global product firms, consultancies, and — increasingly — capability centres in Bengaluru, Hyderabad, Pune, Chennai, and the NCR.
+            For a person in Gurugram or anywhere on that map, the useful reading is directional: the work exists, the titles moved, and the entry ticket is still boring on purpose.
+          </p>
+          <p>
+            Services firms still need analysts who can trust a pipeline. Product companies and GCCs need people who can put a model behind an API, or retrieve the right document without hallucinating a policy.
+            Those are different jobs. The chart’s three lines are a reminder not to buy a single slogan — “learn AI” — and expect it to place you on every slope at once.
+          </p>
+          <blockquote class="pull">The scarce skill is not a tool name. It is a sequence you can finish: data, then judgement, then a system someone else can run.</blockquote>
+          <p>
+            Wages and “guaranteed placement” figures do not belong on this page. They vary by city, degree, years of work, and whether the role is captive GCC or services.
+            What we can say without inventing a percentage: Python is the shared first step; SQL still interviews; production AI is a second language, not a replacement for the first.
+          </p>
+          <ul class="india-points">
+            <li>
+              <strong>Volume</strong>
+              <span>Analytics remains the broadest hire. If you need a first data role, start on the dashed line — then specialise.</span>
+            </li>
+            <li>
+              <strong>Titles</strong>
+              <span>“Data scientist” now splits toward research-flavoured work or toward ML/LLM engineering. Read the JD, not the fashion.</span>
+            </li>
+            <li>
+              <strong>AI work</strong>
+              <span>The steep line is real. It mostly pays people who can evaluate, retrieve, serve, and observe — not only chat with a model.</span>
+            </li>
+          </ul>
+          <p class="note">
+            Sources informing the shape of the chart: public job-posting indexes and emerging-jobs write-ups (LinkedIn, Indeed and Indian boards as reported in secondary summaries), NASSCOM technology and skills notes, World Economic Forum Future of Jobs discussions of AI and data roles.
+            This page does not reprint their tables, and does not treat them as AI Career Academy outcomes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="sequence-chapter">
+      <div class="wrap chapter-grid">
+        <p class="chapter-label">Decision</p>
+        <div class="prose">
+          <h2>Pick a job. Get a sequence.</h2>
+          <p>
+            The chart tells you demand moved. It does not tell you your next twelve weeks.
+            Choose a role. We show the order we teach — Python first, then the work that role actually does — and a live program if you want instructors, not another playlist.
+          </p>
+
+          <div class="jobs" role="group" aria-label="Choose a job">
+            <button class="job" type="button" data-job="data-analyst" aria-pressed="true">
+              <span class="job-k">Volume line</span>
+              <b>Data Analyst</b>
+            </button>
+            <button class="job" type="button" data-job="data-scientist" aria-pressed="false">
+              <span class="job-k">Black line</span>
+              <b>Data Scientist</b>
+            </button>
+            <button class="job" type="button" data-job="ml-engineer" aria-pressed="false">
+              <span class="job-k">Systems</span>
+              <b>ML Engineer</b>
+            </button>
+            <button class="job" type="button" data-job="llm-engineer" aria-pressed="false">
+              <span class="job-k">Steep line</span>
+              <b>LLM Engineer</b>
+            </button>
+            <button class="job" type="button" data-job="devops" aria-pressed="false">
+              <span class="job-k">Production</span>
+              <b>MLOps Engineer</b>
+            </button>
+          </div>
+
+          <div class="sequence" id="sequence" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="climax">
+      <div class="wrap">
+        <p class="eyebrow">After the chart</p>
+        <h2>If the line is real, the next move is a conversation — not another tab.</h2>
+        <p>
+          Live cohorts from Gurugram. We will not quote a placement rate on this page.
+          We will map your current work to one of the sequences above.
+        </p>
+        <div class="climax-actions">
+          <a class="btn btn-solid" href="../../register/index.html">Register / book a career call</a>
+          <a class="btn btn-line" href="../../courses/index.html">Browse programs</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <p class="foot-brand">AI Career Academy</p>
+          <p>68 Avenue, Badshahpur, Sector 68,<br />Gurugram, Haryana 122101</p>
+        </div>
+        <div>
+          <p><a href="tel:+918708752385">+91 87087 52385</a></p>
+          <p><a href="https://wa.me/918708752385">WhatsApp</a></p>
+          <p><a href="mailto:hello@aicareer.academy">hello@aicareer.academy</a></p>
+        </div>
+        <div>
+          <p><a href="../../register/index.html">Register</a></p>
+          <p><a href="../../courses/index.html">Courses</a></p>
+          <p><a href="../../contact-us/index.html">Contact</a></p>
+          <p><a href="../../index.html">Live homepage</a></p>
+        </div>
+      </div>
+      <div class="foot-meta">
+        <p>© <span id="year">2026</span> AI Career Academy · aicareer.academy</p>
+        <p>Experiment v1 · does not replace the live site</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="story.js"></script>
+</body>
+</html>

@@ -16,8 +16,8 @@ ORG_ID = f"{SITE_ORIGIN}/#org"
 
 SEO_OVERRIDES = {
     "home": {
-        "title": f"{BRAND} — Pick the job. Get the sequence.",
-        "description": f"Choose an AI role and get the learning sequence: live programs, curriculum, published fees, and mentor-led projects. {BRAND}, Gurugram.",
+        "title": f"{BRAND} — The job is the syllabus",
+        "description": f"The market does not care about your certificate. Live cohorts in Gurugram mapped to a job — Analyst, Data Science, GenAI, MLOps, Agentic. Published fees. No invented placement %. Book a 15-minute career call.",
     },
     "courses": {
         "title": f"AI and data programs — {BRAND}",

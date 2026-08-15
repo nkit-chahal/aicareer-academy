@@ -1,50 +1,32 @@
 
 (function () {
   var toggle = document.getElementById('navToggle');
-  var nav = document.getElementById('nav');
-  var header = document.getElementById('header');
+  var menu = document.getElementById('menu');
+  var closeBtn = document.getElementById('menuClose');
   var year = document.getElementById('year');
-  var explore = document.getElementById('navExplore');
-  var exploreBtn = document.getElementById('exploreToggle');
   if (year) year.textContent = new Date().getFullYear();
-  if (toggle && nav) {
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
-    });
-    nav.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        nav.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-        if (explore) {
-          explore.classList.remove('open');
-          if (exploreBtn) exploreBtn.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
+  if (!toggle || !menu) return;
+
+  function setOpen(open) {
+    menu.classList.toggle('is-open', open);
+    menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open && closeBtn) closeBtn.focus();
+    else toggle.focus();
   }
-  if (explore && exploreBtn) {
-    exploreBtn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var open = explore.classList.toggle('open');
-      exploreBtn.setAttribute('aria-expanded', String(open));
-    });
-    document.addEventListener('click', function (e) {
-      if (!explore.contains(e.target)) {
-        explore.classList.remove('open');
-        exploreBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        explore.classList.remove('open');
-        exploreBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
+
+  toggle.addEventListener('click', function () {
+    setOpen(!menu.classList.contains('is-open'));
+  });
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function () { setOpen(false); });
   }
-  if (header) {
-    window.addEventListener('scroll', function () {
-      header.classList.toggle('scrolled', window.scrollY > 8);
-    }, { passive: true });
-  }
+  menu.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') setOpen(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menu.classList.contains('is-open')) setOpen(false);
+  });
 })();

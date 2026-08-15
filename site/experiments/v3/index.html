@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Career Academy — Career OS</title>
+  <meta name="description" content="A Career OS for AI work: read the hiring map for DS, ML, LLM, and MLOps, then follow a live-program sequence. Gurugram. Fees on course pages." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#07070b" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M8 22.5L16 8.5L24 22.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11.5 17.5H20.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" opacity="0.7"/>
+        </svg>
+        <span class="brand-text">AI Career<em>.academy</em></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#os">Career OS</a>
+        <a href="#honest">How we work</a>
+        <a href="../../courses/index.html">Programs</a>
+        <a class="btn btn-ghost" href="https://wa.me/918708752385">WhatsApp</a>
+        <a class="btn btn-primary" href="../../register/index.html">Book a career call</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker"><span class="pulse" aria-hidden="true"></span> Career OS · live programs</p>
+        <h1>See the market.<br /><span>Then take the sequence.</span></h1>
+        <p class="lede">
+          This is not a course catalog. Toggle hiring attention for data science, ML, LLMs, and MLOps — then map a role to the order we actually teach. Fees live on the program pages. Calls happen on WhatsApp.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="#os">Open the map</a>
+          <a class="btn btn-ghost btn-lg" href="../../courses/index.html">All programs</a>
+        </div>
+        <p class="hero-meta">Gurugram · +91 87087 52385 · hello@aicareer.academy</p>
+      </div>
+    </section>
+
+    <section class="product" id="os">
+      <div class="wrap">
+        <article class="os-shell">
+          <div class="os-chrome">
+            <div class="os-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <p class="os-title">career-os / hiring-map</p>
+            <p class="os-live">Live cohorts · not a recorded dump</p>
+          </div>
+
+          <div class="os-body">
+            <div class="chart-pane">
+              <div class="pane-head">
+                <div>
+                  <h2>Hiring attention, 2020 → 2026+</h2>
+                  <p>Relative index (0–100). Toggle series. Click a line to load that role’s sequence.</p>
+                </div>
+              </div>
+
+              <div class="legend" role="group" aria-label="Toggle market series">
+                <button type="button" class="is-on" data-series="ds" aria-pressed="true"><span class="swatch swatch-ds" aria-hidden="true"></span> Data science</button>
+                <button type="button" class="is-on" data-series="ml" aria-pressed="true"><span class="swatch swatch-ml" aria-hidden="true"></span> ML</button>
+                <button type="button" class="is-on" data-series="llm" aria-pressed="true"><span class="swatch swatch-llm" aria-hidden="true"></span> LLM</button>
+                <button type="button" class="is-on" data-series="ops" aria-pressed="true"><span class="swatch swatch-ops" aria-hidden="true"></span> MLOps</button>
+              </div>
+
+              <div class="chart-wrap">
+                <svg id="market-chart" width="800" height="360"></svg>
+                <div class="tooltip" id="chart-tooltip" role="status"></div>
+              </div>
+              <p class="chart-note">
+                Teaching sketch of public hiring narratives — DS matured and flattened, ML climbed as production work, LLMs spiked after 2022/23, MLOps rose as the shipping constraint. Not a proprietary forecast, not placement numbers, not “X% growth.”
+              </p>
+
+              <button type="button" class="table-toggle" id="table-toggle" aria-expanded="false" aria-controls="index-table">Show index table</button>
+              <table class="data-table" id="index-table">
+                <caption>Relative hiring-attention index by year</caption>
+                <thead>
+                  <tr>
+                    <th>Track</th>
+                    <th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th><th>2026+</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th>Data science</th><td>70</td><td>85</td><td>92</td><td>88</td><td>84</td><td>82</td><td>80</td></tr>
+                  <tr><th>Machine learning</th><td>40</td><td>52</td><td>62</td><td>70</td><td>78</td><td>84</td><td>88</td></tr>
+                  <tr><th>LLM / GenAI</th><td>8</td><td>10</td><td>18</td><td>72</td><td>95</td><td>100</td><td>96</td></tr>
+                  <tr><th>MLOps</th><td>18</td><td>24</td><td>32</td><td>48</td><td>62</td><td>74</td><td>82</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="seq-pane">
+              <div class="pane-head">
+                <div>
+                  <p class="kicker" id="seq-kicker">01 · Analyst</p>
+                  <h2 id="seq-title">Data Analyst</h2>
+                  <p id="seq-blurb">Turn messy tables into decisions a manager can trust.</p>
+                </div>
+              </div>
+
+              <div class="roles" role="group" aria-label="Choose a role">
+                <button type="button" class="role is-active" data-role="ds" aria-pressed="true">
+                  <small>Start</small>
+                  <strong>Analyst</strong>
+                </button>
+                <button type="button" class="role" data-role="ml" aria-pressed="false">
+                  <small>Then</small>
+                  <strong>ML Engineer</strong>
+                </button>
+                <button type="button" class="role" data-role="llm" aria-pressed="false">
+                  <small>Then</small>
+                  <strong>LLM Engineer</strong>
+                </button>
+                <button type="button" class="role" data-role="ops" aria-pressed="false">
+                  <small>Then</small>
+                  <strong>MLOps</strong>
+                </button>
+              </div>
+
+              <ol class="sequence" id="sequence"></ol>
+
+              <div class="seq-cta">
+                <a class="btn btn-primary" id="seq-course" href="../../courses/data-analytics-course-with-placement/index.html">Open Data Analytics with AI</a>
+                <a class="btn btn-ghost" href="../../register/index.html">Talk through fit</a>
+              </div>
+              <p class="seq-note">Published fees are on each course page. We will not invent a number here.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="story">
+      <div class="wrap story-grid">
+        <article class="card">
+          <h2>A product, not a brochure.</h2>
+          <p>The map is the homepage. You pick a role the same way you pick a job family — then you get an order of work, not twenty related links.</p>
+        </article>
+        <article class="card">
+          <h2>Live, because the stack moves.</h2>
+          <p>Cohorts are taught live. Recorded dumps lag the week the APIs change. Mentors can stop a bad RAG pattern in the room.</p>
+        </article>
+        <article class="card">
+          <h2>Call if the map is unclear.</h2>
+          <p>WhatsApp a career call. We will tell you if Analyst is enough, or if you should skip to ML / LLM / MLOps — without a fake “98% placed” badge.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="honest" id="honest">
+      <div class="wrap">
+        <div class="honest-box">
+          <div>
+            <h2>What we will not pretend.</h2>
+            <p class="lede">Career OS is a teaching product. The market chart is a sketch of direction. The sequence is the curriculum order. The rest is a conversation.</p>
+          </div>
+          <ul class="truths">
+            <li>
+              <span class="label">Programs</span>
+              <span>Live cohorts in Gurugram and online. Browse the full list when you are ready to enroll — not before you know the job.</span>
+            </li>
+            <li>
+              <span class="label">Fees</span>
+              <span>Published on the individual course pages. If a homepage quotes a price, treat it as stale.</span>
+            </li>
+            <li>
+              <span class="label">Calls</span>
+              <span>WhatsApp <a href="https://wa.me/918708752385">+91 87087 52385</a> or book a career call. Email <a href="mailto:hello@aicareer.academy">hello@aicareer.academy</a>.</span>
+            </li>
+            <li>
+              <span class="label">Outcomes</span>
+              <span>We teach the sequence. We do not invent placement percentages or salary medians for this page.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap">
+        <div class="cta-inner">
+          <h2>Ready to pick a lane?</h2>
+          <p>Book a career call, or open the program list once the sequence above already matches the job you want.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary btn-lg" href="../../register/index.html">Book a career call</a>
+            <a class="btn btn-wa btn-lg" href="https://wa.me/918708752385">WhatsApp</a>
+            <a class="btn btn-ghost btn-lg" href="../../courses/index.html">All programs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <h2>AI Career Academy</h2>
+          <p>68 Avenue, Badshahpur, Sector 68,<br />Gurugram, Haryana 122101</p>
+        </div>
+        <div class="foot-links">
+          <a href="mailto:hello@aicareer.academy">hello@aicareer.academy</a>
+          <a href="tel:+918708752385">+91 87087 52385</a>
+          <a href="https://wa.me/918708752385">WhatsApp career call</a>
+        </div>
+        <div class="foot-links">
+          <a href="../../register/index.html">Register</a>
+          <a href="../../courses/index.html">Courses</a>
+          <a href="../../contact-us/index.html">Contact</a>
+        </div>
+      </div>
+      <p class="legal">Experiment v3 · standalone Career OS homepage. Does not replace the production site index.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,180 +1,205 @@
 {% extends "base.html" %}
+{% block ticker %}
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>AI Career Academy · Gurugram</span>
+    <span>No invented placement %</span>
+    <span>Live cohorts — not a course dump</span>
+    <span>Book a 15-minute career call</span>
+    <span>+91 87087 52385</span>
+    <span>The job is the syllabus</span>
+    <span>AI Career Academy · Gurugram</span>
+    <span>No invented placement %</span>
+    <span>Live cohorts — not a course dump</span>
+    <span>Book a 15-minute career call</span>
+    <span>+91 87087 52385</span>
+    <span>The job is the syllabus</span>
+  </div>
+</div>
+{% endblock %}
 {% block content %}
-<section class="path-hero">
-  <div class="container path-hero-grid">
-    <div class="path-hero-copy">
-      <p class="eyebrow path-badge">Career OS</p>
-      <h1 class="path-hero-title">Pick the job.<br /><span>We’ll give you the sequence.</span></h1>
-      <p class="path-hero-sub">Resonance is not a course dump. Start with Python, choose a role, open the steps, then enter the live program that matches — Analyst, ML, LLM, or MLOps.</p>
-      <ol class="os-rail" aria-label="How Resonance works">
-        <li><span>01</span> Choose a path</li>
-        <li><span>02</span> Follow the sequence</li>
-        <li><span>03</span> Open the program</li>
-      </ol>
-      <div class="path-hero-actions">
-        <a href="#paths" class="btn btn-primary btn-lg">Use the map</a>
-        <a href="{{ base }}courses/index.html" class="btn btn-ghost btn-lg">All programs</a>
-      </div>
-      <p class="path-hero-note">Live cohorts · Gurugram · +91 87087 52385</p>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-stamp">Not a catalog<br />Not a miracle<br />A sequence</div>
+  <h1 id="hero-title">
+    The market<br />
+    does not<br />
+    <span class="strike">care</span><br />
+    about your<br />
+    <span class="hl">certificate</span>
+  </h1>
+  <div class="hero-rail">
+    <div class="hero-copy">
+      <p>
+        It cares whether you can ship. AI Career Academy is a live, instructor-led map from a job title
+        to a learning sequence — Analyst, Data Science, GenAI, MLOps, Agentic. We will not quote a fake
+        placement rate. We will take a 15-minute call and tell you if a cohort is the right next move.
+      </p>
     </div>
-
-    <div class="py-hub" role="group" aria-label="Python connected to four roles">
-      <svg class="py-hub-lines" viewBox="0 0 400 400" aria-hidden="true">
-        <circle class="hub-orbit" cx="200" cy="200" r="118" fill="none" />
-        <line class="hub-spoke" x1="200" y1="200" x2="200" y2="58" />
-        <line class="hub-spoke" x1="200" y1="200" x2="342" y2="200" />
-        <line class="hub-spoke" x1="200" y1="200" x2="200" y2="342" />
-        <line class="hub-spoke" x1="200" y1="200" x2="58" y2="200" />
-      </svg>
-      <div class="hub-core">
-        <span class="hub-core-mark">Py</span>
-        <span class="hub-core-label">Python</span>
-      </div>
-      {% for t in paths.tracks if t.hub %}
-      <button type="button" class="hub-node hub-node-{{ loop.index }}" data-path="{{ t.id }}">{{ t.title }}</button>
-      {% endfor %}
+    <div class="hero-act">
+      <a class="cta" href="{{ base }}register/index.html">Book a career call</a>
+      <a class="ghost" href="{{ base }}courses/index.html">See published programs</a>
     </div>
   </div>
 </section>
 
-<section class="path-choose" id="paths">
-  <div class="container">
-    <p class="eyebrow">The map</p>
-    <h2 class="path-studio-title">Four ways out of Python</h2>
-    <p class="path-studio-lead">Click a track. The sequence below updates. Then open the matching program — not a pile of related links.</p>
+<section class="demand" id="demand" aria-labelledby="demand-title">
+  <div class="demand-head">
+    <p class="kicker">Fig. 01 · U.S. BLS employment projections 2024–34</p>
+    <h2 id="demand-title">Demand, drawn as a building</h2>
+    <p>
+      Heights are official U.S. percent-change forecasts — not Indian salary, not our alumni count, not a guarantee.
+      The yellow tape is 2026: you are already inside the window these numbers describe. Tap a slab.
+    </p>
+  </div>
 
-    <div class="path-card-grid">
-      {% for t in paths.tracks if t.featured %}
-      <button type="button" class="path-pick{% if loop.first %} is-active{% endif %}" data-path="{{ t.id }}">
-        <span class="path-pick-icon" aria-hidden="true">{{ "%02d"|format(loop.index) }}</span>
-        <strong class="path-pick-title">{{ t.title }}</strong>
-        <span class="path-pick-tagline">{{ t.tagline }}</span>
-        <span class="path-pick-tags">
-          {% for tag in t.tags %}<span class="topic">{{ tag }}</span>{% endfor %}
+  <div class="chart-stage" aria-label="Projected U.S. employment growth 2024 to 2034 as vertical slabs">
+    <div class="year-axis" aria-hidden="true">
+      <span>2034</span>
+      <span>2029</span>
+      <span>2026</span>
+      <span>2024</span>
+    </div>
+    <div class="towers" role="listbox" aria-label="Occupations by projected growth" aria-activedescendant="tower-ds">
+      <button class="tower is-on" id="tower-ds" type="button" role="option" aria-selected="true" data-id="ds" style="--h: 86%">
+        <span class="tower-fill"></span>
+        <span class="tower-meta">
+          <span class="tower-pct">+33.5%</span>
+          <span class="tower-name">Data scientists</span>
         </span>
-        <span class="path-pick-link">Open sequence</span>
       </button>
-      {% endfor %}
-    </div>
-
-    <p class="path-more-label">Also on the map</p>
-    <div class="path-card-grid path-card-grid--more">
-      {% for t in paths.tracks if not t.featured %}
-      <button type="button" class="path-pick path-pick--compact" data-path="{{ t.id }}">
-        <strong class="path-pick-title">{{ t.title }}</strong>
-        <span class="path-pick-tagline">{{ t.tagline }}</span>
-        <span class="path-pick-tags">
-          {% for tag in t.tags %}<span class="topic">{{ tag }}</span>{% endfor %}
+      <button class="tower" id="tower-sec" type="button" role="option" aria-selected="false" data-id="sec" style="--h: 73%">
+        <span class="tower-fill"></span>
+        <span class="tower-meta">
+          <span class="tower-pct">+28.5%</span>
+          <span class="tower-name">Info security analysts</span>
         </span>
-        <span class="path-pick-link">Open sequence</span>
       </button>
-      {% endfor %}
+      <button class="tower" id="tower-rs" type="button" role="option" aria-selected="false" data-id="rs" style="--h: 51%">
+        <span class="tower-fill"></span>
+        <span class="tower-meta">
+          <span class="tower-pct">+19.7%</span>
+          <span class="tower-name">Research scientists</span>
+        </span>
+      </button>
+      <button class="tower" id="tower-sw" type="button" role="option" aria-selected="false" data-id="sw" style="--h: 41%">
+        <span class="tower-fill"></span>
+        <span class="tower-meta">
+          <span class="tower-pct">+16%</span>
+          <span class="tower-name">Software developers</span>
+        </span>
+      </button>
+      <button class="tower" id="tower-all" type="button" role="option" aria-selected="false" data-id="all" style="--h: 8%">
+        <span class="tower-fill"></span>
+        <span class="tower-meta">
+          <span class="tower-pct">+3.1%</span>
+          <span class="tower-name">All occupations</span>
+        </span>
+      </button>
     </div>
+    <div class="year-tape" aria-hidden="true">—— 2026 you are here ——</div>
+  </div>
+
+  <div class="demand-readout" aria-live="polite">
+    <strong id="readoutTitle">Data scientists · +33.5%</strong>
+    <p id="readoutBody">
+      U.S. BLS projects data scientist employment to grow 33.5% from 2024 to 2034 — among the fastest of all occupations, versus 3.1% for all jobs. That is a labour forecast, not an Indian placement promise. If this is the job you want, we map Excel/SQL/Python into a live program.
+    </p>
+  </div>
+
+  <div class="sr-table-wrap">
+    <h3>Source table (same numbers as the slabs)</h3>
+    <table>
+      <caption class="kicker" style="color:#09090b;margin-bottom:10px;display:block;">
+        U.S. Bureau of Labor Statistics, Employment Projections 2024–34. All-occupations average +3.1%. Software developers (SOC 15-1252) +16%; grouped developers / QA / testers +15%.
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Occupation</th>
+          <th scope="col">Projected % change, 2024–34</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Data scientists</td><td>+33.5%</td></tr>
+        <tr><td>Information security analysts</td><td>+28.5%</td></tr>
+        <tr><td>Computer and information research scientists</td><td>+19.7%</td></tr>
+        <tr><td>Software developers</td><td>+16%</td></tr>
+        <tr><td>All occupations</td><td>+3.1%</td></tr>
+      </tbody>
+    </table>
+    <p style="margin:14px 0 0;font-size:0.9rem;">
+      Source:
+      <a href="https://www.bls.gov/opub/mlr/2026/article/industry-and-occupational-employment-projections-overview.htm" rel="noopener noreferrer">BLS Monthly Labor Review, 2024–34 highlights</a>
+      and
+      <a href="https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm" rel="noopener noreferrer">OOH software developers</a>.
+      India has no matching official series on this page — we do not fabricate one.
+    </p>
   </div>
 </section>
 
-<section class="path-studio" id="path-detail">
-  <div class="container">
-    <div class="path-studio-head">
-      <p class="eyebrow">Sequence</p>
-      <h2 class="path-studio-title">Do this, in this order</h2>
-      <p class="path-studio-lead">Python is step zero. Everything else is the job you picked.</p>
-    </div>
+<section class="honest" id="honest" aria-labelledby="honest-title">
+  <article class="yes">
+    <h2 id="honest-title">What we will say</h2>
+    <ul>
+      <li>Live cohorts from Gurugram, with published fees on each program page.</li>
+      <li>A sequence tied to a role: analyst, DS, GenAI, MLOps, agentic — not 40 random modules.</li>
+      <li>Mentor-led projects. Resume and interview practice when you are actually applying.</li>
+      <li>A 15-minute call to see if you should join now, later, or not at all.</li>
+    </ul>
+  </article>
+  <article class="no">
+    <h2>What we will not say</h2>
+    <ul>
+      <li>A placement percentage we cannot defend.</li>
+      <li>That BLS U.S. growth equals your Gurugram offer letter.</li>
+      <li>That a certificate is the product. The product is whether you can do the work.</li>
+      <li>That every background maps to the same 10-month stack.</li>
+    </ul>
+  </article>
+</section>
 
-    <div class="path-layout">
-      <div class="path-tabs" role="tablist" aria-label="Career tracks">
-        {% for t in paths.tracks %}
-        <button type="button" class="path-tab{% if loop.first %} is-active{% endif %}" role="tab" id="tab-{{ t.id }}" aria-controls="panel-{{ t.id }}" aria-selected="{{ 'true' if loop.first else 'false' }}" data-path="{{ t.id }}">
-          <span class="path-tab-name">{{ t.title }}</span>
-          <span class="path-tab-meta">{{ t.time }}</span>
-        </button>
-        {% endfor %}
-      </div>
-
-      <div class="path-panels">
-        {% for t in paths.tracks %}
-        <article class="path-panel{% if loop.first %} is-active{% endif %}" id="panel-{{ t.id }}" role="tabpanel" aria-labelledby="tab-{{ t.id }}" {% if not loop.first %}hidden{% endif %} data-path="{{ t.id }}">
-          <header class="path-panel-head">
-            <div>
-              <h3 class="path-panel-title">{{ t.title }}</h3>
-              <p class="path-panel-tagline">{{ t.tagline }}</p>
-            </div>
-            <span class="path-time">{{ t.time }}</span>
-          </header>
-          <p class="path-for"><span>Best for</span> {{ t.for }}</p>
-          <p class="path-foundation-inline"><strong>0 · Python</strong> — {{ paths.foundation.body }}</p>
-
-          <ol class="path-steps">
-            {% for s in t.steps %}
-            <li class="path-step">
-              <span class="path-step-n" aria-hidden="true">{{ s.n }}</span>
-              <div>
-                <h4 class="path-step-title">{{ s.title }}</h4>
-                <p class="path-step-body">{{ s.body }}</p>
-              </div>
-            </li>
-            {% endfor %}
-          </ol>
-
-          <div class="path-panel-cta">
-            <a class="btn btn-primary" href="{{ base }}courses/{{ t.course }}/index.html">Open {{ t.course_label }}</a>
-            {% if t.roadmap %}
-            <a class="btn btn-ghost" href="{{ base }}{{ t.roadmap }}">Full curriculum map</a>
-            {% endif %}
-            <a class="btn btn-ghost" href="{{ base }}register/index.html?course={{ t.course }}">Talk to us</a>
-          </div>
-        </article>
-        {% endfor %}
-      </div>
-    </div>
+<section class="progs" id="programs" aria-labelledby="prog-title">
+  <div class="progs-head">
+    <p class="kicker">Fig. 02 · Published programs, not a moodboard</p>
+    <h2 id="prog-title">Pick a slab. Open the fee.</h2>
+  </div>
+  <div class="prog-list">
+    {% set ns = namespace(n=0) %}
+    {% for p in programs if p.section == 'featured' and ns.n < 6 %}
+    {% set ns.n = ns.n + 1 %}
+    <a class="prog" href="{{ base }}courses/{{ p.slug }}/index.html">
+      <span class="prog-num">{{ '%02d'|format(ns.n) }}</span>
+      <span class="prog-title">{{ p.title }}</span>
+      <span class="prog-meta">{{ p.duration }}{% if p.fee_label %} · {{ p.fee_label }}{% endif %}</span>
+    </a>
+    {% endfor %}
+    <a class="prog" href="{{ base }}courses/index.html">
+      <span class="prog-num">17</span>
+      <span class="prog-title">All programs →</span>
+      <span class="prog-meta">Catalog</span>
+    </a>
   </div>
 </section>
 
-<section class="path-stats" aria-label="Program facts">
-  <div class="container path-stats-grid">
-    <div><strong>17</strong><span>Live programs</span></div>
-    <div><strong>7</strong><span>Role maps</span></div>
-    <div><strong>Live</strong><span>Instructor-led, not recordings-only</span></div>
-    <div><strong>Static</strong><span>Opens in milliseconds</span></div>
-  </div>
-</section>
-
-<section class="path-flow">
-  <div class="container">
-    <p class="eyebrow">How we teach</p>
-    <h2 class="path-studio-title">Learn. Build. Deploy. Get hired.</h2>
-    <ol class="path-flow-grid">
-      <li>
-        <strong>Learn</strong>
-        <p>Practitioners. Python first. No slide tourism.</p>
-      </li>
-      <li>
-        <strong>Build</strong>
-        <p>Work you can show: dashboards, models, RAG, pipelines.</p>
-      </li>
-      <li>
-        <strong>Deploy</strong>
-        <p>Something that runs without you sitting next to it.</p>
-      </li>
-      <li>
-        <strong>Get hired</strong>
-        <p>Portfolio plus a 15-minute map if you’re stuck.</p>
-      </li>
+<section class="call" id="call" aria-labelledby="call-title">
+  <div class="call-copy">
+    <p class="kicker">The only CTA that is honest</p>
+    <h2 id="call-title">Fifteen minutes. Then you decide.</h2>
+    <ol class="call-steps">
+      <li><span>01</span><span>You say background + the job you want.</span></li>
+      <li><span>02</span><span>We say which sequence fits — or that none does yet.</span></li>
+      <li><span>03</span><span>Fees stay on the program page. No surprise invoice on the call.</span></li>
     </ol>
+    <div class="call-actions">
+      <a class="cta" href="{{ base }}register/index.html">Book a career call</a>
+      <a class="ghost" href="https://wa.me/918708752385">WhatsApp</a>
+    </div>
   </div>
-</section>
-
-<section class="cta-band">
-  <div class="container cta-inner">
-    <div>
-      <h2 class="cta-title">Stuck between two roles?</h2>
-      <p class="cta-sub">Fifteen minutes. We’ll put you on one sequence — not a brochure.</p>
-    </div>
-    <div class="cta-actions">
-      <a href="{{ base }}register/index.html" class="btn btn-light btn-lg">Book a career call</a>
-      <a href="https://wa.me/918708752385" class="btn btn-outline-light btn-lg">WhatsApp</a>
-      <p class="cta-phone">+91 87087 52385</p>
-    </div>
+  <div class="contact-block">
+    <p class="kicker" style="color:#fff;">Studio</p>
+    <p><a href="tel:+918708752385">+91 87087 52385</a></p>
+    <p><a href="mailto:{{ email }}">{{ email }}</a></p>
+    <p>68 Avenue, Badshahpur,<br />Sector 68, Gurugram</p>
+    <p style="margin-top:20px;"><a href="{{ base }}courses/index.html">Browse all programs</a></p>
   </div>
 </section>
 {% endblock %}

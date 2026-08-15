@@ -10,9 +10,8 @@
   position: sticky;
   top: var(--header-h);
   z-index: 40;
-  background: rgba(248, 250, 252, 0.94);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  border-bottom: var(--border) solid var(--fg);
 }
 .prog-jump-inner {
   display: flex;
@@ -37,7 +36,7 @@
   align-items: center;
   min-height: 36px;
   padding: 6px 12px;
-  border-radius: 999px;
+  border-radius: 0;
   font-size: 13px;
   font-weight: 600;
   color: var(--ink-2);
@@ -68,8 +67,8 @@
 .prog-fee-amt { flex-wrap: wrap; }
 .prog-fee-amt-wrap--original .prog-fee-num { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 500; text-decoration: line-through; color: var(--ink-3); opacity: 0.75; }
 .prog-fee-amt-wrap--original .prog-fee-symbol { font-size: 0.85em; opacity: 0.75; }
-.prog-fee-save { display: inline-flex; align-items: center; padding: 6px 12px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; background: var(--accent); border-radius: 999px; white-space: nowrap; }
-.prog-fee-save .prog-fee-symbol, .prog-fee-save .prog-fee-num { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: #fff; }
+.prog-fee-save { display: inline-flex; align-items: center; padding: 6px 12px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-ink); background: var(--accent); border-radius: 0; white-space: nowrap; }
+.prog-fee-save .prog-fee-symbol, .prog-fee-save .prog-fee-num { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: var(--accent-ink); }
 .prog-fee-display--tier { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
 .prog-fee-sep { font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--ink-3); align-self: center; padding: 0 2px; }
 .prog-fee-display--plan { display: flex; flex-direction: column; gap: 10px; }
@@ -127,7 +126,7 @@
 .curriculum-list { list-style: none; margin: 20px 0; }
 .curriculum-list li { padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--radius-sm); margin-bottom: 8px; font-size: 15px; color: var(--ink-2); background: var(--card); }
 .curriculum-tree { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
-.curr-level { border: 1px solid var(--line); border-radius: 12px; background: var(--card); overflow: hidden; }
+.curr-level { border: var(--border) solid var(--line); border-radius: 0; background: var(--card); overflow: hidden; }
 .curr-level > summary, .curr-module > summary {
   list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px;
   padding: 16px 18px; font-weight: 700; font-size: 15px; color: var(--ink);
@@ -142,13 +141,13 @@
 .curr-level[open] > summary::after, .curr-module[open] > summary::after { transform: rotate(225deg); translate: 0 3px; }
 .curr-level > summary { background: var(--chip); }
 .curr-level-body { padding: 8px 12px 14px; }
-.curr-module { border: 1px solid #BFDBFE; border-radius: 10px; margin: 8px 0; background: #fff; }
+.curr-module { border: var(--border) solid var(--line); border-radius: 0; margin: 8px 0; background: var(--card); }
 .curr-module > summary { font-size: 14px; font-weight: 600; }
-.curr-topics { list-style: none; margin: 0 16px 12px 28px; padding: 4px 0 8px; border-left: 2px solid #BFDBFE; }
+.curr-topics { list-style: none; margin: 0 16px 12px 28px; padding: 4px 0 8px; border-left: 2px solid var(--line); }
 .curr-topics li { position: relative; padding: 8px 0 8px 20px; font-size: 14px; color: var(--ink-2); line-height: 1.45; }
 .curr-topics li::before {
   content: ""; position: absolute; left: -5px; top: 14px; width: 8px; height: 8px;
-  border-radius: 50%; background: var(--accent); border: 2px solid #fff; box-shadow: 0 0 0 1px #BFDBFE;
+  border-radius: 0; background: var(--accent); border: 2px solid var(--bg); box-shadow: 0 0 0 1px var(--line);
 }
 
 /* FAQ */

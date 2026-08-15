@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The India hiring curve — AI Career Academy</title>
+  <meta name="description" content="A cover story on data and AI hiring in India through 2026: NCR, Bengaluru, Hyderabad, and Pune as context, and three career paths — switcher, software engineer, analyst. AI Career Academy, Gurugram." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0f4c4a" />
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Libre+Bodoni:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="mast">
+    <div class="wrap mast-top">
+      <span>Gurugram studio · Vol. 04 · August 2026</span>
+      <span>
+        <a href="tel:+918708752385">+91 87087 52385</a>
+        ·
+        <a href="https://wa.me/918708752385">WhatsApp</a>
+      </span>
+    </div>
+    <div class="wrap mast-bar">
+      <a class="brand" href="index.html">
+        <span class="brand-kicker">Cover story</span>
+        <span class="brand-name">AI Career Academy</span>
+      </a>
+      <nav class="nav" id="siteNav" aria-label="Primary">
+        <a href="index.html" aria-current="page">This issue</a>
+        <a href="../../courses/index.html">Programs</a>
+        <a href="../../mentors/index.html">Mentors</a>
+        <a href="../../contact-us/index.html">Contact</a>
+        <a class="nav-cta" href="../../register/index.html">Book a career call</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <header class="hero wrap">
+        <p class="folio">
+          <b>India desk</b>
+          <span>Data &amp; AI labour, not a city-page menu</span>
+          <span>Chart labelled illustrative</span>
+        </p>
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Hiring · 2021–2027 sketch</p>
+            <h1>The curve that actually moves careers in India — and the three people still arguing with it.</h1>
+            <p class="dek">
+              Bengaluru still writes the thickest offer letters. NCR and Hyderabad are filling GCC floors. Pune keeps the analytics shops running.
+              None of that is a doorway to “course in [city]”. The useful split is who you are: a career switcher, a software engineer, or an analyst.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="../../register/index.html">Talk through your path</a>
+              <a class="btn btn-ghost" href="../../courses/index.html">See the programs</a>
+            </div>
+            <p class="byline">
+              <strong>AI Career Academy, Sector 68, Gurugram</strong>
+              <span>Live programs. Published curriculum. No invented placement percentages on this page.</span>
+            </p>
+          </div>
+
+          <figure class="chart-panel">
+            <div class="chart-head">
+              <div>
+                <h2>India data &amp; AI hiring index</h2>
+                <p>Illustrative composite — not a government series, not a placement claim.</p>
+              </div>
+            </div>
+            <div class="legend" aria-hidden="true">
+              <span><i class="swatch"></i> Observed (illustrative)</span>
+              <span><i class="swatch dash"></i> Projection (dashed)</span>
+              <span><i class="swatch band"></i> Uncertainty band</span>
+            </div>
+            <div class="chart-canvas-wrap">
+              <canvas id="hiringChart" role="img" tabindex="0" aria-labelledby="chartSummary"></canvas>
+              <div class="tooltip" id="chartTooltip" role="status"></div>
+            </div>
+            <p class="chart-note" id="chartSummary">
+              Index set to 100 in 2021. Solid line through 2025; dashed line and brass band for 2026–27. Use arrow keys on the chart to read each year.
+            </p>
+            <button class="table-toggle" id="tableToggle" type="button" aria-expanded="false" aria-controls="chartTableWrap">Show data table</button>
+            <div id="chartTableWrap" hidden>
+              <table class="data-table">
+                <caption>Illustrative hiring index (2021 = 100). Values are a sketch for this cover story, not official statistics.</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Year</th>
+                    <th scope="col">Index</th>
+                    <th scope="col">Band</th>
+                    <th scope="col">Kind</th>
+                  </tr>
+                </thead>
+                <tbody id="chartTableBody"></tbody>
+              </table>
+            </div>
+          </figure>
+        </div>
+      </header>
+
+      <section class="cities wrap" aria-labelledby="cities-heading">
+        <h2 id="cities-heading">Four metros as weather, not as landing pages</h2>
+        <p class="lead">
+          If you work in data or AI in India, you already know the map. Demand clusters. It does not politely distribute itself across SEO URLs.
+          We teach from Gurugram and online; the cities below are how the labour market talks — context for the chart, not a directory.
+        </p>
+        <div class="city-grid">
+          <article class="city">
+            <p class="meta">Product gravity</p>
+            <h3>Bengaluru</h3>
+            <p>Still the deepest stack of product companies and AI labs. Engineers here are competing with people who already ship.</p>
+          </article>
+          <article class="city">
+            <p class="meta">GCC corridor</p>
+            <h3>NCR</h3>
+            <p>Gurugram–Noida–Delhi: captives, consulting, and a lot of “build it for global”. Our studio sits in this weather.</p>
+          </article>
+          <article class="city">
+            <p class="meta">Campus + captive</p>
+            <h3>Hyderabad</h3>
+            <p>GCC floors and a serious campus pipeline. Titles look similar to Bengaluru; the work is often more systems than startup.</p>
+          </article>
+          <article class="city">
+            <p class="meta">Analytics shops</p>
+            <h3>Pune</h3>
+            <p>BFSI, product engineering, and the quiet density of people who already live in Excel and SQL — and need a next gear.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="paths wrap" id="paths" aria-labelledby="paths-heading">
+        <p class="section-kicker">Chapter set</p>
+        <h2 id="paths-heading">Three people. Same hiring curve. Different homework.</h2>
+        <p class="lead">
+          The chart does not care about your motivation quote. It cares whether you can do a specific kind of work.
+          Here is how the same India market reads if you are switching fields, already writing production software, or already trusted with the numbers.
+        </p>
+
+        <div class="chapters">
+          <article class="chapter" id="switcher">
+            <div class="ch-num" aria-hidden="true">01</div>
+            <div>
+              <h3>The career switcher</h3>
+              <p class="who">Seven years in operations, sales, or a non-CS degree. Sharp. Tired of being told to “just learn Python”.</p>
+              <p>
+                You are not late. You are also not a hidden machine-learning engineer. India’s hiring curve through 2026 still has room for people who can
+                own a business problem, wrangle messy data, and use modern models without theatre. What it does not have room for is a six-week miracle.
+              </p>
+              <p class="pull">The switch is real when you can show a before-and-after on a problem a manager already has — not when you finish a certificate.</p>
+              <p class="need"><strong>What to build:</strong> SQL you can defend, a first model you can explain, an LLM workflow with evaluation, and a portfolio that names the industry you came from.</p>
+            </div>
+          </article>
+
+          <article class="chapter" id="engineer">
+            <div class="ch-num" aria-hidden="true">02</div>
+            <div>
+              <h3>The software engineer</h3>
+              <p class="who">Backend, full-stack, or mobile. You already ship. You are bored of being handed a “prompting” slide deck.</p>
+              <p>
+                Bengaluru and Hyderabad will keep hiring engineers who can put models behind APIs, watch latency, and not set the bill on fire.
+                Your gap is rarely syntax. It is retrieval, evals, orchestration, and the unglamorous work of making an agent survive contact with production data.
+              </p>
+              <p class="pull">You do not need another beginner Python week. You need systems literacy for models — the same seriousness you already have for databases.</p>
+              <p class="need"><strong>What to build:</strong> RAG that fails loudly, traces, eval sets, and a service you would actually on-call.</p>
+            </div>
+          </article>
+
+          <article class="chapter" id="analyst">
+            <div class="ch-num" aria-hidden="true">03</div>
+            <div>
+              <h3>The analyst</h3>
+              <p class="who">Excel, SQL, dashboards. BFSI, ops, or a GCC reporting team. People already ask you “what happened?”</p>
+              <p>
+                Pune and NCR are full of this person. The hiring curve past 2026 does not erase analysts; it asks them to go from describing last quarter
+                to shaping the next one — with models, experiments, and language models that are checked, not worshipped.
+              </p>
+              <p class="pull">You already have the rare part: business instinct. The missing part is a stack that lets you move from slide to system.</p>
+              <p class="need"><strong>What to build:</strong> a metric you own, a forecast with a stated error, and an assisted-analysis workflow a risk team could audit.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="studio wrap" aria-labelledby="studio-heading">
+        <div class="studio-grid">
+          <div>
+            <p class="section-kicker">The academy, not the slogan</p>
+            <h2 id="studio-heading">We will not call ourselves India’s best institute. We will tell you the sequence.</h2>
+            <p class="lead">
+              AI Career Academy is a Gurugram studio for people who want a job-shaped path into data and AI — live teaching, a published syllabus,
+              and mentors who have sat on the other side of the hiring table. If a number cannot be sourced, it does not appear here.
+            </p>
+            <ul class="facts">
+              <li>
+                <span class="label">Where</span>
+                <span>68 Avenue, Badshahpur, Sector 68, Gurugram, Haryana 122101</span>
+              </li>
+              <li>
+                <span class="label">Reach</span>
+                <span><a href="tel:+918708752385">+91 87087 52385</a> · <a href="https://wa.me/918708752385">WhatsApp</a> · <a href="mailto:hello@aicareer.academy">hello@aicareer.academy</a></span>
+              </li>
+              <li>
+                <span class="label">What we won’t do</span>
+                <span>Fake placement rates, city-spam homepages, or a chart pretending to be NASSCOM.</span>
+              </li>
+            </ul>
+          </div>
+          <aside class="aside">
+            <h3>Pick a chapter. Then pick a call.</h3>
+            <p>Switcher, engineer, or analyst — say which one you are. We will map a program, not a brochure.</p>
+            <a class="btn btn-primary" href="../../register/index.html">Book a career call</a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="cta-block wrap">
+        <div class="cta-inner">
+          <div>
+            <h2>Read the curve. Then get on it.</h2>
+            <p>Programs are listed with curriculum and fees. The call is for choosing a path, not for a hard sell dressed as counselling.</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="../../register/index.html">Book a career call</a>
+            <a class="btn btn-ghost" href="../../courses/index.html">Browse programs</a>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot-grid">
+      <div>
+        <h2>AI Career Academy</h2>
+        <address>
+          68 Avenue, Badshahpur,<br />
+          Sector 68, Gurugram, Haryana 122101
+        </address>
+        <p><a href="tel:+918708752385">+91 87087 52385</a></p>
+        <p><a href="https://wa.me/918708752385">WhatsApp</a> · <a href="mailto:hello@aicareer.academy">hello@aicareer.academy</a></p>
+      </div>
+      <div>
+        <h2>This issue</h2>
+        <div class="foot-links">
+          <a href="#paths">Three paths</a>
+          <a href="#switcher">Career switcher</a>
+          <a href="#engineer">Software engineer</a>
+          <a href="#analyst">Analyst</a>
+        </div>
+      </div>
+      <div>
+        <h2>Site</h2>
+        <div class="foot-links">
+          <a href="../../courses/index.html">All programs</a>
+          <a href="../../register/index.html">Register</a>
+          <a href="../../mentors/index.html">Mentors</a>
+          <a href="../../contact-us/index.html">Contact</a>
+          <a href="../../privacy-policy/index.html">Privacy</a>
+        </div>
+      </div>
+    </div>
+    <p class="wrap colophon">Cover experiment v4. Chart is illustrative. © AI Career Academy.</p>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script src="chart.js"></script>
+</body>
+</html>
