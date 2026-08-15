@@ -1,0 +1,41 @@
+﻿
+=== prog-ai-engineering ===
+  fee_label: ['fee details.', 'fees']
+  starting_at: ['starting from Python and ML foundations and ending wi']
+
+=== prog-ds-dl ===
+  fee_label: ['feed from social media or comments left by customers on products, so your data hand']
+  section [Database Mastery]: Technical Details of SQL and NoSQL with Reference to Their Day to Day Use It is, therefore, very important to comprehend
+  section [Advanced Technologies]: Encouraging the Dissemination of the Extremely Innovative I will also introduce some modern deep learning approaches suc
+  section [It Professionals & System Architects]: They manage and scale data infrastructures. This course will teach you to integrate deep learning for data science into 
+
+=== prog-ds-ml ===
+  section [Academics]: Academic as the data science and AI in their field of specialty
+  section [Talk to Our Team Directly]: Contact us and our academic counsellor will get in touch with you shortly.
+
+Enquire Now +91 96914 40998 info@schoolofcor
+
+=== prog-dl-spec ===
+  section [Talk to Our Team Directly]: Contact us and our academic counsellor will get in touch with you shortly.
+
+Enquire Now +91 96914 40998 info@schoolofcor
+
+=== prog-fde ===
+  fee_label: ['feedback loops, evaluation practices and production-readiness decisions.', 'feedback and iteration', 'feedback, failure examples and workflow observations to improve usefulness after ro', 'Feedback loops and reliability thinking']
+  large_nums: ['255,255', '255,255', '255,255', '255,255', '255,255', '255,255']
+  section [Support rollout and iteration]: Carry the system into real usage with APIs, feedback loops, evaluation practices and production-readiness decisions.
+
+=== prog-full-stack-ds ===
+  section [Talk to Our Team Directly]: Contact us and our academic counsellor will get in touch with you shortly.
+
+Enquire Now +91 96914 40998 info@schoolofcor
+
+=== prog-cv ===
+  section [Talk to Our Team Directly]: Contact us and our academic counsellor will get in touch with you shortly.
+
+Enquire Now +91 96914 40998 info@schoolofcor
+
+=== prog-nlp ===
+  section [Talk to Our Team Directly]: Contact us and our academic counsellor will get in touch with you shortly.
+
+Enquire Now +91 96914 40998 info@schoolofcor

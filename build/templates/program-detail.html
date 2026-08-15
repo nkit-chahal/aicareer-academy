@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{% from "fee-block.html" import fee_block %}
+{% block content %}
+<section class="prog-hero">
+  <div class="container prog-hero-grid">
+    <div>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ base }}courses/index.html">All programs</a>
+        <span aria-hidden="true">/</span>
+        <span>{{ program.title if program else data.hero_title }}</span>
+      </nav>
+      <h1 class="prog-hero-title">{{ data.hero_title }}</h1>
+      {% if program %}
+      <div class="prog-meta">
+        <span class="card-duration">{{ program.duration }}</span>
+        {% if program.featured %}<span class="badge badge-orange">Featured</span>{% endif %}
+        {% for tag in program.tags %}
+        {% if tag == 'beginner' %}<span class="badge badge-green">Beginner friendly</span>
+        {% elif tag == 'career' %}<span class="badge">Career track</span>
+        {% elif tag == 'specialization' %}<span class="badge">Specialization</span>
+        {% elif tag == 'architect' %}<span class="badge">Architect level</span>
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% if data.hero_sub %}<p class="prog-hero-sub">{{ data.hero_sub }}</p>{% endif %}
+      <div class="prog-cta-row">
+        <a href="{{ base }}register/index.html{% if course_slug %}?course={{ course_slug }}{% endif %}" class="btn btn-primary btn-lg">Book a session</a>
+        <a href="https://wa.me/918708752385" class="btn btn-ghost btn-lg">Chat on WhatsApp</a>
+      </div>
+    </div>
+    <div class="prog-hero-art" aria-hidden="true">
+      <svg viewBox="0 0 280 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="16" y="24" width="248" height="152" rx="20" fill="#EFF6FF"/>
+        <rect x="40" y="48" width="120" height="12" rx="6" fill="#2563EB"/>
+        <rect x="40" y="72" width="200" height="8" rx="4" fill="#BFDBFE"/>
+        <rect x="40" y="92" width="176" height="8" rx="4" fill="#BFDBFE"/>
+        <circle cx="56" cy="132" r="14" fill="#1E3A8A"/>
+        <circle cx="92" cy="132" r="14" fill="#2563EB"/>
+        <circle cx="128" cy="132" r="14" fill="#93C5FD"/>
+        <path d="M42 132h140" stroke="#93C5FD" stroke-width="3" stroke-dasharray="4 6"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+{% if jump_nav %}
+<nav class="prog-jump" aria-label="On this page">
+  <div class="container prog-jump-inner">
+    <span class="prog-jump-label">On this page</span>
+    {% for item in jump_nav %}
+    <a href="#{{ item.id }}">{{ item.label }}</a>
+    {% endfor %}
+  </div>
+</nav>
+{% endif %}
+
+{% if fees %}{{ fee_block(fees, "prog-fees-title", "Program fee") }}{% endif %}
+
+{% if salaries %}
+<section class="prog-salaries" id="salary" aria-labelledby="prog-salary-title">
+  <div class="container">
+    <header class="prog-salary-header">
+      <h2 class="prog-salary-title" id="prog-salary-title">{{ salaries.title }}</h2>
+      {% if salaries.subtitle %}<p class="prog-salary-subtitle">{{ salaries.subtitle }}</p>{% endif %}
+      {% if salaries.intro %}<p class="prog-salary-intro">{{ salaries.intro }}</p>{% endif %}
+    </header>
+
+    {% if salaries.roles %}
+    <div class="prog-salary-cards">
+      {% for role in salaries.roles %}
+      <article class="prog-salary-card">
+        <h3 class="prog-salary-card-title">{{ role.name }}</h3>
+        {% for tier in role.tiers %}
+        <div class="prog-salary-card-tier">
+          <span class="prog-salary-exp">{{ tier.experience }}</span>
+          <span class="prog-salary-amt">{{ tier.india_lpa }} ₹ LPA</span>
+        </div>
+        {% endfor %}
+        {% if role.note %}<p class="prog-salary-card-note">{{ role.note }}</p>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if salaries.experience_table %}
+    <div class="prog-salary-table-wrap">
+      <table class="prog-salary-table">
+        <caption class="prog-salary-caption">Salary by experience</caption>
+        <thead>
+          <tr>
+            <th scope="col">Experience</th>
+            <th scope="col">India (₹ LPA)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for tier in salaries.experience_table %}
+          <tr{% if loop.index0 is odd %} class="prog-salary-row-alt"{% endif %}>
+            <td class="prog-salary-exp">{{ tier.experience }}</td>
+            <td class="prog-salary-amt">{{ tier.india_lpa }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% if salaries.footnote %}<p class="prog-salary-footnote">{{ salaries.footnote }}</p>{% endif %}
+    {% endif %}
+
+    {% if salaries.tips %}
+    <div class="prog-salary-tips">
+      {% if salaries.tips_heading %}<h3 class="prog-salary-tips-title">{{ salaries.tips_heading }}</h3>{% endif %}
+      <ul class="prog-salary-tips-list">
+        {% for tip in salaries.tips %}
+        <li>{{ tip }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+{% if display_sections %}
+<section class="prog-sections">
+  <div class="container">
+    {% for section in display_sections %}
+    <div class="prog-section">
+      <h2 class="prog-section-title">{{ section.heading }}</h2>
+      {% if section.content_html %}
+      <div class="prog-section-body">{{ section.content_html | safe }}</div>
+      {% else %}
+      <div class="prog-section-body">{{ section.content }}</div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% elif data.sections %}
+<section class="prog-sections">
+  <div class="container">
+    {% for section in data.sections %}
+    <div class="prog-section">
+      <h2 class="prog-section-title">{{ section.heading }}</h2>
+      <div class="prog-section-body">{{ section.content }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% include "curriculum-tree.html" %}
+
+{% if data.faqs %}
+<section class="prog-faq" id="faq">
+  <div class="container">
+    <h2 class="section-title">Frequently asked questions</h2>
+    <div class="faq-list">
+      {% for faq in data.faqs %}
+      <details class="faq-item">
+        <summary>{{ faq.question }}</summary>
+        <p>{{ faq.answer }}</p>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <h2 class="cta-title">Ready to start?</h2>
+      <p class="cta-sub">Talk to an advisor about this program — 15 minutes, no sales pitch.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="{{ base }}register/index.html{% if course_slug %}?course={{ course_slug }}{% endif %}" class="btn btn-light btn-lg">Book a career call</a>
+      <a href="https://wa.me/918708752385" class="btn btn-outline-light btn-lg">Chat on WhatsApp</a>
+      <p class="cta-phone">+91 87087 52385</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,15 @@
+﻿=== Cached audit (19 programs) ===
+python : Traceback (most recent call last):
+At C:\Users\Pc\AppData\Local\Temp\ps-script-a52417cd-9f3f-4b61-bfd4-f5b4bf1a2ac4.ps1:110 char:1
++ python "D:\personal_app\scai-clone\build\fee_check.py" cached 2>&1 |  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "D:\personal_app\scai-clone\build\fee_check.py", line 92, in <module>
+    print(f"{slug}: {status} | amounts={fees['amounts'] if fees else []} | raw_rupees={rupees[:3]}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Pc\miniconda3\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u20b9' in position 35: character maps to <undefined>

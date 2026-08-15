@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Large Language Model Course — AI Career Academy</title>
+  <meta name="description" content="Learn transformers, LoRA/QLoRA fine-tuning, RAG pipelines, RLHF alignment, and production deployment in this hands-on Large Language Model Course." />
+  
+  <meta name="robots" content="index, follow" />
+  
+  <link rel="canonical" href="https://aicareer.academy/courses/large-language-model-course/" />
+  <meta property="og:site_name" content="AI Career Academy" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Large Language Model Course — AI Career Academy" />
+  <meta property="og:description" content="Learn transformers, LoRA/QLoRA fine-tuning, RAG pipelines, RLHF alignment, and production deployment in this hands-on Large Language Model Course." />
+  <meta property="og:url" content="https://aicareer.academy/courses/large-language-model-course/" />
+  
+  <meta property="og:image" content="https://aicareer.academy/assets/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aicareer.academy/assets/og.png" />
+  
+  <meta name="twitter:title" content="Large Language Model Course — AI Career Academy" />
+  <meta name="twitter:description" content="Learn transformers, LoRA/QLoRA fine-tuning, RAG pipelines, RLHF alignment, and production deployment in this hands-on Large Language Model Course." />
+  <meta name="theme-color" content="#1E3A8A" />
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+  
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@id": "https://aicareer.academy/#org", "@type": "EducationalOrganization", "address": {"@type": "PostalAddress", "addressCountry": "IN", "addressLocality": "Gurugram", "addressRegion": "Haryana", "postalCode": "122003", "streetAddress": "Sector 44"}, "email": "hello@aicareer.academy", "name": "AI Career Academy", "telephone": "+918708752385", "url": "https://aicareer.academy/"}, {"@id": "https://aicareer.academy/#website", "@type": "WebSite", "name": "AI Career Academy", "publisher": {"@id": "https://aicareer.academy/#org"}, "url": "https://aicareer.academy/"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://aicareer.academy/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://aicareer.academy/courses/", "name": "Programs", "position": 2}, {"@type": "ListItem", "item": "https://aicareer.academy/courses/large-language-model-course/", "name": "Large Language Model Course (LLM) \u2014 Fine-Tuning, RAG \u0026 RLHF", "position": 3}]}, {"@type": "Course", "description": "Learn transformers, LoRA/QLoRA fine-tuning, RAG pipelines, RLHF alignment, and production deployment in this hands-on Large Language Model Course.", "name": "Large Language Model Course (LLM) \u2014 Fine-Tuning, RAG \u0026 RLHF", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "price": "40000", "priceCurrency": "INR", "url": "https://aicareer.academy/courses/large-language-model-course/"}, "provider": {"@id": "https://aicareer.academy/#org"}, "url": "https://aicareer.academy/courses/large-language-model-course/"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "A Large Language Model Course (LLM course) is an engineering-focused program that teaches how transformer language models work and how to adapt them for real products using fine tuning large language models, retrieval-augmented generation (RAG), alignment, evaluation, and deployment. If you\u0027re comparing a large language models course across providers, prioritize hands-on labs, measurable evaluation, and production deployment patterns. Build and debug LLM systems beyond prompt-only workflows Fine-tune open source LLM models with LoRA/QLoRA Ship RAG pipelines with grounded answers and evaluation"}, "name": "What is a Large Language Model Course?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Transformer internals, attention variants, and context-window trade-offs LLM engineering workflows: data curation, training runs, and reproducibility RAG course skills: chunking, embeddings, retrieval, re-ranking, and grounding RLHF training concepts (DPO/RLHF) and preference-based alignment LLM evaluation: test sets, regression harnesses, and hallucination checks LLM deployment: vLLM/TGI serving, observability, and cost-per-token control"}, "name": "What Skills Do You Learn in an LLM Course?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Tokenization: convert text to token IDs and build vocabularies Transformers: learn next-token prediction with attention Fine-tuning: SFT + PEFT (LoRA/QLoRA) for domain behavior Alignment: RLHF/DPO-style preference optimization Evaluation: quality, safety, robustness, and cost/latency constraints"}, "name": "How Large Language Models Are Trained"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "For engineers and builders aiming at LLM roles \u2014 from fine-tuning and alignment to RAG systems, deployment, and evaluation."}, "name": "Who Is This Large Language Model Course For?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "LLMs are redefining software. Upskill from Transformer fundamentals to LoRA/QLoRA fine-tuning, RLHF alignment, and evaluation to stay ahead."}, "name": "Why Learn Large Language Models Now?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "See how our Large Language Model training delivers real-world fine-tuning, RLHF, and AI engineering skills versus generic online courses."}, "name": "What Sets Our Large Language Model Course Apart?"}]}]}</script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/base.css" />
+  <link rel="stylesheet" href="../../assets/css/program.css" /><link rel="stylesheet" href="../../assets/css/content.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <p class="topbar-note">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        An engineering-first map for AI careers — not a course catalog.
+      </p>
+      <div class="topbar-links">
+        <a href="https://wa.me/918708752385" class="topbar-link">Chat with us</a>
+        <span class="topbar-divider" aria-hidden="true"></span>
+        <a href="tel:+918708752385" class="topbar-link">+91 87087 52385</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c0 .34-.04.67-.12.98A4 4 0 0 1 19 14.5c0 .17-.01.33-.03.5A3.5 3.5 0 0 1 17.5 21h-11A3.5 3.5 0 0 1 5.03 15c-.02-.17-.03-.33-.03-.5a4 4 0 0 1 3.12-7.52A4.01 4.01 0 0 1 8 6a4 4 0 0 1 4-4z"/><path d="M12 8v13"/><path d="M9 12h6"/></svg>
+        </span>
+        <span class="brand-text">AI Career<em>.academy</em></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="../../index.html" class="nav-link">Home</a>
+        <a href="../../courses/index.html" class="nav-link">All programs</a>
+        <div class="nav-explore" id="navExplore">
+          <button type="button" class="nav-link nav-explore-toggle" id="exploreToggle" aria-expanded="false" aria-haspopup="true" aria-controls="exploreMenu">Explore</button>
+          <div class="nav-dropdown" id="exploreMenu" role="menu">
+            <a href="../../index.html#paths" role="menuitem">Career paths</a>
+            <a href="../../courses/index.html" role="menuitem">Courses</a>
+            <a href="../../comparisons/index.html" role="menuitem">Comparisons</a>
+            <a href="../../roadmaps/data-science-roadmap/index.html" role="menuitem">Roadmaps</a>
+            <a href="../../blogs/index.html" role="menuitem">Blogs</a>
+            <a href="../../register/index.html" role="menuitem">Register</a>
+          </div>
+        </div>
+        <a href="../../mentors/index.html" class="nav-link">Mentors</a>
+        <a href="../../contact-us/index.html" class="nav-link">Contact</a>
+        <a href="../../register/index.html" class="btn btn-primary nav-cta">Book a career call</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    
+<section class="prog-hero">
+  <div class="container prog-hero-grid">
+    <div>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../courses/index.html">All programs</a>
+        <span aria-hidden="true">/</span>
+        <span>LLM Mastery</span>
+      </nav>
+      <h1 class="prog-hero-title">Large Language Model Course (LLM) — Fine-Tuning, RAG &amp; RLHF</h1>
+      
+      <div class="prog-meta">
+        <span class="card-duration">2 Months</span>
+        <span class="badge badge-orange">Featured</span>
+        
+        <span class="badge">Specialization</span>
+        
+        
+      </div>
+      
+      <p class="prog-hero-sub">A Large Language Model Course teaches how modern AI models such as GPT-4/4o , Llama 3/4 , Mistral , Qwen , and DeepSeek are built, fine-tuned, evaluated, and deployed. You’ll study transformer architecture, LoRA/QLoRA fine-tuning, RLHF alignment, retrieval-augmented generation (RAG), and production deployment patterns used in real LLM systems.</p>
+      <div class="prog-cta-row">
+        <a href="../../register/index.html?course=large-language-model-course" class="btn btn-primary btn-lg">Book a session</a>
+        <a href="https://wa.me/918708752385" class="btn btn-ghost btn-lg">Chat on WhatsApp</a>
+      </div>
+    </div>
+    <div class="prog-hero-art" aria-hidden="true">
+      <svg viewBox="0 0 280 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="16" y="24" width="248" height="152" rx="20" fill="#EFF6FF"/>
+        <rect x="40" y="48" width="120" height="12" rx="6" fill="#2563EB"/>
+        <rect x="40" y="72" width="200" height="8" rx="4" fill="#BFDBFE"/>
+        <rect x="40" y="92" width="176" height="8" rx="4" fill="#BFDBFE"/>
+        <circle cx="56" cy="132" r="14" fill="#1E3A8A"/>
+        <circle cx="92" cy="132" r="14" fill="#2563EB"/>
+        <circle cx="128" cy="132" r="14" fill="#93C5FD"/>
+        <path d="M42 132h140" stroke="#93C5FD" stroke-width="3" stroke-dasharray="4 6"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+<nav class="prog-jump" aria-label="On this page">
+  <div class="container prog-jump-inner">
+    <span class="prog-jump-label">On this page</span>
+    
+    <a href="#fees">Fees</a>
+    
+    <a href="#curriculum">Curriculum</a>
+    
+    <a href="#faq">FAQ</a>
+    
+  </div>
+</nav>
+
+
+
+<section class="prog-fees" id="fees" aria-labelledby="prog-fees-title">
+  <div class="container prog-fees-inner">
+    <div class="prog-fees-col-main">
+      <p class="prog-fees-label" id="prog-fees-title">Program fee</p>
+
+      
+      
+      <div class="prog-fee-display prog-fee-display--single">
+        <span class="prog-fee-amt"><span class="prog-fee-symbol">₹</span><span class="prog-fee-num">40,000</span></span>
+      </div>
+      
+
+      
+      <div class="prog-fees-notes">
+        
+        <p class="prog-fees-note prog-fees-note--muted">One-time payment</p>
+        
+        
+      </div>
+      
+    </div>
+
+    
+  </div>
+</section>
+
+
+
+
+
+<section class="prog-sections">
+  <div class="container">
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">What is a Large Language Model Course?</h2>
+      
+      <div class="prog-section-body">A Large Language Model Course (LLM course) is an engineering-focused program that teaches how transformer language models work and how to adapt them for real products using fine tuning large language models, retrieval-augmented generation (RAG), alignment, evaluation, and deployment. If you&#39;re comparing a large language models course across providers, prioritize hands-on labs, measurable evaluation, and production deployment patterns.
+
+Build and debug LLM systems beyond prompt-only workflows Fine-tune open source LLM models with LoRA/QLoRA Ship RAG pipelines with grounded answers and evaluation</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">What Skills Do You Learn in an LLM Course?</h2>
+      
+      <div class="prog-section-body">Transformer internals, attention variants, and context-window trade-offs LLM engineering workflows: data curation, training runs, and reproducibility RAG course skills: chunking, embeddings, retrieval, re-ranking, and grounding RLHF training concepts (DPO/RLHF) and preference-based alignment LLM evaluation: test sets, regression harnesses, and hallucination checks LLM deployment: vLLM/TGI serving, observability, and cost-per-token control</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Examples of Large Language Models</h2>
+      
+      <div class="prog-section-body">Clear entity examples help teams reason about capabilities, constraints, and deployment options.
+
+GPT-4 / GPT-4o LLaMA 3 Mistral Qwen DeepSeek</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">How Large Language Models Are Trained</h2>
+      
+      <div class="prog-section-body">Tokenization: convert text to token IDs and build vocabularies Transformers: learn next-token prediction with attention Fine-tuning: SFT + PEFT (LoRA/QLoRA) for domain behavior Alignment: RLHF/DPO-style preference optimization Evaluation: quality, safety, robustness, and cost/latency constraints</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Skills You Will Gain in This Large Language Model Course</h2>
+      
+      <div class="prog-section-body">From Transformer internals to LoRA/QLoRA fine-tuning, RLHF alignment, RAG systems, and production deployment — every skill is practiced hands-on.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Program Highlights</h2>
+      
+      <div class="prog-section-body">What makes this LLM course different from online tutorials and theoretical lectures.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Hands-On Fine-Tuning (LoRA/QLoRA)</h2>
+      
+      <div class="prog-section-body">Complete end-to-end labs on LLaMA/Mistral/DeepSeek with parameter-efficient training, dataset curation, and reproducible reports.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">RLHF / DPO &amp; Evaluation</h2>
+      
+      <div class="prog-section-body">Alignment methods, preference data pipelines, and quality measurement (BLEU, ROUGE, Perplexity) to reduce hallucinations and improve safety.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Capstone: Build Your Own LLM App</h2>
+      
+      <div class="prog-section-body">Fine-tune, evaluate, and deploy an open-source LLM on domain data. Publish a model card and demo — perfect for interviews and portfolios.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Deployment &amp; Career Support</h2>
+      
+      <div class="prog-section-body">Serve with vLLM/TGI, add LangSmith tracing and cost controls. Get dual certification, resume review, and mock interview preparation.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Program Overview of Large Language Model Course</h2>
+      
+      <div class="prog-section-body">Six core pillars — Transformer theory through production deployment — each taught with hands-on labs and real open-source models.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Transformer Fundamentals</h2>
+      
+      <div class="prog-section-body">Understand how modern LLMs are built — attention, embeddings, positional encodings, and the architecture behind BERT, GPT, LLaMA, Mistral, and DeepSeek.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Efficient Fine-Tuning</h2>
+      
+      <div class="prog-section-body">Perform parameter-efficient fine-tuning (LoRA, QLoRA, SFT) on domain data. Run hyperparameter sweeps, curate clean datasets, and produce reproducible model cards.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Alignment &amp; Evaluation</h2>
+      
+      <div class="prog-section-body">Align models with RLHF and DPO, build preference datasets, evaluate using BLEU/ROUGE/Perplexity, and implement hallucination reduction strategies.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Retrieval &amp; Memory (RAG)</h2>
+      
+      <div class="prog-section-body">Design retrieval-augmented pipelines with LangChain and LlamaIndex. Choose embeddings, vector stores, and implement re-ranking with citation-grounded answers.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Production Deployment</h2>
+      
+      <div class="prog-section-body">Serve models with vLLM and TGI, add LangSmith tracing, enforce guardrails, and manage cost-per-token and throughput SLAs for reliable AI features.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Scaling &amp; MoE</h2>
+      
+      <div class="prog-section-body">Learn Mixture-of-Experts routing to scale capacity without linear cost. Reason about trade-offs in memory, throughput, latency, and quality.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Who Is This Large Language Model Course For?</h2>
+      
+      <div class="prog-section-body">For engineers and builders aiming at LLM roles — from fine-tuning and alignment to RAG systems, deployment, and evaluation.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">ML &amp; LLM Engineers</h2>
+      
+      <div class="prog-section-body">End-to-end LLM engineering with production deployment
+
+Fine-tune with LoRA/QLoRA, RLHF/DPO, and measure quality metrics Build RAG pipelines with LangChain, vector stores, and re-ranking Serve with vLLM/TGI and trace with LangSmith</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Software Developers</h2>
+      
+      <div class="prog-section-body">Go beyond API calls and ship AI-powered features
+
+Fine-tune BERT/GPT on domain data with clean pipelines Integrate RAG with LangChain into existing services Add observability and guardrails for reliable LLM features</div>
+      
+    </div>
+    
+  </div>
+</section>
+
+
+
+<section class="prog-curriculum" id="curriculum">
+  <div class="container">
+    <h2 class="section-title">Course Curriculum</h2>
+    <div class="curriculum-tree">
+      
+      <details class="curr-level" open>
+        <summary>LLM fundamentals</summary>
+        <div class="curr-level-body">
+          
+            
+            <details class="curr-module">
+              <summary>Module 1: Internals</summary>
+              
+              <ul class="curr-topics">
+                
+                <li>LLM Fundamentals</li>
+                
+                <li>Tokenization and Embeddings</li>
+                
+                <li>Attention variants</li>
+                
+              </ul>
+              
+            </details>
+            
+            <details class="curr-module">
+              <summary>Module 2: Data and training</summary>
+              
+              <ul class="curr-topics">
+                
+                <li>Data curation</li>
+                
+                <li>Training runs</li>
+                
+                <li>Reproducibility</li>
+                
+              </ul>
+              
+            </details>
+            
+          
+        </div>
+      </details>
+      
+      <details class="curr-level">
+        <summary>Adaptation</summary>
+        <div class="curr-level-body">
+          
+            
+            <details class="curr-module">
+              <summary>Module 3: Fine-tuning</summary>
+              
+              <ul class="curr-topics">
+                
+                <li>Fine-tuning and PEFT</li>
+                
+                <li>LoRA and QLoRA</li>
+                
+                <li>Preference alignment</li>
+                
+              </ul>
+              
+            </details>
+            
+            <details class="curr-module">
+              <summary>Module 4: RAG skills</summary>
+              
+              <ul class="curr-topics">
+                
+                <li>Chunking and retrieval</li>
+                
+                <li>Re-ranking</li>
+                
+                <li>Grounding</li>
+                
+              </ul>
+              
+            </details>
+            
+          
+        </div>
+      </details>
+      
+      <details class="curr-level">
+        <summary>Serve and evaluate</summary>
+        <div class="curr-level-body">
+          
+            
+            <details class="curr-module">
+              <summary>Module 5: Production</summary>
+              
+              <ul class="curr-topics">
+                
+                <li>Scalable Inference</li>
+                
+                <li>Evaluation Metrics</li>
+                
+                <li>Cost-per-token control</li>
+                
+              </ul>
+              
+            </details>
+            
+          
+        </div>
+      </details>
+      
+    </div>
+  </div>
+</section>
+
+
+
+<section class="prog-faq" id="faq">
+  <div class="container">
+    <h2 class="section-title">Frequently asked questions</h2>
+    <div class="faq-list">
+      
+      <details class="faq-item">
+        <summary>What is a Large Language Model Course?</summary>
+        <p>A Large Language Model Course (LLM course) is an engineering-focused program that teaches how transformer language models work and how to adapt them for real products using fine tuning large language models, retrieval-augmented generation (RAG), alignment, evaluation, and deployment. If you&#39;re comparing a large language models course across providers, prioritize hands-on labs, measurable evaluation, and production deployment patterns. Build and debug LLM systems beyond prompt-only workflows Fine-tune open source LLM models with LoRA/QLoRA Ship RAG pipelines with grounded answers and evaluation</p>
+      </details>
+      
+      <details class="faq-item">
+        <summary>What Skills Do You Learn in an LLM Course?</summary>
+        <p>Transformer internals, attention variants, and context-window trade-offs LLM engineering workflows: data curation, training runs, and reproducibility RAG course skills: chunking, embeddings, retrieval, re-ranking, and grounding RLHF training concepts (DPO/RLHF) and preference-based alignment LLM evaluation: test sets, regression harnesses, and hallucination checks LLM deployment: vLLM/TGI serving, observability, and cost-per-token control</p>
+      </details>
+      
+      <details class="faq-item">
+        <summary>How Large Language Models Are Trained</summary>
+        <p>Tokenization: convert text to token IDs and build vocabularies Transformers: learn next-token prediction with attention Fine-tuning: SFT + PEFT (LoRA/QLoRA) for domain behavior Alignment: RLHF/DPO-style preference optimization Evaluation: quality, safety, robustness, and cost/latency constraints</p>
+      </details>
+      
+      <details class="faq-item">
+        <summary>Who Is This Large Language Model Course For?</summary>
+        <p>For engineers and builders aiming at LLM roles — from fine-tuning and alignment to RAG systems, deployment, and evaluation.</p>
+      </details>
+      
+      <details class="faq-item">
+        <summary>Why Learn Large Language Models Now?</summary>
+        <p>LLMs are redefining software. Upskill from Transformer fundamentals to LoRA/QLoRA fine-tuning, RLHF alignment, and evaluation to stay ahead.</p>
+      </details>
+      
+      <details class="faq-item">
+        <summary>What Sets Our Large Language Model Course Apart?</summary>
+        <p>See how our Large Language Model training delivers real-world fine-tuning, RLHF, and AI engineering skills versus generic online courses.</p>
+      </details>
+      
+    </div>
+  </div>
+</section>
+
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <h2 class="cta-title">Ready to start?</h2>
+      <p class="cta-sub">Talk to an advisor about this program — 15 minutes, no sales pitch.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="../../register/index.html?course=large-language-model-course" class="btn btn-light btn-lg">Book a career call</a>
+      <a href="https://wa.me/918708752385" class="btn btn-outline-light btn-lg">Chat on WhatsApp</a>
+      <p class="cta-phone">+91 87087 52385</p>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="../../index.html" class="brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c0 .34-.04.67-.12.98A4 4 0 0 1 19 14.5c0 .17-.01.33-.03.5A3.5 3.5 0 0 1 17.5 21h-11A3.5 3.5 0 0 1 5.03 15c-.02-.17-.03-.33-.03-.5a4 4 0 0 1 3.12-7.52A4.01 4.01 0 0 1 8 6a4 4 0 0 1 4-4z"/><path d="M12 8v13"/><path d="M9 12h6"/></svg>
+          </span>
+          <span class="brand-text">AI Career<em>.academy</em></span>
+        </a>
+        <p>An engineering-first AI institution helping learners, professionals and teams build real capability in Generative AI, Agentic Systems and Machine Learning.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <a href="../../index.html#paths">Career paths</a>
+        <a href="../../courses/index.html">All programs</a>
+        <a href="../../comparisons/index.html">Comparisons</a>
+        <a href="../../roadmaps/data-science-roadmap/index.html">Roadmaps</a>
+        <a href="../../blogs/index.html">Blogs</a>
+        <a href="../../register/index.html">Register</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="../../about-us/index.html">About us</a>
+        <a href="../../mentors/index.html">Mentors</a>
+        <a href="../../hire-from-us/index.html">Hire from us</a>
+        <a href="../../enterprise-ai-upskilling/index.html">For teams</a>
+        <a href="../../contact-us/index.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="../../privacy-policy/index.html">Privacy policy</a>
+        <a href="../../terms-and-conditions/index.html">Terms of service</a>
+        <a href="../../refund-policy/index.html">Refund policy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <a href="mailto:hello@aicareer.academy">hello@aicareer.academy</a>
+        <a href="tel:+918708752385">+91 87087 52385</a>
+        <p class="footer-addr">Sector 44, Gurugram,<br />Haryana 122003</p>
+        <p class="footer-hours">Mon–Sat, 10am–7pm IST</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> AI Career Academy. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="../../privacy-policy/index.html">Privacy policy</a>
+        <a href="../../terms-and-conditions/index.html">Terms of service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/nav.js" defer></script>
+  
+</body>
+</html>

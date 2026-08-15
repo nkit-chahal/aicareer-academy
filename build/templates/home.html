@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="path-hero">
+  <div class="container path-hero-grid">
+    <div class="path-hero-copy">
+      <p class="eyebrow path-badge">Career OS</p>
+      <h1 class="path-hero-title">Pick the job.<br /><span>We’ll give you the sequence.</span></h1>
+      <p class="path-hero-sub">Resonance is not a course dump. Start with Python, choose a role, open the steps, then enter the live program that matches — Analyst, ML, LLM, or MLOps.</p>
+      <ol class="os-rail" aria-label="How Resonance works">
+        <li><span>01</span> Choose a path</li>
+        <li><span>02</span> Follow the sequence</li>
+        <li><span>03</span> Open the program</li>
+      </ol>
+      <div class="path-hero-actions">
+        <a href="#paths" class="btn btn-primary btn-lg">Use the map</a>
+        <a href="{{ base }}courses/index.html" class="btn btn-ghost btn-lg">All programs</a>
+      </div>
+      <p class="path-hero-note">Live cohorts · Gurugram · +91 87087 52385</p>
+    </div>
+
+    <div class="py-hub" role="group" aria-label="Python connected to four roles">
+      <svg class="py-hub-lines" viewBox="0 0 400 400" aria-hidden="true">
+        <circle class="hub-orbit" cx="200" cy="200" r="118" fill="none" />
+        <line class="hub-spoke" x1="200" y1="200" x2="200" y2="58" />
+        <line class="hub-spoke" x1="200" y1="200" x2="342" y2="200" />
+        <line class="hub-spoke" x1="200" y1="200" x2="200" y2="342" />
+        <line class="hub-spoke" x1="200" y1="200" x2="58" y2="200" />
+      </svg>
+      <div class="hub-core">
+        <span class="hub-core-mark">Py</span>
+        <span class="hub-core-label">Python</span>
+      </div>
+      {% for t in paths.tracks if t.hub %}
+      <button type="button" class="hub-node hub-node-{{ loop.index }}" data-path="{{ t.id }}">{{ t.title }}</button>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="path-choose" id="paths">
+  <div class="container">
+    <p class="eyebrow">The map</p>
+    <h2 class="path-studio-title">Four ways out of Python</h2>
+    <p class="path-studio-lead">Click a track. The sequence below updates. Then open the matching program — not a pile of related links.</p>
+
+    <div class="path-card-grid">
+      {% for t in paths.tracks if t.featured %}
+      <button type="button" class="path-pick{% if loop.first %} is-active{% endif %}" data-path="{{ t.id }}">
+        <span class="path-pick-icon" aria-hidden="true">{{ "%02d"|format(loop.index) }}</span>
+        <strong class="path-pick-title">{{ t.title }}</strong>
+        <span class="path-pick-tagline">{{ t.tagline }}</span>
+        <span class="path-pick-tags">
+          {% for tag in t.tags %}<span class="topic">{{ tag }}</span>{% endfor %}
+        </span>
+        <span class="path-pick-link">Open sequence</span>
+      </button>
+      {% endfor %}
+    </div>
+
+    <p class="path-more-label">Also on the map</p>
+    <div class="path-card-grid path-card-grid--more">
+      {% for t in paths.tracks if not t.featured %}
+      <button type="button" class="path-pick path-pick--compact" data-path="{{ t.id }}">
+        <strong class="path-pick-title">{{ t.title }}</strong>
+        <span class="path-pick-tagline">{{ t.tagline }}</span>
+        <span class="path-pick-tags">
+          {% for tag in t.tags %}<span class="topic">{{ tag }}</span>{% endfor %}
+        </span>
+        <span class="path-pick-link">Open sequence</span>
+      </button>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="path-studio" id="path-detail">
+  <div class="container">
+    <div class="path-studio-head">
+      <p class="eyebrow">Sequence</p>
+      <h2 class="path-studio-title">Do this, in this order</h2>
+      <p class="path-studio-lead">Python is step zero. Everything else is the job you picked.</p>
+    </div>
+
+    <div class="path-layout">
+      <div class="path-tabs" role="tablist" aria-label="Career tracks">
+        {% for t in paths.tracks %}
+        <button type="button" class="path-tab{% if loop.first %} is-active{% endif %}" role="tab" id="tab-{{ t.id }}" aria-controls="panel-{{ t.id }}" aria-selected="{{ 'true' if loop.first else 'false' }}" data-path="{{ t.id }}">
+          <span class="path-tab-name">{{ t.title }}</span>
+          <span class="path-tab-meta">{{ t.time }}</span>
+        </button>
+        {% endfor %}
+      </div>
+
+      <div class="path-panels">
+        {% for t in paths.tracks %}
+        <article class="path-panel{% if loop.first %} is-active{% endif %}" id="panel-{{ t.id }}" role="tabpanel" aria-labelledby="tab-{{ t.id }}" {% if not loop.first %}hidden{% endif %} data-path="{{ t.id }}">
+          <header class="path-panel-head">
+            <div>
+              <h3 class="path-panel-title">{{ t.title }}</h3>
+              <p class="path-panel-tagline">{{ t.tagline }}</p>
+            </div>
+            <span class="path-time">{{ t.time }}</span>
+          </header>
+          <p class="path-for"><span>Best for</span> {{ t.for }}</p>
+          <p class="path-foundation-inline"><strong>0 · Python</strong> — {{ paths.foundation.body }}</p>
+
+          <ol class="path-steps">
+            {% for s in t.steps %}
+            <li class="path-step">
+              <span class="path-step-n" aria-hidden="true">{{ s.n }}</span>
+              <div>
+                <h4 class="path-step-title">{{ s.title }}</h4>
+                <p class="path-step-body">{{ s.body }}</p>
+              </div>
+            </li>
+            {% endfor %}
+          </ol>
+
+          <div class="path-panel-cta">
+            <a class="btn btn-primary" href="{{ base }}courses/{{ t.course }}/index.html">Open {{ t.course_label }}</a>
+            {% if t.roadmap %}
+            <a class="btn btn-ghost" href="{{ base }}{{ t.roadmap }}">Full curriculum map</a>
+            {% endif %}
+            <a class="btn btn-ghost" href="{{ base }}register/index.html?course={{ t.course }}">Talk to us</a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="path-stats" aria-label="Program facts">
+  <div class="container path-stats-grid">
+    <div><strong>17</strong><span>Live programs</span></div>
+    <div><strong>7</strong><span>Role maps</span></div>
+    <div><strong>Live</strong><span>Instructor-led, not recordings-only</span></div>
+    <div><strong>Static</strong><span>Opens in milliseconds</span></div>
+  </div>
+</section>
+
+<section class="path-flow">
+  <div class="container">
+    <p class="eyebrow">How we teach</p>
+    <h2 class="path-studio-title">Learn. Build. Deploy. Get hired.</h2>
+    <ol class="path-flow-grid">
+      <li>
+        <strong>Learn</strong>
+        <p>Practitioners. Python first. No slide tourism.</p>
+      </li>
+      <li>
+        <strong>Build</strong>
+        <p>Work you can show: dashboards, models, RAG, pipelines.</p>
+      </li>
+      <li>
+        <strong>Deploy</strong>
+        <p>Something that runs without you sitting next to it.</p>
+      </li>
+      <li>
+        <strong>Get hired</strong>
+        <p>Portfolio plus a 15-minute map if you’re stuck.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <h2 class="cta-title">Stuck between two roles?</h2>
+      <p class="cta-sub">Fifteen minutes. We’ll put you on one sequence — not a brochure.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="{{ base }}register/index.html" class="btn btn-light btn-lg">Book a career call</a>
+      <a href="https://wa.me/918708752385" class="btn btn-outline-light btn-lg">WhatsApp</a>
+      <p class="cta-phone">+91 87087 52385</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% from "fee-block.html" import fee_block %}
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <h1 class="page-hero-title">{{ data.hero_title }}</h1>
+    {% if data.hero_sub %}<p class="page-hero-sub">{{ data.hero_sub }}</p>{% endif %}
+    {% if data.page_links %}
+    <ul class="content-list">
+      {% for link in data.page_links %}
+      <li><a href="{{ base }}{{ link.href }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>
+
+{% if fees %}{{ fee_block(fees, "city-fees-title", "Course fee") }}{% endif %}
+
+{% if curriculum %}
+{% include "curriculum-tree.html" %}
+{% endif %}
+
+<section class="page-content">
+  <div class="container content-body">
+    {% if data.sections %}
+      {% for section in data.sections %}
+      <div class="content-section">
+        <h2>{{ section.heading }}</h2>
+        <p>{{ section.content }}</p>
+      </div>
+      {% endfor %}
+    {% elif data.raw_html %}
+      <div class="scraped-content">{{ data.raw_html | safe }}</div>
+    {% endif %}
+
+    {% if data.lists %}
+    {% for lst in data.lists[:5] %}
+    <ul class="content-list">
+      {% for item in lst %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+    {% endif %}
+
+    {% if data.faqs %}
+    <div class="faq-list">
+      {% for faq in data.faqs %}
+      <details class="faq-item">
+        <summary>{{ faq.question }}</summary>
+        <p>{{ faq.answer }}</p>
+      </details>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <h2 class="cta-title">Have questions?</h2>
+      <p class="cta-sub">Talk to our team — we're here Mon–Sat, 10am–7pm IST.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="{{ base }}register/index.html" class="btn btn-light btn-lg">Book a career call</a>
+      <a href="https://wa.me/918708752385" class="btn btn-outline-light btn-lg">Chat on WhatsApp</a>
+      <p class="cta-phone">+91 87087 52385</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

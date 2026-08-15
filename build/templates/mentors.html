@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <h1 class="page-hero-title">Our mentors</h1>
+    <p class="page-hero-sub">Practitioners who work in AI engineering, analytics, and machine learning every day — not just instructors reading slides.</p>
+  </div>
+</section>
+
+<section class="mentors-grid-section">
+  <div class="container">
+    <div class="mentors-grid">
+      {% for mentor in mentors %}
+      <article class="mentor-card">
+        <div class="mentor-avatar" aria-hidden="true">{{ mentor.initials }}</div>
+        <h3 class="mentor-name">{{ mentor.name }}</h3>
+        <p class="mentor-role">{{ mentor.role }}</p>
+        <div class="mentor-tags">
+          {% for tag in mentor.tags %}
+          <span class="topic">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        <p class="mentor-focus">{{ mentor.focus }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <h2 class="cta-title">Learn with practitioners</h2>
+      <p class="cta-sub">Mentor-led cohorts with structured review cycles and real project guidance.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="{{ base }}courses/index.html" class="btn btn-light btn-lg">Explore programs</a>
+      <a href="{{ base }}register/index.html" class="btn btn-outline-light btn-lg">Book a career call</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "D:\personal_app\scai-clone\build\generate.py", line 344, in <module>
+    generate()
+    ~~~~~~~~^^
+  File "D:\personal_app\scai-clone\build\generate.py", line 137, in generate
+    html = post_process_html(html)
+  File "D:\personal_app\scai-clone\build\generate.py", line 181, in post_process_html
+    html = re.sub(
+        r"<img([^>]*)(?<!loading=)(?<!loading\s*=)>",
+    ...<2 lines>...
+        flags=re.IGNORECASE,
+    )
+  File "C:\Users\Pc\miniconda3\Lib\re\__init__.py", line 208, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Pc\miniconda3\Lib\re\__init__.py", line 350, in _compile
+    p = _compiler.compile(pattern, flags)
+  File "C:\Users\Pc\miniconda3\Lib\re\_compiler.py", line 752, in compile
+    code = _code(p, flags)
+  File "C:\Users\Pc\miniconda3\Lib\re\_compiler.py", line 585, in _code
+    _compile(code, p.data, flags)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Pc\miniconda3\Lib\re\_compiler.py", line 153, in _compile
+    raise PatternError("look-behind requires fixed-width pattern")
+re.PatternError: look-behind requires fixed-width pattern

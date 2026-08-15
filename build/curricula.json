@@ -1,0 +1,537 @@
+{
+  "data-analytics-course-with-placement": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "Python Basics",
+        "modules": [
+          {"title": "Module 1: Getting started", "topics": ["Variables and data types", "Operators and expressions", "Working in notebooks"]},
+          {"title": "Module 2: Control flow", "topics": ["Conditionals", "Loops", "Functions"]},
+          {"title": "Module 7: Time and Space Complexity", "topics": ["Understanding Algorithm Efficiency", "Time Complexity", "Space Complexity"]}
+        ]
+      },
+      {
+        "title": "Python Advanced",
+        "modules": [
+          {"title": "Module 8: Pandas for analysis", "topics": ["DataFrames and Series", "Filtering and aggregation", "Merges and reshaping"]},
+          {"title": "Module 9: Data cleaning", "topics": ["Missing values", "Types and outliers", "Feature-ready tables"]}
+        ]
+      },
+      {
+        "title": "Introduction to Excel",
+        "modules": [
+          {"title": "Module 10: Spreadsheet analytics", "topics": ["Formulas and references", "Pivot tables", "Charts for stakeholders"]},
+          {"title": "Module 11: SQL and Power BI", "topics": ["SQL for Data Analysis", "AI-Powered Dashboards", "Business Intelligence"]}
+        ]
+      }
+    ]
+  },
+  "data-science-course": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "Python Basics",
+        "modules": [
+          {"title": "Module 1: Python for Data Science", "topics": ["Syntax and data structures", "Functions and modules", "Jupyter workflows"]},
+          {"title": "Module 2: NumPy and Pandas", "topics": ["Arrays and broadcasting", "Data wrangling", "EDA with Pandas"]},
+          {"title": "Module 7: Time and Space Complexity", "topics": ["Understanding Algorithm Efficiency", "Time Complexity", "Space Complexity"]}
+        ]
+      },
+      {
+        "title": "Python Advanced",
+        "modules": [
+          {"title": "Module 8: Statistics and EDA", "topics": ["Probability and hypothesis testing", "Feature engineering", "Visualization with Matplotlib and Seaborn"]},
+          {"title": "Module 9: Core Machine Learning", "topics": ["Regression to XGBoost", "Model evaluation", "Scikit-learn pipelines"]},
+          {"title": "Module 10: Deep learning and NLP", "topics": ["Neural network foundations", "NLP essentials", "LLM and RAG foundations"]}
+        ]
+      },
+      {
+        "title": "Introduction to Excel",
+        "modules": [
+          {"title": "Module 11: Spreadsheets and BI", "topics": ["MS Excel dashboards", "Power BI / Tableau", "SQL for analytics"]}
+        ]
+      }
+    ]
+  },
+  "ai-developers-course": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "Foundations for GenAI applications",
+        "modules": [
+          {"title": "Module 1: LLM APIs and SDKs", "topics": ["API and SDK Integration", "Prompt patterns", "Structured outputs"]},
+          {"title": "Module 2: App packaging", "topics": ["FastAPI services", "Streamlit and Gradio UIs", "Error handling and retries"]}
+        ]
+      },
+      {
+        "title": "RAG and agents",
+        "modules": [
+          {"title": "Module 3: RAG pipelines", "topics": ["Chunking and embeddings", "Grounded retrieval", "Evaluation of answers"]},
+          {"title": "Module 4: Agent workflows", "topics": ["Tool calling", "Memory", "Multi-step orchestration"]}
+        ]
+      },
+      {
+        "title": "Production",
+        "modules": [
+          {"title": "Module 5: Ship the capstone", "topics": ["Production Deployment", "Tracing and docs", "Portfolio review"]}
+        ]
+      }
+    ]
+  },
+  "generative-ai-course": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "Model foundations",
+        "modules": [
+          {"title": "Module 1: LLM architectures", "topics": ["Transformers and attention", "Context windows", "Tokenization"]},
+          {"title": "Module 2: Multimodal systems", "topics": ["Vision-Language and Multimodal Models", "ViTs and VLMs", "Multimodal workflows"]}
+        ]
+      },
+      {
+        "title": "Applied GenAI",
+        "modules": [
+          {"title": "Module 3: RAG design", "topics": ["RAG Design Patterns", "Retrieval evaluation", "Grounding"]},
+          {"title": "Module 4: Fine-tuning", "topics": ["Fine-tuning and PEFT", "Quantization", "Preference alignment"]}
+        ]
+      },
+      {
+        "title": "Deployment",
+        "modules": [
+          {"title": "Module 5: Agentic deployment", "topics": ["Serving and monitoring", "Cost controls", "Agentic Deployment"]}
+        ]
+      }
+    ]
+  },
+  "mlops-course": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "Packaging ML",
+        "modules": [
+          {"title": "Module 1: Containers", "topics": ["Docker and Containerization", "Reproducible images", "Local-to-cloud parity"]},
+          {"title": "Module 2: Versioning", "topics": ["Data and Model Versioning", "DVC", "MLflow registry"]}
+        ]
+      },
+      {
+        "title": "Release discipline",
+        "modules": [
+          {"title": "Module 3: CI/CD for ML", "topics": ["Training pipelines", "Eval gates", "Rollback patterns"]},
+          {"title": "Module 4: Kubernetes for ML services", "topics": ["Serving", "Autoscaling", "Environments"]}
+        ]
+      },
+      {
+        "title": "Operate",
+        "modules": [
+          {"title": "Module 5: Monitoring", "topics": ["Model Monitoring", "Drift detection", "Evaluation Pipelines"]}
+        ]
+      }
+    ]
+  },
+  "llmops-course": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "Serving LLMs",
+        "modules": [
+          {"title": "Module 1: Inference", "topics": ["LLM Serving and Scaling", "Batching and caching", "p95/p99 latency"]},
+          {"title": "Module 2: Observability", "topics": ["Traces and dashboards", "Error budgets", "Cost Optimization"]}
+        ]
+      },
+      {
+        "title": "RAGOps",
+        "modules": [
+          {"title": "Module 3: RAG in production", "topics": ["Retrieval evaluation", "Golden-set regression", "Chunk hit-rate"]},
+          {"title": "Module 4: Prompt operations", "topics": ["Prompt Versioning and Governance", "Canary rollouts", "Eval gates"]}
+        ]
+      },
+      {
+        "title": "AgentOps",
+        "modules": [
+          {"title": "Module 5: Agent operations", "topics": ["AgentOps", "Tool-call auditing", "Safety filters"]}
+        ]
+      }
+    ]
+  },
+  "aiops-course": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "Traditional ML operations",
+        "modules": [
+          {"title": "Module 1: Pipelines", "topics": ["Data pipelines and versioning", "Experiment tracking", "Model registry"]},
+          {"title": "Module 2: Retraining", "topics": ["CI/CD and automated retraining", "Evaluation Pipelines"]}
+        ]
+      },
+      {
+        "title": "Deep learning in production",
+        "modules": [
+          {"title": "Module 3: GPU serving", "topics": ["LLM serving and inference optimization", "Quantization", "Scaling Strategies"]}
+        ]
+      },
+      {
+        "title": "Enterprise AI ops",
+        "modules": [
+          {"title": "Module 4: LLMOps and AgentOps", "topics": ["Multi-agent orchestration", "Drift across AI layers", "Security guardrails"]},
+          {"title": "Module 5: Governance", "topics": ["Enterprise Governance", "Audit logging", "Automation Pipelines"]}
+        ]
+      }
+    ]
+  },
+  "ai-course-with-placement": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "Python Basics",
+        "modules": [
+          {"title": "Module 1: Python for AI", "topics": ["Syntax and functions", "APIs in Python", "Notebook-to-script habits"]},
+          {"title": "Module 7: Time and Space Complexity", "topics": ["Understanding Algorithm Efficiency", "Time Complexity", "Space Complexity"]}
+        ]
+      },
+      {
+        "title": "Python Advanced",
+        "modules": [
+          {"title": "Module 8: LLM apps", "topics": ["LLM App Development", "RAG Pipelines", "Agent Building"]},
+          {"title": "Module 9: Portfolio", "topics": ["GitHub projects", "FastAPI basics", "Capstone scoring"]}
+        ]
+      },
+      {
+        "title": "Placement prep",
+        "modules": [
+          {"title": "Module 10: Interview kit", "topics": ["Resume and GitHub", "Mocks and project defense", "Interview Preparation"]}
+        ]
+      }
+    ]
+  },
+  "agentic-ai-course": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "Agent design",
+        "modules": [
+          {"title": "Module 1: Tools and memory", "topics": ["Agent and Tool Design", "Tool Use Patterns", "Memory Systems"]},
+          {"title": "Module 2: Planning", "topics": ["Task routing", "Bounded behavior", "Structured outputs"]}
+        ]
+      },
+      {
+        "title": "Orchestration",
+        "modules": [
+          {"title": "Module 3: Multi-agent systems", "topics": ["Multi-agent Orchestration", "LangGraph and AutoGen Workflows", "MCP patterns"]},
+          {"title": "Module 4: Evaluation", "topics": ["Evaluation Frameworks", "Traces", "Failure modes"]}
+        ]
+      },
+      {
+        "title": "Projects",
+        "modules": [
+          {"title": "Module 5: Applied agents", "topics": ["Support pipeline", "Research agent", "Workflow automation"]}
+        ]
+      }
+    ]
+  },
+  "large-language-model-course": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "LLM fundamentals",
+        "modules": [
+          {"title": "Module 1: Internals", "topics": ["LLM Fundamentals", "Tokenization and Embeddings", "Attention variants"]},
+          {"title": "Module 2: Data and training", "topics": ["Data curation", "Training runs", "Reproducibility"]}
+        ]
+      },
+      {
+        "title": "Adaptation",
+        "modules": [
+          {"title": "Module 3: Fine-tuning", "topics": ["Fine-tuning and PEFT", "LoRA and QLoRA", "Preference alignment"]},
+          {"title": "Module 4: RAG skills", "topics": ["Chunking and retrieval", "Re-ranking", "Grounding"]}
+        ]
+      },
+      {
+        "title": "Serve and evaluate",
+        "modules": [
+          {"title": "Module 5: Production", "topics": ["Scalable Inference", "Evaluation Metrics", "Cost-per-token control"]}
+        ]
+      }
+    ]
+  },
+  "data-science-with-machine-learning": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "Python Basics",
+        "modules": [
+          {"title": "Module 1: Python essentials", "topics": ["Syntax", "Pandas intro", "Notebooks"]},
+          {"title": "Module 7: Time and Space Complexity", "topics": ["Understanding Algorithm Efficiency", "Time Complexity", "Space Complexity"]}
+        ]
+      },
+      {
+        "title": "Python Advanced",
+        "modules": [
+          {"title": "Module 8: Supervised learning", "topics": ["Regression and classification", "Feature Engineering", "Model Evaluation"]},
+          {"title": "Module 9: Unsupervised learning", "topics": ["Clustering", "Dimensionality reduction", "Real-world Projects"]}
+        ]
+      }
+    ]
+  },
+  "data-science-with-deep-learning": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "Python Basics",
+        "modules": [
+          {"title": "Module 1: Neural network foundations", "topics": ["Tensors", "Backprop intuition", "Training loops"]},
+          {"title": "Module 7: Time and Space Complexity", "topics": ["Understanding Algorithm Efficiency", "Time Complexity", "Space Complexity"]}
+        ]
+      },
+      {
+        "title": "Python Advanced",
+        "modules": [
+          {"title": "Module 8: Architectures", "topics": ["Convolutional Networks", "Recurrent Networks", "Transformers"]},
+          {"title": "Module 9: Transfer and deploy", "topics": ["Transfer Learning", "Deployment", "Vision and language apps"]}
+        ]
+      }
+    ]
+  },
+  "full-stack-data-science": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "Python Basics",
+        "modules": [
+          {"title": "Module 1: Analytics foundation", "topics": ["Python and SQL", "Analytics and BI", "Data Engineering Workflows"]},
+          {"title": "Module 7: Time and Space Complexity", "topics": ["Understanding Algorithm Efficiency", "Time Complexity", "Space Complexity"]}
+        ]
+      },
+      {
+        "title": "Python Advanced",
+        "modules": [
+          {"title": "Module 8: Modeling", "topics": ["Machine Learning and Deep Learning", "Feature pipelines", "Evaluation"]},
+          {"title": "Module 9: Ship end-to-end", "topics": ["Cloud Deployment", "MLOps", "End-to-End Projects"]}
+        ]
+      }
+    ]
+  },
+  "machine-learning-course": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "Core algorithms",
+        "modules": [
+          {"title": "Module 1: Supervised methods", "topics": ["Regression and Classification", "Ensembles", "Imbalanced data"]},
+          {"title": "Module 2: Unsupervised methods", "topics": ["Clustering and Anomaly Detection", "PCA", "Feature Engineering"]}
+        ]
+      },
+      {
+        "title": "Tuning and trust",
+        "modules": [
+          {"title": "Module 3: Optimization", "topics": ["Hyperparameter Tuning", "GridSearch and Optuna", "Performance Optimization"]},
+          {"title": "Module 4: Interpretability", "topics": ["Model Interpretability", "Error analysis", "Mini deployment demo"]}
+        ]
+      }
+    ]
+  },
+  "deep-learning-course": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "Architectures",
+        "modules": [
+          {"title": "Module 1: Neural network architectures", "topics": ["Feed-forward nets", "Regularization", "Optimization"]},
+          {"title": "Module 2: Conv and recurrent", "topics": ["Convolutional and Recurrent Models", "Sequence modeling"]}
+        ]
+      },
+      {
+        "title": "Modern DL",
+        "modules": [
+          {"title": "Module 3: Generative and attention", "topics": ["Generative Models", "Attention Mechanisms", "Transformers"]},
+          {"title": "Module 4: Practice", "topics": ["Transfer Learning", "Model Optimization"]}
+        ]
+      }
+    ]
+  },
+  "computer-vision-course": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "Vision basics",
+        "modules": [
+          {"title": "Module 1: Image processing", "topics": ["Image Processing", "Augmentation", "Feature maps"]},
+          {"title": "Module 2: Detection and segmentation", "topics": ["Object Detection", "Segmentation", "Visual Analytics"]}
+        ]
+      },
+      {
+        "title": "Deploy vision",
+        "modules": [
+          {"title": "Module 3: Real-time systems", "topics": ["Real-time Inference", "Model Optimization", "Serving"]}
+        ]
+      }
+    ]
+  },
+  "natural-language-processing-course": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "Text foundations",
+        "modules": [
+          {"title": "Module 1: Preprocessing", "topics": ["Text Preprocessing and Tokenization", "spaCy and NLTK", "Cleaning pipelines"]},
+          {"title": "Module 2: Representations", "topics": ["Word Embeddings and Transformers", "BERT and GPT families"]}
+        ]
+      },
+      {
+        "title": "Language applications",
+        "modules": [
+          {"title": "Module 3: Extraction and sentiment", "topics": ["Named Entity Recognition", "Sentiment Analysis", "Information Extraction"]},
+          {"title": "Module 4: Conversational systems", "topics": ["Conversational AI", "Hugging Face workflows", "FastAPI deployment"]}
+        ]
+      }
+    ]
+  },
+  "ai-engineering-course": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "AI systems",
+        "modules": [
+          {"title": "Module 1: Foundations", "topics": ["Python for AI systems", "Data and evaluation", "Architecture sketches"]},
+          {"title": "Module 2: Applied ML", "topics": ["Training loops", "Serving patterns", "Reliability"]}
+        ]
+      },
+      {
+        "title": "GenAI engineering",
+        "modules": [
+          {"title": "Module 3: RAG and agents", "topics": ["Retrieval systems", "Tool use", "Evals"]},
+          {"title": "Module 4: Production", "topics": ["Observability", "Cost and latency", "Handoff to ops"]}
+        ]
+      }
+    ]
+  },
+  "forward-deployed-engineer-course": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "Customer-facing AI",
+        "modules": [
+          {"title": "Module 1: Python for AI apps", "topics": ["LLM applications", "APIs and backend integration", "Structured outputs"]},
+          {"title": "Module 2: RAG in the field", "topics": ["Vector databases", "Grounding", "Tool calling"]}
+        ]
+      },
+      {
+        "title": "Delivery",
+        "modules": [
+          {"title": "Module 3: Agents on-site", "topics": ["Agent workflows", "Multi-agent orchestration", "Task routing"]},
+          {"title": "Module 4: MCP and integration", "topics": ["MCP patterns", "Handoffs", "Runbooks"]}
+        ]
+      }
+    ]
+  },
+  "data-science-roadmap": {
+    "title": "Full roadmap",
+    "levels": [
+      {
+        "title": "Python and programming foundations",
+        "modules": [
+          {"title": "Python Essentials", "topics": ["Variables, functions, loops, conditions", "Lists and dictionaries", "File handling and modules"]},
+          {"title": "Developer tooling", "topics": ["Notebooks", "Git and debugging", "Package management"]},
+          {"title": "Python data libraries", "topics": ["NumPy", "pandas", "Working with tabular data"]}
+        ]
+      },
+      {
+        "title": "Math, SQL, and data",
+        "modules": [
+          {"title": "Math and statistics foundations", "topics": ["Descriptive statistics", "Probability basics", "Hypothesis testing"]},
+          {"title": "SQL and databases", "topics": ["SELECT and filters", "Joins and aggregation", "Relational thinking"]},
+          {"title": "Cleaning and EDA", "topics": ["Missing data", "Visualization", "Feature-ready tables"]}
+        ]
+      },
+      {
+        "title": "Models and projects",
+        "modules": [
+          {"title": "Machine learning foundations", "topics": ["Supervised learning", "Unsupervised learning", "Validation"]},
+          {"title": "Evaluation and improvement", "topics": ["Metrics", "Error analysis", "Iteration"]},
+          {"title": "Deployment thinking", "topics": ["APIs", "Basic monitoring", "Modern AI extensions"]}
+        ]
+      }
+    ]
+  },
+  "ai-developer-roadmap": {
+    "title": "Full roadmap",
+    "levels": [
+      {
+        "title": "Build with models",
+        "modules": [
+          {"title": "Python and APIs", "topics": ["HTTP clients", "Auth and retries", "Token and cost awareness"]},
+          {"title": "Prompting to products", "topics": ["Prompt patterns", "Structured outputs", "UX constraints"]}
+        ]
+      },
+      {
+        "title": "RAG and workflows",
+        "modules": [
+          {"title": "Retrieval systems", "topics": ["Chunking", "Embeddings", "Citations"]},
+          {"title": "Agents", "topics": ["Tools", "Memory", "Evaluation"]}
+        ]
+      },
+      {
+        "title": "Ship",
+        "modules": [
+          {"title": "App packaging", "topics": ["FastAPI", "Front ends", "Docs and traces"]}
+        ]
+      }
+    ]
+  },
+  "ai-engineer-roadmap": {
+    "title": "Full roadmap",
+    "levels": [
+      {
+        "title": "Engineering base",
+        "modules": [
+          {"title": "Python systems", "topics": ["Packages and tests", "Typing", "Data contracts"]},
+          {"title": "ML literacy", "topics": ["Training vs inference", "Metrics", "Failure modes"]}
+        ]
+      },
+      {
+        "title": "AI systems",
+        "modules": [
+          {"title": "RAG and agents", "topics": ["Retrieval", "Orchestration", "Evals"]},
+          {"title": "Serving", "topics": ["Latency", "Reliability", "Observability"]}
+        ]
+      }
+    ]
+  },
+  "ml-engineer-roadmap": {
+    "title": "Full roadmap",
+    "levels": [
+      {
+        "title": "Model engineering",
+        "modules": [
+          {"title": "Python engineering", "topics": ["Packages", "Tests", "Pipelines"]},
+          {"title": "Classical ML depth", "topics": ["Features", "Training loops", "Evaluation you can defend"]}
+        ]
+      },
+      {
+        "title": "Production ML",
+        "modules": [
+          {"title": "Serving", "topics": ["APIs", "Batch jobs", "Latency vs throughput"]},
+          {"title": "MLOps layer", "topics": ["Version data and models", "CI for training", "Drift monitoring"]}
+        ]
+      }
+    ]
+  },
+  "generative-ai-roadmap": {
+    "title": "Full roadmap",
+    "levels": [
+      {
+        "title": "LLM literacy",
+        "modules": [
+          {"title": "Python + APIs", "topics": ["Call models cleanly", "Tokens and retries", "Cost"]},
+          {"title": "Embeddings and retrieval", "topics": ["Chunking", "Vector search", "Why RAG fails in production"]}
+        ]
+      },
+      {
+        "title": "Specialize",
+        "modules": [
+          {"title": "Fine-tuning and PEFT", "topics": ["When to fine-tune", "Adapters", "Measure, don’t guess"]},
+          {"title": "Evals and serving", "topics": ["Golden sets", "Hallucination checks", "Batching and caching"]}
+        ]
+      }
+    ]
+  }
+}

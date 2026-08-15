@@ -1,0 +1,58 @@
+{
+  "id": "refund",
+  "source": "/refund-policy",
+  "output": "refund-policy/index.html",
+  "type": "content",
+  "nav": "legal",
+  "title": "School of Core AI | The AI Career Institute",
+  "description": "An engineering-first AI institution for learners, professionals, and teams building real capability in Generative AI, ML, Agentic AI, and modern AI systems.",
+  "hero_title": "School of Core AI",
+  "hero_sub": "",
+  "sections": [
+    {
+      "heading": "Talk to Our Team Directly",
+      "content": "Contact us and our academic counsellor will get in touch with you shortly.\n\nEnquire Now +91 96914 40998 info@schoolofcoreai.com"
+    }
+  ],
+  "faqs": [],
+  "lists": [],
+  "images": [
+    {
+      "src": "/assets/images/refund-0b06468ca320.svg",
+      "alt": "Chat with us on WhatsApp",
+      "width": "16",
+      "height": "16"
+    },
+    {
+      "src": "/assets/images/refund-0b06468ca320.svg",
+      "alt": "whatsapp",
+      "width": "16",
+      "height": "16"
+    },
+    {
+      "src": "/assets/images/refund-c73fb77b6cff.svg",
+      "alt": "phone",
+      "width": "16",
+      "height": "16"
+    },
+    {
+      "src": "/assets/images/refund-6a743315a730.svg",
+      "alt": "School of Core AI Footer",
+      "width": "400",
+      "height": "400"
+    },
+    {
+      "src": "/assets/images/refund-30c522dbe93d.svg",
+      "alt": "Instagram - School of Core AI",
+      "width": "32",
+      "height": "32"
+    },
+    {
+      "src": "/assets/images/refund-e328e98afcf1.svg",
+      "alt": "LinkedIn - School of Core AI",
+      "width": "32",
+      "height": "32"
+    }
+  ],
+  "raw_html": "<main id=\"main-content\"><div class=\"scai-refund-policy-page-container w-full min-h-[50vh] flex justify-center items-center\"><div class=\"text-7xl md:text-[8rem] font-black text-white\"><div class=\"pt-4 text-center\">REFUND POLICY</div></div></div><div><div class=\"mx-5 lg:mx-auto lg:container p-5 text-2xl lg:text-center\">At <span class=\"text-[#8C263C] font-bold\">School of Core AI</span> we are always committed to offer the best courses on AI, ML, Data Science etc. Please review our refund policy below to understand the terms and conditions that apply.</div><div class=\"border border-[#020078] lg:mt-[3rem] p-5 lg:p-8 rounded-[24px] max-w-[90vw] mx-auto mb-[3rem]\"><div class=\"pb-7 border-b border-[#00000043] mb-7\"><span class=\"brand text-3xl font-bold\">Course Enrollment</span><div class=\"text-2xl mt-5\">Any amount paid to acquire any course, program or service, will not be refundable. Before making the final payment for the course, all the interested students should ensure that they go through the course description, the admission requirements as well as other information passed to them. Should you have any queries, do not hesitate to call our support team and they will be glad to explain to you in detail about the courses, mode of delivery and any other thing that you need to know before deciding on which course to take.</div></div><div class=\"pb-7 border-b border-[#00000043] mb-7\"><span class=\"brand text-3xl font-bold\">Payment and Deadlines</span><div class=\"text-2xl mt-5\">It is important also to note that all course fees are required to be paid flexible payment option. And if you are paying in installments then the inability to make payment in time may lead to some or all content and services being locked until the full payment is paid for.</div></div><div class=\"pb-7 border-b border-[#00000043] mb-7\"><span class=\"brand text-3xl font-bold\">Transfer to another course</span><div class=\"text-2xl mt-5\">If student want to transfer to a different course kindly contact us within 7 days from the starting date of the course. The request for transfer is dependent on availability as well as the course the student intends to transfer to.</div></div><div class=\"pb-7 border-b border-[#00000043] mb-7\"><span class=\"brand text-3xl font-bold\">Transfer of registration to another person</span><div class=\"text-2xl mt-5\">If student want to pass their course registration to another person of their choice up to the time when the course requirements are concerned. However, we require the cancellation be done at least 14 days before the starting of the course.</div></div><div class=\"pb-7 border-b border-[#00000043] mb-7\"><span class=\"brand text-3xl font-bold\">Cancellation or Rescheduling by School of Core AI</span><div class=\"text-2xl mt-5\">If a course is canceled or rescheduled due to unforeseen circumstances, students will be given the following options: Transfer to another course or batch at no additional cost/Credit toward future courses.<div class=\"my-5 border border-[#00000071] py-3 px-7 text-[#D61E27] rounded-[12px] font-semibold\">While refunds are not provided in such cases, we aim to accommodate your learning requirements</div></div></div><div class=\"pb-0 border-0 border-[#00000043] mb-5\"><span class=\"brand text-3xl font-bold\">Technical Requirements</span><div class=\"text-2xl mt-5\">They pay for any necessary hardware, software and Internet connection that would enable them enroll for and attend online courses. On the student’s part any technical problems will not warrant an extension of the course or a refund.</div></div></div></div><div class=\"bg-gray-100 text-black py-16 px-8 flex flex-col md:flex-row justify-between items-center\"><div class=\"md:w-1/2 space-y-4\"><h3 class=\"text-3xl brand font-semibold\">Got More Questions?</h3><h2 class=\"text-3xl md:text-4xl font-bold\">Talk to Our Team Directly</h2><p class=\"text-gray-400\">Contact us and our academic counsellor will get in touch with you shortly.</p><div class=\"flex flex-wrap items-center mt-6\"><a class=\"text-white px-6 py-3 rounded-full bg-custom-gradient transition mt-3 me-3\" href=\"/form/\">Enquire Now</a><a class=\"flex items-center me-3 text-black border border-gray-500 px-4 py-3 rounded-full hover:bg-gray-700 hover:text-white transition mt-3\" href=\"https://wa.me/9196914 40998\" rel=\"noopener noreferrer\" target=\"_blank\"><i class=\"fab fa-whatsapp text-xl\"></i> <span>+91 96914 40998</span></a><a class=\"flex items-center text-black border border-gray-500 px-4 py-3 rounded-full hover:bg-gray-700 hover:text-white transition mt-3\" href=\"mailto:info@schoolofcoreai.com\"><i class=\"far fa-envelope text-xl\"></i> <span>info@schoolofcoreai.com</span></a></div></div><div class=\"md:w-1/2 mt-8 md:mt-0 flex justify-end\"><img alt=\"School of Core AI Footer\" class=\"object-contain\" data-nimg=\"1\" decoding=\"async\" height=\"400\" loading=\"lazy\" src=\"/_next/static/media/course_footer.bb245e09.svg\" style=\"color:transparent\" width=\"400\"/></div></div></main>"
+}

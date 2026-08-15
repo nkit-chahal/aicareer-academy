@@ -1,0 +1,44 @@
+{% macro program_card(p) %}
+<article class="card" data-tags="{{ p.tags | join(',') }}">
+  <div class="card-thumb" aria-hidden="true">
+    <svg viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="64" height="40" rx="8" fill="#EFF6FF"/>
+      <rect x="8" y="10" width="28" height="6" rx="3" fill="#2563EB"/>
+      <rect x="8" y="20" width="48" height="4" rx="2" fill="#93C5FD"/>
+      <rect x="8" y="28" width="36" height="4" rx="2" fill="#BFDBFE"/>
+    </svg>
+  </div>
+  <div class="card-top">
+    <div class="card-meta">
+      <span class="card-duration">{{ p.duration }}</span>
+      {% if p.fee_label %}<span class="card-fee">{{ p.fee_label }}</span>{% endif %}
+    </div>
+    <div class="card-badges">
+      {% if p.featured %}<span class="badge badge-orange">Featured</span>{% endif %}
+      {% for tag in p.tags %}
+        {% if tag == 'beginner' %}<span class="badge badge-green">Beginner friendly</span>
+        {% elif tag == 'career' %}<span class="badge">Career track</span>
+        {% elif tag == 'specialization' %}<span class="badge">Specialization</span>
+        {% elif tag == 'architect' %}<span class="badge">Architect level</span>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <h3 class="card-title">{{ p.title }}</h3>
+  <p class="card-desc">{{ p.description }}</p>
+  <div class="card-topics">
+    {% for topic in p.topics[:3] %}
+    <span class="topic">{{ topic }}</span>
+    {% endfor %}
+    {% if p.topics | length > 3 %}
+    <span class="topic-more">+{{ p.topics | length - 3 }} more</span>
+    {% endif %}
+  </div>
+  <div class="card-footer">
+    <a href="{{ p.slug }}/index.html" class="btn btn-ghost card-cta" aria-label="View {{ p.title }} program">
+      View program
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
+</article>
+{% endmacro %}

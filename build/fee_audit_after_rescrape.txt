@@ -1,0 +1,29 @@
+| Program slug | Fees in JSON | Amounts | Notes |
+|---|---|---|---|
+| agentic-ai-course | YES | ₹35,000 | The fee is ₹35,000 for the full program with 8+ hands-on pro |
+| ai-course-with-placement | YES | ₹35,000, ₹55,000 |  |
+| ai-developers-course | YES | ₹40,000 | One-time payment for 3 months live ILT with capstone and cer |
+| ai-engineering-course | YES |  | No standalone fee on source site — detailed syllabus and fee |
+| aiops-course | YES | ₹80,000 |  |
+| computer-vision-course | YES | ₹74,999 |  |
+| data-analytics-course-with-placement | YES | ₹40,000 | One-time fee inclusive of training, projects, certification  |
+| data-science-course | YES | ₹55,000, ₹65,000 | Limited-time discount: course fee ₹65,000 minus ₹10,000; you |
+| data-science-with-deep-learning | YES | ₹49,999, ₹44,999 | Dual-plan fee structure with post-placement component. |
+| data-science-with-machine-learning | YES | ₹39,999 |  |
+| deep-learning-course | YES | ₹74,999 |  |
+| forward-deployed-engineer-course | YES |  | No published fee on source site — 6-month program; contact a |
+| full-stack-data-science | YES | ₹89,999, ₹54,999 | Dual-plan full stack data science fee structure. |
+| generative-ai-course | YES | ₹64,999 | The fee is ₹64,999 |
+| large-language-model-course | YES | ₹40,000 |  |
+| llmops-course | YES | ₹35,000 |  |
+| machine-learning-course | YES | ₹20,000 |  |
+| mlops-course | YES | ₹60,000 | MLOps course fees are ₹60,000 for live instructor-led traini |
+| natural-language-processing-course | YES | ₹64,999 | NLP course one-time fee with refund assurance if placement n |
+
+Summary: 19/19 programs with fee amounts or notes
+
+City pages:
+- city-delhi: ['₹55,000']
+- city-bangalore: ['₹55,000']
+- city-hyderabad: ['₹55,000']
+- city-pune: ['₹55,000']

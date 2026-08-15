@@ -1,0 +1,36 @@
+{% if curriculum and curriculum.levels %}
+<section class="prog-curriculum" id="curriculum">
+  <div class="container">
+    <h2 class="section-title">{{ curriculum.title }}</h2>
+    <div class="curriculum-tree">
+      {% for level in curriculum.levels %}
+      <details class="curr-level"{% if loop.first %} open{% endif %}>
+        <summary>{{ level.title }}</summary>
+        <div class="curr-level-body">
+          {% if level.modules %}
+            {% for module in level.modules %}
+            <details class="curr-module">
+              <summary>{{ module.title }}</summary>
+              {% if module.topics %}
+              <ul class="curr-topics">
+                {% for topic in module.topics %}
+                <li>{{ topic }}</li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </details>
+            {% endfor %}
+          {% elif level.topics %}
+          <ul class="curr-topics">
+            {% for topic in level.topics %}
+            <li>{{ topic }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

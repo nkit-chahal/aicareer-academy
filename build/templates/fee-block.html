@@ -1,0 +1,78 @@
+{% macro fee_amount(part) -%}
+<span class="prog-fee-amt"><span class="prog-fee-symbol">{{ part.symbol }}</span><span class="prog-fee-num">{{ part.value }}</span></span>
+{%- endmacro %}
+
+{% macro fee_block(fees, label_id, label_text) %}
+<section class="prog-fees" id="fees" aria-labelledby="{{ label_id }}">
+  <div class="container prog-fees-inner">
+    <div class="prog-fees-col-main">
+      <p class="prog-fees-label" id="{{ label_id }}">{{ label_text }}</p>
+
+      {% set d = fees.display %}
+      {% if d.mode == 'single' %}
+      <div class="prog-fee-display prog-fee-display--single">
+        {{ fee_amount(d.current) }}
+      </div>
+      {% elif d.mode == 'discount' %}
+      <div class="prog-fee-display prog-fee-display--discount">
+        <div class="prog-fee-primary">
+          <span class="prog-fee-amt-wrap prog-fee-amt-wrap--current">{{ fee_amount(d.current) }}</span>
+          <span class="prog-fee-amt-wrap prog-fee-amt-wrap--original">{{ fee_amount(d.original) }}</span>
+          <span class="prog-fee-save">Save {{ fee_amount(d.save) }}</span>
+        </div>
+      </div>
+      {% elif d.mode == 'dual_tier' %}
+      <div class="prog-fee-display prog-fee-display--tier">
+        {{ fee_amount(d.tier_a) }}
+        <span class="prog-fee-sep" aria-hidden="true">or</span>
+        {{ fee_amount(d.tier_b) }}
+      </div>
+      {% elif d.mode == 'dual_plan' %}
+      <div class="prog-fee-display prog-fee-display--plan">
+        <div class="prog-fee-plan-row">
+          <span class="prog-fee-plan-label">Upfront</span>
+          {{ fee_amount(d.upfront) }}
+        </div>
+        <div class="prog-fee-plan-row prog-fee-plan-row--secondary">
+          <span class="prog-fee-plan-label">Post-placement</span>
+          {{ fee_amount(d.post) }}
+        </div>
+      </div>
+      {% elif d.mode == 'multi' %}
+      <div class="prog-fee-display prog-fee-display--tier">
+        {% for part in d.amounts %}
+        {% if not loop.first %}<span class="prog-fee-sep" aria-hidden="true">or</span>{% endif %}
+        {{ fee_amount(part) }}
+        {% endfor %}
+      </div>
+      {% elif d.mode == 'notes_only' %}
+      <div class="prog-fee-display prog-fee-display--notes">
+        <p class="prog-fees-note">Contact admissions for current pricing and EMI options.</p>
+      </div>
+      {% endif %}
+
+      {% if fees.amount_notes or fees.notes %}
+      <div class="prog-fees-notes">
+        {% for note in fees.amount_notes %}
+        <p class="prog-fees-note prog-fees-note--muted">{{ note }}</p>
+        {% endfor %}
+        {% for note in fees.notes %}
+        <p class="prog-fees-note">{{ note }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+    {% if fees.plans %}
+    <div class="prog-fees-plans">
+      <p class="prog-fees-label">Payment options</p>
+      <ul class="prog-fees-plan-list">
+        {% for plan in fees.plans %}
+        <li>{{ plan }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endmacro %}

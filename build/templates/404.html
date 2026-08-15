@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <h1 class="page-hero-title">Page not found</h1>
+    <p class="page-hero-sub">That URL is not on {{ brand | default('AI Career Academy') }}. Try a program, a career path, or a career call.</p>
+    <p>
+      <a class="btn btn-primary" href="{{ base }}index.html">Home</a>
+      <a class="btn btn-ghost" href="{{ base }}courses/index.html">All programs</a>
+    </p>
+  </div>
+</section>
+{% endblock %}

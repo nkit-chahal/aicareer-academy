@@ -1,0 +1,48 @@
+﻿  Fetching https://schoolofcoreai.com/courses/data-analytics-course-with-placement
+  FAIL prog-data-analytics: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/data-analytics-course-with-placement (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC310ECF0>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/courses/data-science-course
+  FAIL prog-data-science: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/data-science-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC30E3ED0>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/courses/ai-developers-course
+  FAIL prog-ai-developers: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/ai-developers-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC31CC7D0>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/courses/generative-ai-course
+  FAIL prog-generative-ai: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/generative-ai-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC31CCA50>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/courses/mlops-course
+  FAIL prog-mlops: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/mlops-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC31CCCD0>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/courses/llmops-course
+  FAIL prog-llmops: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/llmops-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC31CCE10>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/courses/aiops-course
+  FAIL prog-aiops: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/aiops-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC31CD090>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/courses/ai-course-with-placement
+  FAIL prog-ai-placement: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/ai-course-with-placement (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC2DD7ED0>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/courses/agentic-ai-course
+  FAIL prog-agentic-ai: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/agentic-ai-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC30E3B10>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/courses/large-language-model-course
+  FAIL prog-llm-mastery: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/large-language-model-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC30E3890>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/courses/data-science-with-machine-learning
+  FAIL prog-ds-ml: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/data-science-with-machine-learning (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC30E3750>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/courses/data-science-with-deep-learning
+  FAIL prog-ds-dl: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/data-science-with-deep-learning (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC30E3D90>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/courses/full-stack-data-science
+  FAIL prog-full-stack-ds: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/full-stack-data-science (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC30E2FD0>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/courses/machine-learning-course
+  FAIL prog-ml-spec: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/machine-learning-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC30E2990>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/courses/deep-learning-course
+  FAIL prog-dl-spec: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/deep-learning-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC30E2AD0>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/courses/computer-vision-course
+  FAIL prog-cv: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/computer-vision-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC30E2C10>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/courses/natural-language-processing-course
+  FAIL prog-nlp: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/natural-language-processing-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC30E1E50>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/courses/ai-engineering-course
+  FAIL prog-ai-engineering: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/ai-engineering-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC30E2710>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/courses/forward-deployed-engineer-course
+  FAIL prog-fde: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/forward-deployed-engineer-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC31F4050>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/data-science-course-in-delhi
+  FAIL city-delhi: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /data-science-course-in-delhi (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC31F42D0>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/data-science-course-in-bangalore
+  FAIL city-bangalore: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /data-science-course-in-bangalore (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC31F4550>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/data-science-course-in-hyderabad
+  FAIL city-hyderabad: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /data-science-course-in-hyderabad (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC31F47D0>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+  Fetching https://schoolofcoreai.com/data-science-course-in-pune
+  FAIL city-pune: HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /data-science-course-in-pune (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000017DC31F4A50>, 'Connection to schoolofcoreai.com timed out. (connect timeout=30)'))
+
+Done: 0 scraped, 0 cached, 23 failed

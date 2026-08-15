@@ -1,0 +1,56 @@
+﻿=== Live fetch for missing programs ===
+
+--- ai-developers-course ---
+  cached fees: None
+  cached raw rupees: []
+  live: {'error': "HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/ai-developers-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000022DF1EC2BA0>, 'Connection to schoolofcoreai.com timed out. (connect timeout=25)'))"}
+
+--- ai-engineering-course ---
+  cached fees: None
+  cached raw rupees: []
+  live: {'error': "HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/ai-engineering-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000022DF1F42210>, 'Connection to schoolofcoreai.com timed out. (connect timeout=25)'))"}
+
+--- mlops-course ---
+  cached fees: None
+  cached raw rupees: []
+  live: {'error': "HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/mlops-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000022DF1F42C10>, 'Connection to schoolofcoreai.com timed out. (connect timeout=25)'))"}
+
+--- data-science-course ---
+  cached fees: None
+  cached raw rupees: []
+  live: {'error': "HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/data-science-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000022DF1F43110>, 'Connection to schoolofcoreai.com timed out. (connect timeout=25)'))"}
+
+--- data-science-with-deep-learning ---
+  cached fees: {'amounts': [], 'plans': ['Encouraging the Dissemination of the Extremely Innovative I will also introduce some modern deep learning approaches such as Generative Adversarial Networks (GANs) and transformers which form the basis of many state-of-the-art solutions. One could only think of such AI as the creation of artwork, composition of text, or language translationùresults that are not only the implementation of advanced technologies but an augmentation of human imagination and discourse in real-life scenarios. These techniques are among the most modern in the data science field of deep learning.', "They manage and scale data infrastructures. This course will teach you to integrate deep learning for data science into existing systems. It will ensure that AI models are used well in your enterprise's tech stack, both in the cloud and on-premise."], 'notes': [], 'amount_notes': []}
+  cached raw rupees: []
+  live: {'error': "HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/data-science-with-deep-learning (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000022DF1F434D0>, 'Connection to schoolofcoreai.com timed out. (connect timeout=25)'))"}
+
+--- data-science-with-machine-learning ---
+  cached fees: {'amounts': [], 'plans': ['Academic as the data science and AI in their field of specialty', 'Contact us and our academic counsellor will get in touch with you shortly.'], 'notes': [], 'amount_notes': []}
+  cached raw rupees: []
+  live: {'error': "HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/data-science-with-machine-learning (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000022DF1F42D50>, 'Connection to schoolofcoreai.com timed out. (connect timeout=25)'))"}
+
+--- deep-learning-course ---
+  cached fees: {'amounts': [], 'plans': ['Contact us and our academic counsellor will get in touch with you shortly.'], 'notes': [], 'amount_notes': []}
+  cached raw rupees: []
+  live: {'error': "HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/deep-learning-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000022DF1F43750>, 'Connection to schoolofcoreai.com timed out. (connect timeout=25)'))"}
+
+--- forward-deployed-engineer-course ---
+  cached fees: None
+  cached raw rupees: []
+  live: {'error': "HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/forward-deployed-engineer-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000022DF1F43390>, 'Connection to schoolofcoreai.com timed out. (connect timeout=25)'))"}
+
+--- full-stack-data-science ---
+  cached fees: {'amounts': [], 'plans': ['Contact us and our academic counsellor will get in touch with you shortly.'], 'notes': [], 'amount_notes': []}
+  cached raw rupees: []
+  live: {'error': "HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/full-stack-data-science (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000022DF1F42FD0>, 'Connection to schoolofcoreai.com timed out. (connect timeout=25)'))"}
+
+--- computer-vision-course ---
+  cached fees: {'amounts': [], 'plans': ['Contact us and our academic counsellor will get in touch with you shortly.'], 'notes': [], 'amount_notes': []}
+  cached raw rupees: []
+  live: {'error': "HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/computer-vision-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000022DF1F42710>, 'Connection to schoolofcoreai.com timed out. (connect timeout=25)'))"}
+
+--- natural-language-processing-course ---
+  cached fees: {'amounts': [], 'plans': ['Contact us and our academic counsellor will get in touch with you shortly.'], 'notes': [], 'amount_notes': []}
+  cached raw rupees: []
+  live: {'error': "HTTPSConnectionPool(host='schoolofcoreai.com', port=443): Max retries exceeded with url: /courses/natural-language-processing-course (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000022DF1F42AD0>, 'Connection to schoolofcoreai.com timed out. (connect timeout=25)'))"}

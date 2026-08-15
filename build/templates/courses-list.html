@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% from "macros.html" import program_card %}
+{% block content %}
+<section class="hero">
+  <div class="container hero-inner">
+    <p class="eyebrow">All programs</p>
+    <h1 class="hero-title">Industry-ready AI &amp;<br />data science programs.</h1>
+    <p class="hero-sub">Live, instructor-led courses in Generative AI, Machine Learning, MLOps and Data Science. Learn by building real projects, guided by practitioners who work in the field every day.</p>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-value">17</span><span class="stat-label">Programs</span></div>
+      <span class="stat-sep" aria-hidden="true"></span>
+      <div class="stat"><span class="stat-value">1–10 mo</span><span class="stat-label">Duration range</span></div>
+      <span class="stat-sep" aria-hidden="true"></span>
+      <div class="stat"><span class="stat-value">100% live</span><span class="stat-label">Online classes</span></div>
+    </div>
+    <div class="trusted">
+      <span class="trusted-label">Learners now at</span>
+      <div class="trusted-names"><span>Google</span><span>Microsoft</span><span>Amazon</span><span>Meta</span><span>Infosys</span><span>Wipro</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="filters-wrap">
+  <div class="container filters-inner">
+    <div class="filters" id="filters" role="tablist" aria-label="Filter programs">
+      <button class="filter-pill active" data-filter="all" role="tab" aria-selected="true">All programs</button>
+      <button class="filter-pill" data-filter="beginner" role="tab" aria-selected="false">Beginner</button>
+      <button class="filter-pill" data-filter="specialization" role="tab" aria-selected="false">Specialization</button>
+      <button class="filter-pill" data-filter="architect" role="tab" aria-selected="false">Architect</button>
+      <button class="filter-pill" data-filter="career" role="tab" aria-selected="false">Career track</button>
+    </div>
+    <p class="showing-count" id="showingCount" aria-live="polite">Showing all 17 programs</p>
+  </div>
+</section>
+
+<section class="programs-section" id="featuredSection">
+  <div class="container">
+    <div class="section-head"><span class="section-num">01</span><h2 class="section-title">Featured programs</h2><span class="section-rule" aria-hidden="true"></span></div>
+    <div class="grid" id="featuredGrid">
+      {% for p in programs if p.section == 'featured' %}
+      {{ program_card(p) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="programs-section programs-section-alt" id="moreSection">
+  <div class="container">
+    <div class="section-head"><span class="section-num">02</span><h2 class="section-title">More programs</h2><span class="section-rule" aria-hidden="true"></span></div>
+    <div class="grid" id="moreGrid">
+      {% for p in programs if p.section == 'more' %}
+      {{ program_card(p) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<template id="emptyTpl">
+  <div class="empty-state">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    <p>No programs match this filter here.</p>
+  </div>
+</template>
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <h2 class="cta-title">Not sure which track fits?</h2>
+      <p class="cta-sub">Talk to an advisor — 15 minutes, no sales pitch. We'll map your background to the right program.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="{{ base }}register/index.html" class="btn btn-light btn-lg">Book a career call</a>
+      <a href="https://wa.me/918708752385" class="btn btn-outline-light btn-lg">Chat on WhatsApp</a>
+      <p class="cta-phone">Prefer the phone? <a href="tel:+918708752385">+91 87087 52385</a></p>
+    </div>
+  </div>
+</section>
+{% endblock %}

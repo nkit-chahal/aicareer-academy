@@ -1,0 +1,208 @@
+=== agentic-ai-course ===
+  extract_fees: {'amounts': ['₹35,000'], 'plans': [], 'notes': ['The fee is ₹35,000 for the full program with 8+ hands-on projects, mentor code reviews, a portfolio, and a completion'], 'amount_notes': []}
+  rupees in raw: ['₹35,000']
+  entities: []
+  Rs: []
+  one-time blocks: []
+  snippet: ] md:text-4xl font-semibold text-center">Book a session</div></div></div><div class="" style="position:relative;width:fi
+  snippet: ] md:text-2xl font-semibold text-center text-[#282828] mt-2">Inquire about Agentic AI</div></div></div><div class="conta
+  snippet: ed-lg text-sm font-semibold shadow-md mt-2 hover:opacity-95 transition" type="submit"><span>Book a demo</span></button><
+  snippet: ss="text-base font-semibold text-[#0b1220] mb-2">What Is the Agentic AI Course at School of Core AI?</h2><p class="text-
+
+=== ai-course-with-placement ===
+  extract_fees: {'amounts': ['₹35,000', '₹55,000'], 'plans': [], 'notes': [], 'amount_notes': []}
+  rupees in raw: ['₹35,000', '₹55,000']
+  entities: []
+  Rs: []
+  one-time blocks: ['600">One-time']
+  snippet: white text-sm font-semibold hover:opacity-95 transition" href="/form?for=ai-course-with-placement/" style="background:li
+  snippet: 026C] text-sm font-semibold hover:bg-[#04026C]/5 transition flex items-center gap-1.5" href="/form?for=ai-course-with-pl
+  snippet: lass="text-xs font-semibold px-3 py-1 rounded-full bg-[#04026C]/10 text-[#04026C]">Career Starter Track</span><span clas
+  snippet: text-xs font-semibold px-3 py-1 rounded-full bg-[#BF0025]/10 text-[#BF0025]">Live Online Across India</span></div><h1
+
+=== ai-developers-course ===
+  extract_fees: None
+  rupees in raw: []
+  entities: []
+  Rs: []
+  one-time blocks: []
+  snippet: 1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#BF0025]">For software engineers moving into AI product de
+  snippet: y-1.5 text-xs font-semibold tracking-wide text-[#0b0a7a] shadow-sm">Live engineering reviews</span><span class="inline-f
+  snippet: y-1.5 text-xs font-semibold tracking-wide text-[#0b0a7a] shadow-sm">4 builds + deployed capstone</span><span class="inli
+  snippet: y-1.5 text-xs font-semibold tracking-wide text-[#0b0a7a] shadow-sm">Certificate on completion</span></div></div></div><d
+
+=== ai-engineering-course ===
+  extract_fees: None
+  rupees in raw: []
+  entities: []
+  Rs: ['rs,']
+  one-time blocks: []
+  snippet: lass="text-xs font-semibold uppercase tracking-[0.22em] text-[#BF0025] mb-4">Role-Focused AI Engineer Path</p><h1 class=
+  snippet:  py-3 text-sm font-semibold text-white shadow-md transition hover:opacity-95" href="/courses/generative-ai-course/">View
+  snippet:  py-3 text-sm font-semibold text-[#0b1220] transition hover:border-[#0b1220]/30 hover:bg-white" href="/form?for=AI%20Eng
+  snippet: lass="text-xs font-semibold uppercase tracking-[0.2em] text-[#BF0025] mb-2">AI Engineering Course Details</p><h2 class="
+
+=== aiops-course ===
+  extract_fees: {'amounts': ['₹80,000'], 'plans': [], 'notes': [], 'amount_notes': ['One-time payment']}
+  rupees in raw: ['₹80,000']
+  entities: []
+  Rs: ['rs,', 'rs,', 'rs,']
+  one-time blocks: ['80,000 One-time']
+  snippet: ext-[#0b1220] font-semibold max-w-2xl leading-snug mb-4">Every layer of production AI — ML pipelines, distributed traini
+  snippet: l md:text-2xl font-semibold text-center text-gray-800">Apply for the AIOps Program</div></div></div><div class="containe
+  snippet: ed-lg text-sm font-semibold shadow-md mt-2 hover:opacity-95 transition" type="submit"><span>Book a demo</span></button><
+  snippet: lass="text-lg font-semibold text-gray-900 mb-2">AI Engineers &amp; Architects</h3><p class="text-gray-700 leading-relaxe
+
+=== computer-vision-course ===
+  extract_fees: {'amounts': [], 'plans': ['Contact us and our academic counsellor will get in touch with you shortly.'], 'notes': [], 'amount_notes': []}
+  rupees in raw: []
+  entities: []
+  Rs: ['rs,', 'rs,']
+  one-time blocks: []
+  snippet: ] md:text-4xl font-semibold text-center">Book a session</div></div></div><div class="" style="position:relative;width:fi
+  snippet: ] md:text-2xl font-semibold text-center text-[#282828] mt-2">Inquire Now</div></div></div><div class="container mx-auto 
+  snippet: ed-lg text-sm font-semibold shadow-md mt-2 hover:opacity-95 transition" type="submit"><span>Book a demo</span></button><
+  snippet: ] md:text-5xl font-semibold text-center pb-[3rem]">Skills you'll gain in Computer Vision course</h2></div></div></div><d
+
+=== data-analytics-course-with-placement ===
+  extract_fees: {'amounts': [], 'plans': ['Flexible batches: classroom or live virtual (same fee)', 'EMI options available • Pay in 2 installments • No hidden charges'], 'notes': [], 'amount_notes': []}
+  rupees in raw: []
+  entities: []
+  Rs: []
+  one-time blocks: []
+  snippet: ] md:text-4xl font-semibold text-center">Book A Session</div></div></div><div class="" style="position:relative;width:fi
+  snippet: ] md:text-2xl font-semibold text-center text-[#282828] mt-2">Inquire Now</div></div></div><div class="container mx-auto 
+  snippet: ed-lg text-sm font-semibold shadow-md mt-2 hover:opacity-95 transition" type="submit"><span>Book a demo</span></button><
+  snippet: ] md:text-5xl font-semibold text-center pb-[3rem]">    Skills You'll Gain in Data Analytics Course</h2></div></div></div
+
+=== data-science-course ===
+  extract_fees: None
+  rupees in raw: []
+  entities: []
+  Rs: ['rs,']
+  one-time blocks: []
+  snippet: ] md:text-4xl font-semibold text-center text-[#0b1220]">Book a Session</div></div></div><div class="" style="position:re
+  snippet: ] md:text-2xl font-semibold text-center text-[#282828] mt-2">Inquire about our Data Science Course</p></div></div><div c
+  snippet: ed-lg text-sm font-semibold shadow-md mt-2 hover:opacity-95 transition" type="submit"><span>Book a demo</span></button><
+  snippet: ss="text-base font-semibold text-slate-900 leading-tight">Python, SQL &amp; Data Wrangling</h3></div><p class="mt-3 text
+
+=== data-science-with-deep-learning ===
+  extract_fees: {'amounts': [], 'plans': ['Encouraging the Dissemination of the Extremely Innovative I will also introduce some modern deep learning approaches such as Generative Adversarial Networks (GANs) and transformers which form the basis of many state-of-the-art solutions. One could only think of such AI as the creation of artwork, composition of text, or language translation—results that are not only the implementation of advanced technologies but an augmentation of human imagination and discourse in real-life scenarios. These techniques are among the most modern in the data science field of deep learning.', "They manage and scale data infrastructures. This course will teach you to integrate deep learning for data science into existing systems. It will ensure that AI models are used well in your enterprise's tech stack, both in the cloud and on-premise."], 'notes': [], 'amount_notes': []}
+  rupees in raw: []
+  entities: []
+  Rs: ['rs,']
+  one-time blocks: []
+  snippet: ] md:text-4xl font-semibold text-center">Book a session</div></div></div><div class="" style="position:relative;width:fi
+  snippet: ] md:text-2xl font-semibold text-center text-[#282828] mt-2">Inquire Now</div></div></div><div class="container mx-auto 
+  snippet: ed-lg text-sm font-semibold shadow-md mt-2 hover:opacity-95 transition" type="submit"><span>Book a demo</span></button><
+  snippet: ] md:text-5xl font-semibold text-center pb-[3rem]">Skills you'll gain in Data Science with Deep Learning</h2></div></div
+
+=== data-science-with-machine-learning ===
+  extract_fees: {'amounts': [], 'plans': ['Academic as the data science and AI in their field of specialty', 'Contact us and our academic counsellor will get in touch with you shortly.'], 'notes': [], 'amount_notes': []}
+  rupees in raw: []
+  entities: []
+  Rs: []
+  one-time blocks: []
+  snippet: ] md:text-4xl font-semibold text-center">Book a session</div></div></div><div class="" style="position:relative;width:fi
+  snippet: ] md:text-2xl font-semibold text-center text-[#282828] mt-2">Inquire Now</div></div></div><div class="container mx-auto 
+  snippet: ed-lg text-sm font-semibold shadow-md mt-2 hover:opacity-95 transition" type="submit"><span>Book a demo</span></button><
+  snippet: ] md:text-5xl font-semibold text-center pb-[3rem]">Skills you'll gain in Data Science &amp; Machine Learning</h2></div><
+
+=== deep-learning-course ===
+  extract_fees: {'amounts': [], 'plans': ['Contact us and our academic counsellor will get in touch with you shortly.'], 'notes': [], 'amount_notes': []}
+  rupees in raw: []
+  entities: []
+  Rs: []
+  one-time blocks: []
+  snippet: ] md:text-4xl font-semibold text-center">Book a session</div></div></div><div class="" style="position:relative;width:fi
+  snippet: ] md:text-2xl font-semibold text-center text-[#282828] mt-2">Inquire Now</div></div></div><div class="container mx-auto 
+  snippet: ed-lg text-sm font-semibold shadow-md mt-2 hover:opacity-95 transition" type="submit"><span>Book a demo</span></button><
+  snippet: ] md:text-5xl font-semibold text-center pb-[3rem]">Skills you'll gain in Deep Learning Specialization  course</h2></div>
+
+=== forward-deployed-engineer-course ===
+  extract_fees: None
+  rupees in raw: []
+  entities: []
+  Rs: ['rs,', 'rs,', 'rs,']
+  one-time blocks: []
+  snippet: lass="text-xs font-semibold uppercase tracking-[0.24em] text-[#f59ab0] mb-4">Role Program For AI Production Systems</p><
+  snippet: y-1.5 text-sm font-semibold text-white/90 backdrop-blur-sm">6-Month Program</span><span class="inline-flex items-center 
+  snippet: y-1.5 text-sm font-semibold text-white/90 backdrop-blur-sm">Live Online</span><span class="inline-flex items-center roun
+  snippet: y-1.5 text-sm font-semibold text-white/90 backdrop-blur-sm">Enterprise AI Delivery Focus</span></div><h1 class="font-min
+
+=== full-stack-data-science ===
+  extract_fees: {'amounts': [], 'plans': ['Contact us and our academic counsellor will get in touch with you shortly.'], 'notes': [], 'amount_notes': []}
+  rupees in raw: []
+  entities: []
+  Rs: []
+  one-time blocks: []
+  snippet: ] md:text-4xl font-semibold text-center">Book a session</div></div></div><div class="" style="position:relative;width:fi
+  snippet: ] md:text-2xl font-semibold text-center text-[#282828] mt-2">Inquire Now</div></div></div><div class="container mx-auto 
+  snippet: ed-lg text-sm font-semibold shadow-md mt-2 hover:opacity-95 transition" type="submit"><span>Book a demo</span></button><
+  snippet: ] md:text-5xl font-semibold text-center pb-[3rem]">Perks of the Program</h2></div></div></div><div class="mt-15 mb-10 gr
+
+=== generative-ai-course ===
+  extract_fees: {'amounts': ['₹64,999'], 'plans': ['0 1 Large Language Models GPT, Claude, Gemini, Llama 4, DeepSeek, Qwen3 0 2 Diffusion Models FLUX.1, Stable Diffusion 3.5, Sora-class video 0 3 Vision-Language Models Qwen3-VL, Llama Vision, InternVL, CLIP 0 4 Code Generation Qwen3-Coder, DeepSeek-Coder, StarCoder2', 'Generative AI is a category of artificial intelligence that creates new text, images, code, audio, and video by learning patterns from large datasets. Unlike traditional ML that classifies or predicts, generative models produce original outputs. The core architectures powering this field today are: 0 1 Large Language Models GPT, Claude, Gemini, Llama 4, DeepSeek, Qwen3 0 2 Diffusion Models FLUX.1, Stable Diffusion 3.5, Sora-class video 0 3 Vision-Language Models Qwen3-VL, Llama Vision, InternVL, CLIP 0 4 Code Generation Qwen3-Coder, DeepSeek-Coder, StarCoder2'], 'notes': ['The fee is ₹64,999'], 'amount_notes': ['One-time payment']}
+  rupees in raw: ['₹64,999', '₹64,999']
+  entities: []
+  Rs: ['rs,', 'rs,', 'rs,']
+  one-time blocks: ['0b1220]">₹64,999 (one-time']
+  snippet: ] md:text-2xl font-semibold text-center text-gray-800">Apply for GenAI Course</div></div></div><div class="container mx-
+  snippet: ed-lg text-sm font-semibold shadow-md mt-2 hover:opacity-95 transition" type="submit"><span>Book a demo</span></button><
+  snippet: lass="text-xs font-semibold uppercase tracking-[0.2em] text-[#BF0025] mb-2">Generative AI Training Overview</p><h2 class
+  snippet: e format, duration, fee, core skills, projects, certificate and support you get when you join the program.</p></div><div
+
+=== large-language-model-course ===
+  extract_fees: {'amounts': ['₹40,000'], 'plans': [], 'notes': [], 'amount_notes': ['One-time payment']}
+  rupees in raw: ['₹40,000']
+  entities: []
+  Rs: ['rs,']
+  one-time blocks: ['40,000 (One-time']
+  snippet: ext-[#0b1220] font-semibold max-w-2xl leading-snug mb-4">A <span class="text-[#BF0025]">Large Language Model Course</spa
+  snippet: ed-lg text-sm font-semibold shadow-md mt-2 hover:opacity-95 transition" type="submit"><span>Book a demo</span></button><
+  snippet: y-1.5 text-xs font-semibold rounded-full text-white" style="background:linear-gradient(90deg, #BF0025 7%, #04026C 93%)">
+  snippet: y-1.5 text-xs font-semibold rounded-full text-white" style="background:linear-gradient(90deg, #BF0025 7%, #04026C 93%)">
+
+=== llmops-course ===
+  extract_fees: {'amounts': ['₹35,000'], 'plans': [], 'notes': [], 'amount_notes': ['One-time payment']}
+  rupees in raw: ['₹35,000']
+  entities: []
+  Rs: ['rs,', 'rs,', 'rs,']
+  one-time blocks: ['35,000 One-time']
+  snippet: ext-[#0b1220] font-semibold max-w-2xl leading-snug mb-4">Production LLM infrastructure training for engineers — serving,
+  snippet: l md:text-2xl font-semibold text-gray-800">Inquire about LLMOps</p></div></div></div><div class="container mx-auto px-3 
+  snippet: ed-lg text-sm font-semibold shadow-md mt-2 hover:opacity-95 transition" type="submit"><span>Talk to Our Team</span></but
+  snippet: lass="text-lg font-semibold text-gray-900">Master LLM Deployment at Scale</h3></div><p class="text-gray-600 text-sm lead
+
+=== machine-learning-course ===
+  extract_fees: {'amounts': ['₹20,000'], 'plans': [], 'notes': [], 'amount_notes': []}
+  rupees in raw: ['₹20,000', '₹20,000', '₹5', '₹10', '₹18']
+  entities: []
+  Rs: ['rs,', 'rs,', 'rs,']
+  one-time blocks: ['2xl mb-3">One-time']
+  snippet: nt text-white font-semibold" href="/download-brochure?requestedFor=Machine+Learning+Course+Brochure&amp;brochure=brouche
+  snippet: ext-[#282828] font-semibold" href="#apply">View Syllabus</a></div></div></div></div><div class="order-1 lg:order-2"><div
+  snippet: ] md:text-4xl font-semibold text-center">Book a Session</div></div></div><div class="" style="position:relative;width:fi
+  snippet: ] md:text-2xl font-semibold text-center text-[#282828] mt-2">Inquire about our Machine Learning Course</div></div></div>
+
+=== mlops-course ===
+  extract_fees: None
+  rupees in raw: []
+  entities: []
+  Rs: ['rs,', 'rs,', 'rs,']
+  one-time blocks: []
+  snippet: ] md:text-3xl font-semibold text-center text-[#0b1220]">Book a Session</div></div></div><div class="" style="position:re
+  snippet: m] md:text-xl font-semibold text-center text-[#282828] mt-2">Inquire about our MLOps Course</p></div></div><div class="c
+  snippet: ed-lg text-sm font-semibold shadow-md mt-2 hover:opacity-95 transition" type="submit"><span>Book a demo</span></button><
+  snippet: lass="text-xl font-semibold text-gray-900">DevOps / Platform / SRE (5–10 yrs)</h3></div><ul class="space-y-2 mt-3"><li c
+
+=== natural-language-processing-course ===
+  extract_fees: {'amounts': [], 'plans': ['Contact us and our academic counsellor will get in touch with you shortly.'], 'notes': [], 'amount_notes': []}
+  rupees in raw: []
+  entities: []
+  Rs: []
+  one-time blocks: []
+  snippet:  class="brand font-semibold">NLTK</span>, <span class="brand font-semibold">spaCy</span>, <span class="brand font-semibo
+  snippet:  class="brand font-semibold">AWS Comprehend</span> and <span class="brand font-semibold">Google Cloud NLP</span>.</p></d
+  snippet: ] md:text-4xl font-semibold text-center">Book a session</div></div></div><div class="" style="position:relative;width:fi
+  snippet: ] md:text-2xl font-semibold text-center text-[#282828] mt-2">Inquire Now</div></div></div><div class="container mx-auto 

@@ -1,0 +1,47 @@
+{
+  "id": "register",
+  "source": "/register",
+  "output": "register/index.html",
+  "type": "register",
+  "nav": "register",
+  "title": "Registration | School of Core AI",
+  "description": "An engineering-first AI institution for learners, professionals, and teams building real capability in Generative AI, ML, Agentic AI, and modern AI systems.",
+  "hero_title": "Register for a Course",
+  "hero_sub": "Loading...",
+  "sections": [],
+  "faqs": [],
+  "lists": [],
+  "images": [
+    {
+      "src": "/assets/images/register-0b06468ca320.svg",
+      "alt": "Chat with us on WhatsApp",
+      "width": "16",
+      "height": "16"
+    },
+    {
+      "src": "/assets/images/register-0b06468ca320.svg",
+      "alt": "whatsapp",
+      "width": "16",
+      "height": "16"
+    },
+    {
+      "src": "/assets/images/register-c73fb77b6cff.svg",
+      "alt": "phone",
+      "width": "16",
+      "height": "16"
+    },
+    {
+      "src": "/assets/images/register-30c522dbe93d.svg",
+      "alt": "Instagram - School of Core AI",
+      "width": "32",
+      "height": "32"
+    },
+    {
+      "src": "/assets/images/register-e328e98afcf1.svg",
+      "alt": "LinkedIn - School of Core AI",
+      "width": "32",
+      "height": "32"
+    }
+  ],
+  "raw_html": "<main id=\"main-content\"><template data-dgst=\"BAILOUT_TO_CLIENT_SIDE_RENDERING\"></template><div class=\"mx-auto max-w-6xl p-4 md:p-8 bg-gradient-to-b from-white via-[#f9fbff] to-white\"><div class=\"mb-6 flex flex-col gap-1\"><h1 class=\"text-2xl md:text-3xl font-semibold tracking-tight\">Register for a Course</h1><p class=\"text-sm text-gray-600\">Loading...</p></div></div></main>"
+}

@@ -1,0 +1,30 @@
+| Program slug | Fees in scrape? | Fees in generated HTML? | What fee info exists |
+|---|---|---|---|
+| agentic-ai-course | YES | YES | agent frameworks. The fee is ₹35,000 for the full program with 8+ hands-on projects, mentor code reviews, a portfoli; modern agent frameworks. The fee is ₹35,000 for the full program with 8+ hands-on  |
+| ai-course-with-placement | YES | YES | nt-extrabold text-black mt-2">₹35,000</p><p class="mt-2 text-sm md:text-base text-gray-600">18 weeks, live classes, c; text-gray-900 font-semibold">₹55,000 includes live classes, guided projects, caps |
+| ai-developers-course | NO | NO | MISSING |
+| ai-engineering-course | NO | NO | MISSING |
+| aiops-course | YES | YES | ded-full bg-[#BF0025]"></span>₹80,000 One-time</span></div></div></div></div></div><div class="order-2 lg:order-2"><d |
+| computer-vision-course | NO | NO | MISSING |
+| data-analytics-course-with-placement | YES | YES | or live virtual (same fee)", "EMI options available • Pay in 2 installments • No hidden charges"], ["About Us", "Contact Us", "Hire From Us", "Pay Now"], ["Privacy Policy", "Refund Policy", "Re; optio |
+| data-science-course | NO | NO | MISSING |
+| data-science-with-deep-learning | NO | NO | MISSING |
+| data-science-with-machine-learning | NO | NO | MISSING |
+| deep-learning-course | NO | NO | MISSING |
+| forward-deployed-engineer-course | NO | NO | MISSING |
+| full-stack-data-science | NO | NO | MISSING |
+| generative-ai-course | YES | YES | how in interviews. The fee is ₹64,999."}, {"heading": "What Is Generative AI?", "content": "Generative AI is a catego; how in interviews. The fee is ₹64,999."}, {"question": "What Is Generative AI?",  |
+| large-language-model-course | YES | YES | #BF0025] inline-block"></span>₹40,000 (One-time)</span></div><div class="mt-6 p-4 bg-white/70 rounded-xl border borde |
+| llmops-course | YES | YES | ded-full bg-[#BF0025]"></span>₹35,000 One-time</span></div><button aria-label="Book a session for the LLMOps Infrastr |
+| machine-learning-course | YES | YES | 3">One-time Payment</div><div>₹20,000</div></div></div><div class="bg-white py-5 px-3 md:px-10 rounded-[24px] col-spa; l font-bold text-center px-4">₹20,000 flat — project-based ML training, certifica |
+| mlops-course | NO | NO | MISSING |
+| natural-language-processing-course | NO | NO | MISSING |
+
+## Other pages
+- Home: scrape=NO, html=NO — MISSING
+- Courses listing: scrape=NO, html=NO — MISSING
+- Register: scrape=NO, html=NO — MISSING
+- City Delhi: scrape=NO, html=NO — MISSING
+- City Bangalore: scrape=YES, html=NO — 5 mb-1 leading-snug\">Fee and EMI Plans</p><p class=\"text-[0.65rem] sm:text-[0.72rem] leading-[1.6]
+- City Hyderabad: scrape=NO, html=NO — MISSING
+- City Pune: scrape=YES, html=NO — 5 mb-1 leading-snug\">Fee and EMI Plans</p><p class=\"text-[0.65rem] sm:text-[0.72rem] leading-[1.6]

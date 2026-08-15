@@ -1,0 +1,160 @@
+
+/* Program hero */
+.prog-hero { padding: 56px 0 48px; background: var(--paper); border-bottom: 1px solid var(--line); }
+.prog-hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(200px, 0.7fr); gap: 32px; align-items: center; }
+@media (max-width: 768px) { .prog-hero-grid { grid-template-columns: 1fr; } .prog-hero-art { display: none; } }
+.prog-hero-art { justify-self: end; max-width: 280px; width: 100%; }
+#fees, #salary, #curriculum, #faq { scroll-margin-top: calc(var(--header-h) + 56px); }
+
+.prog-jump {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 40;
+  background: rgba(248, 250, 252, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.prog-jump-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.prog-jump-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+  margin-right: 4px;
+}
+.prog-jump a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+  border: 1px solid var(--line);
+  background: var(--card);
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.prog-jump a:hover { color: var(--accent); border-color: var(--accent-line); background: var(--accent-soft); }
+.breadcrumb { font-family: var(--font-mono); font-size: 12px; margin-bottom: 16px; display: flex; gap: 8px; align-items: center; color: var(--ink-3); }
+.breadcrumb a:hover { color: var(--accent); text-decoration: underline; }
+.prog-hero-title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; color: var(--ink); }
+.prog-hero-sub { font-size: 17px; color: var(--ink-3); line-height: 1.7; max-width: 680px; margin-bottom: 24px; }
+.prog-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.prog-cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* Fee block */
+.prog-fees { padding: 48px 0; background: var(--chip); border-bottom: 1px solid var(--line); }
+.prog-fees-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px 56px; align-items: start; }
+@media (max-width: 720px) { .prog-fees-inner { grid-template-columns: 1fr; gap: 32px; } }
+.prog-fees-col-main { min-width: 0; }
+.prog-fees-label { font-family: var(--font-mono); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-3); margin: 0 0 12px; }
+.prog-fee-display { margin: 0; }
+.prog-fee-amt { font-variant-numeric: tabular-nums; display: inline-flex; align-items: baseline; gap: 0.15em; line-height: 1.1; color: var(--ink); }
+.prog-fee-symbol { font-size: 0.7em; font-weight: 700; opacity: 0.85; }
+.prog-fee-num { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; letter-spacing: -0.03em; }
+.prog-fee-display--discount .prog-fee-primary { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 18px; }
+.prog-fee-display { min-width: 0; }
+.prog-fee-amt { flex-wrap: wrap; }
+.prog-fee-amt-wrap--original .prog-fee-num { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 500; text-decoration: line-through; color: var(--ink-3); opacity: 0.75; }
+.prog-fee-amt-wrap--original .prog-fee-symbol { font-size: 0.85em; opacity: 0.75; }
+.prog-fee-save { display: inline-flex; align-items: center; padding: 6px 12px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; background: var(--accent); border-radius: 999px; white-space: nowrap; }
+.prog-fee-save .prog-fee-symbol, .prog-fee-save .prog-fee-num { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: #fff; }
+.prog-fee-display--tier { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.prog-fee-sep { font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--ink-3); align-self: center; padding: 0 2px; }
+.prog-fee-display--plan { display: flex; flex-direction: column; gap: 10px; }
+.prog-fee-plan-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px; }
+.prog-fee-plan-label { font-family: var(--font-mono); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); min-width: 108px; flex-shrink: 0; }
+.prog-fee-plan-row--secondary .prog-fee-num { font-size: clamp(1.35rem, 2.5vw, 1.75rem); }
+.prog-fees-notes { margin-top: 14px; }
+.prog-fees-note { font-size: 14px; line-height: 1.65; margin: 0 0 6px; max-width: 520px; color: var(--ink-2); }
+.prog-fees-note:last-child { margin-bottom: 0; }
+.prog-fees-note--muted { font-size: 13px; color: var(--ink-3); }
+.prog-fees-plans { min-width: 0; }
+.prog-fees-plan-list { list-style: none; margin: 0; padding: 0; }
+.prog-fees-plan-list li { font-size: 15px; color: var(--ink-2); line-height: 1.55; padding: 12px 0; display: flex; align-items: flex-start; gap: 10px; border-bottom: 1px solid var(--line); }
+.prog-fees-plan-list li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); margin-top: 0.55em; flex-shrink: 0; }
+.prog-fees-plan-list li:last-child { border-bottom: none; padding-bottom: 0; }
+
+/* Content sections */
+.prog-sections { padding: 56px 0; background: var(--paper-alt); }
+.prog-section { margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
+.prog-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.prog-section-title { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 14px; color: var(--ink); }
+.prog-section-body { font-size: 15px; color: var(--ink-2); line-height: 1.75; white-space: pre-line; }
+
+/* Salary tables */
+.prog-salaries { padding: 56px 0; background: var(--paper-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.prog-salary-header { max-width: 720px; margin-bottom: 32px; }
+.prog-salary-title { font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 8px; }
+.prog-salary-subtitle { font-size: 16px; font-weight: 600; color: var(--ink-2); margin-bottom: 12px; }
+.prog-salary-intro { font-size: 15px; color: var(--ink-3); line-height: 1.7; margin-bottom: 0; }
+.prog-salary-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-bottom: 32px; }
+.prog-salary-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+.prog-salary-card-title { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); }
+.prog-salary-card-tier { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.prog-salary-card-tier:last-of-type { border-bottom: none; }
+.prog-salary-card-note { font-size: 12px; color: var(--ink-3); margin-top: 12px; line-height: 1.5; }
+.prog-salary-table-wrap { overflow-x: auto; margin: 20px 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); }
+.prog-salary-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.prog-salary-caption { caption-side: top; text-align: left; font-weight: 700; font-size: 15px; color: var(--ink); padding: 16px 16px 8px; }
+.prog-salary-table thead { background: var(--paper-alt); border-bottom: 2px solid var(--line); }
+.prog-salary-table th { text-align: left; padding: 12px 16px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink); }
+.prog-salary-table td { padding: 12px 16px; border-bottom: 1px solid var(--line); color: var(--ink-2); }
+.prog-salary-table tbody tr:hover { background: var(--accent-soft); }
+.prog-salary-table tbody tr:last-child td { border-bottom: none; }
+.prog-salary-row-alt { background: var(--paper); }
+.prog-salary-exp { font-weight: 600; color: var(--ink); }
+.prog-salary-amt { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-weight: 700; color: var(--accent); text-align: right; white-space: nowrap; }
+.prog-salary-footnote { font-size: 13px; color: var(--ink-3); margin-top: 12px; line-height: 1.6; }
+.prog-salary-tips { margin-top: 28px; padding: 24px; background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: var(--radius); }
+.prog-salary-tips-title { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
+.prog-salary-tips-list { margin: 0; padding-left: 20px; }
+.prog-salary-tips-list li { font-size: 14px; color: var(--ink-2); line-height: 1.65; margin-bottom: 8px; }
+
+/* Curriculum */
+.prog-curriculum { padding: 48px 0; background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.curriculum-list { list-style: none; margin: 20px 0; }
+.curriculum-list li { padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--radius-sm); margin-bottom: 8px; font-size: 15px; color: var(--ink-2); background: var(--card); }
+.curriculum-tree { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
+.curr-level { border: 1px solid var(--line); border-radius: 12px; background: var(--card); overflow: hidden; }
+.curr-level > summary, .curr-module > summary {
+  list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px;
+  padding: 16px 18px; font-weight: 700; font-size: 15px; color: var(--ink);
+}
+.curr-level > summary::-webkit-details-marker,
+.curr-module > summary::-webkit-details-marker { display: none; }
+.curr-level > summary::after, .curr-module > summary::after {
+  content: ""; margin-left: auto; width: 8px; height: 8px; flex-shrink: 0;
+  border-right: 2px solid var(--accent); border-bottom: 2px solid var(--accent);
+  transform: rotate(45deg); transition: transform 0.15s;
+}
+.curr-level[open] > summary::after, .curr-module[open] > summary::after { transform: rotate(225deg); translate: 0 3px; }
+.curr-level > summary { background: var(--chip); }
+.curr-level-body { padding: 8px 12px 14px; }
+.curr-module { border: 1px solid #BFDBFE; border-radius: 10px; margin: 8px 0; background: #fff; }
+.curr-module > summary { font-size: 14px; font-weight: 600; }
+.curr-topics { list-style: none; margin: 0 16px 12px 28px; padding: 4px 0 8px; border-left: 2px solid #BFDBFE; }
+.curr-topics li { position: relative; padding: 8px 0 8px 20px; font-size: 14px; color: var(--ink-2); line-height: 1.45; }
+.curr-topics li::before {
+  content: ""; position: absolute; left: -5px; top: 14px; width: 8px; height: 8px;
+  border-radius: 50%; background: var(--accent); border: 2px solid #fff; box-shadow: 0 0 0 1px #BFDBFE;
+}
+
+/* FAQ */
+.prog-faq { padding: 56px 0; background: var(--paper-alt); }
+.faq-list { margin-top: 24px; }
+.faq-item { border: 1px solid var(--line); border-radius: var(--radius-sm); margin-bottom: 8px; background: var(--card); }
+.faq-item summary { padding: 16px 20px; font-weight: 700; font-size: 15px; cursor: pointer; list-style: none; color: var(--ink); }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item p { padding: 0 20px 16px; font-size: 14px; color: var(--ink-2); line-height: 1.7; }

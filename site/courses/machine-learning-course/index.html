@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Machine Learning Course — AI Career Academy</title>
+  <meta name="description" content="Hands-on Machine Learning certification: feature engineering, supervised &amp; unsupervised models, cross-validation, Optuna, PCA, time series, FastAPI &amp; Azure ML." />
+  
+  <meta name="robots" content="index, follow" />
+  
+  <link rel="canonical" href="https://aicareer.academy/courses/machine-learning-course/" />
+  <meta property="og:site_name" content="AI Career Academy" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Machine Learning Course — AI Career Academy" />
+  <meta property="og:description" content="Hands-on Machine Learning certification: feature engineering, supervised &amp; unsupervised models, cross-validation, Optuna, PCA, time series, FastAPI &amp; Azure ML." />
+  <meta property="og:url" content="https://aicareer.academy/courses/machine-learning-course/" />
+  
+  <meta property="og:image" content="https://aicareer.academy/assets/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://aicareer.academy/assets/og.png" />
+  
+  <meta name="twitter:title" content="Machine Learning Course — AI Career Academy" />
+  <meta name="twitter:description" content="Hands-on Machine Learning certification: feature engineering, supervised &amp; unsupervised models, cross-validation, Optuna, PCA, time series, FastAPI &amp; Azure ML." />
+  <meta name="theme-color" content="#1E3A8A" />
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+  
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@id": "https://aicareer.academy/#org", "@type": "EducationalOrganization", "address": {"@type": "PostalAddress", "addressCountry": "IN", "addressLocality": "Gurugram", "addressRegion": "Haryana", "postalCode": "122003", "streetAddress": "Sector 44"}, "email": "hello@aicareer.academy", "name": "AI Career Academy", "telephone": "+918708752385", "url": "https://aicareer.academy/"}, {"@id": "https://aicareer.academy/#website", "@type": "WebSite", "name": "AI Career Academy", "publisher": {"@id": "https://aicareer.academy/#org"}, "url": "https://aicareer.academy/"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://aicareer.academy/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://aicareer.academy/courses/", "name": "Programs", "position": 2}, {"@type": "ListItem", "item": "https://aicareer.academy/courses/machine-learning-course/", "name": "Machine Learning Course \u2013 Master Core ML Skills for 2025", "position": 3}]}, {"@type": "Course", "description": "Hands-on Machine Learning certification: feature engineering, supervised \u0026 unsupervised models, cross-validation, Optuna, PCA, time series, FastAPI \u0026 Azure ML.", "name": "Machine Learning Course \u2013 Master Core ML Skills for 2025", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "price": "20000", "priceCurrency": "INR", "url": "https://aicareer.academy/courses/machine-learning-course/"}, "provider": {"@id": "https://aicareer.academy/#org"}, "url": "https://aicareer.academy/courses/machine-learning-course/"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Master ML from Scratch Understand core algorithms like Linear Regression, Decision Trees, SVM, and Ensemble Methods with implementation focus. End-to-End ML Workflow Get hands-on with real projects \u2014 from data cleaning and EDA to model tuning, evaluation, and deployment. Imbalanced Data Handling Master techniques like SMOTE, undersampling, class-weighting, and ensemble balancing for skewed datasets. Feature Engineering Expertise Learn domain-driven feature construction, encoding tricks, interaction terms, binning, and PCA for dimensionality reduction. Hyperparameter Tuning Explore GridSearchCV, RandomizedSearch, and Optuna for tuning ML models in a reproducible way. ML Interview Preparation Sharpen your ML understanding with interview-style Q\u0026A, mock sessions, and practical problem-solving"}, "name": "Why Join Our Machine Learning Course?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "End-to-end ML pipeline: EDA, feature engineering, cross-validation, model comparison. Supervised \u0026 unsupervised learning, PCA , ensembles (RF/Boosting). Imbalanced data handling (SMOTE, thresholds, PR-AUC) and Optuna tuning. Clean scikit-learn code, experiment tracking, and mini deployment demo. Certification, interview prep sprints, resume/portfolio review \u0026 referral support. Lifetime access to recordings and ongoing updates."}, "name": "What You\u2019ll Get:"}]}]}</script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/base.css" />
+  <link rel="stylesheet" href="../../assets/css/program.css" /><link rel="stylesheet" href="../../assets/css/content.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <p class="topbar-note">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        An engineering-first map for AI careers — not a course catalog.
+      </p>
+      <div class="topbar-links">
+        <a href="https://wa.me/918708752385" class="topbar-link">Chat with us</a>
+        <span class="topbar-divider" aria-hidden="true"></span>
+        <a href="tel:+918708752385" class="topbar-link">+91 87087 52385</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c0 .34-.04.67-.12.98A4 4 0 0 1 19 14.5c0 .17-.01.33-.03.5A3.5 3.5 0 0 1 17.5 21h-11A3.5 3.5 0 0 1 5.03 15c-.02-.17-.03-.33-.03-.5a4 4 0 0 1 3.12-7.52A4.01 4.01 0 0 1 8 6a4 4 0 0 1 4-4z"/><path d="M12 8v13"/><path d="M9 12h6"/></svg>
+        </span>
+        <span class="brand-text">AI Career<em>.academy</em></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="../../index.html" class="nav-link">Home</a>
+        <a href="../../courses/index.html" class="nav-link">All programs</a>
+        <div class="nav-explore" id="navExplore">
+          <button type="button" class="nav-link nav-explore-toggle" id="exploreToggle" aria-expanded="false" aria-haspopup="true" aria-controls="exploreMenu">Explore</button>
+          <div class="nav-dropdown" id="exploreMenu" role="menu">
+            <a href="../../index.html#paths" role="menuitem">Career paths</a>
+            <a href="../../courses/index.html" role="menuitem">Courses</a>
+            <a href="../../comparisons/index.html" role="menuitem">Comparisons</a>
+            <a href="../../roadmaps/data-science-roadmap/index.html" role="menuitem">Roadmaps</a>
+            <a href="../../blogs/index.html" role="menuitem">Blogs</a>
+            <a href="../../register/index.html" role="menuitem">Register</a>
+          </div>
+        </div>
+        <a href="../../mentors/index.html" class="nav-link">Mentors</a>
+        <a href="../../contact-us/index.html" class="nav-link">Contact</a>
+        <a href="../../register/index.html" class="btn btn-primary nav-cta">Book a career call</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    
+<section class="prog-hero">
+  <div class="container prog-hero-grid">
+    <div>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../courses/index.html">All programs</a>
+        <span aria-hidden="true">/</span>
+        <span>Machine Learning Specialization</span>
+      </nav>
+      <h1 class="prog-hero-title">Machine Learning Course – Master Core ML Skills for 2025</h1>
+      
+      <div class="prog-meta">
+        <span class="card-duration">1 Month</span>
+        
+        
+        <span class="badge">Specialization</span>
+        
+        
+      </div>
+      
+      <p class="prog-hero-sub">Machine Learning Course with projects, feature engineering, imbalanced data handling, model tuning, and deployment. Includes certificate and interview prep.</p>
+      <div class="prog-cta-row">
+        <a href="../../register/index.html?course=machine-learning-course" class="btn btn-primary btn-lg">Book a session</a>
+        <a href="https://wa.me/918708752385" class="btn btn-ghost btn-lg">Chat on WhatsApp</a>
+      </div>
+    </div>
+    <div class="prog-hero-art" aria-hidden="true">
+      <svg viewBox="0 0 280 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="16" y="24" width="248" height="152" rx="20" fill="#EFF6FF"/>
+        <rect x="40" y="48" width="120" height="12" rx="6" fill="#2563EB"/>
+        <rect x="40" y="72" width="200" height="8" rx="4" fill="#BFDBFE"/>
+        <rect x="40" y="92" width="176" height="8" rx="4" fill="#BFDBFE"/>
+        <circle cx="56" cy="132" r="14" fill="#1E3A8A"/>
+        <circle cx="92" cy="132" r="14" fill="#2563EB"/>
+        <circle cx="128" cy="132" r="14" fill="#93C5FD"/>
+        <path d="M42 132h140" stroke="#93C5FD" stroke-width="3" stroke-dasharray="4 6"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+<nav class="prog-jump" aria-label="On this page">
+  <div class="container prog-jump-inner">
+    <span class="prog-jump-label">On this page</span>
+    
+    <a href="#fees">Fees</a>
+    
+    <a href="#curriculum">Curriculum</a>
+    
+    <a href="#faq">FAQ</a>
+    
+  </div>
+</nav>
+
+
+
+<section class="prog-fees" id="fees" aria-labelledby="prog-fees-title">
+  <div class="container prog-fees-inner">
+    <div class="prog-fees-col-main">
+      <p class="prog-fees-label" id="prog-fees-title">Program fee</p>
+
+      
+      
+      <div class="prog-fee-display prog-fee-display--single">
+        <span class="prog-fee-amt"><span class="prog-fee-symbol">₹</span><span class="prog-fee-num">20,000</span></span>
+      </div>
+      
+
+      
+    </div>
+
+    
+  </div>
+</section>
+
+
+
+
+
+<section class="prog-sections">
+  <div class="container">
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Why Join Our Machine Learning Course?</h2>
+      
+      <div class="prog-section-body">Master ML from Scratch Understand core algorithms like Linear Regression, Decision Trees, SVM, and Ensemble Methods with implementation focus. End-to-End ML Workflow Get hands-on with real projects — from data cleaning and EDA to model tuning, evaluation, and deployment. Imbalanced Data Handling Master techniques like SMOTE, undersampling, class-weighting, and ensemble balancing for skewed datasets. Feature Engineering Expertise Learn domain-driven feature construction, encoding tricks, interaction terms, binning, and PCA for dimensionality reduction. Hyperparameter Tuning Explore GridSearchCV, RandomizedSearch, and Optuna for tuning ML models in a reproducible way. ML Interview Preparation Sharpen your ML understanding with interview-style Q&amp;A, mock sessions, and practical problem-solving skills. Model Evaluation Mastery Dive deep into confusion matrices, ROC-AUC, precision-recall curves, F1 scores, and threshold tuning. Real-World Use Cases Work on applied ML tasks in domains like finance, HR, sales forecasting, fraud detection, and churn prediction. Capstone Projects &amp; Mentorship Build resume-grade ML pipelines with expert mentorship and GitHub-ready projects to crack job interviews.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Python &amp; Pandas</h2>
+      
+      <div class="prog-section-body">Brush up Python, NumPy, Pandas for ML-ready datasets.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Feature Engineering</h2>
+      
+      <div class="prog-section-body">Encoding, scaling, PCA, leakage avoidance, data quality.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Supervised &amp; Unsupervised</h2>
+      
+      <div class="prog-section-body">Linear/Logistic, SVM, Trees, KMeans, PCA—end to end.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Model Evaluation</h2>
+      
+      <div class="prog-section-body">CV, stratified splits, AUC/F1/PR, calibration, fairness.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">FastAPI &amp; Azure ML</h2>
+      
+      <div class="prog-section-body">Serve models, containerize, and ship to Azure ML.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Skills to Master in ML Training</h2>
+      
+      <div class="prog-section-body">Python for Machine Learning Mathematics for ML (Linear Algebra, Probability) EDA &amp; Feature Engineering Techniques Handling Imbalanced Datasets Supervised ML Algorithms (Regression, Classification) Unsupervised ML (Clustering, Dimensionality Reduction) Model Evaluation Metrics &amp; Cross-Validation Hyperparameter Tuning with GridSearch &amp; Optuna Principal Component Analysis (PCA) Ensemble Methods (Bagging, Boosting, Random Forest) Model Interpretability (SHAP, LIME) Real-World ML Projects (End-to-End) ML Tools: Scikit-learn, Pandas, NumPy, Matplotlib ML Interview Preparation &amp; Case Studies ML Deployment Basics with Streamlit &amp; FastAPI</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Interview Prep Sprints</h2>
+      
+      <div class="prog-section-body">Problem sets, case studies, and mock interviews focused on ML fundamentals &amp; scenario questions.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Mentor Guidance</h2>
+      
+      <div class="prog-section-body">1:1 feedback on projects, resume pointers, and role-aligned guidance for transitions.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Transparent Placement Help</h2>
+      
+      <div class="prog-section-body">We don’t oversell. You get referrals where fit exists, plus portfolio polish and outreach strategy.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Explore Related Data Science Tracks</h2>
+      
+      <div class="prog-section-body">Data Science — ML End-to-end ML for analytics &amp; product roles Data Science — Deep Learning CNNs, LSTMs, Transformers, computer vision &amp; NLP Data Science — Gen AI RAG, prompt patterns, evaluation &amp; governance Full-Stack Gen AI Agents, LangChain, FastAPI, deployment workflows
+
+Talk to a Mentor</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">MACHINE LEARNING FOUNDATIONS</h2>
+      
+      <div class="prog-section-body">Module 1: Python Refresher Module 2: Foundational Mathematics for Machine Learning Module 3: Data Preprocessing and Feature Engineering Module 4: Basic Machine Learning Models Module 5: Model Validation and Optimization Module 6: Time Series Analysis Module 7: Machine Learning Pipelines and Deployment</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">End-to-End ML Pipeline</h2>
+      
+      <div class="prog-section-body">✔ Build complete ML workflows: data preprocessing, feature engineering, training, tuning, and evaluation.
+
+✘ Covers only basic model fitting with no structured pipeline approach.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Model Optimization (Optuna, GridSearchCV)</h2>
+      
+      <div class="prog-section-body">✔ Tune models efficiently using Optuna and cross-validation to achieve production-level accuracy.
+
+✘ Focuses only on default parameters without tuning or validation strategies.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Imbalanced Data &amp; Feature Engineering</h2>
+      
+      <div class="prog-section-body">✔ Apply SMOTE, scaling, encoding, and feature selection to handle real-world imbalance issues.
+
+✘ Limited to clean toy datasets with no class imbalance handling.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Cloud Accessibility (Azure ML, AWS SageMaker)</h2>
+      
+      <div class="prog-section-body">✔ Train, track, and deploy models using Azure ML Studio and AWS SageMaker with free-tier guidance.
+
+✘ No exposure to cloud tools or enterprise-level ML environments.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Explainability &amp; Model Interpretation</h2>
+      
+      <div class="prog-section-body">✔ Understand SHAP, LIME, and error analysis to explain model predictions for stakeholders.
+
+✘ Skips interpretability; focuses only on model accuracy numbers.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Deployment &amp; CI/CD</h2>
+      
+      <div class="prog-section-body">✔ Deploy ML models via FastAPI and Docker with GitHub Actions for continuous delivery.
+
+✘ Notebook-only learning; no API deployment or CI/CD exposure.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">Certification &amp; Placement</h2>
+      
+      <div class="prog-section-body">✔ Industry-recognized ML certification, resume projects, interview prep, and placement assistance.
+
+✘ No certification, mentorship, or professional portfolio support.</div>
+      
+    </div>
+    
+    <div class="prog-section">
+      <h2 class="prog-section-title">What You’ll Get:</h2>
+      
+      <div class="prog-section-body">End-to-end ML pipeline: EDA, feature engineering, cross-validation, model comparison. Supervised &amp; unsupervised learning, PCA , ensembles (RF/Boosting). Imbalanced data handling (SMOTE, thresholds, PR-AUC) and Optuna tuning. Clean scikit-learn code, experiment tracking, and mini deployment demo. Certification, interview prep sprints, resume/portfolio review &amp; referral support. Lifetime access to recordings and ongoing updates.</div>
+      
+    </div>
+    
+  </div>
+</section>
+
+
+
+<section class="prog-curriculum" id="curriculum">
+  <div class="container">
+    <h2 class="section-title">Course Curriculum</h2>
+    <div class="curriculum-tree">
+      
+      <details class="curr-level" open>
+        <summary>Core algorithms</summary>
+        <div class="curr-level-body">
+          
+            
+            <details class="curr-module">
+              <summary>Module 1: Supervised methods</summary>
+              
+              <ul class="curr-topics">
+                
+                <li>Regression and Classification</li>
+                
+                <li>Ensembles</li>
+                
+                <li>Imbalanced data</li>
+                
+              </ul>
+              
+            </details>
+            
+            <details class="curr-module">
+              <summary>Module 2: Unsupervised methods</summary>
+              
+              <ul class="curr-topics">
+                
+                <li>Clustering and Anomaly Detection</li>
+                
+                <li>PCA</li>
+                
+                <li>Feature Engineering</li>
+                
+              </ul>
+              
+            </details>
+            
+          
+        </div>
+      </details>
+      
+      <details class="curr-level">
+        <summary>Tuning and trust</summary>
+        <div class="curr-level-body">
+          
+            
+            <details class="curr-module">
+              <summary>Module 3: Optimization</summary>
+              
+              <ul class="curr-topics">
+                
+                <li>Hyperparameter Tuning</li>
+                
+                <li>GridSearch and Optuna</li>
+                
+                <li>Performance Optimization</li>
+                
+              </ul>
+              
+            </details>
+            
+            <details class="curr-module">
+              <summary>Module 4: Interpretability</summary>
+              
+              <ul class="curr-topics">
+                
+                <li>Model Interpretability</li>
+                
+                <li>Error analysis</li>
+                
+                <li>Mini deployment demo</li>
+                
+              </ul>
+              
+            </details>
+            
+          
+        </div>
+      </details>
+      
+    </div>
+  </div>
+</section>
+
+
+
+<section class="prog-faq" id="faq">
+  <div class="container">
+    <h2 class="section-title">Frequently asked questions</h2>
+    <div class="faq-list">
+      
+      <details class="faq-item">
+        <summary>Why Join Our Machine Learning Course?</summary>
+        <p>Master ML from Scratch Understand core algorithms like Linear Regression, Decision Trees, SVM, and Ensemble Methods with implementation focus. End-to-End ML Workflow Get hands-on with real projects — from data cleaning and EDA to model tuning, evaluation, and deployment. Imbalanced Data Handling Master techniques like SMOTE, undersampling, class-weighting, and ensemble balancing for skewed datasets. Feature Engineering Expertise Learn domain-driven feature construction, encoding tricks, interaction terms, binning, and PCA for dimensionality reduction. Hyperparameter Tuning Explore GridSearchCV, RandomizedSearch, and Optuna for tuning ML models in a reproducible way. ML Interview Preparation Sharpen your ML understanding with interview-style Q&amp;A, mock sessions, and practical problem-solving</p>
+      </details>
+      
+      <details class="faq-item">
+        <summary>What You’ll Get:</summary>
+        <p>End-to-end ML pipeline: EDA, feature engineering, cross-validation, model comparison. Supervised &amp; unsupervised learning, PCA , ensembles (RF/Boosting). Imbalanced data handling (SMOTE, thresholds, PR-AUC) and Optuna tuning. Clean scikit-learn code, experiment tracking, and mini deployment demo. Certification, interview prep sprints, resume/portfolio review &amp; referral support. Lifetime access to recordings and ongoing updates.</p>
+      </details>
+      
+    </div>
+  </div>
+</section>
+
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <h2 class="cta-title">Ready to start?</h2>
+      <p class="cta-sub">Talk to an advisor about this program — 15 minutes, no sales pitch.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="../../register/index.html?course=machine-learning-course" class="btn btn-light btn-lg">Book a career call</a>
+      <a href="https://wa.me/918708752385" class="btn btn-outline-light btn-lg">Chat on WhatsApp</a>
+      <p class="cta-phone">+91 87087 52385</p>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="../../index.html" class="brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c0 .34-.04.67-.12.98A4 4 0 0 1 19 14.5c0 .17-.01.33-.03.5A3.5 3.5 0 0 1 17.5 21h-11A3.5 3.5 0 0 1 5.03 15c-.02-.17-.03-.33-.03-.5a4 4 0 0 1 3.12-7.52A4.01 4.01 0 0 1 8 6a4 4 0 0 1 4-4z"/><path d="M12 8v13"/><path d="M9 12h6"/></svg>
+          </span>
+          <span class="brand-text">AI Career<em>.academy</em></span>
+        </a>
+        <p>An engineering-first AI institution helping learners, professionals and teams build real capability in Generative AI, Agentic Systems and Machine Learning.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <a href="../../index.html#paths">Career paths</a>
+        <a href="../../courses/index.html">All programs</a>
+        <a href="../../comparisons/index.html">Comparisons</a>
+        <a href="../../roadmaps/data-science-roadmap/index.html">Roadmaps</a>
+        <a href="../../blogs/index.html">Blogs</a>
+        <a href="../../register/index.html">Register</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="../../about-us/index.html">About us</a>
+        <a href="../../mentors/index.html">Mentors</a>
+        <a href="../../hire-from-us/index.html">Hire from us</a>
+        <a href="../../enterprise-ai-upskilling/index.html">For teams</a>
+        <a href="../../contact-us/index.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="../../privacy-policy/index.html">Privacy policy</a>
+        <a href="../../terms-and-conditions/index.html">Terms of service</a>
+        <a href="../../refund-policy/index.html">Refund policy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <a href="mailto:hello@aicareer.academy">hello@aicareer.academy</a>
+        <a href="tel:+918708752385">+91 87087 52385</a>
+        <p class="footer-addr">Sector 44, Gurugram,<br />Haryana 122003</p>
+        <p class="footer-hours">Mon–Sat, 10am–7pm IST</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> AI Career Academy. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="../../privacy-policy/index.html">Privacy policy</a>
+        <a href="../../terms-and-conditions/index.html">Terms of service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/nav.js" defer></script>
+  
+</body>
+</html>
