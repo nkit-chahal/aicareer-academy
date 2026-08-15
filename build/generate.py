@@ -72,7 +72,7 @@ def _initials(name: str) -> str:
 
 MENTORS = [
     {"name": "Ankit", "role": "Lead AI Engineer", "tags": ["Generative AI", "Agentic AI", "LLM", "VLM", "AIOPS"], "focus": "Supports learners across analytics, structured problem-solving, and applied ML foundations."},
-    {"name": "Prerna", "role": "Data Scientist", "tags": ["Machine Learning", "Computer Vision", "NLP", "GenAI", "Agentic AI"], "focus": "Guides project work and practical implementation across core AI workflows."},
+    {"name": "Prerna", "role": "Sales Head", "tags": ["Career calls", "Program fit", "Enrolment"], "focus": "First desk for a 15-minute call — which sequence fits, or that none does yet."},
     {"name": "Praveen", "role": "Applied AI Engineer", "tags": ["Generative AI", "Deep Learning", "Python", "ML Systems", "Agentic AI"], "focus": "Helps learners connect modern AI concepts with real engineering execution."},
     {"name": "Aayush", "role": "Senior AI Engineer", "tags": ["Machine Learning", "Computer Vision", "LLMOPS", "AIOPS", "GenAI"], "focus": "Focuses on helping learners build strong model-building intuition and debugging skills."},
     {"name": "Rahul Bhardwaj", "role": "ML Engineer", "tags": ["MLOps", "Data Engineering", "Python", "Cloud"], "focus": "Brings production ML deployment experience to mentor data pipeline and serving projects."},
@@ -280,6 +280,12 @@ def setup_assets():
                 shutil.copy(img, people_dst / img.name)
     src_img = BUILD / "assets"
     cursor_assets = Path(r"C:\Users\Pc\.cursor\projects\d-personal-app\assets")
+    src_img.mkdir(parents=True, exist_ok=True)
+    for extra in ("og-search.png", "logo-aca.png", "og-programs.png", "og-gurugram.png"):
+        if (cursor_assets / extra).exists():
+            shutil.copy(cursor_assets / extra, src_img / extra)
+    if (src_img / "og-search.png").exists():
+        shutil.copy(src_img / "og-search.png", src_img / "og.png")
     for name in (
         "og.png",
         "home-figure.png",
@@ -297,6 +303,10 @@ def setup_assets():
         "offer-curriculum.png",
         "offer-projects.png",
         "offer-career.png",
+        "logo-aca.png",
+        "og-programs.png",
+        "og-gurugram.png",
+        "og-search.png",
     ):
         src = src_img / name
         if not src.exists() and (cursor_assets / name).exists():
@@ -309,8 +319,7 @@ def setup_assets():
             shutil.copy(src, img_dir / name)
             if name == "og.png":
                 shutil.copy(src, assets / "og.png")
-                if not (BUILD / "og.png").exists():
-                    shutil.copy(src, BUILD / "og.png")
+                shutil.copy(src, BUILD / "og.png")
     write_employer_stamps(img_dir / "stamps")
     for verify in src_img.glob("google*.html"):
         shutil.copy(verify, SITE / verify.name)
@@ -359,12 +368,15 @@ def generate():
         page_title = format_seo_title(data.get("title", ""), page)
         description = meta_description(data, page)
         canon = canonical_url(page)
+        og_image = f"{SITE_ORIGIN}/assets/og.png"
+        if page.get("id") == "ncr":
+            og_image = f"{SITE_ORIGIN}/assets/img/og-gurugram.png"
         ctx = {
             "page_title": page_title,
             "meta_description": description,
             "canonical_url": canon,
             "og_type": og_type(page),
-            "og_image": f"{SITE_ORIGIN}/assets/og.png",
+            "og_image": og_image,
             "noindex": is_noindex(page),
             "json_ld": json_ld(page, data, fees),
             "base": base,

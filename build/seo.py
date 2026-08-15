@@ -39,6 +39,16 @@ SEO_OVERRIDES = {
         "title": f"Contact {BRAND}",
         "description": f"Reach {CONTACT_NAME} at {BRAND}: {PHONE_DISPLAY}, {EMAIL}, or WhatsApp. Office: 68 Avenue, Badshahpur, Sector 68, Gurugram, Haryana 122101. Mon–Sat, 10am–7pm IST.",
     },
+    "ncr": {
+        "title": f"AI courses in Delhi NCR (live online) — {BRAND}, Gurugram",
+        "description": (
+            f"Live online AI, data, Java, DevOps, and frontend programs for Delhi NCR. "
+            f"Desk at 68 Avenue, Sector 68, Gurugram. Same published fees as the catalog. "
+            f"Talk to {CONTACT_NAME} on {PHONE_DISPLAY}."
+        ),
+        "hero_title": "AI courses in Delhi NCR — live online",
+        "hero_sub": "The classroom is a screen. The desk is in Gurugram. Learners across Delhi, Gurugram, Noida, Faridabad, and Ghaziabad join the same live cohort.",
+    },
     "enterprise": {
         "title": f"Enterprise AI upskilling — {BRAND}",
         "description": f"Role-based GenAI, LLM, agentic AI, and MLOps upskilling for teams. Talk to {BRAND} about cohort format and scope.",
@@ -67,7 +77,7 @@ SEO_OVERRIDES = {
     },
     "mentors": {
         "title": f"Mentors — {BRAND}",
-        "description": f"Practitioner mentors at {BRAND}: Ankit, Prerna, Praveen, Aayush, Rahul Bhardwaj, Vaibhav Sharma, and Deepak Rohilla (senior frontend engineer).",
+        "description": f"Practitioner mentors at {BRAND}: Ankit, Praveen, Aayush, Rahul Bhardwaj, Vaibhav Sharma, and Deepak Rohilla (senior frontend engineer). Sales Head: Prerna.",
     },
     "blogs": {
         "title": f"Blog — {BRAND}",
@@ -174,6 +184,79 @@ ABOUT_SECTIONS = [
         "content": f"Book a career call with {CONTACT_NAME}, WhatsApp {PHONE_DISPLAY}, or write {EMAIL}. If the sequence does not fit, we will say so.",
     },
 ]
+
+NCR_PAGE = {
+    "sections": [
+        {
+            "heading": "Where you actually sit",
+            "content": (
+                f"{BRAND} is based at 68 Avenue, Badshahpur, Sector 68, Gurugram, Haryana 122101. "
+                "That is the studio desk — for career calls with Prerna and for anyone who needs to visit. "
+                "Batches are live online. You do not have to move to Gurugram, and we do not run a separate classroom in Connaught Place, Noida Sector 18, or Dwarka."
+            ),
+        },
+        {
+            "heading": "Who this page is for",
+            "content": (
+                "Working professionals and graduates in Delhi, Gurugram, Noida, Greater Noida, Faridabad, and Ghaziabad who want a published sequence — Data Analytics, Data Science, GenAI, MLOps, LLMOps, Java, DevOps, or Frontend — without a mystery PDF after they pay. "
+                "Evening and weekend-shaped batches are listed on the program pages; confirm the current slot on the call."
+            ),
+        },
+        {
+            "heading": "What NCR hiring actually looks like here",
+            "content": (
+                "Product firms, IT services, banks, and captives across NCR hire analysts, developers, and ops engineers. "
+                "That is a labour-market fact, not a list of companies that hired our alumni, and not a placement percentage. "
+                "We map your background to one catalog program, or we say none fits yet."
+            ),
+        },
+        {
+            "heading": "Fees",
+            "content": (
+                "The number on each program page is the number. Placement support, a course certificate, and internship opportunities are included. "
+                "We do not publish a fake “Delhi NCR average CTC” table."
+            ),
+        },
+        {
+            "heading": "Next step",
+            "content": (
+                f"Open a program below, or WhatsApp {CONTACT_NAME} on {PHONE_DISPLAY} for a 15-minute career call. "
+                "Mon–Sat, 10am–7pm IST."
+            ),
+        },
+    ],
+    "faqs": [
+        {
+            "question": "Is this a classroom course in Delhi?",
+            "answer": "No. Cohorts are live online. The Gurugram Sector 68 address is the office, not a daily classroom you must attend.",
+        },
+        {
+            "question": "I live in Noida or Faridabad. Can I join?",
+            "answer": "Yes. You join the same live online cohort as learners anywhere else. If you need to visit the desk, it is in Gurugram Sector 68.",
+        },
+        {
+            "question": "Which programs can Delhi NCR learners take?",
+            "answer": "All nine published programs: Data Analytics with AI, Data Science Gen AI, Gen AI for Developers, Gen AI Specialization, MLOps, LLMOps, Java, DevOps, and Frontend. Fees and modules are on each program page.",
+        },
+        {
+            "question": "Do you guarantee a job in Gurgaon or Noida?",
+            "answer": "No. We offer placement support, a certificate, and internship opportunities. We do not invent a placement rate.",
+        },
+    ],
+    "page_links": [
+        {"href": "courses/data-analytics-course-with-placement/index.html", "title": "Data Analytics with AI"},
+        {"href": "courses/data-science-course/index.html", "title": "Data Science Gen AI"},
+        {"href": "courses/ai-developers-course/index.html", "title": "Gen AI for Developers"},
+        {"href": "courses/generative-ai-course/index.html", "title": "Gen AI Specialization"},
+        {"href": "courses/mlops-course/index.html", "title": "MLOps"},
+        {"href": "courses/llmops-course/index.html", "title": "LLMOps"},
+        {"href": "courses/java-course/index.html", "title": "Java"},
+        {"href": "courses/devops-course/index.html", "title": "DevOps"},
+        {"href": "courses/frontend-course/index.html", "title": "Frontend"},
+        {"href": "contact-us/index.html", "title": "Gurugram desk + map"},
+        {"href": "register/index.html", "title": "Book a career call"},
+    ],
+}
 
 
 def city_body(city: str) -> dict:
@@ -330,6 +413,13 @@ def apply_overrides(page: dict, data: dict) -> dict:
         data["faqs"] = []
         data["lists"] = []
         data["images"] = []
+    if page["id"] == "ncr":
+        data["sections"] = NCR_PAGE["sections"]
+        data["faqs"] = NCR_PAGE["faqs"]
+        data["page_links"] = NCR_PAGE["page_links"]
+        data["raw_html"] = ""
+        data["lists"] = []
+        data["images"] = []
     if str(page["id"]).startswith("city-"):
         city = {
             "city-delhi": "Delhi NCR",
@@ -341,6 +431,13 @@ def apply_overrides(page: dict, data: dict) -> dict:
         data.update(body)
         data["raw_html"] = ""
         data["images"] = []
+        if page["id"] == "city-delhi":
+            data["page_links"] = [
+                {
+                    "href": "ai-courses-in-delhi-ncr/index.html",
+                    "title": "AI courses in Delhi NCR (live online) — the indexed page",
+                }
+            ]
     if page["id"] in ROADMAP_BODIES:
         data.update(ROADMAP_BODIES[page["id"]])
         data["raw_html"] = ""
@@ -480,6 +577,13 @@ def json_ld(page: dict, data: dict, fees=None) -> list:
         "url": SITE_ORIGIN + "/",
         "email": EMAIL,
         "telephone": PHONE_E164,
+        "logo": f"{SITE_ORIGIN}/assets/img/logo-aca.png",
+        "image": [
+            f"{SITE_ORIGIN}/assets/og.png",
+            f"{SITE_ORIGIN}/assets/img/logo-aca.png",
+            f"{SITE_ORIGIN}/assets/img/og-programs.png",
+            f"{SITE_ORIGIN}/assets/img/og-gurugram.png",
+        ],
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "68 Avenue, Badshahpur, Sector 68",
@@ -523,8 +627,24 @@ def json_ld(page: dict, data: dict, fees=None) -> list:
             offer["url"] = canonical_url(page)
             course["offers"] = offer
         graph.append(course)
+    if page.get("id") == "ncr":
+        graph.append(
+            {
+                "@type": "WebPage",
+                "name": data.get("hero_title") or "AI courses in Delhi NCR",
+                "url": canonical_url(page),
+                "about": {"@id": ORG_ID},
+                "areaServed": [
+                    {"@type": "City", "name": "Gurugram"},
+                    {"@type": "City", "name": "New Delhi"},
+                    {"@type": "City", "name": "Noida"},
+                    {"@type": "City", "name": "Faridabad"},
+                    {"@type": "City", "name": "Ghaziabad"},
+                ],
+            }
+        )
     faqs = data.get("faqs") or []
-    if faqs and page.get("type") in ("program", "comparison", "blog"):
+    if faqs and (page.get("type") in ("program", "comparison", "blog") or page.get("id") == "ncr"):
         graph.append(
             {
                 "@type": "FAQPage",

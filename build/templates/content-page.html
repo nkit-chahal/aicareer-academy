@@ -26,6 +26,30 @@
   </div>
 </section>
 
+{% if page_id == 'ncr' %}
+<section class="contact-split" aria-label="Gurugram studio for Delhi NCR">
+  <div class="box">
+    <h2>Desk in Gurugram</h2>
+    <p>68 Avenue, Badshahpur, Sector 68, Gurugram, Haryana 122101</p>
+    <p>{{ contact_name }} (Sales Head): <a href="tel:{{ phone_e164 }}">{{ phone_display }}</a></p>
+    <p>Live online cohorts for Delhi, Gurugram, Noida, Faridabad, Ghaziabad.</p>
+    <a class="btn-yellow" href="{{ wa_url }}">WhatsApp {{ contact_name }}</a>
+  </div>
+  <div class="box" style="padding:0;overflow:hidden;background:#fff;">
+    <iframe title="Map of AI Career Academy, Gurugram" src="https://maps.google.com/maps?q=28.385278,77.051389&ll=28.385278,77.051389&z=16&hl=en&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+<p class="center-copy"><img src="{{ base }}assets/img/og-gurugram.png" alt="AI Career Academy live online desk in Gurugram, Delhi NCR" width="1200" height="900" style="max-width:min(720px,100%);height:auto;border:3px solid #111;border-radius:12px;" /></p>
+{% endif %}
+
+{% if page_id == 'about-us' %}
+<section class="band search-art" aria-label="Studio graphics">
+  <img src="{{ base }}assets/img/logo-aca.png" alt="AI Career Academy logo, ACA mark" width="800" height="800" />
+  <img src="{{ base }}assets/img/og-programs.png" alt="AI Career Academy nine live online programs" width="1200" height="675" />
+  <img src="{{ base }}assets/img/og-gurugram.png" alt="AI Career Academy live online desk in Gurugram" width="1200" height="900" />
+</section>
+{% endif %}
+
 {% if page_id == 'contact-us' %}
 <section class="contact-split" aria-label="Studio address">
   <div class="box">

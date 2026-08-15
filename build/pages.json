@@ -5,6 +5,7 @@
     {"id": "courses", "source": "/courses", "output": "courses/index.html", "type": "courses-list", "nav": "courses"},
     {"id": "hire-from-us", "source": "/hire-from-us", "output": "hire-from-us/index.html", "type": "content", "nav": "hire"},
     {"id": "contact-us", "source": "/contact-us", "output": "contact-us/index.html", "type": "content", "nav": "contact"},
+    {"id": "ncr", "source": "/ai-courses-in-delhi-ncr", "output": "ai-courses-in-delhi-ncr/index.html", "type": "content", "nav": "contact"},
     {"id": "about-us", "source": "/about-us", "output": "about-us/index.html", "type": "content", "nav": "about"},
     {"id": "enterprise", "source": "/enterprise-ai-upskilling", "output": "enterprise-ai-upskilling/index.html", "type": "content", "nav": "enterprise"},
     {"id": "privacy", "source": "/privacy-policy", "output": "privacy-policy/index.html", "type": "content", "nav": "legal"},
