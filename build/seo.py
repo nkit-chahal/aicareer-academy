@@ -7,6 +7,8 @@ import re
 from datetime import date
 from pathlib import Path
 
+from program_copy import PROGRAM_COPY
+
 SITE_ORIGIN = os.environ.get("SITE_ORIGIN", "https://aicareer.academy").rstrip("/")
 BRAND = "AI Career Academy"
 PHONE_DISPLAY = "+91 87087 52385"
@@ -17,23 +19,23 @@ ORG_ID = f"{SITE_ORIGIN}/#org"
 SEO_OVERRIDES = {
     "home": {
         "title": f"{BRAND} — The job is the syllabus",
-        "description": f"The market does not care about your certificate. Live cohorts in Gurugram mapped to a job — Analyst, Data Science, GenAI, MLOps, Agentic. Published fees. No invented placement %. Book a 15-minute career call.",
+        "description": f"Live online cohorts mapped to a job — Analyst, Data Science, GenAI, MLOps, LLMOps, Java, DevOps, Frontend. Placement support, certification, and internships. Nine published programs. Book a 15-minute career call.",
     },
     "courses": {
         "title": f"AI and data programs — {BRAND}",
-        "description": "Live instructor-led programs in data analytics, data science, machine learning, GenAI, MLOps, and agentic AI. Curriculum, fees, and career-call booking.",
+        "description": "Nine live programs: Data Analytics with AI, Data Science Gen AI, Gen AI for Developers, Gen AI Specialization, MLOps, LLMOps, Java, DevOps, and Frontend. Placement support, certification, internships. Curriculum, fees, and career-call booking.",
     },
     "about-us": {
         "title": f"About {BRAND}",
-        "description": f"{BRAND} is an engineering-first studio in Gurugram that maps AI careers to a learning sequence — live cohorts, projects, and practitioner mentors.",
+        "description": f"{BRAND} is an engineering-first studio that maps AI careers to a learning sequence — live online cohorts, projects, and practitioner mentors.",
     },
     "hire-from-us": {
         "title": f"Hire from {BRAND}",
-        "description": f"Talk to {BRAND} about hiring learners trained on RAG, MLOps, and agentic workflows. Portfolios and practitioner-led projects — not a placement guarantee.",
+        "description": f"Talk to {BRAND} about hiring learners trained on RAG, MLOps, and agentic workflows. Portfolios, practitioner-led projects, and internship pipelines.",
     },
     "contact-us": {
         "title": f"Contact {BRAND}",
-        "description": f"Reach {BRAND} in Gurugram: {PHONE_DISPLAY}, {EMAIL}, or WhatsApp. Mon–Sat, 10am–7pm IST.",
+        "description": f"Reach {BRAND}: {PHONE_DISPLAY}, {EMAIL}, or WhatsApp. Office: 68 Avenue, Badshahpur, Sector 68, Gurugram, Haryana 122101. Mon–Sat, 10am–7pm IST.",
     },
     "enterprise": {
         "title": f"Enterprise AI upskilling — {BRAND}",
@@ -63,17 +65,13 @@ SEO_OVERRIDES = {
     },
     "mentors": {
         "title": f"Mentors — {BRAND}",
-        "description": f"Practitioner mentors at {BRAND}: Ankit, Prerna, Praveen, Aayush, Rahul Bhardwaj, and Vaibhav Sharma.",
+        "description": f"Practitioner mentors at {BRAND}: Ankit, Prerna, Praveen, Aayush, Rahul Bhardwaj, Vaibhav Sharma, and Deepak Rohilla (senior frontend engineer).",
     },
     "blogs": {
         "title": f"Blog — {BRAND}",
         "description": f"Short notes on AI career sequences, tools, and role maps from {BRAND}.",
         "hero_title": "Notes on AI careers",
         "hero_sub": "Role maps and tool stacks — written to help you choose a sequence, not to rank for ‘best institute’.",
-    },
-    "prog-data-science": {
-        "title": f"Data Science course — {BRAND}",
-        "description": "Live data science program: Python, SQL, statistics, ML, projects, and interview prep. See curriculum and fees on this page.",
     },
 }
 
@@ -118,6 +116,128 @@ LEGAL_SECTIONS = {
             "content": f"Write to {EMAIL} or call {PHONE_DISPLAY} before you pay if anything on a program page is unclear.",
         },
     ],
+    "terms": [
+        {
+            "heading": "Using this site",
+            "content": f"This website is a catalog for {BRAND}. Published fees, durations, and curricula are the offer. Marketing pages do not create a placement guarantee.",
+        },
+        {
+            "heading": "Enrollment",
+            "content": "A seat is confirmed after we accept your enquiry and you pay the published fee (or the installment plan we write down). We may refuse a batch if the sequence does not fit your background — that is the point of the career call.",
+        },
+        {
+            "heading": "Live online format",
+            "content": "Cohorts are live online. The Gurugram address is the studio office, not a classroom you must attend.",
+        },
+        {
+            "heading": "Conduct",
+            "content": "Do not share session recordings, assignments, or other learners’ work outside the cohort without permission.",
+        },
+        {
+            "heading": "Contact",
+            "content": f"{EMAIL} · {PHONE_DISPLAY} · 68 Avenue, Badshahpur, Sector 68, Gurugram, Haryana 122101.",
+        },
+    ],
+    "enterprise": [
+        {
+            "heading": "What we will scope",
+            "content": "Role-based live cohorts for teams: GenAI for developers, RAG/eval habits, MLOps, or LLMOps. We start from the job your people already do — not a generic tool dump.",
+        },
+        {
+            "heading": "What we will not claim",
+            "content": "We do not sell a placement percentage for your employees, and we do not put your logo on this site unless you ask in writing.",
+        },
+        {
+            "heading": "Talk to the desk",
+            "content": f"WhatsApp or email {EMAIL} with team size, stack, and the role you want people to grow into.",
+        },
+    ],
+}
+
+ABOUT_SECTIONS = [
+    {
+        "heading": "What this studio is",
+        "content": f"{BRAND} maps a job to a live online sequence. Nine published programs, practitioner mentors, and a 15-minute career call before you pay. The office is in Gurugram; the classroom is a screen.",
+    },
+    {
+        "heading": "How we work",
+        "content": "Curriculum and fees sit on each program page. Every live program includes placement support, a course certificate, and internship opportunities — not an invented pass rate.",
+    },
+    {
+        "heading": "What we will not do",
+        "content": "We will not paste another institute’s recruiter wall as ours. We will not invent Indian salary tables. We will not call a recorded dump a live cohort.",
+    },
+    {
+        "heading": "Talk to us",
+        "content": f"Book a career call, WhatsApp {PHONE_DISPLAY}, or write {EMAIL}. If the sequence does not fit, we will say so.",
+    },
+]
+
+
+def city_body(city: str) -> dict:
+    return {
+        "title": f"Data Science course for {city} learners — live online — {BRAND}",
+        "description": (
+            f"Live online Data Science Gen AI for people in {city}. Same published curriculum and fee as the national program. "
+            "Placement support, certificate, internships — not a local hiring-partner claim."
+        ),
+        "hero_title": f"Data Science for {city} — live online",
+        "hero_sub": (
+            f"You join the same live online cohort as everyone else. Gurugram is the studio address, not a {city} classroom. "
+            f"This page is here so searchers in {city} can find the catalog."
+        ),
+        "sections": [
+            {
+                "heading": "Same program, your city in the search box",
+                "content": (
+                    f"The Data Science Gen AI sequence is Python, SQL, statistics, machine learning, and a first RAG. "
+                    f"Learners in {city} attend live online. We do not run a separate {city} campus batch."
+                ),
+            },
+            {
+                "heading": "Fees and support",
+                "content": "The fee on the program page is the fee. Placement support, a certificate, and internship opportunities are included — without a made-up percentage or a named hiring-partner list.",
+            },
+            {
+                "heading": "Next step",
+                "content": "Open the Data Science program, or book a 15-minute career call if you are unsure this is the role.",
+            },
+        ],
+        "faqs": [
+            {
+                "question": f"Do I have to move to Gurugram from {city}?",
+                "answer": "No. Cohorts are live online. The Sector 68 address is the office.",
+            },
+            {
+                "question": "Is this a different syllabus for each city?",
+                "answer": "No. City pages point at the same Data Science Gen AI catalog.",
+            },
+        ],
+        "lists": [],
+    }
+
+
+ROADMAP_BODIES = {
+    "roadmap-ds": {
+        "hero_title": "Data science roadmap",
+        "hero_sub": "Excel/SQL → Python → ML → a first RAG. Matches the Data Science Gen AI program — not a placement promise.",
+    },
+    "roadmap-ai-dev": {
+        "hero_title": "AI developer roadmap",
+        "hero_sub": "Software engineering plus LLM APIs, RAG, and a deployed service. Matches Gen AI for Developers.",
+    },
+    "roadmap-ai-eng": {
+        "hero_title": "AI engineer roadmap",
+        "hero_sub": "Build, evaluate, and ship model-backed features. Deeper than a prompt-only track.",
+    },
+    "roadmap-ml-eng": {
+        "hero_title": "ML engineer roadmap",
+        "hero_sub": "Train, version, and serve models. Neighbours the MLOps program, not a dashboard course.",
+    },
+    "roadmap-genai": {
+        "hero_title": "Generative AI roadmap",
+        "hero_sub": "Transformers, RAG, adapters, serving. Matches Gen AI Specialization.",
+    },
 }
 
 
@@ -161,6 +281,7 @@ def sanitize_text(value: str) -> str:
         s,
         flags=re.I,
     )
+    s = re.sub(r"hiring partners?", "typical employers of these roles", s, flags=re.I)
     return s
 
 
@@ -176,13 +297,61 @@ def sanitize_tree(obj):
 
 def apply_overrides(page: dict, data: dict) -> dict:
     data = dict(data)
-    extra = SEO_OVERRIDES.get(page["id"], {})
+    extra = dict(SEO_OVERRIDES.get(page["id"], {}))
+    extra.update(PROGRAM_COPY.get(page["id"], {}))
     for key in ("title", "description", "hero_title", "hero_sub"):
         if key in extra:
             data[key] = extra[key]
+    if page["id"] in PROGRAM_COPY:
+        copy = PROGRAM_COPY[page["id"]]
+        data["sections"] = copy["sections"]
+        data["raw_html"] = ""
+        data["skip_extracted_salaries"] = True
+        data["faqs"] = copy.get("faqs") or []
+        data["lists"] = []
+        data["related"] = copy.get("related") or []
     if page["id"] in LEGAL_SECTIONS:
         data["sections"] = LEGAL_SECTIONS[page["id"]]
         data["raw_html"] = ""
+        data["faqs"] = []
+        data["lists"] = []
+    if page["id"] == "about-us":
+        data["hero_title"] = f"About {BRAND}"
+        data["hero_sub"] = "An engineering-first studio. Live online cohorts. A desk in Gurugram."
+        data["sections"] = ABOUT_SECTIONS
+        data["raw_html"] = ""
+        data["faqs"] = []
+        data["lists"] = []
+        data["images"] = []
+    if str(page["id"]).startswith("city-"):
+        city = {
+            "city-delhi": "Delhi NCR",
+            "city-bangalore": "Bengaluru",
+            "city-hyderabad": "Hyderabad",
+            "city-pune": "Pune",
+        }.get(page["id"], "your city")
+        body = city_body(city)
+        data.update(body)
+        data["raw_html"] = ""
+        data["images"] = []
+    if page["id"] in ROADMAP_BODIES:
+        data.update(ROADMAP_BODIES[page["id"]])
+        data["raw_html"] = ""
+        if not data.get("sections"):
+            data["sections"] = [
+                {
+                    "heading": "How to use this page",
+                    "content": "The tree below is a sequence, not a job offer. Pick the matching live program if the role is the one you want.",
+                }
+            ]
+    if page.get("type") == "comparison":
+        data["raw_html"] = ""
+        intro = {
+            "heading": "How to read this",
+            "content": "Role and tool comparisons for choosing a sequence. Not salary tables, not a ranking of institutes, not a claim about who hires our alumni.",
+        }
+        existing = [s for s in (data.get("sections") or []) if s.get("heading") != intro["heading"]]
+        data["sections"] = [intro] + existing
     if page["id"] == "blogs":
         data["page_links"] = [
             {
@@ -194,22 +363,31 @@ def apply_overrides(page: dict, data: dict) -> dict:
                 "title": "Data science tools shaping 2026",
             },
         ]
-    if page["id"] == "about-us":
-        sections = []
-        for section in data.get("sections") or []:
-            item = dict(section)
-            if item.get("heading") == "Numbers that reflect real outcomes":
-                item["heading"] = "How we work"
-                item["content"] = (
-                    "We publish program curriculum and fees on each course page. "
-                    "We do not list student counts or placement percentages we cannot show."
-                )
-            sections.append(item)
-        data["sections"] = sections
+        data["raw_html"] = ""
+    if page["id"] == "comparisons":
+        data["hero_title"] = "Comparisons"
+        data["hero_sub"] = "Pick a role or tool pair. These pages help you choose a sequence — not an institute ranking."
+        data["raw_html"] = ""
+        data["page_links"] = [
+            {"href": "comparisons/ai-developer-vs-data-scientist/index.html", "title": "AI Developer vs Data Scientist"},
+            {"href": "comparisons/ai-developer-vs-ai-engineer/index.html", "title": "AI Developer vs AI Engineer"},
+            {"href": "comparisons/ai-engineer-vs-ml-engineer/index.html", "title": "AI Engineer vs ML Engineer"},
+            {"href": "comparisons/genai-vs-ai-developer-vs-agentic-ai/index.html", "title": "GenAI vs AI Developer vs Agentic AI"},
+            {"href": "comparisons/mlops-vs-llmops-vs-aiops/index.html", "title": "MLOps vs LLMOps vs AIOps"},
+            {"href": "comparisons/prompt-engineer-vs-ai-developer/index.html", "title": "Prompt Engineer vs AI Developer"},
+            {"href": "comparisons/mlops-engineer-vs-ml-engineer/index.html", "title": "MLOps Engineer vs ML Engineer"},
+            {"href": "comparisons/rag-vs-fine-tuning/index.html", "title": "RAG vs Fine-Tuning"},
+            {"href": "comparisons/rag-vs-agentic-rag/index.html", "title": "RAG vs Agentic RAG"},
+            {"href": "comparisons/langchain-vs-langgraph/index.html", "title": "LangChain vs LangGraph"},
+            {"href": "comparisons/crewai-vs-autogen-vs-langgraph/index.html", "title": "CrewAI vs AutoGen vs LangGraph"},
+            {"href": "comparisons/mcp-vs-acp/index.html", "title": "MCP vs ACP"},
+        ]
     return data
 
 
 def _format_title(raw: str, page: dict) -> str:
+    if page.get("id") in PROGRAM_COPY and PROGRAM_COPY[page["id"]].get("title"):
+        return PROGRAM_COPY[page["id"]]["title"]
     if page.get("id") in SEO_OVERRIDES and SEO_OVERRIDES[page["id"]].get("title"):
         return SEO_OVERRIDES[page["id"]]["title"]
     if page.get("type") == "home":
@@ -230,7 +408,7 @@ def meta_description(data: dict, page: dict) -> str:
     desc = sanitize_text(desc)
     if not desc or desc.startswith("An engineering-first AI institution"):
         title = data.get("hero_title") or data.get("title") or BRAND
-        desc = f"{sanitize_text(str(title).split('|')[0].strip())}. Live programs and career sequences from {BRAND}, Gurugram."
+        desc = f"{sanitize_text(str(title).split('|')[0].strip())}. Live online programs and career sequences from {BRAND}."
     return desc[:300]
 
 

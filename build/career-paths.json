@@ -35,8 +35,8 @@
       "hub": true,
       "tags": ["Python", "ML", "PyTorch"],
       "roadmap": "roadmaps/ml-engineer-roadmap/index.html",
-      "course": "machine-learning-course",
-      "course_label": "Machine Learning Specialization",
+      "course": "mlops-course",
+      "course_label": "MLOps",
       "steps": [
         { "n": "01", "title": "Python engineering", "body": "Packages, tests, typing. Treat model code like product code." },
         { "n": "02", "title": "Classical ML depth", "body": "Feature pipelines, training loops, evaluation you can defend in review." },
@@ -55,8 +55,8 @@
       "hub": true,
       "tags": ["LLMs", "RAG", "LangChain"],
       "roadmap": "roadmaps/generative-ai-roadmap/index.html",
-      "course": "large-language-model-course",
-      "course_label": "LLM Mastery",
+      "course": "llmops-course",
+      "course_label": "LLMOps",
       "steps": [
         { "n": "01", "title": "Python + APIs", "body": "Call models cleanly. Handle tokens, retries, and cost." },
         { "n": "02", "title": "Embeddings & retrieval", "body": "Chunking, vector search, why RAG fails in production." },
@@ -115,8 +115,8 @@
       "hub": false,
       "tags": ["Agents", "Tools", "LangGraph"],
       "roadmap": "roadmaps/ai-engineer-roadmap/index.html",
-      "course": "agentic-ai-course",
-      "course_label": "Agentic AI",
+      "course": "ai-developers-course",
+      "course_label": "Gen AI for Developers",
       "steps": [
         { "n": "01", "title": "Python + LLM apps", "body": "Solid API usage and structured outputs before you add loops." },
         { "n": "02", "title": "Tool use", "body": "Functions, APIs, files. An agent without tools is a chatbot with extra steps." },

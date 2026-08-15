@@ -1,205 +1,401 @@
 {% extends "base.html" %}
-{% block ticker %}
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    <span>AI Career Academy · Gurugram</span>
-    <span>No invented placement %</span>
-    <span>Live cohorts — not a course dump</span>
-    <span>Book a 15-minute career call</span>
-    <span>+91 87087 52385</span>
-    <span>The job is the syllabus</span>
-    <span>AI Career Academy · Gurugram</span>
-    <span>No invented placement %</span>
-    <span>Live cohorts — not a course dump</span>
-    <span>Book a 15-minute career call</span>
-    <span>+91 87087 52385</span>
-    <span>The job is the syllabus</span>
-  </div>
-</div>
-{% endblock %}
+{% from "macros.html" import scratch, employer_marquee %}
 {% block content %}
-<section class="hero" aria-labelledby="hero-title">
-  <div class="hero-stamp">Not a catalog<br />Not a miracle<br />A sequence</div>
-  <h1 id="hero-title">
-    The market<br />
-    does not<br />
-    <span class="strike">care</span><br />
-    about your<br />
-    <span class="hl">certificate</span>
-  </h1>
-  <div class="hero-rail">
-    <div class="hero-copy">
-      <p>
-        It cares whether you can ship. AI Career Academy is a live, instructor-led map from a job title
-        to a learning sequence — Analyst, Data Science, GenAI, MLOps, Agentic. We will not quote a fake
-        placement rate. We will take a 15-minute call and tell you if a cohort is the right next move.
-      </p>
-    </div>
-    <div class="hero-act">
-      <a class="cta" href="{{ base }}register/index.html">Book a career call</a>
-      <a class="ghost" href="{{ base }}courses/index.html">See published programs</a>
-    </div>
+<section class="playfield" id="top">
+  <canvas id="gridCanvas" aria-hidden="true"></canvas>
+  <div class="play-copy">
+    <p class="live-pill">{{ programs|length }} live programs · online</p>
+    <p class="mix"><em>The job</em> is the<br />syllabus — not the <em>certificate</em></p>
+    <p class="mix mix-2 ringed">Live <em>online</em><br />cohorts</p>
   </div>
 </section>
 
-<section class="demand" id="demand" aria-labelledby="demand-title">
-  <div class="demand-head">
-    <p class="kicker">Fig. 01 · U.S. BLS employment projections 2024–34</p>
-    <h2 id="demand-title">Demand, drawn as a building</h2>
-    <p>
-      Heights are official U.S. percent-change forecasts — not Indian salary, not our alumni count, not a guarantee.
-      The yellow tape is 2026: you are already inside the window these numbers describe. Tap a slab.
-    </p>
-  </div>
+<section class="st-stats" aria-label="Studio facts — not a published pass rate">
+  <article><span class="dot d1"></span><strong>{{ programs|length }}</strong><span>Live programs</span></article>
+  <article><span class="dot d2"></span><strong>3–6</strong><span>Months on the catalog</span></article>
+  <article><span class="dot d3"></span><strong>9</strong><span>Role maps we teach toward</span></article>
+  <article><span class="dot d4"></span><strong>15</strong><span>Minutes for a career call</span></article>
+</section>
 
-  <div class="chart-stage" aria-label="Projected U.S. employment growth 2024 to 2034 as vertical slabs">
-    <div class="year-axis" aria-hidden="true">
-      <span>2034</span>
-      <span>2029</span>
-      <span>2026</span>
-      <span>2024</span>
+<section class="mat-wrap" id="offer">
+  <div class="paper-sheet">
+    <h2 class="h-scribble">What we offer</h2>
+    {{ scratch() }}
+    <div class="offer-five">
+      <article class="c1">
+        <h3>Live online classes</h3>
+        <div class="fig fig-live" aria-hidden="true"><span class="monitor"></span><span class="head"></span></div>
+        <p>Instructor-led sessions on a screen. Same published fee — batches are online as of now.</p>
+      </article>
+      <article class="c2">
+        <h3>WhatsApp desk</h3>
+        <div class="fig fig-wa" aria-hidden="true"><span class="bubble"></span></div>
+        <p>A 15-minute call. We say which sequence fits — or that none does yet.</p>
+      </article>
+      <article class="c3">
+        <h3>Published curriculum</h3>
+        <div class="fig fig-pack" aria-hidden="true"><span class="cup"></span><span class="note"></span></div>
+        <p>Modules on each program page. No mystery PDF after you pay.</p>
+      </article>
+      <article class="c4">
+        <h3>Projects &amp; mocks</h3>
+        <div class="fig fig-mock" aria-hidden="true"><span class="board"></span></div>
+        <p>Work you can defend. Interview practice when you are actually applying.</p>
+      </article>
+      <article class="c5">
+        <h3>Career support</h3>
+        <div class="fig fig-port" aria-hidden="true"><span class="book"></span></div>
+        <p>Placement support, a course certificate, and internship opportunities — not a placement percentage.</p>
+      </article>
     </div>
-    <div class="towers" role="listbox" aria-label="Occupations by projected growth" aria-activedescendant="tower-ds">
-      <button class="tower is-on" id="tower-ds" type="button" role="option" aria-selected="true" data-id="ds" style="--h: 86%">
-        <span class="tower-fill"></span>
-        <span class="tower-meta">
-          <span class="tower-pct">+33.5%</span>
-          <span class="tower-name">Data scientists</span>
-        </span>
-      </button>
-      <button class="tower" id="tower-sec" type="button" role="option" aria-selected="false" data-id="sec" style="--h: 73%">
-        <span class="tower-fill"></span>
-        <span class="tower-meta">
-          <span class="tower-pct">+28.5%</span>
-          <span class="tower-name">Info security analysts</span>
-        </span>
-      </button>
-      <button class="tower" id="tower-rs" type="button" role="option" aria-selected="false" data-id="rs" style="--h: 51%">
-        <span class="tower-fill"></span>
-        <span class="tower-meta">
-          <span class="tower-pct">+19.7%</span>
-          <span class="tower-name">Research scientists</span>
-        </span>
-      </button>
-      <button class="tower" id="tower-sw" type="button" role="option" aria-selected="false" data-id="sw" style="--h: 41%">
-        <span class="tower-fill"></span>
-        <span class="tower-meta">
-          <span class="tower-pct">+16%</span>
-          <span class="tower-name">Software developers</span>
-        </span>
-      </button>
-      <button class="tower" id="tower-all" type="button" role="option" aria-selected="false" data-id="all" style="--h: 8%">
-        <span class="tower-fill"></span>
-        <span class="tower-meta">
-          <span class="tower-pct">+3.1%</span>
-          <span class="tower-name">All occupations</span>
-        </span>
-      </button>
-    </div>
-    <div class="year-tape" aria-hidden="true">—— 2026 you are here ——</div>
+    <div class="mat-cta"><a class="btn-yellow" href="{{ base }}register/index.html">Apply now →</a></div>
   </div>
+</section>
 
+<section class="band" id="why">
+  <h2 class="h-scribble">Why this studio?</h2>
+  {{ scratch() }}
+  <div class="why-pills">
+    <span class="p-red">Published fees</span>
+    <span class="p-yel">Live, not a dump</span>
+    <span class="p-grn">Role-tied sequence</span>
+    <span class="p-blu">Live online</span>
+    <span class="p-red">Mentor review</span>
+    <span class="p-blu">Internship option</span>
+    <span class="p-yel">Career call first</span>
+    <span class="p-grn">No invented pass rate</span>
+  </div>
+</section>
+
+<section class="band" id="vs">
+  <h2 class="h-scribble">Theirs vs ours</h2>
+  {{ scratch() }}
+  <p class="center-copy">A comparison in type — not empty artwork, not a partner-logo wall, not someone else’s campus photos.</p>
+  <div class="vs-row">
+    <article class="vs-theirs">
+      <h3>Typical institutes</h3>
+      <ul>
+        <li>Recorded dumps sold as “live”</li>
+        <li>Fee appears after the sales call</li>
+        <li>A placement % with no method behind it</li>
+        <li>Logo strips that never hired you</li>
+      </ul>
+    </article>
+    <article class="vs-ours">
+      <h3>This studio</h3>
+      <ul>
+        <li>Live online cohorts — same published fee</li>
+        <li>The number is on the program page first</li>
+        <li>Placement support, certificate, internships — no invented %</li>
+        <li>Roles and sectors, not fake lockups</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="band" id="programs">
+  <h2 class="h-scribble">Course offerings</h2>
+  {{ scratch() }}
+  <p class="script-label">{{ programs|length }} live programs</p>
+  {% set colors = ['red', 'green', 'yellow', 'blue', 'orange', 'navy', 'teal', 'purple', 'rust'] %}
+  <div class="course-row">
+    {% for p in programs if p.section == 'featured' %}
+    <article class="course-card {{ colors[loop.index0] }}">
+      <h3>{{ p.title }}</h3>
+      <p class="sub">{{ p.duration }}{% if p.fee_label %} · {{ p.fee_label }}{% endif %}</p>
+      <ul>
+        {% for t in p.topics[:4] %}
+        <li>{{ t }}</li>
+        {% endfor %}
+      </ul>
+      <a class="btn-yellow" href="{{ base }}courses/{{ p.slug }}/index.html">Enrol now →</a>
+    </article>
+    {% endfor %}
+  </div>
+  <h3 class="h-scribble">Duration available</h3>
+  {{ scratch() }}
+  <p class="script-label">How batches usually sit — confirm on the call</p>
+  <div class="sched" role="table" aria-label="Sample batch shape">
+    <div class="h b">Batch</div>
+    <div class="h y">Span</div>
+    <div class="h g">Days</div>
+    <div class="h o">Mode</div>
+    <div class="green-t">Weekends</div>
+    <div class="green-t">3–6 months</div>
+    <div class="green-t">Sat–Sun</div>
+    <div class="green-t">Online</div>
+    <div class="blue-t">Weekdays</div>
+    <div class="blue-t">3–6 months</div>
+    <div class="blue-t">Eve blocks</div>
+    <div class="blue-t">Online</div>
+  </div>
+</section>
+
+<section class="band" id="hire-jobs">
+  <h2 class="h-scribble">Companies hire for these jobs</h2>
+  {{ scratch() }}
+  <p class="center-copy">Not a campus list. Not a partner-logo wall. These are the <strong>roles</strong> the catalog maps to, and the <strong>sectors</strong> that typically hire them. We do not claim those firms hired our alumni.</p>
+  <div class="hire-sectors">
+    <span>Product</span><span>IT services</span><span>BFSI</span><span>Ops / platform</span>
+  </div>
+  {{ employer_marquee(base) }}
+  <div class="role-grid">
+    <article><h3>Data analyst</h3><p>Excel, SQL, Python, Power BI — the analytics program.</p></article>
+    <article><h3>Data scientist</h3><p>Python, stats, ML, a first RAG — Data Science Gen AI.</p></article>
+    <article><h3>AI developer</h3><p>APIs, RAG, agents, FastAPI — Gen AI for Developers.</p></article>
+    <article><h3>GenAI specialist</h3><p>Fine-tune, multimodal, serve — Gen AI Specialization.</p></article>
+    <article><h3>MLOps engineer</h3><p>Version, gate, serve, watch models — MLOps.</p></article>
+    <article><h3>LLMOps engineer</h3><p>Eval, cost, guardrails on LLM systems — LLMOps.</p></article>
+    <article><h3>Java developer</h3><p>Core Java and Spring Boot APIs — the Java program.</p></article>
+    <article><h3>DevOps engineer</h3><p>CI/CD, containers, Kubernetes — DevOps.</p></article>
+    <article><h3>Frontend engineer</h3><p>HTML, CSS, JavaScript, React — Frontend (Deepak Rohilla).</p></article>
+  </div>
+  <p class="hire-note">Typical employers of these roles sit in product companies, IT services, banks, and platform teams. A career call maps your background to one sequence — not to a named offer letter.</p>
+</section>
+
+<section class="band" id="highlights">
+  <h2 class="h-scribble">Highlights</h2>
+  {{ scratch() }}
+  <div class="clip-grid">
+    <article class="clip-card"><div class="stripe s-blue"></div><span class="clip" aria-hidden="true"></span><h3>1. Live faculty</h3><p>Practitioners in the room, not a slide tape.</p></article>
+    <article class="clip-card"><div class="stripe s-or"></div><span class="clip" aria-hidden="true"></span><h3>2. Published fees</h3><p>The number is on the program page.</p></article>
+    <article class="clip-card"><div class="stripe s-gr"></div><span class="clip" aria-hidden="true"></span><h3>3. Role map</h3><p>Analyst through frontend — pick one gate.</p></article>
+    <article class="clip-card"><div class="stripe s-bk"></div><span class="clip" aria-hidden="true"></span><h3>4. Projects</h3><p>Work you can walk through in an interview.</p></article>
+    <article class="clip-card"><div class="stripe s-ye"></div><span class="clip" aria-hidden="true"></span><h3>5. Internships</h3><p>When the sequence fits, not as a slogan.</p></article>
+    <article class="clip-card"><div class="stripe s-blue"></div><span class="clip" aria-hidden="true"></span><h3>6. Career call</h3><p>Fifteen minutes. Join, wait, or walk.</p></article>
+    <article class="clip-card"><div class="stripe s-or"></div><span class="clip" aria-hidden="true"></span><h3>7. Certificate</h3><p>Issued when you finish the work.</p></article>
+    <article class="clip-card"><div class="stripe s-gr"></div><span class="clip" aria-hidden="true"></span><h3>8. Placement support</h3><p>Resume and mocks when you apply.</p></article>
+    <article class="clip-card"><div class="stripe s-bk"></div><span class="clip" aria-hidden="true"></span><h3>9. Join from anywhere</h3><p>Batches are online. Address is only for the office.</p></article>
+    <article class="clip-card"><div class="stripe s-ye"></div><span class="clip" aria-hidden="true"></span><h3>10. Honest demand</h3><p>BLS U.S. chart is a labour forecast, not your CTC.</p></article>
+  </div>
+</section>
+
+<section class="band" id="notes-people">
+  <h2 class="h-scribble">Desk notes</h2>
+  {{ scratch() }}
+  <p class="center-copy">Camera-style portraits made for this page. These are sample learner notes — not named alumni at named firms, and not a placement claim.</p>
+  <div class="quotes">
+    <article>
+      <img src="{{ base }}assets/img/people/p1.jpg" width="144" height="144" alt="Portrait illustration for a sample learner note" />
+      <p>“The call told me analytics, not a ten-month dump. Power BI stayed on that track only.”</p>
+      <strong>Sample note · R.</strong>
+    </article>
+    <article>
+      <img src="{{ base }}assets/img/people/p2.jpg" width="144" height="144" alt="Portrait illustration for a sample learner note" />
+      <p>“I wanted to ship RAG, not decorate a dashboard. The developer slab was the honest map.”</p>
+      <strong>Sample note</strong>
+    </article>
+    <article>
+      <img src="{{ base }}assets/img/people/p3.jpg" width="144" height="144" alt="Portrait illustration for a sample learner note" />
+      <p>“MLOps was pipelines and incidents. Nobody promised a percentage.”</p>
+      <strong>Sample note</strong>
+    </article>
+    <article>
+      <img src="{{ base }}assets/img/people/p4.jpg" width="144" height="144" alt="Portrait illustration for a sample learner note" />
+      <p>“Fees were on the page before WhatsApp. That was the whole trust exercise.”</p>
+      <strong>Sample note</strong>
+    </article>
+    <article>
+      <img src="{{ base }}assets/img/people/p5.jpg" width="144" height="144" alt="Portrait illustration for a sample learner note" />
+      <p>“I still do not have a fairy-tale CTC. I do have a sequence I can explain.”</p>
+      <strong>Sample note</strong>
+    </article>
+    <article>
+      <img src="{{ base }}assets/img/people/p6.jpg" width="144" height="144" alt="Portrait illustration for a sample learner note" />
+      <p>“LLMOps was eval and cost, not another chatbot tutorial.”</p>
+      <strong>Sample note</strong>
+    </article>
+    <article>
+      <img src="{{ base }}assets/img/people/p7.jpg" width="144" height="144" alt="Portrait illustration for a sample learner note" />
+      <p>“The weekend slab was a sample shape, not a secret timetable. That honesty was useful.”</p>
+      <strong>Sample note</strong>
+    </article>
+    <article>
+      <img src="{{ base }}assets/img/people/p8.jpg" width="144" height="144" alt="Portrait illustration for a sample learner note" />
+      <p>“I asked who hired their last batch. They named roles and sectors, not a logo wall.”</p>
+      <strong>Sample note</strong>
+    </article>
+  </div>
+</section>
+
+<section class="band" id="demand">
+  <h2 class="h-scribble">Demand, as a U.S. labour table</h2>
+  {{ scratch() }}
+  <p class="center-copy">BLS 2024–34 percent-change — not Indian salary. Tap a row on the chart below if you want the readout. India has no matching official series here.</p>
+  <div class="chart-stage" aria-label="Projected U.S. employment growth 2024 to 2034 as a lollipop chart">
+    <div class="lane-scale" aria-hidden="true">
+      <span class="lane-scale-label">Occupation</span>
+      <span class="lane-scale-ticks"><span>0</span><span>+10%</span><span>+20%</span><span>+30%</span></span>
+      <span class="lane-scale-end">BLS</span>
+    </div>
+    <div class="lanes" role="listbox" aria-label="Occupations by projected growth" aria-activedescendant="lane-ds">
+      <button class="lane is-on" id="lane-ds" type="button" role="option" aria-selected="true" data-id="ds" style="--w: 100%"><span class="lane-name">Data scientists</span><span class="lane-track"><span class="lane-base" aria-hidden="true"></span><span class="lane-fill"></span><span class="lane-dot" aria-hidden="true"></span></span><span class="lane-pct">+33.5%</span></button>
+      <button class="lane" id="lane-sec" type="button" role="option" aria-selected="false" data-id="sec" style="--w: 85.1%"><span class="lane-name">Info security analysts</span><span class="lane-track"><span class="lane-base" aria-hidden="true"></span><span class="lane-fill"></span><span class="lane-dot" aria-hidden="true"></span></span><span class="lane-pct">+28.5%</span></button>
+      <button class="lane" id="lane-rs" type="button" role="option" aria-selected="false" data-id="rs" style="--w: 58.8%"><span class="lane-name">Research scientists</span><span class="lane-track"><span class="lane-base" aria-hidden="true"></span><span class="lane-fill"></span><span class="lane-dot" aria-hidden="true"></span></span><span class="lane-pct">+19.7%</span></button>
+      <button class="lane" id="lane-sw" type="button" role="option" aria-selected="false" data-id="sw" style="--w: 47.8%"><span class="lane-name">Software developers</span><span class="lane-track"><span class="lane-base" aria-hidden="true"></span><span class="lane-fill"></span><span class="lane-dot" aria-hidden="true"></span></span><span class="lane-pct">+16%</span></button>
+      <button class="lane" id="lane-all" type="button" role="option" aria-selected="false" data-id="all" style="--w: 9.3%"><span class="lane-name">All occupations</span><span class="lane-track"><span class="lane-base" aria-hidden="true"></span><span class="lane-fill"></span><span class="lane-dot" aria-hidden="true"></span></span><span class="lane-pct">+3.1%</span></button>
+    </div>
+  </div>
   <div class="demand-readout" aria-live="polite">
     <strong id="readoutTitle">Data scientists · +33.5%</strong>
-    <p id="readoutBody">
-      U.S. BLS projects data scientist employment to grow 33.5% from 2024 to 2034 — among the fastest of all occupations, versus 3.1% for all jobs. That is a labour forecast, not an Indian placement promise. If this is the job you want, we map Excel/SQL/Python into a live program.
-    </p>
-  </div>
-
-  <div class="sr-table-wrap">
-    <h3>Source table (same numbers as the slabs)</h3>
-    <table>
-      <caption class="kicker" style="color:#09090b;margin-bottom:10px;display:block;">
-        U.S. Bureau of Labor Statistics, Employment Projections 2024–34. All-occupations average +3.1%. Software developers (SOC 15-1252) +16%; grouped developers / QA / testers +15%.
-      </caption>
-      <thead>
-        <tr>
-          <th scope="col">Occupation</th>
-          <th scope="col">Projected % change, 2024–34</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Data scientists</td><td>+33.5%</td></tr>
-        <tr><td>Information security analysts</td><td>+28.5%</td></tr>
-        <tr><td>Computer and information research scientists</td><td>+19.7%</td></tr>
-        <tr><td>Software developers</td><td>+16%</td></tr>
-        <tr><td>All occupations</td><td>+3.1%</td></tr>
-      </tbody>
-    </table>
-    <p style="margin:14px 0 0;font-size:0.9rem;">
-      Source:
-      <a href="https://www.bls.gov/opub/mlr/2026/article/industry-and-occupational-employment-projections-overview.htm" rel="noopener noreferrer">BLS Monthly Labor Review, 2024–34 highlights</a>
-      and
-      <a href="https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm" rel="noopener noreferrer">OOH software developers</a>.
-      India has no matching official series on this page — we do not fabricate one.
-    </p>
+    <p id="readoutBody">U.S. BLS projects data scientist employment to grow 33.5% from 2024 to 2034 versus 3.1% for all jobs. That is a labour forecast, not an Indian placement promise.</p>
   </div>
 </section>
 
-<section class="honest" id="honest" aria-labelledby="honest-title">
-  <article class="yes">
-    <h2 id="honest-title">What we will say</h2>
-    <ul>
-      <li>Live cohorts from Gurugram, with published fees on each program page.</li>
-      <li>A sequence tied to a role: analyst, DS, GenAI, MLOps, agentic — not 40 random modules.</li>
-      <li>Mentor-led projects. Resume and interview practice when you are actually applying.</li>
-      <li>A 15-minute call to see if you should join now, later, or not at all.</li>
-    </ul>
-  </article>
-  <article class="no">
-    <h2>What we will not say</h2>
-    <ul>
-      <li>A placement percentage we cannot defend.</li>
-      <li>That BLS U.S. growth equals your Gurugram offer letter.</li>
-      <li>That a certificate is the product. The product is whether you can do the work.</li>
-      <li>That every background maps to the same 10-month stack.</li>
-    </ul>
-  </article>
-</section>
+<section class="band" id="market-shift">
+  <h2 class="h-scribble">How the job market is moving</h2>
+  {{ scratch() }}
+  <p class="center-copy">Third-party labour and market graphics — animated when you scroll to them. Not Indian CTC. Not our placement rate. India has no matching official series for most of these cuts.</p>
 
-<section class="progs" id="programs" aria-labelledby="prog-title">
-  <div class="progs-head">
-    <p class="kicker">Fig. 02 · Published programs, not a moodboard</p>
-    <h2 id="prog-title">Pick a slab. Open the fee.</h2>
-  </div>
-  <div class="prog-list">
-    {% set ns = namespace(n=0) %}
-    {% for p in programs if p.section == 'featured' and ns.n < 6 %}
-    {% set ns.n = ns.n + 1 %}
-    <a class="prog" href="{{ base }}courses/{{ p.slug }}/index.html">
-      <span class="prog-num">{{ '%02d'|format(ns.n) }}</span>
-      <span class="prog-title">{{ p.title }}</span>
-      <span class="prog-meta">{{ p.duration }}{% if p.fee_label %} · {{ p.fee_label }}{% endif %}</span>
-    </a>
-    {% endfor %}
-    <a class="prog" href="{{ base }}courses/index.html">
-      <span class="prog-num">17</span>
-      <span class="prog-title">All programs →</span>
-      <span class="prog-meta">Catalog</span>
-    </a>
-  </div>
-</section>
-
-<section class="call" id="call" aria-labelledby="call-title">
-  <div class="call-copy">
-    <p class="kicker">The only CTA that is honest</p>
-    <h2 id="call-title">Fifteen minutes. Then you decide.</h2>
-    <ol class="call-steps">
-      <li><span>01</span><span>You say background + the job you want.</span></li>
-      <li><span>02</span><span>We say which sequence fits — or that none does yet.</span></li>
-      <li><span>03</span><span>Fees stay on the program page. No surprise invoice on the call.</span></li>
-    </ol>
-    <div class="call-actions">
-      <a class="cta" href="{{ base }}register/index.html">Book a career call</a>
-      <a class="ghost" href="https://wa.me/918708752385">WhatsApp</a>
+  <article class="shift-board js-reveal" id="shiftBoard">
+    <header class="shift-head">The AI job market shift</header>
+    <div class="shift-cols">
+      <div>
+        <div class="shift-ico" aria-hidden="true">
+          <svg viewBox="0 0 72 72" fill="none"><path d="M22 40c0-12 8-22 18-22s18 10 18 22" stroke="#1a3d6e" stroke-width="3"/><path d="M26 38c2-8 8-14 14-14" stroke="#48c78e" stroke-width="3"/><path d="M36 48V28l8 6" stroke="#48c78e" stroke-width="3" stroke-linecap="round"/></svg>
+        </div>
+        <h3>AI skills in demand</h3>
+        <p>Jobs requiring AI skills</p>
+        <p class="shift-stat up"><span class="js-count" data-to="7.5" data-suf="%">0%</span></p>
+        <p class="shift-sub">Last year</p>
+        <p>Total job postings</p>
+        <p class="shift-stat down"><span class="js-count" data-to="11.3" data-suf="%" data-neg="1">0%</span></p>
+      </div>
+      <div>
+        <div class="shift-ico" aria-hidden="true">
+          <svg viewBox="0 0 72 72" fill="none"><ellipse cx="36" cy="44" rx="18" ry="10" stroke="#1a3d6e" stroke-width="3"/><path d="M18 44V34c0-6 8-10 18-10s18 4 18 10v10" stroke="#1a3d6e" stroke-width="3"/><text x="36" y="40" text-anchor="middle" fill="#1a3d6e" font-size="14" font-weight="800">$</text></svg>
+        </div>
+        <h3>Salary premium</h3>
+        <p><strong class="js-count" data-to="56" data-suf="%">0%</strong> higher wage with AI skills vs <strong>25%</strong> previous year</p>
+        <div class="prem-bars" aria-hidden="true">
+          <div><span>25%</span><i class="b25"></i></div>
+          <div><span>56%</span><i class="b56"></i></div>
+        </div>
+      </div>
+      <div>
+        <div class="shift-ico" aria-hidden="true">
+          <svg viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="12" stroke="#1a3d6e" stroke-width="3"/><path d="M36 30v8h6" stroke="#1a3d6e" stroke-width="3" stroke-linecap="round"/><path d="M20 28a20 20 0 0 1 32 0M20 44a20 20 0 0 0 32 0" stroke="#48c78e" stroke-width="3"/></svg>
+        </div>
+        <h3>Evolving skills</h3>
+        <p>AI-exposed jobs: skills change <strong class="js-count" data-to="66" data-suf="%">0%</strong> faster than less exposed roles</p>
+        <div class="gauge" aria-hidden="true">
+          <svg viewBox="0 0 120 70">
+            <defs>
+              <linearGradient id="gaugeGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#48c78e"/>
+                <stop offset="100%" stop-color="#1a3d6e"/>
+              </linearGradient>
+            </defs>
+            <path class="g-track" d="M10 60 A50 50 0 0 1 110 60" />
+            <path class="g-fill" d="M10 60 A50 50 0 0 1 110 60" />
+          </svg>
+        </div>
+      </div>
     </div>
+    <p class="chart-src">Labour-market infographic in the style of public AI-skills reports. Directional, not a promise about your offer letter.</p>
+  </article>
+
+  <article class="country-board js-reveal" id="countryBoard">
+    <h3>Top 10 countries for AI jobs — scaled comparison</h3>
+    <p class="chart-legend"><span class="dot inv"></span> Investment <span class="dot co"></span> AI companies <span class="dot jobs"></span> Job postings</p>
+    <div class="country-chart" role="img" aria-label="Horizontal stacked bars comparing ten countries on three scaled AI metrics">
+      {% set countries = [
+        ('United States', 64, 22, 10),
+        ('China', 24, 18, 8),
+        ('United Kingdom', 14, 11, 7),
+        ('Canada', 12, 9, 6),
+        ('Israel', 10, 10, 5),
+        ('Germany', 10, 8, 5),
+        ('France', 9, 7, 5),
+        ('India', 8, 9, 5),
+        ('South Korea', 7, 6, 4),
+        ('Japan', 6, 5, 4)
+      ] %}
+      {% for name, a, b, c in countries %}
+      <div class="c-row">
+        <span class="c-name">{{ name }}</span>
+        <div class="c-bar">
+          <i class="inv" style="--w: {{ a }}%"></i>
+          <i class="co" style="--w: {{ b }}%"></i>
+          <i class="jobs" style="--w: {{ c }}%"></i>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="c-axis" aria-hidden="true"><span class="c-axis-pad"></span><span class="c-axis-ticks"><span>0</span><span>100</span><span>200</span><span>300</span><span>400</span><span>500</span></span></div>
+    </div>
+    <p class="chart-src">Stacked segments are <strong>scaled</strong> so they can sit on one axis — investment, company counts, and job-share are not the same unit. Not a ranking of where we place people.</p>
+  </article>
+
+  <article class="supply-board js-reveal" id="supplyBoard">
+    <h3>Global AI in supply chain market</h3>
+    <p class="supply-sub">Size, by component, 2023–2033 (USD billion) — third-party forecast</p>
+    <p class="chart-legend"><span class="dot sw"></span> Software <span class="dot hw"></span> Hardware <span class="dot sv"></span> Services</p>
+    <div class="supply-chart" role="img" aria-label="Stacked bars of global AI in supply chain market size from 2023 to 2033">
+      {% set years = [
+        (2023, 4.5, 45, 30, 25),
+        (2024, 6.4, 45, 30, 25),
+        (2025, 9.2, 45, 30, 25),
+        (2026, 13.1, 45, 30, 25),
+        (2027, 18.7, 45, 30, 25),
+        (2028, 26.6, 45, 30, 25),
+        (2029, 38.0, 45, 30, 25),
+        (2030, 54.2, 45, 30, 25),
+        (2031, 77.4, 45, 30, 25),
+        (2032, 110.4, 45, 30, 25),
+        (2033, 157.6, 45, 30, 25)
+      ] %}
+      <div class="supply-plot">
+        {% for y, total, sw, hw, sv in years %}
+        <div class="s-col" style="--h: {{ (total / 180 * 100) | round(1) }}%">
+          <span class="s-val">{{ total }}</span>
+          <div class="s-stack">
+            <i class="sv" style="--p: {{ sv }}%"></i>
+            <i class="hw" style="--p: {{ hw }}%"></i>
+            <i class="sw" style="--p: {{ sw }}%"></i>
+          </div>
+          <span class="s-year">{{ y }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="supply-foot">
+      <span>The market will grow at a CAGR of <strong>42.7%</strong></span>
+      <span>Forecasted size for 2033: <strong>$157.6B</strong></span>
+    </div>
+    <p class="chart-src">Component split is a simplified 45 / 30 / 25 sketch on published totals. Forecast, not a course outcome.</p>
+  </article>
+</section>
+
+<section class="band" id="studio-notes">
+  <h2 class="h-scribble">Studio notes</h2>
+  {{ scratch() }}
+  <div class="notes-grid">
+    <article><time datetime="2026-08-15">15 Aug 2026</time><h3>Power BI lives on one program</h3><p>Analytics only. DS uses Matplotlib/Seaborn. Ops uses Grafana.</p></article>
+    <article><time datetime="2026-08-14">14 Aug 2026</time><h3>A cutoff is not an offer</h3><p>We do not republish another institute’s seat matrix as ours.</p></article>
+    <article><time datetime="2026-08-10">10 Aug 2026</time><h3>What the call is for</h3><p>Background + the job you want. Then a sequence, or a no.</p></article>
   </div>
-  <div class="contact-block">
-    <p class="kicker" style="color:#fff;">Studio</p>
-    <p><a href="tel:+918708752385">+91 87087 52385</a></p>
-    <p><a href="mailto:{{ email }}">{{ email }}</a></p>
-    <p>68 Avenue, Badshahpur,<br />Sector 68, Gurugram</p>
-    <p style="margin-top:20px;"><a href="{{ base }}courses/index.html">Browse all programs</a></p>
+</section>
+
+<section class="enquire-bar" id="enquire">
+  <div class="enquire-row">
+    <h2 style="flex-basis:100%;margin:0 0 4px;">Register your interest</h2>
+    <form id="dockEnquire" class="enquire-row" style="flex:1;margin:0;">
+      <div class="field"><label for="dqName">Name</label><input id="dqName" name="name" required autocomplete="name" /></div>
+      <div class="field"><label for="dqPhone">Mobile</label><input id="dqPhone" name="phone" type="tel" required autocomplete="tel" /></div>
+      <div class="field">
+        <label for="dqCourse">Program</label>
+        <select id="dqCourse" name="course" required>
+          <option value="">Select</option>
+          {% for p in programs %}
+          <option value="{{ p.title }}">{{ p.title }}</option>
+          {% endfor %}
+          <option value="Not sure">Not sure yet</option>
+        </select>
+      </div>
+      <div class="field"><label for="dqCity">City</label><input id="dqCity" name="city" required autocomplete="address-level2" /></div>
+      <button class="btn-black" type="submit">Enquire</button>
+      <p class="form-status" id="dqStatus" role="status"></p>
+    </form>
   </div>
 </section>
 {% endblock %}

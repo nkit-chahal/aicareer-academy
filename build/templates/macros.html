@@ -1,31 +1,59 @@
-{% macro program_card(p) %}
-<article class="card" data-tags="{{ p.tags | join(',') }}">
-  <div class="card-top">
-    <div class="card-meta">
-      <span class="card-mark" aria-hidden="true">{{ p.title[0] }}</span>
-      <span class="card-duration">{{ p.duration }}</span>
-      {% if p.fee_label %}<span class="card-fee">{{ p.fee_label }}</span>{% endif %}
-    </div>
-    <div class="card-badges">
-      {% if p.featured %}<span class="badge badge-orange">Featured</span>{% endif %}
-      {% for tag in p.tags %}
-        {% if tag == 'beginner' %}<span class="badge badge-green">Beginner friendly</span>
-        {% elif tag == 'career' %}<span class="badge">Career track</span>
-        {% elif tag == 'specialization' %}<span class="badge">Specialization</span>
-        {% elif tag == 'architect' %}<span class="badge">Architect level</span>
-        {% endif %}
+{% macro scratch() %}
+<svg class="scratch" viewBox="0 0 96 14" aria-hidden="true"><path d="M4 9 Q24 2 48 8 T92 7"/></svg>
+{% endmacro %}
+
+{% macro employer_marquee(base='') %}
+<div class="logo-marquee" role="region" aria-label="Company names that commonly post these jobs. Studio wordmarks, not official logos, not a claim they hired our alumni.">
+  <div class="logo-track">
+    {% for _dup in [1, 2] %}
+    <ul class="logo-set" {% if _dup == 2 %}aria-hidden="true"{% endif %}>
+      {% for slug, name in employers %}
+      <li>
+        <img src="{{ base }}assets/img/stamps/{{ slug }}.svg" alt="{% if _dup == 1 %}{{ name }}{% endif %}" width="220" height="88" />
+      </li>
       {% endfor %}
-    </div>
-  </div>
-  <h3 class="card-title">{{ p.title }}</h3>
-  <p class="card-desc">{{ p.description }}</p>
-  <div class="card-topics">
-    {% for topic in p.topics[:3] %}
-    <span class="topic">{{ topic }}</span>
+    </ul>
     {% endfor %}
-    {% if p.topics | length > 3 %}
-    <span class="topic-more">+{{ p.topics | length - 3 }} more</span>
-    {% endif %}
+  </div>
+</div>
+<p class="hire-note">Studio nameplates — not official lockups. Typical employers of these roles, not a partner wall and not our placement list.</p>
+{% endmacro %}
+
+{% macro program_card(p, base='') %}
+<article class="card" data-tags="{{ p.tags | join(',') }}">
+  {% if p.poster %}
+  <div class="card-cover" aria-hidden="true">
+    <img src="{{ base }}assets/img/{{ p.poster }}" alt="" width="800" height="600" />
+  </div>
+  {% endif %}
+  <div class="card-body">
+    <div class="card-top">
+      <div class="card-meta">
+        <span class="card-mark" aria-hidden="true">{{ p.title[0] }}</span>
+        <span class="card-duration">{{ p.duration }}</span>
+        {% if p.fee_label %}<span class="card-fee">{{ p.fee_label }}</span>{% endif %}
+      </div>
+      <div class="card-badges">
+        {% if p.featured %}<span class="badge badge-orange">Featured</span>{% endif %}
+        {% for tag in p.tags %}
+          {% if tag == 'beginner' %}<span class="badge badge-green">Beginner friendly</span>
+          {% elif tag == 'career' %}<span class="badge">Career track</span>
+          {% elif tag == 'specialization' %}<span class="badge">Specialization</span>
+          {% elif tag == 'architect' %}<span class="badge">Architect level</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <h3 class="card-title">{{ p.title }}</h3>
+    <p class="card-desc">{{ p.description }}</p>
+    <div class="card-topics">
+      {% for topic in p.topics[:3] %}
+      <span class="topic">{{ topic }}</span>
+      {% endfor %}
+      {% if p.topics | length > 3 %}
+      <span class="topic-more">+{{ p.topics | length - 3 }} more</span>
+      {% endif %}
+    </div>
   </div>
   <div class="card-footer">
     <a href="{{ p.slug }}/index.html" class="btn btn-ghost card-cta" aria-label="View {{ p.title }} program">

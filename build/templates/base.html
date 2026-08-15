@@ -23,28 +23,34 @@
   {% endif %}
   <meta name="twitter:title" content="{{ page_title }}" />
   {% if meta_description %}<meta name="twitter:description" content="{{ meta_description }}" />{% endif %}
-  <meta name="theme-color" content="#09090B" />
+  <meta name="theme-color" content="#111111" />
   <link rel="icon" href="{{ base }}assets/favicon.svg" type="image/svg+xml" />
   {% if json_ld %}
   <script type="application/ld+json">{{ json_ld | tojson }}</script>
   {% endif %}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Playfair+Display:ital,wght@1,600&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{{ base }}assets/css/base.css" />
+  <link rel="stylesheet" href="{{ base }}assets/css/studio.css" />
   {% if extra_css %}{% for css in extra_css %}<link rel="stylesheet" href="{{ base }}assets/css/{{ css }}" />{% endfor %}{% endif %}
 </head>
-<body class="{% if active_nav == 'home' %}is-home{% endif %}">
+<body class="studio {% if active_nav == 'home' %}is-home{% endif %}">
   <a class="skip skip-link" href="#main">Skip to content</a>
 
-  {% block ticker %}{% endblock %}
-
-  <header class="site-head" id="header">
+  <header class="studio-head" id="header">
     <a href="{{ base }}index.html" class="brand">
       <span class="brand-mark" aria-hidden="true">ACA</span>
       <span>AI Career<em>.academy</em></span>
     </a>
-    <a class="head-cta" href="{{ base }}register/index.html"><span>Book a career call</span></a>
+    <nav class="pill-nav" aria-label="Primary">
+      <a href="{{ base }}about-us/index.html">About us</a>
+      <a href="{{ base }}courses/index.html">Courses offered</a>
+      <a href="{{ base }}register/index.html">Enrollment form</a>
+      <a href="{{ base }}mentors/index.html">Studio hub</a>
+      <a href="{{ base }}contact-us/index.html">Contact</a>
+      <a class="login" href="{{ base }}register/index.html">Enquire</a>
+    </nav>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
       <span></span><span></span><span></span>
     </button>
@@ -52,15 +58,14 @@
 
   <div class="menu" id="menu" aria-hidden="true">
     <button class="menu-close" id="menuClose" type="button">Close</button>
-    <nav aria-label="Primary">
+    <nav aria-label="Mobile">
       <a href="{{ base }}index.html">Home</a>
-      <a href="{{ base }}index.html#demand">Demand chart</a>
-      <a href="{{ base }}courses/index.html">All programs</a>
-      <a href="{{ base }}comparisons/index.html">Comparisons</a>
-      <a href="{{ base }}roadmaps/data-science-roadmap/index.html">Roadmaps</a>
+      <a href="{{ base }}about-us/index.html">About us</a>
+      <a href="{{ base }}courses/index.html">Courses offered</a>
+      <a href="{{ base }}register/index.html">Enrollment form</a>
       <a href="{{ base }}mentors/index.html">Mentors</a>
+      <a href="{{ base }}hire-from-us/index.html">Hire from us</a>
       <a href="{{ base }}contact-us/index.html">Contact</a>
-      <a href="{{ base }}register/index.html">Book a call</a>
       <a href="https://wa.me/918708752385">WhatsApp</a>
       <a href="tel:+918708752385">+91 87087 52385</a>
     </nav>
@@ -70,52 +75,44 @@
     {% block content %}{% endblock %}
   </main>
 
-  <footer class="site-foot footer">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <p class="kicker">Studio</p>
-        <p>Live cohorts. Published fees. A sequence for a job — not a certificate dump.</p>
+  <footer class="studio-foot">
+    <div class="foot-grid">
+      <div>
+        <p class="brand-word">AI Career Academy</p>
+        <p>Live online cohorts. Published fees. Placement support, certification, and internships — not a pass-rate slogan.</p>
+        <p>68 Avenue, Badshahpur, Sector 68, Gurugram, Haryana 122101</p>
+        <p><a href="tel:+918708752385">+91 87087 52385</a> · <a href="mailto:{{ email }}">{{ email }}</a></p>
       </div>
-      <div class="footer-col">
-        <h4>Learn</h4>
-        <a href="{{ base }}index.html#demand">Demand chart</a>
-        <a href="{{ base }}courses/index.html">All programs</a>
-        <a href="{{ base }}comparisons/index.html">Comparisons</a>
-        <a href="{{ base }}roadmaps/data-science-roadmap/index.html">Roadmaps</a>
-        <a href="{{ base }}blogs/index.html">Blogs</a>
-        <a href="{{ base }}register/index.html">Register</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
+      <div>
+        <h4>Quick links</h4>
         <a href="{{ base }}about-us/index.html">About us</a>
+        <a href="{{ base }}courses/index.html">Courses offered</a>
         <a href="{{ base }}mentors/index.html">Mentors</a>
         <a href="{{ base }}hire-from-us/index.html">Hire from us</a>
-        <a href="{{ base }}enterprise-ai-upskilling/index.html">For teams</a>
-        <a href="{{ base }}contact-us/index.html">Contact</a>
+        <a href="{{ base }}blogs/index.html">Blogs</a>
       </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
+      <div>
+        <h4>On paper</h4>
         <a href="{{ base }}privacy-policy/index.html">Privacy policy</a>
-        <a href="{{ base }}terms-and-conditions/index.html">Terms of service</a>
-        <a href="{{ base }}refund-policy/index.html">Refund policy</a>
+        <a href="{{ base }}terms-and-conditions/index.html">Terms</a>
+        <a href="{{ base }}refund-policy/index.html">Refunds</a>
       </div>
-      <div class="footer-col">
-        <h4>Get in touch</h4>
-        <a href="mailto:{{ email }}">{{ email }}</a>
-        <a href="tel:+918708752385">+91 87087 52385</a>
-        <p class="footer-addr">68 Avenue, Badshahpur,<br />Sector 68, Gurugram, Haryana 122101</p>
-        <p class="footer-hours">Mon–Sat, 10am–7pm IST</p>
+      <div>
+        <h4>Stay on the desk</h4>
+        <a href="{{ base }}register/index.html">Register your interest</a>
+        <a href="https://wa.me/918708752385">WhatsApp</a>
       </div>
     </div>
-    <p>© <span id="year"></span> {{ brand }}. Demand slabs cite U.S. BLS 2024–34 projections. They are not a promise about your job.</p>
+    <p class="copy">© <span id="year"></span> {{ brand }}. U.S. BLS figures on the demand chart are not a promise about your job.</p>
   </footer>
 
-  <div class="dock" aria-label="Quick actions">
-    <a class="dock-call" href="{{ base }}register/index.html">Career call</a>
-    <a class="dock-wa" href="https://wa.me/918708752385">WhatsApp</a>
+  <div class="studio-dock" aria-label="Quick actions">
+    <button class="chat-pop" type="button" id="chatBtn">Talk to studio<br /><small>WhatsApp · career call</small></button>
+    <a class="dock-cta" href="{{ base }}register/index.html">Register your interest</a>
   </div>
 
   <script src="{{ base }}assets/js/nav.js" defer></script>
+  <script src="{{ base }}assets/js/studio.js" defer></script>
   {% if extra_js %}{% for js in extra_js %}<script src="{{ base }}assets/js/{{ js }}" defer></script>{% endfor %}{% endif %}
 </body>
 </html>

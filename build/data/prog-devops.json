@@ -1,0 +1,21 @@
+{
+  "id": "prog-devops",
+  "source": "/courses/devops-course",
+  "output": "courses/devops-course/index.html",
+  "type": "program",
+  "title": "DevOps — AI Career Academy",
+  "description": "Live 6-month DevOps sequence. Fee ₹60,000.",
+  "hero_title": "DevOps",
+  "hero_sub": "Six months live, online.",
+  "sections": [],
+  "faqs": [],
+  "lists": [],
+  "images": [],
+  "raw_html": "",
+  "fees": {
+    "amounts": ["₹60,000"],
+    "plans": ["No hidden charges. Batch timings confirmed on call."],
+    "notes": ["One-time payment for 6 months live online with capstone and certificate."],
+    "amount_notes": ["One-time payment"]
+  }
+}

@@ -21,28 +21,34 @@
   
   <meta name="twitter:title" content="RAG vs Agentic RAG: Direct Retrieval or Multi-Step Control? — AI Career Academy" />
   <meta name="twitter:description" content="Compare standard RAG and Agentic RAG by workflow complexity and system fit so you can decide whether the added orchestration is worth it for your actual retrieval problem." />
-  <meta name="theme-color" content="#09090B" />
+  <meta name="theme-color" content="#111111" />
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
   
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@id": "https://aicareer.academy/#org", "@type": "EducationalOrganization", "address": {"@type": "PostalAddress", "addressCountry": "IN", "addressLocality": "Gurugram", "addressRegion": "Haryana", "postalCode": "122101", "streetAddress": "68 Avenue, Badshahpur, Sector 68"}, "email": "hello@aicareer.academy", "name": "AI Career Academy", "telephone": "+918708752385", "url": "https://aicareer.academy/"}, {"@id": "https://aicareer.academy/#website", "@type": "WebSite", "name": "AI Career Academy", "publisher": {"@id": "https://aicareer.academy/#org"}, "url": "https://aicareer.academy/"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://aicareer.academy/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://aicareer.academy/comparisons/", "name": "Comparisons", "position": 2}, {"@type": "ListItem", "item": "https://aicareer.academy/comparisons/rag-vs-agentic-rag/", "name": "RAG vs Agentic RAG: Direct Retrieval or Multi-Step Control?", "position": 3}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Use these definitions as a decision frame. The point is not to memorize labels. The point is to understand the kind of work, depth, and responsibility each term usually implies."}, "name": "What each term means in practice"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The most useful comparison is not title versus title. It is the type of skills you will be forced to practice repeatedly if you choose one route over the other."}, "name": "What skills each path usually pushes you toward"}]}]}</script>
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Playfair+Display:ital,wght@1,600&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../../assets/css/base.css" />
+  <link rel="stylesheet" href="../../assets/css/studio.css" />
   <link rel="stylesheet" href="../../assets/css/content.css" />
 </head>
-<body class="">
+<body class="studio ">
   <a class="skip skip-link" href="#main">Skip to content</a>
 
-  
-
-  <header class="site-head" id="header">
+  <header class="studio-head" id="header">
     <a href="../../index.html" class="brand">
       <span class="brand-mark" aria-hidden="true">ACA</span>
       <span>AI Career<em>.academy</em></span>
     </a>
-    <a class="head-cta" href="../../register/index.html"><span>Book a career call</span></a>
+    <nav class="pill-nav" aria-label="Primary">
+      <a href="../../about-us/index.html">About us</a>
+      <a href="../../courses/index.html">Courses offered</a>
+      <a href="../../register/index.html">Enrollment form</a>
+      <a href="../../mentors/index.html">Studio hub</a>
+      <a href="../../contact-us/index.html">Contact</a>
+      <a class="login" href="../../register/index.html">Enquire</a>
+    </nav>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
       <span></span><span></span><span></span>
     </button>
@@ -50,15 +56,14 @@
 
   <div class="menu" id="menu" aria-hidden="true">
     <button class="menu-close" id="menuClose" type="button">Close</button>
-    <nav aria-label="Primary">
+    <nav aria-label="Mobile">
       <a href="../../index.html">Home</a>
-      <a href="../../index.html#demand">Demand chart</a>
-      <a href="../../courses/index.html">All programs</a>
-      <a href="../../comparisons/index.html">Comparisons</a>
-      <a href="../../roadmaps/data-science-roadmap/index.html">Roadmaps</a>
+      <a href="../../about-us/index.html">About us</a>
+      <a href="../../courses/index.html">Courses offered</a>
+      <a href="../../register/index.html">Enrollment form</a>
       <a href="../../mentors/index.html">Mentors</a>
+      <a href="../../hire-from-us/index.html">Hire from us</a>
       <a href="../../contact-us/index.html">Contact</a>
-      <a href="../../register/index.html">Book a call</a>
       <a href="https://wa.me/918708752385">WhatsApp</a>
       <a href="tel:+918708752385">+91 87087 52385</a>
     </nav>
@@ -66,10 +71,12 @@
 
   <main id="main">
     
-<section class="page-hero">
+
+<section class="page-hero band">
   <div class="container">
-    <h1 class="page-hero-title">RAG vs Agentic RAG: Direct Retrieval or Multi-Step Control?</h1>
-    <p class="page-hero-sub">Standard RAG retrieves context and generates a response in a relatively direct chain. Agentic RAG adds planning, routing, tool use, or iterative retrieval when a single retrieval step is not enough. The question is not which one is better — it is which one your actual retrieval problem needs.</p>
+    <h1 class="h-scribble">RAG vs Agentic RAG: Direct Retrieval or Multi-Step Control?</h1>
+    <svg class="scratch" viewBox="0 0 96 14" aria-hidden="true"><path d="M4 9 Q24 2 48 8 T92 7"/></svg>
+    <p class="center-copy">Standard RAG retrieves context and generates a response in a relatively direct chain. Agentic RAG adds planning, routing, tool use, or iterative retrieval when a single retrieval step is not enough. The question is not which one is better — it is which one your actual retrieval problem needs.</p>
     
   </div>
 </section>
@@ -78,9 +85,18 @@
 
 
 
+
+
+
+
 <section class="page-content">
   <div class="container content-body">
     
+      
+      <div class="content-section">
+        <h2>How to read this</h2>
+        <p>Role and tool comparisons for choosing a sequence. Not salary tables, not a ranking of institutes, not a claim about who hires our alumni.</p>
+      </div>
       
       <div class="content-section">
         <h2>The short answer</h2>
@@ -256,52 +272,44 @@ Book a Career Call Explore the RAG Course</p>
 
   </main>
 
-  <footer class="site-foot footer">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <p class="kicker">Studio</p>
-        <p>Live cohorts. Published fees. A sequence for a job — not a certificate dump.</p>
+  <footer class="studio-foot">
+    <div class="foot-grid">
+      <div>
+        <p class="brand-word">AI Career Academy</p>
+        <p>Live online cohorts. Published fees. Placement support, certification, and internships — not a pass-rate slogan.</p>
+        <p>68 Avenue, Badshahpur, Sector 68, Gurugram, Haryana 122101</p>
+        <p><a href="tel:+918708752385">+91 87087 52385</a> · <a href="mailto:hello@aicareer.academy">hello@aicareer.academy</a></p>
       </div>
-      <div class="footer-col">
-        <h4>Learn</h4>
-        <a href="../../index.html#demand">Demand chart</a>
-        <a href="../../courses/index.html">All programs</a>
-        <a href="../../comparisons/index.html">Comparisons</a>
-        <a href="../../roadmaps/data-science-roadmap/index.html">Roadmaps</a>
-        <a href="../../blogs/index.html">Blogs</a>
-        <a href="../../register/index.html">Register</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
+      <div>
+        <h4>Quick links</h4>
         <a href="../../about-us/index.html">About us</a>
+        <a href="../../courses/index.html">Courses offered</a>
         <a href="../../mentors/index.html">Mentors</a>
         <a href="../../hire-from-us/index.html">Hire from us</a>
-        <a href="../../enterprise-ai-upskilling/index.html">For teams</a>
-        <a href="../../contact-us/index.html">Contact</a>
+        <a href="../../blogs/index.html">Blogs</a>
       </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
+      <div>
+        <h4>On paper</h4>
         <a href="../../privacy-policy/index.html">Privacy policy</a>
-        <a href="../../terms-and-conditions/index.html">Terms of service</a>
-        <a href="../../refund-policy/index.html">Refund policy</a>
+        <a href="../../terms-and-conditions/index.html">Terms</a>
+        <a href="../../refund-policy/index.html">Refunds</a>
       </div>
-      <div class="footer-col">
-        <h4>Get in touch</h4>
-        <a href="mailto:hello@aicareer.academy">hello@aicareer.academy</a>
-        <a href="tel:+918708752385">+91 87087 52385</a>
-        <p class="footer-addr">68 Avenue, Badshahpur,<br />Sector 68, Gurugram, Haryana 122101</p>
-        <p class="footer-hours">Mon–Sat, 10am–7pm IST</p>
+      <div>
+        <h4>Stay on the desk</h4>
+        <a href="../../register/index.html">Register your interest</a>
+        <a href="https://wa.me/918708752385">WhatsApp</a>
       </div>
     </div>
-    <p>© <span id="year"></span> AI Career Academy. Demand slabs cite U.S. BLS 2024–34 projections. They are not a promise about your job.</p>
+    <p class="copy">© <span id="year"></span> AI Career Academy. U.S. BLS figures on the demand chart are not a promise about your job.</p>
   </footer>
 
-  <div class="dock" aria-label="Quick actions">
-    <a class="dock-call" href="../../register/index.html">Career call</a>
-    <a class="dock-wa" href="https://wa.me/918708752385">WhatsApp</a>
+  <div class="studio-dock" aria-label="Quick actions">
+    <button class="chat-pop" type="button" id="chatBtn">Talk to studio<br /><small>WhatsApp · career call</small></button>
+    <a class="dock-cta" href="../../register/index.html">Register your interest</a>
   </div>
 
   <script src="../../assets/js/nav.js" defer></script>
+  <script src="../../assets/js/studio.js" defer></script>
   
 </body>
 </html>

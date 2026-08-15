@@ -3,25 +3,312 @@
     "title": "Course Curriculum",
     "levels": [
       {
-        "title": "Python Basics",
+        "title": "Spreadsheets and SQL",
         "modules": [
-          {"title": "Module 1: Getting started", "topics": ["Variables and data types", "Operators and expressions", "Working in notebooks"]},
-          {"title": "Module 2: Control flow", "topics": ["Conditionals", "Loops", "Functions"]},
-          {"title": "Module 7: Time and Space Complexity", "topics": ["Understanding Algorithm Efficiency", "Time Complexity", "Space Complexity"]}
+          {
+            "title": "Module 1: Excel for analysis",
+            "lead": "You start where most analyst jobs still start: a messy workbook, a stakeholder question, and a sheet that has to survive a review. Copilot is allowed as an accelerator once you can do the work by hand.",
+            "blocks": [
+              {
+                "heading": "Workbook hygiene",
+                "items": [
+                  "Named ranges, tables, and why a ‘pretty’ sheet still fails a join",
+                  "Absolute vs relative references, lookup families, and when INDEX/MATCH is enough",
+                  "Dates, types, and the errors that quietly break a pivot"
+                ]
+              },
+              {
+                "heading": "Pivots and summaries",
+                "items": [
+                  "Pivot tables for actual questions, not decoration",
+                  "Slicers, calculated fields, and a second view of the same fact table",
+                  "How to explain a number without hiding the filter that made it"
+                ]
+              },
+              {
+                "heading": "Charts for stakeholders",
+                "items": [
+                  "Choosing a chart that matches the claim",
+                  "Titles, axes, and annotations a manager can read in ten seconds",
+                  "What not to chart — vanity plots that do not change a decision"
+                ]
+              },
+              {
+                "heading": "Copilot, used honestly",
+                "items": [
+                  "Drafting formulas and cleaning steps with Copilot, then checking them",
+                  "Where NLQ helps and where it invents a column",
+                  "A short before/after: same analysis with and without the assistant"
+                ]
+              }
+            ],
+            "outcome": "You leave with a cleaned workbook, a pivot that answers one real question, and a note on what Copilot got wrong.",
+            "topics": [
+              "Named ranges, tables, and why a ‘pretty’ sheet still fails a join",
+              "Absolute vs relative references, lookup families, and when INDEX/MATCH is enough",
+              "Pivot tables for actual questions, not decoration",
+              "Slicers, calculated fields, and a second view of the same fact table",
+              "Choosing a chart that matches the claim",
+              "Titles, axes, and annotations a manager can read in ten seconds",
+              "Drafting formulas and cleaning steps with Copilot, then checking them",
+              "Where NLQ helps and where it invents a column"
+            ]
+          },
+          {
+            "title": "Module 2: SQL for analysts",
+            "lead": "Hiring managers still ask you to pull a table. This module is selects, joins, and aggregations you can write on a whiteboard and in a notebook — not a DBA certification.",
+            "blocks": [
+              {
+                "heading": "Reads you can defend",
+                "items": [
+                  "SELECT, WHERE, ORDER BY, LIMIT — and why SELECT * is a smell in a review",
+                  "NULL behaviour, DISTINCT, and the row-count surprises that fail interviews",
+                  "Reading an EXPLAIN at a glance so you know if the query is lying"
+                ]
+              },
+              {
+                "heading": "Joins and grain",
+                "items": [
+                  "Inner, left, and anti-joins on real-ish schemas",
+                  "Grain: one row per customer vs one row per order",
+                  "How a bad join inflates revenue — you will break a number on purpose"
+                ]
+              },
+              {
+                "heading": "Aggregations and windows",
+                "items": [
+                  "GROUP BY that matches the question",
+                  "Window functions for running totals, ranks, and previous-period compares",
+                  "CTEs so a hiring manager can follow the story"
+                ]
+              },
+              {
+                "heading": "Interview queries",
+                "items": [
+                  "‘Top N per group’, funnels, and retention-style cuts",
+                  "Writing the query, then saying the caveat in one sentence",
+                  "Saving a small case (question → SQL → result → so-what)"
+                ]
+              }
+            ],
+            "outcome": "You leave with a short SQL case you can walk through on a career call — question, query, grain, caveat.",
+            "topics": [
+              "SELECT, WHERE, ORDER BY, LIMIT — and why SELECT * is a smell in a review",
+              "NULL behaviour, DISTINCT, and the row-count surprises that fail interviews",
+              "Inner, left, and anti-joins on real-ish schemas",
+              "Grain: one row per customer vs one row per order",
+              "GROUP BY that matches the question",
+              "Window functions for running totals, ranks, and previous-period compares",
+              "‘Top N per group’, funnels, and retention-style cuts",
+              "Writing the query, then saying the caveat in one sentence"
+            ]
+          }
         ]
       },
       {
-        "title": "Python Advanced",
+        "title": "Python for analysis",
         "modules": [
-          {"title": "Module 8: Pandas for analysis", "topics": ["DataFrames and Series", "Filtering and aggregation", "Merges and reshaping"]},
-          {"title": "Module 9: Data cleaning", "topics": ["Missing values", "Types and outliers", "Feature-ready tables"]}
+          {
+            "title": "Module 3: Pandas and cleaning",
+            "lead": "Spreadsheets stop being enough. You move the same tables into Pandas so you can clean, merge, and shape them without clicking yourself into a corner.",
+            "blocks": [
+              {
+                "heading": "DataFrames as a habit",
+                "items": [
+                  "Series vs DataFrame, dtypes, and why object columns hide dates",
+                  "Read CSV/Excel, then write a parquet or clean CSV you can hand off",
+                  "Indexing, loc/iloc, and the copy warnings you should not ignore"
+                ]
+              },
+              {
+                "heading": "Missing values and types",
+                "items": [
+                  "Drop vs fill vs flag — pick one and write why",
+                  "Numeric coercion, categoricals, and timezone-naive dates",
+                  "Outliers: keep, clip, or isolate before you plot"
+                ]
+              },
+              {
+                "heading": "Merges and groupbys",
+                "items": [
+                  "Merge on keys with validate='one_to_one' when the grain claims it",
+                  "Groupby aggregations that match SQL you already wrote",
+                  "Reshape: melt/pivot so a dashboard or model can eat the table"
+                ]
+              },
+              {
+                "heading": "Feature-ready tables",
+                "items": [
+                  "One table, one grain, documented columns",
+                  "A cleaning log in the notebook — not tribal memory",
+                  "A test: re-run the notebook on a second file without editing cells by hand"
+                ]
+              }
+            ],
+            "outcome": "You leave with a cleaning notebook that produces one feature-ready table and a log of every drop/fill.",
+            "topics": [
+              "Series vs DataFrame, dtypes, and why object columns hide dates",
+              "Read CSV/Excel, then write a parquet or clean CSV you can hand off",
+              "Drop vs fill vs flag — pick one and write why",
+              "Numeric coercion, categoricals, and timezone-naive dates",
+              "Merge on keys with validate='one_to_one' when the grain claims it",
+              "Groupby aggregations that match SQL you already wrote",
+              "One table, one grain, documented columns",
+              "A cleaning log in the notebook — not tribal memory"
+            ]
+          },
+          {
+            "title": "Module 4: EDA for business questions",
+            "lead": "EDA here is not a gallery of plots. It is a sequence: question, cut, distribution, exception, sentence a stakeholder can use.",
+            "blocks": [
+              {
+                "heading": "Distributions and outliers",
+                "items": [
+                  "Histograms and box plots that name the unit",
+                  "When a ‘spike’ is a data bug vs a real event",
+                  "Segment first — all-up averages hide the story"
+                ]
+              },
+              {
+                "heading": "Simple stats you can defend",
+                "items": [
+                  "Mean vs median, rates vs counts",
+                  "A confidence interval you can explain without a lecture",
+                  "Correlation is not the campaign — you will say that out loud"
+                ]
+              },
+              {
+                "heading": "Notebooks for humans",
+                "items": [
+                  "A top cell that states the question and the grain",
+                  "Plots with titles that are claims, not ‘fig 3’",
+                  "A last cell: decision, caveat, next pull"
+                ]
+              },
+              {
+                "heading": "Handoff",
+                "items": [
+                  "Export a one-pager table plus two charts",
+                  "What belongs in Power BI next vs what stays in the notebook",
+                  "Review language for the career call: what you found, what you did not"
+                ]
+              }
+            ],
+            "outcome": "You leave with an EDA notebook a stakeholder could skim — question, two charts, one caveat.",
+            "topics": [
+              "Histograms and box plots that name the unit",
+              "When a ‘spike’ is a data bug vs a real event",
+              "Mean vs median, rates vs counts",
+              "A confidence interval you can explain without a lecture",
+              "A top cell that states the question and the grain",
+              "Plots with titles that are claims, not ‘fig 3’",
+              "Export a one-pager table plus two charts",
+              "What belongs in Power BI next vs what stays in the notebook"
+            ]
+          }
         ]
       },
       {
-        "title": "Introduction to Excel",
+        "title": "Power BI (the catalog’s only BI visualizer)",
         "modules": [
-          {"title": "Module 10: Spreadsheet analytics", "topics": ["Formulas and references", "Pivot tables", "Charts for stakeholders"]},
-          {"title": "Module 11: SQL and Power BI", "topics": ["SQL for Data Analysis", "AI-Powered Dashboards", "Business Intelligence"]}
+          {
+            "title": "Module 5: Power BI dashboards",
+            "lead": "This is the only BI visualizer on the catalog. You model the data, write DAX that matches the grain, and publish a report someone can filter without calling you.",
+            "blocks": [
+              {
+                "heading": "Data model",
+                "items": [
+                  "Star-ish relationships, cardinality, and both-direction traps",
+                  "Date tables and why auto date/time will bite you",
+                  "Hiding columns the report should never expose"
+                ]
+              },
+              {
+                "heading": "DAX measures",
+                "items": [
+                  "CALCULATE, FILTER, and time intelligence you can explain",
+                  "Measures vs calculated columns — pick the cheaper one",
+                  "A broken measure on purpose, then the fix"
+                ]
+              },
+              {
+                "heading": "Interactive reports",
+                "items": [
+                  "Slicers, drill-through, and bookmarks without circus UI",
+                  "Row-level thinking: who should see which cut",
+                  "Mobile vs desktop — what you actually ship"
+                ]
+              },
+              {
+                "heading": "Review bar",
+                "items": [
+                  "Does the title state the decision?",
+                  "Can a new viewer find the filter that changed the number?",
+                  "Performance: too many visuals is a bug"
+                ]
+              }
+            ],
+            "outcome": "You leave with a published-style report: model, three measures, filters that do not lie.",
+            "topics": [
+              "Star-ish relationships, cardinality, and both-direction traps",
+              "Date tables and why auto date/time will bite you",
+              "CALCULATE, FILTER, and time intelligence you can explain",
+              "Measures vs calculated columns — pick the cheaper one",
+              "Slicers, drill-through, and bookmarks without circus UI",
+              "Row-level thinking: who should see which cut",
+              "Does the title state the decision?",
+              "Can a new viewer find the filter that changed the number?"
+            ]
+          },
+          {
+            "title": "Module 6: AI-assisted BI",
+            "lead": "Copilot and NLQ on Power BI are part of the job now. You will use them, then check them, then ship a dashboard you can defend without the assistant in the room.",
+            "blocks": [
+              {
+                "heading": "NLQ and Copilot",
+                "items": [
+                  "Ask a question the model can actually see in the model",
+                  "When Copilot invents a measure — catch it with DAX you already know",
+                  "Prompt the assistant for layout, not for truth"
+                ]
+              },
+              {
+                "heading": "Publish and share",
+                "items": [
+                  "Workspaces, apps, and who gets which role",
+                  "Scheduled refresh and the email that fires when it fails",
+                  "A one-page ‘how to read this’ for the stakeholder"
+                ]
+              },
+              {
+                "heading": "Portfolio dashboard",
+                "items": [
+                  "One business question, one model, one report",
+                  "A short write-up: grain, measures, known gaps",
+                  "Career-call walkthrough: three clicks, one caveat"
+                ]
+              },
+              {
+                "heading": "What this module is not",
+                "items": [
+                  "Not Tableau — that is not on this program",
+                  "Not a placement percentage",
+                  "Not a substitute for SQL and Excel you already did"
+                ]
+              }
+            ],
+            "outcome": "You leave with a portfolio dashboard plus a paragraph on what Copilot got wrong and how you fixed it.",
+            "topics": [
+              "Ask a question the model can actually see in the model",
+              "When Copilot invents a measure — catch it with DAX you already know",
+              "Workspaces, apps, and who gets which role",
+              "Scheduled refresh and the email that fires when it fails",
+              "One business question, one model, one report",
+              "A short write-up: grain, measures, known gaps",
+              "Not Tableau — that is not on this program",
+              "Not a placement percentage"
+            ]
+          }
         ]
       }
     ]
@@ -30,25 +317,312 @@
     "title": "Course Curriculum",
     "levels": [
       {
-        "title": "Python Basics",
+        "title": "Python, SQL, and statistics",
         "modules": [
-          {"title": "Module 1: Python for Data Science", "topics": ["Syntax and data structures", "Functions and modules", "Jupyter workflows"]},
-          {"title": "Module 2: NumPy and Pandas", "topics": ["Arrays and broadcasting", "Data wrangling", "EDA with Pandas"]},
-          {"title": "Module 7: Time and Space Complexity", "topics": ["Understanding Algorithm Efficiency", "Time Complexity", "Space Complexity"]}
+          {
+            "title": "Module 1: Python for Data Science",
+            "lead": "Six months only works if the language is a habit. This module is Python you will reuse in every later notebook — not a tour of trivia.",
+            "blocks": [
+              {
+                "heading": "Syntax that sticks",
+                "items": [
+                  "Types, control flow, functions, and modules you will actually import",
+                  "List/dict comprehensions without turning the file into a puzzle",
+                  "Errors: read a traceback before you paste it into a chatbot"
+                ]
+              },
+              {
+                "heading": "Data structures in practice",
+                "items": [
+                  "When a list is wrong and a dict or set is right",
+                  "Dataclasses / named tuples for experiment configs",
+                  "Paths, JSON, and CSV without hard-coded Windows surprises"
+                ]
+              },
+              {
+                "heading": "Jupyter workflows",
+                "items": [
+                  "Kernel, restart, run-all — the only honest notebook",
+                  "Markdown cells that state the question",
+                  "Moving a useful cell into a .py helper before it grows mold"
+                ]
+              },
+              {
+                "heading": "Engineering hygiene",
+                "items": [
+                  "venv or conda, requirements.txt, and why ‘it works on my machine’ is not a result",
+                  "Git: commits that say what changed in the experiment",
+                  "A tiny test for a cleaning function"
+                ]
+              }
+            ],
+            "outcome": "You leave with a repo layout: notebook + helper module + requirements, runnable from a cold start.",
+            "topics": [
+              "Types, control flow, functions, and modules you will actually import",
+              "List/dict comprehensions without turning the file into a puzzle",
+              "When a list is wrong and a dict or set is right",
+              "Dataclasses / named tuples for experiment configs",
+              "Kernel, restart, run-all — the only honest notebook",
+              "Markdown cells that state the question",
+              "venv or conda, requirements.txt, and why ‘it works on my machine’ is not a result",
+              "Git: commits that say what changed in the experiment"
+            ]
+          },
+          {
+            "title": "Module 2: NumPy, Pandas, and SQL",
+            "lead": "Modeling tables are arrays and joins. You will wrangle in Pandas, think in NumPy shapes, and pull training tables with SQL — still no Power BI on this program.",
+            "blocks": [
+              {
+                "heading": "NumPy",
+                "items": [
+                  "Shapes, broadcasting, and the bugs that look like ‘wrong accuracy’",
+                  "Vectorize a loop you wrote in Module 1",
+                  "Random seeds you can replay"
+                ]
+              },
+              {
+                "heading": "Pandas wrangling",
+                "items": [
+                  "Groupby, merge, resample, and window-ish transforms",
+                  "Leakage: a feature that includes the future",
+                  "Train/valid split as a time cut when the data has a clock"
+                ]
+              },
+              {
+                "heading": "SQL for modeling tables",
+                "items": [
+                  "Joins that produce one row per entity",
+                  "Aggregations that become features",
+                  "Export to a file the model code can read without a GUI"
+                ]
+              },
+              {
+                "heading": "Handoff to stats",
+                "items": [
+                  "A tidy table, a data dictionary, and known missingness",
+                  "No dashboard tool here — plots come next in Matplotlib/Seaborn",
+                  "A short note: grain, keys, leakage risks"
+                ]
+              }
+            ],
+            "outcome": "You leave with a feature table from SQL + Pandas, documented grain, and a leakage warning you wrote yourself.",
+            "topics": [
+              "Shapes, broadcasting, and the bugs that look like ‘wrong accuracy’",
+              "Vectorize a loop you wrote in Module 1",
+              "Groupby, merge, resample, and window-ish transforms",
+              "Leakage: a feature that includes the future",
+              "Joins that produce one row per entity",
+              "Aggregations that become features",
+              "A tidy table, a data dictionary, and known missingness",
+              "No dashboard tool here — plots come next in Matplotlib/Seaborn"
+            ]
+          },
+          {
+            "title": "Module 3: Statistics and EDA",
+            "lead": "Statistics is how you stop lying to yourself with a lucky chart. Visualization on this program is Matplotlib and Seaborn — not Power BI.",
+            "blocks": [
+              {
+                "heading": "Probability you will use",
+                "items": [
+                  "Distributions that show up in product data",
+                  "Sampling vs population, and why n=12 is not a launch",
+                  "Independence assumptions you will violate and then name"
+                ]
+              },
+              {
+                "heading": "Hypothesis testing",
+                "items": [
+                  "A test that matches the design (not ‘p < 0.05’ as a personality)",
+                  "Confidence intervals as the sentence you tell a PM",
+                  "Multiple comparisons: the dashboard that tests everything"
+                ]
+              },
+              {
+                "heading": "Feature engineering",
+                "items": [
+                  "Encodings, bins, and interactions you can justify",
+                  "Scaling and when trees do not care",
+                  "Target leakage checks before you fit anything"
+                ]
+              },
+              {
+                "heading": "Plots in Python",
+                "items": [
+                  "Matplotlib/Seaborn: univariate, bivariate, residual-style views",
+                  "A figure that states a claim in the title",
+                  "Why this track does not open Power BI — that lives on Analytics"
+                ]
+              }
+            ],
+            "outcome": "You leave with an EDA report: tests, two Python figures, and a feature list with leakage notes.",
+            "topics": [
+              "Distributions that show up in product data",
+              "Sampling vs population, and why n=12 is not a launch",
+              "A test that matches the design (not ‘p < 0.05’ as a personality)",
+              "Confidence intervals as the sentence you tell a PM",
+              "Encodings, bins, and interactions you can justify",
+              "Scaling and when trees do not care",
+              "Matplotlib/Seaborn: univariate, bivariate, residual-style views",
+              "A figure that states a claim in the title"
+            ]
+          }
         ]
       },
       {
-        "title": "Python Advanced",
+        "title": "Machine learning",
         "modules": [
-          {"title": "Module 8: Statistics and EDA", "topics": ["Probability and hypothesis testing", "Feature engineering", "Visualization with Matplotlib and Seaborn"]},
-          {"title": "Module 9: Core Machine Learning", "topics": ["Regression to XGBoost", "Model evaluation", "Scikit-learn pipelines"]},
-          {"title": "Module 10: Deep learning and NLP", "topics": ["Neural network foundations", "NLP essentials", "LLM and RAG foundations"]}
+          {
+            "title": "Module 4: Core Machine Learning",
+            "lead": "Classical ML is still the interview and still the baseline. You will fit, evaluate, and pipeline models in scikit-learn — then beat a dumb baseline on purpose.",
+            "blocks": [
+              {
+                "heading": "From regression to boosting",
+                "items": [
+                  "Linear models you can interpret",
+                  "Trees and random forests",
+                  "Gradient boosting (XGBoost-class) as the strong baseline"
+                ]
+              },
+              {
+                "heading": "Evaluation",
+                "items": [
+                  "The metric that matches the cost of being wrong",
+                  "Calibration, confusion matrices, ranking metrics",
+                  "Cross-validation that respects time or groups"
+                ]
+              },
+              {
+                "heading": "Scikit-learn pipelines",
+                "items": [
+                  "Preprocess + model in one object",
+                  "ColumnTransformer so production code matches the notebook",
+                  "Serialize and reload without ‘it worked yesterday’"
+                ]
+              },
+              {
+                "heading": "Error analysis",
+                "items": [
+                  "Slice the errors; do not only quote AUC",
+                  "A simple model that is allowed to win",
+                  "Write the limitation before the career call"
+                ]
+              }
+            ],
+            "outcome": "You leave with a pipeline, a metric that matches the decision, and an error slice — not just a leaderboard number.",
+            "topics": [
+              "Linear models you can interpret",
+              "Trees and random forests",
+              "The metric that matches the cost of being wrong",
+              "Calibration, confusion matrices, ranking metrics",
+              "Preprocess + model in one object",
+              "ColumnTransformer so production code matches the notebook",
+              "Slice the errors; do not only quote AUC",
+              "A simple model that is allowed to win"
+            ]
+          },
+          {
+            "title": "Module 5: Deep learning and NLP",
+            "lead": "Enough neural nets and text models to talk to a hiring manager without faking a research paper. This is still data science, not Gen AI Specialization.",
+            "blocks": [
+              {
+                "heading": "Neural net foundations",
+                "items": [
+                  "Tensors, a training loop, overfit a tiny set on purpose",
+                  "Regularization and why loss going down is not ‘done’",
+                  "GPU vs CPU: what you actually need for this module"
+                ]
+              },
+              {
+                "heading": "NLP essentials",
+                "items": [
+                  "Tokenization, embeddings, a classical text baseline",
+                  "A transformer API call vs training from scratch — know the difference",
+                  "Failure modes: toxicity, domain shift, empty strings"
+                ]
+              },
+              {
+                "heading": "Honest scope",
+                "items": [
+                  "You will not finish a new LLM pretrain",
+                  "You will be able to explain attention at a whiteboard level",
+                  "If you want LoRA and serving depth, that is Gen AI Specialization"
+                ]
+              },
+              {
+                "heading": "A small experiment",
+                "items": [
+                  "Classify or extract on a dataset you understand",
+                  "Compare to the Module 4 baseline",
+                  "Log hyperparameters like an adult"
+                ]
+              }
+            ],
+            "outcome": "You leave with one DL/NLP experiment compared to a classical baseline, and a sentence on when not to use a net.",
+            "topics": [
+              "Tensors, a training loop, overfit a tiny set on purpose",
+              "Regularization and why loss going down is not ‘done’",
+              "Tokenization, embeddings, a classical text baseline",
+              "A transformer API call vs training from scratch — know the difference",
+              "You will not finish a new LLM pretrain",
+              "You will be able to explain attention at a whiteboard level",
+              "Classify or extract on a dataset you understand",
+              "Compare to the Module 4 baseline"
+            ]
+          }
         ]
       },
       {
-        "title": "Introduction to Excel",
+        "title": "Applied GenAI for scientists",
         "modules": [
-          {"title": "Module 11: Spreadsheets and BI", "topics": ["MS Excel dashboards", "Power BI / Tableau", "SQL for analytics"]}
+          {
+            "title": "Module 6: LLM and RAG intro",
+            "lead": "A grounded intro so you can retrieve over your own notes and wrap it in a script. This is not a BI visualizer track and not the full developer or specialization slab.",
+            "blocks": [
+              {
+                "heading": "Model APIs from notebooks",
+                "items": [
+                  "Chat vs embed endpoints",
+                  "Tokens, cost, and retries",
+                  "Structured outputs for extraction jobs"
+                ]
+              },
+              {
+                "heading": "Simple retrieval",
+                "items": [
+                  "Chunk your own docs, embed, retrieve, cite",
+                  "When RAG is worse than grep",
+                  "A tiny eval: did the answer use the retrieved chunk?"
+                ]
+              },
+              {
+                "heading": "A thin wrap",
+                "items": [
+                  "FastAPI or a CLI around the notebook",
+                  "Secrets not in git",
+                  "Still no Power BI — charts stay in Python"
+                ]
+              },
+              {
+                "heading": "Where to go next",
+                "items": [
+                  "Gen AI for Developers if you want product RAG",
+                  "Gen AI Specialization if you want fine-tunes",
+                  "LLMOps if your job is serving and eval gates"
+                ]
+              }
+            ],
+            "outcome": "You leave with a small RAG-over-docs demo and a written limit: what it cannot answer.",
+            "topics": [
+              "Chat vs embed endpoints",
+              "Tokens, cost, and retries",
+              "Chunk your own docs, embed, retrieve, cite",
+              "When RAG is worse than grep",
+              "FastAPI or a CLI around the notebook",
+              "Secrets not in git",
+              "Gen AI for Developers if you want product RAG",
+              "Gen AI Specialization if you want fine-tunes"
+            ]
+          }
         ]
       }
     ]
@@ -59,21 +633,261 @@
       {
         "title": "Foundations for GenAI applications",
         "modules": [
-          {"title": "Module 1: LLM APIs and SDKs", "topics": ["API and SDK Integration", "Prompt patterns", "Structured outputs"]},
-          {"title": "Module 2: App packaging", "topics": ["FastAPI services", "Streamlit and Gradio UIs", "Error handling and retries"]}
+          {
+            "title": "Module 1: LLM APIs and SDKs",
+            "lead": "You already write software. This module is calling models like any other API: auth, retries, schemas, and prompts that fail closed.",
+            "blocks": [
+              {
+                "heading": "API and SDK integration",
+                "items": [
+                  "Keys, environments, and never committing secrets",
+                  "Timeouts, retries, idempotency for paid calls",
+                  "Streaming vs batch — pick one for the UX"
+                ]
+              },
+              {
+                "heading": "Prompt patterns",
+                "items": [
+                  "System vs user vs tool messages",
+                  "Few-shot that does not rot",
+                  "When a longer prompt is just a more expensive bug"
+                ]
+              },
+              {
+                "heading": "Structured outputs",
+                "items": [
+                  "JSON schemas, function-calling style args",
+                  "Validate before you write to a database",
+                  "Repair loops that do not infinite-spend"
+                ]
+              },
+              {
+                "heading": "Cost and safety at the edge",
+                "items": [
+                  "Token budgets in the client",
+                  "PII you should not send",
+                  "A log line you could show in an incident"
+                ]
+              }
+            ],
+            "outcome": "You leave with a small client library: typed calls, retries, and a schema the rest of the app can trust.",
+            "topics": [
+              "Keys, environments, and never committing secrets",
+              "Timeouts, retries, idempotency for paid calls",
+              "System vs user vs tool messages",
+              "Few-shot that does not rot",
+              "JSON schemas, function-calling style args",
+              "Validate before you write to a database",
+              "Token budgets in the client",
+              "PII you should not send"
+            ]
+          },
+          {
+            "title": "Module 2: App packaging",
+            "lead": "A notebook is not a product. You wrap the model behind FastAPI and put a thin UI in front so a human can try it without your laptop.",
+            "blocks": [
+              {
+                "heading": "FastAPI services",
+                "items": [
+                  "Routes, pydantic models, dependency-injected clients",
+                  "Health checks and version headers",
+                  "Errors that are JSON, not a stack trace in the browser"
+                ]
+              },
+              {
+                "heading": "Streamlit and Gradio UIs",
+                "items": [
+                  "A demo that does not pretend to be the product",
+                  "Session state, file upload, and a clear ‘this is a prototype’",
+                  "When to stop and move logic back to the API"
+                ]
+              },
+              {
+                "heading": "Failure handling",
+                "items": [
+                  "Provider outages, rate limits, empty retrieval",
+                  "User-visible copy that does not leak internals",
+                  "Retry buttons that do not double-submit"
+                ]
+              },
+              {
+                "heading": "Local runbooks",
+                "items": [
+                  "README: how to run, what env vars, what it costs",
+                  "Docker optional but encouraged",
+                  "No Excel, no Power BI — this is an app slab"
+                ]
+              }
+            ],
+            "outcome": "You leave with API + UI running locally, documented env vars, and a failure path you tested.",
+            "topics": [
+              "Routes, pydantic models, dependency-injected clients",
+              "Health checks and version headers",
+              "A demo that does not pretend to be the product",
+              "Session state, file upload, and a clear ‘this is a prototype’",
+              "Provider outages, rate limits, empty retrieval",
+              "User-visible copy that does not leak internals",
+              "README: how to run, what env vars, what it costs",
+              "Docker optional but encouraged"
+            ]
+          }
         ]
       },
       {
         "title": "RAG and agents",
         "modules": [
-          {"title": "Module 3: RAG pipelines", "topics": ["Chunking and embeddings", "Grounded retrieval", "Evaluation of answers"]},
-          {"title": "Module 4: Agent workflows", "topics": ["Tool calling", "Memory", "Multi-step orchestration"]}
+          {
+            "title": "Module 3: RAG pipelines",
+            "lead": "Most ‘chat with my PDFs’ demos lie. You will chunk, embed, retrieve, and score answers against a tiny golden set.",
+            "blocks": [
+              {
+                "heading": "Chunking and embeddings",
+                "items": [
+                  "Chunk size vs question type",
+                  "Metadata filters (source, date, ACL-shaped tags)",
+                  "Re-embed when the corpus moves"
+                ]
+              },
+              {
+                "heading": "Grounded retrieval",
+                "items": [
+                  "Top-k, rerank if you need it",
+                  "Citations the UI can show",
+                  "Abstain when retrieval is junk"
+                ]
+              },
+              {
+                "heading": "Evaluation of answers",
+                "items": [
+                  "Faithfulness vs relevance vs answer quality",
+                  "A 20-row golden set beats a vibe check",
+                  "Regressions: a prompt change that drops groundedness"
+                ]
+              },
+              {
+                "heading": "Known failure modes",
+                "items": [
+                  "Stale docs, duplicate chunks, table-as-text mush",
+                  "Jailbreaks that ignore your corpus",
+                  "What this module will not do: train a new base model"
+                ]
+              }
+            ],
+            "outcome": "You leave with a RAG pipeline and a golden-set score you can quote without blushing.",
+            "topics": [
+              "Chunk size vs question type",
+              "Metadata filters (source, date, ACL-shaped tags)",
+              "Top-k, rerank if you need it",
+              "Citations the UI can show",
+              "Faithfulness vs relevance vs answer quality",
+              "A 20-row golden set beats a vibe check",
+              "Stale docs, duplicate chunks, table-as-text mush",
+              "Jailbreaks that ignore your corpus"
+            ]
+          },
+          {
+            "title": "Module 4: Agent workflows",
+            "lead": "Tool-using agents are useful when the tool list is short and audited. You will build one that can call functions, remember a little, and stop.",
+            "blocks": [
+              {
+                "heading": "Tool calling",
+                "items": [
+                  "Allowlists, argument schemas, dry-run logs",
+                  "Idempotent tools vs ‘send email’ disasters",
+                  "Timeouts per tool"
+                ]
+              },
+              {
+                "heading": "Memory",
+                "items": [
+                  "What belongs in the thread vs a store",
+                  "Summaries that drop the important constraint",
+                  "GDPR-shaped: do not keep secrets in traces"
+                ]
+              },
+              {
+                "heading": "Multi-step orchestration",
+                "items": [
+                  "A graph or loop with a max-step cap",
+                  "Human confirm on irreversible actions",
+                  "LangGraph-class thinking without cargo-culting a vendor"
+                ]
+              },
+              {
+                "heading": "Eval for agents",
+                "items": [
+                  "Did it call the right tool?",
+                  "Did it loop?",
+                  "A trace you can paste into a review"
+                ]
+              }
+            ],
+            "outcome": "You leave with a bounded agent: two tools, a step cap, and a trace of a successful and a failed run.",
+            "topics": [
+              "Allowlists, argument schemas, dry-run logs",
+              "Idempotent tools vs ‘send email’ disasters",
+              "What belongs in the thread vs a store",
+              "Summaries that drop the important constraint",
+              "A graph or loop with a max-step cap",
+              "Human confirm on irreversible actions",
+              "Did it call the right tool?",
+              "Did it loop?"
+            ]
+          }
         ]
       },
       {
         "title": "Production",
         "modules": [
-          {"title": "Module 5: Ship the capstone", "topics": ["Production Deployment", "Tracing and docs", "Portfolio review"]}
+          {
+            "title": "Module 5: Ship the capstone",
+            "lead": "The capstone is a deployed demo you can explain: RAG or agent, an API, a UI, traces, and a paragraph on cost.",
+            "blocks": [
+              {
+                "heading": "Production deployment",
+                "items": [
+                  "A host you can hit from a phone",
+                  "Env-based config, no keys in the frontend",
+                  "A version string in the UI"
+                ]
+              },
+              {
+                "heading": "Tracing and docs",
+                "items": [
+                  "LangSmith/Langfuse-style traces or equivalent logs",
+                  "README + architecture sketch",
+                  "A 3-minute walkthrough script"
+                ]
+              },
+              {
+                "heading": "Portfolio review",
+                "items": [
+                  "What you would not ship to a bank tomorrow",
+                  "Load and cost: one realistic number",
+                  "Career-call defense: decisions, not a feature tour"
+                ]
+              },
+              {
+                "heading": "Boundaries",
+                "items": [
+                  "Not MLOps-for-tabular",
+                  "Not Power BI",
+                  "Not a fake CTC"
+                ]
+              }
+            ],
+            "outcome": "You leave with a live URL (or a recorded deploy), traces, and a one-page architecture note.",
+            "topics": [
+              "A host you can hit from a phone",
+              "Env-based config, no keys in the frontend",
+              "LangSmith/Langfuse-style traces or equivalent logs",
+              "README + architecture sketch",
+              "What you would not ship to a bank tomorrow",
+              "Load and cost: one realistic number",
+              "Not MLOps-for-tabular",
+              "Not Power BI"
+            ]
+          }
         ]
       }
     ]
@@ -84,21 +898,260 @@
       {
         "title": "Model foundations",
         "modules": [
-          {"title": "Module 1: LLM architectures", "topics": ["Transformers and attention", "Context windows", "Tokenization"]},
-          {"title": "Module 2: Multimodal systems", "topics": ["Vision-Language and Multimodal Models", "ViTs and VLMs", "Multimodal workflows"]}
+          {
+            "title": "Module 1: LLM architectures",
+            "lead": "Specialization starts under the API. You need enough transformer literacy to choose context, tokenize honestly, and know why a model refuses a long doc.",
+            "blocks": [
+              {
+                "heading": "Transformers and attention",
+                "items": [
+                  "Encoder/decoder vs decoder-only in practice",
+                  "Attention as routing, not magic",
+                  "A tiny from-scratch or toy pass so the words mean something"
+                ]
+              },
+              {
+                "heading": "Context windows",
+                "items": [
+                  "What actually fits; what gets dropped",
+                  "RoPE-class length tricks at a conceptual level",
+                  "When to RAG instead of stuffing the prompt"
+                ]
+              },
+              {
+                "heading": "Tokenization",
+                "items": [
+                  "Subwords, multilingual pain, code vs prose",
+                  "Count tokens before you price a feature",
+                  "Truncation bugs that look like ‘the model is dumb’"
+                ]
+              },
+              {
+                "heading": "Behaviour",
+                "items": [
+                  "Temperature, top-p, and when greedy is correct",
+                  "Hallucination as a decoding + data problem",
+                  "This is still not a Power BI class"
+                ]
+              }
+            ],
+            "outcome": "You leave with a one-pager: architecture family, context limit, tokenizer gotchas for your use case.",
+            "topics": [
+              "Encoder/decoder vs decoder-only in practice",
+              "Attention as routing, not magic",
+              "What actually fits; what gets dropped",
+              "RoPE-class length tricks at a conceptual level",
+              "Subwords, multilingual pain, code vs prose",
+              "Count tokens before you price a feature",
+              "Temperature, top-p, and when greedy is correct",
+              "Hallucination as a decoding + data problem"
+            ]
+          },
+          {
+            "title": "Module 2: Multimodal systems",
+            "lead": "Text-only is not the whole job. You will wire vision-language pieces into a workflow you can describe, not a research bake-off.",
+            "blocks": [
+              {
+                "heading": "Vision-language models",
+                "items": [
+                  "Image in, text out — and the reverse where it exists",
+                  "Resolution, tiling, and cost",
+                  "When OCR + LLM is more honest than a VLM"
+                ]
+              },
+              {
+                "heading": "ViTs and VLMs at a glance",
+                "items": [
+                  "Patch embeddings as an idea",
+                  "Frozen vs fine-tuned vision towers",
+                  "Failure: charts, handwriting, tiny text"
+                ]
+              },
+              {
+                "heading": "Multimodal workflows",
+                "items": [
+                  "Doc → images → retrieval → answer",
+                  "Audio/transcript as just another document",
+                  "Eval: did it read the figure or bluff?"
+                ]
+              },
+              {
+                "heading": "Scope control",
+                "items": [
+                  "You will not train a new CLIP from scratch here",
+                  "You will ship a pipeline with tests on 10 messy files",
+                  "If you only wanted chat APIs, the developer slab is shorter"
+                ]
+              }
+            ],
+            "outcome": "You leave with a multimodal pipeline on a small messy corpus and a list of files it fails on.",
+            "topics": [
+              "Image in, text out — and the reverse where it exists",
+              "Resolution, tiling, and cost",
+              "Patch embeddings as an idea",
+              "Frozen vs fine-tuned vision towers",
+              "Doc → images → retrieval → answer",
+              "Audio/transcript as just another document",
+              "You will not train a new CLIP from scratch here",
+              "You will ship a pipeline with tests on 10 messy files"
+            ]
+          }
         ]
       },
       {
         "title": "Applied GenAI",
         "modules": [
-          {"title": "Module 3: RAG design", "topics": ["RAG Design Patterns", "Retrieval evaluation", "Grounding"]},
-          {"title": "Module 4: Fine-tuning", "topics": ["Fine-tuning and PEFT", "Quantization", "Preference alignment"]}
+          {
+            "title": "Module 3: RAG design",
+            "lead": "RAG here is design patterns and evaluation, not a single vendor tutorial. You will choose chunking, retrieval, and grounding like an engineer.",
+            "blocks": [
+              {
+                "heading": "Design patterns",
+                "items": [
+                  "Naive RAG vs hierarchical vs agentic retrieve",
+                  "Hybrid search when embeddings miss keywords",
+                  "Query rewrite without infinite loops"
+                ]
+              },
+              {
+                "heading": "Retrieval evaluation",
+                "items": [
+                  "Recall@k on a labelled set",
+                  "Citation rate vs correctness",
+                  "Index freshness"
+                ]
+              },
+              {
+                "heading": "Grounding",
+                "items": [
+                  "Force quotes; fail closed",
+                  "Table and PDF layout hell",
+                  "Access control as a retrieval filter"
+                ]
+              },
+              {
+                "heading": "When not to RAG",
+                "items": [
+                  "The answer is in a database — use SQL",
+                  "The policy is three paragraphs — put it in the system prompt",
+                  "Fine-tune later if the style is the product"
+                ]
+              }
+            ],
+            "outcome": "You leave with a RAG design doc plus scores on a golden set — not a screenshot of a chat.",
+            "topics": [
+              "Naive RAG vs hierarchical vs agentic retrieve",
+              "Hybrid search when embeddings miss keywords",
+              "Recall@k on a labelled set",
+              "Citation rate vs correctness",
+              "Force quotes; fail closed",
+              "Table and PDF layout hell",
+              "The answer is in a database — use SQL",
+              "The policy is three paragraphs — put it in the system prompt"
+            ]
+          },
+          {
+            "title": "Module 4: Fine-tuning",
+            "lead": "PEFT when prompting is not enough. You will run a LoRA/QLoRA-class job, measure it, and know when to throw it away.",
+            "blocks": [
+              {
+                "heading": "Fine-tuning and PEFT",
+                "items": [
+                  "Data you actually have vs data you wish you had",
+                  "LoRA rank, epochs, and overfitting the style",
+                  "QLoRA when VRAM is the constraint"
+                ]
+              },
+              {
+                "heading": "Quantization",
+                "items": [
+                  "Why 4-bit exists",
+                  "Quality vs speed vs memory",
+                  "Eval after quant — not only before"
+                ]
+              },
+              {
+                "heading": "Preference alignment",
+                "items": [
+                  "DPO-class idea at a practical level",
+                  "Reward hacks you can cause with bad prefs",
+                  "Safety evals that are not optional"
+                ]
+              },
+              {
+                "heading": "Decision rule",
+                "items": [
+                  "Prompt → RAG → fine-tune, in that order unless you have a reason",
+                  "A write-up: what improved, what got worse",
+                  "Not a dashboard course"
+                ]
+              }
+            ],
+            "outcome": "You leave with a PEFT run, before/after eval, and a recommendation to keep or drop the adapter.",
+            "topics": [
+              "Data you actually have vs data you wish you had",
+              "LoRA rank, epochs, and overfitting the style",
+              "Why 4-bit exists",
+              "Quality vs speed vs memory",
+              "DPO-class idea at a practical level",
+              "Reward hacks you can cause with bad prefs",
+              "Prompt → RAG → fine-tune, in that order unless you have a reason",
+              "A write-up: what improved, what got worse"
+            ]
+          }
         ]
       },
       {
         "title": "Deployment",
         "modules": [
-          {"title": "Module 5: Agentic deployment", "topics": ["Serving and monitoring", "Cost controls", "Agentic Deployment"]}
+          {
+            "title": "Module 5: Agentic deployment",
+            "lead": "Serving, cost, and agents that are allowed in production. Deeper than the three-month developer slab; still not LLMOps as a full ops career.",
+            "blocks": [
+              {
+                "heading": "Serving and monitoring",
+                "items": [
+                  "API vs self-host tradeoffs",
+                  "Latency budgets and batching",
+                  "A health metric that is not ‘the demo worked’"
+                ]
+              },
+              {
+                "heading": "Cost controls",
+                "items": [
+                  "Max tokens, caching, cheaper models for easy traffic",
+                  "Kill switches",
+                  "A weekly cost number in the README"
+                ]
+              },
+              {
+                "heading": "Agentic deployment",
+                "items": [
+                  "Tool allowlists in prod",
+                  "Human-in-the-loop on money/PII",
+                  "Rollback a prompt or adapter like a binary"
+                ]
+              },
+              {
+                "heading": "Handoff",
+                "items": [
+                  "What LLMOps owns next (eval gates, traces, token budgets)",
+                  "What you still own (the model choice and the task)"
+                ]
+              }
+            ],
+            "outcome": "You leave with a served endpoint (or a sober local serve), cost notes, and an agent policy page.",
+            "topics": [
+              "API vs self-host tradeoffs",
+              "Latency budgets and batching",
+              "Max tokens, caching, cheaper models for easy traffic",
+              "Kill switches",
+              "Tool allowlists in prod",
+              "Human-in-the-loop on money/PII",
+              "What LLMOps owns next (eval gates, traces, token budgets)",
+              "What you still own (the model choice and the task)"
+            ]
+          }
         ]
       }
     ]
@@ -109,21 +1162,259 @@
       {
         "title": "Packaging ML",
         "modules": [
-          {"title": "Module 1: Containers", "topics": ["Docker and Containerization", "Reproducible images", "Local-to-cloud parity"]},
-          {"title": "Module 2: Versioning", "topics": ["Data and Model Versioning", "DVC", "MLflow registry"]}
+          {
+            "title": "Module 1: Containers",
+            "lead": "If it is not in an image, it is not a release. You will containerize training and serving so ‘works on my laptop’ stops being a strategy.",
+            "blocks": [
+              {
+                "heading": "Docker and containerization",
+                "items": [
+                  "Multi-stage builds, non-root users, .dockerignore",
+                  "GPU images vs CPU images — do not mix them by accident",
+                  "Pin base tags; floating latest is an incident"
+                ]
+              },
+              {
+                "heading": "Reproducible images",
+                "items": [
+                  "Lock files, hashes, and why pip freeze on Monday lies on Friday",
+                  "Secrets via env/runtime, not baked layers",
+                  "SBOM-lite: know what you shipped"
+                ]
+              },
+              {
+                "heading": "Local-to-cloud parity",
+                "items": [
+                  "Same entrypoint locally and in CI",
+                  "Compose for model + feature store mock",
+                  "A smoke test that runs in the image"
+                ]
+              },
+              {
+                "heading": "Not this module",
+                "items": [
+                  "Not Power BI",
+                  "Not beginner Python",
+                  "Not a placement %"
+                ]
+              }
+            ],
+            "outcome": "You leave with a Dockerfile that trains or serves, plus a one-command smoke test.",
+            "topics": [
+              "Multi-stage builds, non-root users, .dockerignore",
+              "GPU images vs CPU images — do not mix them by accident",
+              "Lock files, hashes, and why pip freeze on Monday lies on Friday",
+              "Secrets via env/runtime, not baked layers",
+              "Same entrypoint locally and in CI",
+              "Compose for model + feature store mock",
+              "Not Power BI",
+              "Not beginner Python"
+            ]
+          },
+          {
+            "title": "Module 2: Versioning",
+            "lead": "Models without data versions are folklore. You will version data and models so a rollback is a checkout, not a memory.",
+            "blocks": [
+              {
+                "heading": "Data and model versioning",
+                "items": [
+                  "DVC or equivalent: remotes, pipelines, metrics files",
+                  "What belongs in git vs the data remote",
+                  "A failed experiment you can re-run"
+                ]
+              },
+              {
+                "heading": "DVC habits",
+                "items": [
+                  "dvc.yaml stages with frozen params",
+                  "Metrics that CI can read",
+                  "Avoid packing 4GB into a commit"
+                ]
+              },
+              {
+                "heading": "MLflow registry",
+                "items": [
+                  "Runs, params, artifacts",
+                  "Stage: Staging vs Production as a process, not a sticker",
+                  "Load a registered model in serving code by name+version"
+                ]
+              },
+              {
+                "heading": "Audit trail",
+                "items": [
+                  "Who promoted this?",
+                  "What data snapshot?",
+                  "A markdown model card with known slices"
+                ]
+              }
+            ],
+            "outcome": "You leave with a versioned dataset, a registered model, and a card that names the snapshot.",
+            "topics": [
+              "DVC or equivalent: remotes, pipelines, metrics files",
+              "What belongs in git vs the data remote",
+              "dvc.yaml stages with frozen params",
+              "Metrics that CI can read",
+              "Runs, params, artifacts",
+              "Stage: Staging vs Production as a process, not a sticker",
+              "Who promoted this?",
+              "What data snapshot?"
+            ]
+          }
         ]
       },
       {
         "title": "Release discipline",
         "modules": [
-          {"title": "Module 3: CI/CD for ML", "topics": ["Training pipelines", "Eval gates", "Rollback patterns"]},
-          {"title": "Module 4: Kubernetes for ML services", "topics": ["Serving", "Autoscaling", "Environments"]}
+          {
+            "title": "Module 3: CI/CD for ML",
+            "lead": "Training is a build. You will gate on metrics, fail the pipeline, and refuse to ‘just ship the pickle’.",
+            "blocks": [
+              {
+                "heading": "Training pipelines",
+                "items": [
+                  "Scheduled vs on-merge training",
+                  "Feature generation as a stage",
+                  "Determinism: seeds and data cuts"
+                ]
+              },
+              {
+                "heading": "Eval gates",
+                "items": [
+                  "Minimum metric vs last production",
+                  "Slice metrics so you cannot hide a subgroup fail",
+                  "Block merge if the gate fails"
+                ]
+              },
+              {
+                "heading": "Rollback patterns",
+                "items": [
+                  "Keep N previous model versions warm",
+                  "Traffic: shadow, canary, then full",
+                  "A runbook: how to revert in 15 minutes"
+                ]
+              },
+              {
+                "heading": "CI reality",
+                "items": [
+                  "Minutes of GPU vs your bill",
+                  "Caching datasets in CI without leaking PII",
+                  "Notifications that a human will read"
+                ]
+              }
+            ],
+            "outcome": "You leave with a CI job that trains or evaluates and fails closed on a bad metric.",
+            "topics": [
+              "Scheduled vs on-merge training",
+              "Feature generation as a stage",
+              "Minimum metric vs last production",
+              "Slice metrics so you cannot hide a subgroup fail",
+              "Keep N previous model versions warm",
+              "Traffic: shadow, canary, then full",
+              "Minutes of GPU vs your bill",
+              "Caching datasets in CI without leaking PII"
+            ]
+          },
+          {
+            "title": "Module 4: Kubernetes for ML services",
+            "lead": "Serving is a workload. You will put a model behind an API on Kubernetes with the boring pieces: probes, resources, and more than one replica.",
+            "blocks": [
+              {
+                "heading": "Serving",
+                "items": [
+                  "FastAPI/TorchServe-class wrappers",
+                  "Readiness vs liveness for slow loaders",
+                  "Batch vs online — two different services sometimes"
+                ]
+              },
+              {
+                "heading": "Autoscaling",
+                "items": [
+                  "CPU/GPU requests and limits",
+                  "HPA on QPS or GPU util — know the lag",
+                  "Cold start is a product bug"
+                ]
+              },
+              {
+                "heading": "Environments",
+                "items": [
+                  "Dev/stage/prod as namespaces or clusters",
+                  "ConfigMaps/Secrets",
+                  "Network policies at a conceptual level"
+                ]
+              },
+              {
+                "heading": "Optional clouds",
+                "items": [
+                  "The same pattern on SageMaker / Azure ML / Vertex after you can do it yourself",
+                  "Managed ≠ no runbook"
+                ]
+              }
+            ],
+            "outcome": "You leave with a k8s manifest (or equivalent) that serves, probes, and scales on a toy load.",
+            "topics": [
+              "FastAPI/TorchServe-class wrappers",
+              "Readiness vs liveness for slow loaders",
+              "CPU/GPU requests and limits",
+              "HPA on QPS or GPU util — know the lag",
+              "Dev/stage/prod as namespaces or clusters",
+              "ConfigMaps/Secrets",
+              "The same pattern on SageMaker / Azure ML / Vertex after you can do it yourself",
+              "Managed ≠ no runbook"
+            ]
+          }
         ]
       },
       {
         "title": "Operate",
         "modules": [
-          {"title": "Module 5: Monitoring", "topics": ["Model Monitoring", "Drift detection", "Evaluation Pipelines"]}
+          {
+            "title": "Module 5: Monitoring",
+            "lead": "Ops dashboards here are Prometheus/Grafana-style. Power BI is not on this syllabus. You will watch data drift, latency, and the metric that pays the bills.",
+            "blocks": [
+              {
+                "heading": "Model monitoring",
+                "items": [
+                  "Input distributions vs training snapshot",
+                  "Prediction drift vs concept drift — name which one you saw",
+                  "Alerting that is not 400 noisy Slack messages"
+                ]
+              },
+              {
+                "heading": "Drift detection",
+                "items": [
+                  "A simple PSI/KS-style check you can explain",
+                  "Retrain trigger vs investigate trigger",
+                  "When the world changed and the model should not"
+                ]
+              },
+              {
+                "heading": "Evaluation pipelines",
+                "items": [
+                  "Offline eval on a fresh window",
+                  "Shadow mode vs production labels (delayed)",
+                  "Incident: accuracy drop, you have 30 minutes — what do you open first?"
+                ]
+              },
+              {
+                "heading": "Handoff to LLMOps",
+                "items": [
+                  "Tabular/classical serving vs token traces",
+                  "If your job is LLM APIs, take LLMOps next"
+                ]
+              }
+            ],
+            "outcome": "You leave with a Grafana-style board (or a sober substitute) plus a drift alert you tested by breaking the data.",
+            "topics": [
+              "Input distributions vs training snapshot",
+              "Prediction drift vs concept drift — name which one you saw",
+              "A simple PSI/KS-style check you can explain",
+              "Retrain trigger vs investigate trigger",
+              "Offline eval on a fresh window",
+              "Shadow mode vs production labels (delayed)",
+              "Tabular/classical serving vs token traces",
+              "If your job is LLM APIs, take LLMOps next"
+            ]
+          }
         ]
       }
     ]
@@ -134,21 +1425,260 @@
       {
         "title": "Serving LLMs",
         "modules": [
-          {"title": "Module 1: Inference", "topics": ["LLM Serving and Scaling", "Batching and caching", "p95/p99 latency"]},
-          {"title": "Module 2: Observability", "topics": ["Traces and dashboards", "Error budgets", "Cost Optimization"]}
+          {
+            "title": "Module 1: Inference",
+            "lead": "LLMOps starts at the server. You will talk about batching, caching, and p95 as if they were SLOs — because they are.",
+            "blocks": [
+              {
+                "heading": "LLM serving and scaling",
+                "items": [
+                  "vLLM-class ideas: paging, batching, continuous batching",
+                  "Self-host vs API: when each is honest",
+                  "Context length vs throughput"
+                ]
+              },
+              {
+                "heading": "Batching and caching",
+                "items": [
+                  "Prefix cache, prompt cache, semantic cache with a danger label",
+                  "What not to cache (personalized, secret, stale policy)",
+                  "Queueing: user-visible wait vs 500s"
+                ]
+              },
+              {
+                "heading": "p95/p99 latency",
+                "items": [
+                  "Measure tokens/sec and time-to-first-token separately",
+                  "Streaming as a latency lie if the last token is late",
+                  "Load test with a realistic mix, not one prompt"
+                ]
+              },
+              {
+                "heading": "Capacity",
+                "items": [
+                  "A back-of-envelope: QPS × tokens × cost",
+                  "Shed load before you melt the GPU",
+                  "Not Power BI — this is inference math"
+                ]
+              }
+            ],
+            "outcome": "You leave with a serving note: architecture choice, a latency SLO, and a load-test screenshot or table.",
+            "topics": [
+              "vLLM-class ideas: paging, batching, continuous batching",
+              "Self-host vs API: when each is honest",
+              "Prefix cache, prompt cache, semantic cache with a danger label",
+              "What not to cache (personalized, secret, stale policy)",
+              "Measure tokens/sec and time-to-first-token separately",
+              "Streaming as a latency lie if the last token is late",
+              "A back-of-envelope: QPS × tokens × cost",
+              "Shed load before you melt the GPU"
+            ]
+          },
+          {
+            "title": "Module 2: Observability",
+            "lead": "If you cannot see traces, you cannot debug a prompt. Dashboards here are Langfuse/Grafana-class, not analyst BI.",
+            "blocks": [
+              {
+                "heading": "Traces and dashboards",
+                "items": [
+                  "Trace every call: prompt version, model, tokens, latency, user/tenant",
+                  "Redact secrets in traces",
+                  "A board: error rate, cost, p95"
+                ]
+              },
+              {
+                "heading": "Error budgets",
+                "items": [
+                  "What is an ‘LLM error’ — timeout, empty, unsafe, ungrounded",
+                  "Budget per week, not vibes",
+                  "Page a human only when the budget burns"
+                ]
+              },
+              {
+                "heading": "Cost optimization",
+                "items": [
+                  "Cost per successful task, not per token vanity",
+                  "Route easy traffic to a small model",
+                  "A weekly review that actually happens"
+                ]
+              },
+              {
+                "heading": "On-call habits",
+                "items": [
+                  "A runbook: provider outage, cost spike, quality drop",
+                  "Feature flags for prompts",
+                  "This is not tabular MLOps"
+                ]
+              }
+            ],
+            "outcome": "You leave with a trace pipeline and a three-panel ops board: latency, cost, quality proxy.",
+            "topics": [
+              "Trace every call: prompt version, model, tokens, latency, user/tenant",
+              "Redact secrets in traces",
+              "What is an ‘LLM error’ — timeout, empty, unsafe, ungrounded",
+              "Budget per week, not vibes",
+              "Cost per successful task, not per token vanity",
+              "Route easy traffic to a small model",
+              "A runbook: provider outage, cost spike, quality drop",
+              "Feature flags for prompts"
+            ]
+          }
         ]
       },
       {
         "title": "RAGOps",
         "modules": [
-          {"title": "Module 3: RAG in production", "topics": ["Retrieval evaluation", "Golden-set regression", "Chunk hit-rate"]},
-          {"title": "Module 4: Prompt operations", "topics": ["Prompt Versioning and Governance", "Canary rollouts", "Eval gates"]}
+          {
+            "title": "Module 3: RAG in production",
+            "lead": "RAG in prod is an eval problem. You will gate retrieval quality the way MLOps gates accuracy.",
+            "blocks": [
+              {
+                "heading": "Retrieval evaluation",
+                "items": [
+                  "Hit rate, MRR, groundedness on a frozen set",
+                  "Slice by doc type (PDF vs wiki vs ticket)",
+                  "Index build as a versioned artifact"
+                ]
+              },
+              {
+                "heading": "Golden-set regression",
+                "items": [
+                  "CI job that fails if groundedness drops",
+                  "Canary a chunker change",
+                  "Do not eval only on the founder’s favourite PDF"
+                ]
+              },
+              {
+                "heading": "Chunk hit-rate",
+                "items": [
+                  "Log retrieved ids; debug misses",
+                  "Hybrid search when names and SKUs fail embed",
+                  "Access control regressions"
+                ]
+              },
+              {
+                "heading": "Incidents",
+                "items": [
+                  "Stale index after a doc purge",
+                  "Duplicate chunks flooding context",
+                  "A rollback of the index, not the whole app"
+                ]
+              }
+            ],
+            "outcome": "You leave with a RAG eval harness in CI and a golden set you refuse to eyeball-only.",
+            "topics": [
+              "Hit rate, MRR, groundedness on a frozen set",
+              "Slice by doc type (PDF vs wiki vs ticket)",
+              "CI job that fails if groundedness drops",
+              "Canary a chunker change",
+              "Log retrieved ids; debug misses",
+              "Hybrid search when names and SKUs fail embed",
+              "Stale index after a doc purge",
+              "Duplicate chunks flooding context"
+            ]
+          },
+          {
+            "title": "Module 4: Prompt operations",
+            "lead": "Prompts are code. You will version them, canary them, and block merges that fail eval.",
+            "blocks": [
+              {
+                "heading": "Prompt versioning and governance",
+                "items": [
+                  "Prompt + model + tools as a tuple",
+                  "Who can edit production prompts",
+                  "Diffs in git, not in a Slack thread"
+                ]
+              },
+              {
+                "heading": "Canary rollouts",
+                "items": [
+                  "1% traffic, watch traces, then 100%",
+                  "Kill switch",
+                  "User-visible A/B only if you can score it"
+                ]
+              },
+              {
+                "heading": "Eval gates",
+                "items": [
+                  "Offline set + online proxy (thumbs, task success)",
+                  "Safety tests in the same gate",
+                  "A failed gate is a red build"
+                ]
+              },
+              {
+                "heading": "Adapters",
+                "items": [
+                  "If you ship LoRA, version it like a prompt",
+                  "Do not mix adapter v3 with prompt v1 silently"
+                ]
+              }
+            ],
+            "outcome": "You leave with prompts in git, a canary path, and a CI gate that has failed at least once on purpose.",
+            "topics": [
+              "Prompt + model + tools as a tuple",
+              "Who can edit production prompts",
+              "1% traffic, watch traces, then 100%",
+              "Kill switch",
+              "Offline set + online proxy (thumbs, task success)",
+              "Safety tests in the same gate",
+              "If you ship LoRA, version it like a prompt",
+              "Do not mix adapter v3 with prompt v1 silently"
+            ]
+          }
         ]
       },
       {
         "title": "AgentOps",
         "modules": [
-          {"title": "Module 5: Agent operations", "topics": ["AgentOps", "Tool-call auditing", "Safety filters"]}
+          {
+            "title": "Module 5: Agent operations",
+            "lead": "Agents in production need audits. You will log tool calls, cap steps, and put safety filters where money and PII live.",
+            "blocks": [
+              {
+                "heading": "AgentOps",
+                "items": [
+                  "Step cap, time cap, cost cap",
+                  "Idempotent tools",
+                  "Human approval on irreversible actions"
+                ]
+              },
+              {
+                "heading": "Tool-call auditing",
+                "items": [
+                  "Every call: args, result hash, user",
+                  "Replay a bad session",
+                  "Allowlist changes go through review"
+                ]
+              },
+              {
+                "heading": "Safety filters",
+                "items": [
+                  "Input and output filters",
+                  "Jailbreak evals on a fixed set",
+                  "What you still cannot promise: a perfect model"
+                ]
+              },
+              {
+                "heading": "Career-call close",
+                "items": [
+                  "This cohort is 3 months — it does not replace platform years",
+                  "Placement support, certificate, internships as published",
+                  "If you need training pipelines, that is MLOps"
+                ]
+              }
+            ],
+            "outcome": "You leave with an agent policy, an audit log sample, and a safety eval you ran before ‘demo day’.",
+            "topics": [
+              "Step cap, time cap, cost cap",
+              "Idempotent tools",
+              "Every call: args, result hash, user",
+              "Replay a bad session",
+              "Input and output filters",
+              "Jailbreak evals on a fixed set",
+              "This cohort is 3 months — it does not replace platform years",
+              "Placement support, certificate, internships as published"
+            ]
+          }
         ]
       }
     ]
@@ -159,21 +1689,55 @@
       {
         "title": "Traditional ML operations",
         "modules": [
-          {"title": "Module 1: Pipelines", "topics": ["Data pipelines and versioning", "Experiment tracking", "Model registry"]},
-          {"title": "Module 2: Retraining", "topics": ["CI/CD and automated retraining", "Evaluation Pipelines"]}
+          {
+            "title": "Module 1: Pipelines",
+            "topics": [
+              "Data pipelines and versioning",
+              "Experiment tracking",
+              "Model registry"
+            ]
+          },
+          {
+            "title": "Module 2: Retraining",
+            "topics": [
+              "CI/CD and automated retraining",
+              "Evaluation Pipelines"
+            ]
+          }
         ]
       },
       {
         "title": "Deep learning in production",
         "modules": [
-          {"title": "Module 3: GPU serving", "topics": ["LLM serving and inference optimization", "Quantization", "Scaling Strategies"]}
+          {
+            "title": "Module 3: GPU serving",
+            "topics": [
+              "LLM serving and inference optimization",
+              "Quantization",
+              "Scaling Strategies"
+            ]
+          }
         ]
       },
       {
         "title": "Enterprise AI ops",
         "modules": [
-          {"title": "Module 4: LLMOps and AgentOps", "topics": ["Multi-agent orchestration", "Drift across AI layers", "Security guardrails"]},
-          {"title": "Module 5: Governance", "topics": ["Enterprise Governance", "Audit logging", "Automation Pipelines"]}
+          {
+            "title": "Module 4: LLMOps and AgentOps",
+            "topics": [
+              "Multi-agent orchestration",
+              "Drift across AI layers",
+              "Security guardrails"
+            ]
+          },
+          {
+            "title": "Module 5: Governance",
+            "topics": [
+              "Enterprise Governance",
+              "Audit logging",
+              "Automation Pipelines"
+            ]
+          }
         ]
       }
     ]
@@ -184,21 +1748,56 @@
       {
         "title": "Python Basics",
         "modules": [
-          {"title": "Module 1: Python for AI", "topics": ["Syntax and functions", "APIs in Python", "Notebook-to-script habits"]},
-          {"title": "Module 7: Time and Space Complexity", "topics": ["Understanding Algorithm Efficiency", "Time Complexity", "Space Complexity"]}
+          {
+            "title": "Module 1: Python for AI",
+            "topics": [
+              "Syntax and functions",
+              "APIs in Python",
+              "Notebook-to-script habits"
+            ]
+          },
+          {
+            "title": "Module 7: Time and Space Complexity",
+            "topics": [
+              "Understanding Algorithm Efficiency",
+              "Time Complexity",
+              "Space Complexity"
+            ]
+          }
         ]
       },
       {
         "title": "Python Advanced",
         "modules": [
-          {"title": "Module 8: LLM apps", "topics": ["LLM App Development", "RAG Pipelines", "Agent Building"]},
-          {"title": "Module 9: Portfolio", "topics": ["GitHub projects", "FastAPI basics", "Capstone scoring"]}
+          {
+            "title": "Module 8: LLM apps",
+            "topics": [
+              "LLM App Development",
+              "RAG Pipelines",
+              "Agent Building"
+            ]
+          },
+          {
+            "title": "Module 9: Portfolio",
+            "topics": [
+              "GitHub projects",
+              "FastAPI basics",
+              "Capstone scoring"
+            ]
+          }
         ]
       },
       {
         "title": "Placement prep",
         "modules": [
-          {"title": "Module 10: Interview kit", "topics": ["Resume and GitHub", "Mocks and project defense", "Interview Preparation"]}
+          {
+            "title": "Module 10: Interview kit",
+            "topics": [
+              "Resume and GitHub",
+              "Mocks and project defense",
+              "Interview Preparation"
+            ]
+          }
         ]
       }
     ]
@@ -209,21 +1808,56 @@
       {
         "title": "Agent design",
         "modules": [
-          {"title": "Module 1: Tools and memory", "topics": ["Agent and Tool Design", "Tool Use Patterns", "Memory Systems"]},
-          {"title": "Module 2: Planning", "topics": ["Task routing", "Bounded behavior", "Structured outputs"]}
+          {
+            "title": "Module 1: Tools and memory",
+            "topics": [
+              "Agent and Tool Design",
+              "Tool Use Patterns",
+              "Memory Systems"
+            ]
+          },
+          {
+            "title": "Module 2: Planning",
+            "topics": [
+              "Task routing",
+              "Bounded behavior",
+              "Structured outputs"
+            ]
+          }
         ]
       },
       {
         "title": "Orchestration",
         "modules": [
-          {"title": "Module 3: Multi-agent systems", "topics": ["Multi-agent Orchestration", "LangGraph and AutoGen Workflows", "MCP patterns"]},
-          {"title": "Module 4: Evaluation", "topics": ["Evaluation Frameworks", "Traces", "Failure modes"]}
+          {
+            "title": "Module 3: Multi-agent systems",
+            "topics": [
+              "Multi-agent Orchestration",
+              "LangGraph and AutoGen Workflows",
+              "MCP patterns"
+            ]
+          },
+          {
+            "title": "Module 4: Evaluation",
+            "topics": [
+              "Evaluation Frameworks",
+              "Traces",
+              "Failure modes"
+            ]
+          }
         ]
       },
       {
         "title": "Projects",
         "modules": [
-          {"title": "Module 5: Applied agents", "topics": ["Support pipeline", "Research agent", "Workflow automation"]}
+          {
+            "title": "Module 5: Applied agents",
+            "topics": [
+              "Support pipeline",
+              "Research agent",
+              "Workflow automation"
+            ]
+          }
         ]
       }
     ]
@@ -234,21 +1868,56 @@
       {
         "title": "LLM fundamentals",
         "modules": [
-          {"title": "Module 1: Internals", "topics": ["LLM Fundamentals", "Tokenization and Embeddings", "Attention variants"]},
-          {"title": "Module 2: Data and training", "topics": ["Data curation", "Training runs", "Reproducibility"]}
+          {
+            "title": "Module 1: Internals",
+            "topics": [
+              "LLM Fundamentals",
+              "Tokenization and Embeddings",
+              "Attention variants"
+            ]
+          },
+          {
+            "title": "Module 2: Data and training",
+            "topics": [
+              "Data curation",
+              "Training runs",
+              "Reproducibility"
+            ]
+          }
         ]
       },
       {
         "title": "Adaptation",
         "modules": [
-          {"title": "Module 3: Fine-tuning", "topics": ["Fine-tuning and PEFT", "LoRA and QLoRA", "Preference alignment"]},
-          {"title": "Module 4: RAG skills", "topics": ["Chunking and retrieval", "Re-ranking", "Grounding"]}
+          {
+            "title": "Module 3: Fine-tuning",
+            "topics": [
+              "Fine-tuning and PEFT",
+              "LoRA and QLoRA",
+              "Preference alignment"
+            ]
+          },
+          {
+            "title": "Module 4: RAG skills",
+            "topics": [
+              "Chunking and retrieval",
+              "Re-ranking",
+              "Grounding"
+            ]
+          }
         ]
       },
       {
         "title": "Serve and evaluate",
         "modules": [
-          {"title": "Module 5: Production", "topics": ["Scalable Inference", "Evaluation Metrics", "Cost-per-token control"]}
+          {
+            "title": "Module 5: Production",
+            "topics": [
+              "Scalable Inference",
+              "Evaluation Metrics",
+              "Cost-per-token control"
+            ]
+          }
         ]
       }
     ]
@@ -259,15 +1928,43 @@
       {
         "title": "Python Basics",
         "modules": [
-          {"title": "Module 1: Python essentials", "topics": ["Syntax", "Pandas intro", "Notebooks"]},
-          {"title": "Module 7: Time and Space Complexity", "topics": ["Understanding Algorithm Efficiency", "Time Complexity", "Space Complexity"]}
+          {
+            "title": "Module 1: Python essentials",
+            "topics": [
+              "Syntax",
+              "Pandas intro",
+              "Notebooks"
+            ]
+          },
+          {
+            "title": "Module 7: Time and Space Complexity",
+            "topics": [
+              "Understanding Algorithm Efficiency",
+              "Time Complexity",
+              "Space Complexity"
+            ]
+          }
         ]
       },
       {
         "title": "Python Advanced",
         "modules": [
-          {"title": "Module 8: Supervised learning", "topics": ["Regression and classification", "Feature Engineering", "Model Evaluation"]},
-          {"title": "Module 9: Unsupervised learning", "topics": ["Clustering", "Dimensionality reduction", "Real-world Projects"]}
+          {
+            "title": "Module 8: Supervised learning",
+            "topics": [
+              "Regression and classification",
+              "Feature Engineering",
+              "Model Evaluation"
+            ]
+          },
+          {
+            "title": "Module 9: Unsupervised learning",
+            "topics": [
+              "Clustering",
+              "Dimensionality reduction",
+              "Real-world Projects"
+            ]
+          }
         ]
       }
     ]
@@ -278,15 +1975,43 @@
       {
         "title": "Python Basics",
         "modules": [
-          {"title": "Module 1: Neural network foundations", "topics": ["Tensors", "Backprop intuition", "Training loops"]},
-          {"title": "Module 7: Time and Space Complexity", "topics": ["Understanding Algorithm Efficiency", "Time Complexity", "Space Complexity"]}
+          {
+            "title": "Module 1: Neural network foundations",
+            "topics": [
+              "Tensors",
+              "Backprop intuition",
+              "Training loops"
+            ]
+          },
+          {
+            "title": "Module 7: Time and Space Complexity",
+            "topics": [
+              "Understanding Algorithm Efficiency",
+              "Time Complexity",
+              "Space Complexity"
+            ]
+          }
         ]
       },
       {
         "title": "Python Advanced",
         "modules": [
-          {"title": "Module 8: Architectures", "topics": ["Convolutional Networks", "Recurrent Networks", "Transformers"]},
-          {"title": "Module 9: Transfer and deploy", "topics": ["Transfer Learning", "Deployment", "Vision and language apps"]}
+          {
+            "title": "Module 8: Architectures",
+            "topics": [
+              "Convolutional Networks",
+              "Recurrent Networks",
+              "Transformers"
+            ]
+          },
+          {
+            "title": "Module 9: Transfer and deploy",
+            "topics": [
+              "Transfer Learning",
+              "Deployment",
+              "Vision and language apps"
+            ]
+          }
         ]
       }
     ]
@@ -297,15 +2022,43 @@
       {
         "title": "Python Basics",
         "modules": [
-          {"title": "Module 1: Analytics foundation", "topics": ["Python and SQL", "Analytics and BI", "Data Engineering Workflows"]},
-          {"title": "Module 7: Time and Space Complexity", "topics": ["Understanding Algorithm Efficiency", "Time Complexity", "Space Complexity"]}
+          {
+            "title": "Module 1: Analytics foundation",
+            "topics": [
+              "Python and SQL",
+              "Analytics and BI",
+              "Data Engineering Workflows"
+            ]
+          },
+          {
+            "title": "Module 7: Time and Space Complexity",
+            "topics": [
+              "Understanding Algorithm Efficiency",
+              "Time Complexity",
+              "Space Complexity"
+            ]
+          }
         ]
       },
       {
         "title": "Python Advanced",
         "modules": [
-          {"title": "Module 8: Modeling", "topics": ["Machine Learning and Deep Learning", "Feature pipelines", "Evaluation"]},
-          {"title": "Module 9: Ship end-to-end", "topics": ["Cloud Deployment", "MLOps", "End-to-End Projects"]}
+          {
+            "title": "Module 8: Modeling",
+            "topics": [
+              "Machine Learning and Deep Learning",
+              "Feature pipelines",
+              "Evaluation"
+            ]
+          },
+          {
+            "title": "Module 9: Ship end-to-end",
+            "topics": [
+              "Cloud Deployment",
+              "MLOps",
+              "End-to-End Projects"
+            ]
+          }
         ]
       }
     ]
@@ -316,15 +2069,43 @@
       {
         "title": "Core algorithms",
         "modules": [
-          {"title": "Module 1: Supervised methods", "topics": ["Regression and Classification", "Ensembles", "Imbalanced data"]},
-          {"title": "Module 2: Unsupervised methods", "topics": ["Clustering and Anomaly Detection", "PCA", "Feature Engineering"]}
+          {
+            "title": "Module 1: Supervised methods",
+            "topics": [
+              "Regression and Classification",
+              "Ensembles",
+              "Imbalanced data"
+            ]
+          },
+          {
+            "title": "Module 2: Unsupervised methods",
+            "topics": [
+              "Clustering and Anomaly Detection",
+              "PCA",
+              "Feature Engineering"
+            ]
+          }
         ]
       },
       {
         "title": "Tuning and trust",
         "modules": [
-          {"title": "Module 3: Optimization", "topics": ["Hyperparameter Tuning", "GridSearch and Optuna", "Performance Optimization"]},
-          {"title": "Module 4: Interpretability", "topics": ["Model Interpretability", "Error analysis", "Mini deployment demo"]}
+          {
+            "title": "Module 3: Optimization",
+            "topics": [
+              "Hyperparameter Tuning",
+              "GridSearch and Optuna",
+              "Performance Optimization"
+            ]
+          },
+          {
+            "title": "Module 4: Interpretability",
+            "topics": [
+              "Model Interpretability",
+              "Error analysis",
+              "Mini deployment demo"
+            ]
+          }
         ]
       }
     ]
@@ -335,15 +2116,41 @@
       {
         "title": "Architectures",
         "modules": [
-          {"title": "Module 1: Neural network architectures", "topics": ["Feed-forward nets", "Regularization", "Optimization"]},
-          {"title": "Module 2: Conv and recurrent", "topics": ["Convolutional and Recurrent Models", "Sequence modeling"]}
+          {
+            "title": "Module 1: Neural network architectures",
+            "topics": [
+              "Feed-forward nets",
+              "Regularization",
+              "Optimization"
+            ]
+          },
+          {
+            "title": "Module 2: Conv and recurrent",
+            "topics": [
+              "Convolutional and Recurrent Models",
+              "Sequence modeling"
+            ]
+          }
         ]
       },
       {
         "title": "Modern DL",
         "modules": [
-          {"title": "Module 3: Generative and attention", "topics": ["Generative Models", "Attention Mechanisms", "Transformers"]},
-          {"title": "Module 4: Practice", "topics": ["Transfer Learning", "Model Optimization"]}
+          {
+            "title": "Module 3: Generative and attention",
+            "topics": [
+              "Generative Models",
+              "Attention Mechanisms",
+              "Transformers"
+            ]
+          },
+          {
+            "title": "Module 4: Practice",
+            "topics": [
+              "Transfer Learning",
+              "Model Optimization"
+            ]
+          }
         ]
       }
     ]
@@ -354,14 +2161,35 @@
       {
         "title": "Vision basics",
         "modules": [
-          {"title": "Module 1: Image processing", "topics": ["Image Processing", "Augmentation", "Feature maps"]},
-          {"title": "Module 2: Detection and segmentation", "topics": ["Object Detection", "Segmentation", "Visual Analytics"]}
+          {
+            "title": "Module 1: Image processing",
+            "topics": [
+              "Image Processing",
+              "Augmentation",
+              "Feature maps"
+            ]
+          },
+          {
+            "title": "Module 2: Detection and segmentation",
+            "topics": [
+              "Object Detection",
+              "Segmentation",
+              "Visual Analytics"
+            ]
+          }
         ]
       },
       {
         "title": "Deploy vision",
         "modules": [
-          {"title": "Module 3: Real-time systems", "topics": ["Real-time Inference", "Model Optimization", "Serving"]}
+          {
+            "title": "Module 3: Real-time systems",
+            "topics": [
+              "Real-time Inference",
+              "Model Optimization",
+              "Serving"
+            ]
+          }
         ]
       }
     ]
@@ -372,15 +2200,42 @@
       {
         "title": "Text foundations",
         "modules": [
-          {"title": "Module 1: Preprocessing", "topics": ["Text Preprocessing and Tokenization", "spaCy and NLTK", "Cleaning pipelines"]},
-          {"title": "Module 2: Representations", "topics": ["Word Embeddings and Transformers", "BERT and GPT families"]}
+          {
+            "title": "Module 1: Preprocessing",
+            "topics": [
+              "Text Preprocessing and Tokenization",
+              "spaCy and NLTK",
+              "Cleaning pipelines"
+            ]
+          },
+          {
+            "title": "Module 2: Representations",
+            "topics": [
+              "Word Embeddings and Transformers",
+              "BERT and GPT families"
+            ]
+          }
         ]
       },
       {
         "title": "Language applications",
         "modules": [
-          {"title": "Module 3: Extraction and sentiment", "topics": ["Named Entity Recognition", "Sentiment Analysis", "Information Extraction"]},
-          {"title": "Module 4: Conversational systems", "topics": ["Conversational AI", "Hugging Face workflows", "FastAPI deployment"]}
+          {
+            "title": "Module 3: Extraction and sentiment",
+            "topics": [
+              "Named Entity Recognition",
+              "Sentiment Analysis",
+              "Information Extraction"
+            ]
+          },
+          {
+            "title": "Module 4: Conversational systems",
+            "topics": [
+              "Conversational AI",
+              "Hugging Face workflows",
+              "FastAPI deployment"
+            ]
+          }
         ]
       }
     ]
@@ -391,15 +2246,43 @@
       {
         "title": "AI systems",
         "modules": [
-          {"title": "Module 1: Foundations", "topics": ["Python for AI systems", "Data and evaluation", "Architecture sketches"]},
-          {"title": "Module 2: Applied ML", "topics": ["Training loops", "Serving patterns", "Reliability"]}
+          {
+            "title": "Module 1: Foundations",
+            "topics": [
+              "Python for AI systems",
+              "Data and evaluation",
+              "Architecture sketches"
+            ]
+          },
+          {
+            "title": "Module 2: Applied ML",
+            "topics": [
+              "Training loops",
+              "Serving patterns",
+              "Reliability"
+            ]
+          }
         ]
       },
       {
         "title": "GenAI engineering",
         "modules": [
-          {"title": "Module 3: RAG and agents", "topics": ["Retrieval systems", "Tool use", "Evals"]},
-          {"title": "Module 4: Production", "topics": ["Observability", "Cost and latency", "Handoff to ops"]}
+          {
+            "title": "Module 3: RAG and agents",
+            "topics": [
+              "Retrieval systems",
+              "Tool use",
+              "Evals"
+            ]
+          },
+          {
+            "title": "Module 4: Production",
+            "topics": [
+              "Observability",
+              "Cost and latency",
+              "Handoff to ops"
+            ]
+          }
         ]
       }
     ]
@@ -410,15 +2293,43 @@
       {
         "title": "Customer-facing AI",
         "modules": [
-          {"title": "Module 1: Python for AI apps", "topics": ["LLM applications", "APIs and backend integration", "Structured outputs"]},
-          {"title": "Module 2: RAG in the field", "topics": ["Vector databases", "Grounding", "Tool calling"]}
+          {
+            "title": "Module 1: Python for AI apps",
+            "topics": [
+              "LLM applications",
+              "APIs and backend integration",
+              "Structured outputs"
+            ]
+          },
+          {
+            "title": "Module 2: RAG in the field",
+            "topics": [
+              "Vector databases",
+              "Grounding",
+              "Tool calling"
+            ]
+          }
         ]
       },
       {
         "title": "Delivery",
         "modules": [
-          {"title": "Module 3: Agents on-site", "topics": ["Agent workflows", "Multi-agent orchestration", "Task routing"]},
-          {"title": "Module 4: MCP and integration", "topics": ["MCP patterns", "Handoffs", "Runbooks"]}
+          {
+            "title": "Module 3: Agents on-site",
+            "topics": [
+              "Agent workflows",
+              "Multi-agent orchestration",
+              "Task routing"
+            ]
+          },
+          {
+            "title": "Module 4: MCP and integration",
+            "topics": [
+              "MCP patterns",
+              "Handoffs",
+              "Runbooks"
+            ]
+          }
         ]
       }
     ]
@@ -429,25 +2340,88 @@
       {
         "title": "Python and programming foundations",
         "modules": [
-          {"title": "Python Essentials", "topics": ["Variables, functions, loops, conditions", "Lists and dictionaries", "File handling and modules"]},
-          {"title": "Developer tooling", "topics": ["Notebooks", "Git and debugging", "Package management"]},
-          {"title": "Python data libraries", "topics": ["NumPy", "pandas", "Working with tabular data"]}
+          {
+            "title": "Python Essentials",
+            "topics": [
+              "Variables, functions, loops, conditions",
+              "Lists and dictionaries",
+              "File handling and modules"
+            ]
+          },
+          {
+            "title": "Developer tooling",
+            "topics": [
+              "Notebooks",
+              "Git and debugging",
+              "Package management"
+            ]
+          },
+          {
+            "title": "Python data libraries",
+            "topics": [
+              "NumPy",
+              "pandas",
+              "Working with tabular data"
+            ]
+          }
         ]
       },
       {
         "title": "Math, SQL, and data",
         "modules": [
-          {"title": "Math and statistics foundations", "topics": ["Descriptive statistics", "Probability basics", "Hypothesis testing"]},
-          {"title": "SQL and databases", "topics": ["SELECT and filters", "Joins and aggregation", "Relational thinking"]},
-          {"title": "Cleaning and EDA", "topics": ["Missing data", "Visualization", "Feature-ready tables"]}
+          {
+            "title": "Math and statistics foundations",
+            "topics": [
+              "Descriptive statistics",
+              "Probability basics",
+              "Hypothesis testing"
+            ]
+          },
+          {
+            "title": "SQL and databases",
+            "topics": [
+              "SELECT and filters",
+              "Joins and aggregation",
+              "Relational thinking"
+            ]
+          },
+          {
+            "title": "Cleaning and EDA",
+            "topics": [
+              "Missing data",
+              "Visualization",
+              "Feature-ready tables"
+            ]
+          }
         ]
       },
       {
         "title": "Models and projects",
         "modules": [
-          {"title": "Machine learning foundations", "topics": ["Supervised learning", "Unsupervised learning", "Validation"]},
-          {"title": "Evaluation and improvement", "topics": ["Metrics", "Error analysis", "Iteration"]},
-          {"title": "Deployment thinking", "topics": ["APIs", "Basic monitoring", "Modern AI extensions"]}
+          {
+            "title": "Machine learning foundations",
+            "topics": [
+              "Supervised learning",
+              "Unsupervised learning",
+              "Validation"
+            ]
+          },
+          {
+            "title": "Evaluation and improvement",
+            "topics": [
+              "Metrics",
+              "Error analysis",
+              "Iteration"
+            ]
+          },
+          {
+            "title": "Deployment thinking",
+            "topics": [
+              "APIs",
+              "Basic monitoring",
+              "Modern AI extensions"
+            ]
+          }
         ]
       }
     ]
@@ -458,21 +2432,56 @@
       {
         "title": "Build with models",
         "modules": [
-          {"title": "Python and APIs", "topics": ["HTTP clients", "Auth and retries", "Token and cost awareness"]},
-          {"title": "Prompting to products", "topics": ["Prompt patterns", "Structured outputs", "UX constraints"]}
+          {
+            "title": "Python and APIs",
+            "topics": [
+              "HTTP clients",
+              "Auth and retries",
+              "Token and cost awareness"
+            ]
+          },
+          {
+            "title": "Prompting to products",
+            "topics": [
+              "Prompt patterns",
+              "Structured outputs",
+              "UX constraints"
+            ]
+          }
         ]
       },
       {
         "title": "RAG and workflows",
         "modules": [
-          {"title": "Retrieval systems", "topics": ["Chunking", "Embeddings", "Citations"]},
-          {"title": "Agents", "topics": ["Tools", "Memory", "Evaluation"]}
+          {
+            "title": "Retrieval systems",
+            "topics": [
+              "Chunking",
+              "Embeddings",
+              "Citations"
+            ]
+          },
+          {
+            "title": "Agents",
+            "topics": [
+              "Tools",
+              "Memory",
+              "Evaluation"
+            ]
+          }
         ]
       },
       {
         "title": "Ship",
         "modules": [
-          {"title": "App packaging", "topics": ["FastAPI", "Front ends", "Docs and traces"]}
+          {
+            "title": "App packaging",
+            "topics": [
+              "FastAPI",
+              "Front ends",
+              "Docs and traces"
+            ]
+          }
         ]
       }
     ]
@@ -483,15 +2492,43 @@
       {
         "title": "Engineering base",
         "modules": [
-          {"title": "Python systems", "topics": ["Packages and tests", "Typing", "Data contracts"]},
-          {"title": "ML literacy", "topics": ["Training vs inference", "Metrics", "Failure modes"]}
+          {
+            "title": "Python systems",
+            "topics": [
+              "Packages and tests",
+              "Typing",
+              "Data contracts"
+            ]
+          },
+          {
+            "title": "ML literacy",
+            "topics": [
+              "Training vs inference",
+              "Metrics",
+              "Failure modes"
+            ]
+          }
         ]
       },
       {
         "title": "AI systems",
         "modules": [
-          {"title": "RAG and agents", "topics": ["Retrieval", "Orchestration", "Evals"]},
-          {"title": "Serving", "topics": ["Latency", "Reliability", "Observability"]}
+          {
+            "title": "RAG and agents",
+            "topics": [
+              "Retrieval",
+              "Orchestration",
+              "Evals"
+            ]
+          },
+          {
+            "title": "Serving",
+            "topics": [
+              "Latency",
+              "Reliability",
+              "Observability"
+            ]
+          }
         ]
       }
     ]
@@ -502,15 +2539,43 @@
       {
         "title": "Model engineering",
         "modules": [
-          {"title": "Python engineering", "topics": ["Packages", "Tests", "Pipelines"]},
-          {"title": "Classical ML depth", "topics": ["Features", "Training loops", "Evaluation you can defend"]}
+          {
+            "title": "Python engineering",
+            "topics": [
+              "Packages",
+              "Tests",
+              "Pipelines"
+            ]
+          },
+          {
+            "title": "Classical ML depth",
+            "topics": [
+              "Features",
+              "Training loops",
+              "Evaluation you can defend"
+            ]
+          }
         ]
       },
       {
         "title": "Production ML",
         "modules": [
-          {"title": "Serving", "topics": ["APIs", "Batch jobs", "Latency vs throughput"]},
-          {"title": "MLOps layer", "topics": ["Version data and models", "CI for training", "Drift monitoring"]}
+          {
+            "title": "Serving",
+            "topics": [
+              "APIs",
+              "Batch jobs",
+              "Latency vs throughput"
+            ]
+          },
+          {
+            "title": "MLOps layer",
+            "topics": [
+              "Version data and models",
+              "CI for training",
+              "Drift monitoring"
+            ]
+          }
         ]
       }
     ]
@@ -521,15 +2586,814 @@
       {
         "title": "LLM literacy",
         "modules": [
-          {"title": "Python + APIs", "topics": ["Call models cleanly", "Tokens and retries", "Cost"]},
-          {"title": "Embeddings and retrieval", "topics": ["Chunking", "Vector search", "Why RAG fails in production"]}
+          {
+            "title": "Python + APIs",
+            "topics": [
+              "Call models cleanly",
+              "Tokens and retries",
+              "Cost"
+            ]
+          },
+          {
+            "title": "Embeddings and retrieval",
+            "topics": [
+              "Chunking",
+              "Vector search",
+              "Why RAG fails in production"
+            ]
+          }
         ]
       },
       {
         "title": "Specialize",
         "modules": [
-          {"title": "Fine-tuning and PEFT", "topics": ["When to fine-tune", "Adapters", "Measure, don’t guess"]},
-          {"title": "Evals and serving", "topics": ["Golden sets", "Hallucination checks", "Batching and caching"]}
+          {
+            "title": "Fine-tuning and PEFT",
+            "topics": [
+              "When to fine-tune",
+              "Adapters",
+              "Measure, don’t guess"
+            ]
+          },
+          {
+            "title": "Evals and serving",
+            "topics": [
+              "Golden sets",
+              "Hallucination checks",
+              "Batching and caching"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "java-course": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "Core Java",
+        "modules": [
+          {
+            "title": "Module 1: Language and OOP",
+            "lead": "Three months only works if the language is a habit. You start with types, control flow, and objects you can draw on a whiteboard.",
+            "blocks": [
+              {
+                "heading": "Syntax that ships",
+                "items": [
+                  "Types, methods, packages, and a main you can run from the CLI",
+                  "Exceptions you handle instead of swallowing",
+                  "A tiny Maven/Gradle project from day one"
+                ]
+              },
+              {
+                "heading": "OOP in practice",
+                "items": [
+                  "Encapsulation, inheritance, and composition — pick the cheaper one",
+                  "Interfaces vs abstract classes on a real example",
+                  "Equals/hashCode when you put objects in a Set"
+                ]
+              },
+              {
+                "heading": "Tooling",
+                "items": [
+                  "JDK, IDE, and why ‘it works in my run config’ is not a build",
+                  "Checkstyle-lite: readable names, no 400-line classes",
+                  "Git: commits that say what the code does"
+                ]
+              },
+              {
+                "heading": "What this is not",
+                "items": [
+                  "Not Spring yet",
+                  "Not a frontend course",
+                  "Not a 12-month diploma dump"
+                ]
+              }
+            ],
+            "outcome": "You leave with a small OOP kata in a real build file, runnable from a cold clone.",
+            "topics": [
+              "Types, methods, packages, and a main you can run from the CLI",
+              "Exceptions you handle instead of swallowing",
+              "Encapsulation, inheritance, and composition — pick the cheaper one",
+              "Interfaces vs abstract classes on a real example",
+              "JDK, IDE, and why ‘it works in my run config’ is not a build",
+              "Checkstyle-lite: readable names, no 400-line classes",
+              "Not Spring yet",
+              "Not a frontend course"
+            ]
+          },
+          {
+            "title": "Module 2: Collections, I/O, JDBC",
+            "lead": "Most Java interviews still live here. You will use lists, maps, files, and a database without an ORM hiding the SQL.",
+            "blocks": [
+              {
+                "heading": "Collections",
+                "items": [
+                  "List, Set, Map — pick by access pattern",
+                  "Iteration, sorting, and ConcurrentModification surprises",
+                  "When a stream helps and when a loop is honest"
+                ]
+              },
+              {
+                "heading": "I/O and JSON",
+                "items": [
+                  "Files, charset, and resources that close",
+                  "JSON in/out without a framework maze",
+                  "Config as a file, not hardcoded strings"
+                ]
+              },
+              {
+                "heading": "JDBC",
+                "items": [
+                  "Connections, prepared statements, transactions",
+                  "A DAO you could explain to a DBA",
+                  "SQL injection as a bug you refuse to ship"
+                ]
+              },
+              {
+                "heading": "Tests",
+                "items": [
+                  "JUnit for the DAO",
+                  "A fixture database or testcontainers-shaped thinking",
+                  "A failure that taught you the grain of the table"
+                ]
+              }
+            ],
+            "outcome": "You leave with a JDBC-backed CRUD plus tests — no Spring required yet.",
+            "topics": [
+              "List, Set, Map — pick by access pattern",
+              "Iteration, sorting, and ConcurrentModification surprises",
+              "Files, charset, and resources that close",
+              "JSON in/out without a framework maze",
+              "Connections, prepared statements, transactions",
+              "A DAO you could explain to a DBA",
+              "JUnit for the DAO",
+              "A fixture database or testcontainers-shaped thinking"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Spring Boot",
+        "modules": [
+          {
+            "title": "Module 3: REST with Spring Boot",
+            "lead": "Now the framework. You wrap the domain in HTTP: controllers, DTOs, validation, and errors that are JSON.",
+            "blocks": [
+              {
+                "heading": "Boot basics",
+                "items": [
+                  "Starters, application.yml, profiles",
+                  "A health endpoint",
+                  "Secrets in env, not in git"
+                ]
+              },
+              {
+                "heading": "REST",
+                "items": [
+                  "Resources, status codes, and idempotent PUT vs accidental POST",
+                  "Validation annotations that match the contract",
+                  "Problem details instead of a stack trace in the browser"
+                ]
+              },
+              {
+                "heading": "Layering",
+                "items": [
+                  "Controller → service → repository without a 2,000-line God class",
+                  "DTOs vs entities — do not leak JPA out the door",
+                  "Pagination when the table grows"
+                ]
+              },
+              {
+                "heading": "Docs",
+                "items": [
+                  "OpenAPI/Swagger you would show a frontend teammate",
+                  "A README: how to run, what port, what DB"
+                ]
+              }
+            ],
+            "outcome": "You leave with a REST API and a contract a frontend (or Postman) can hit.",
+            "topics": [
+              "Starters, application.yml, profiles",
+              "A health endpoint",
+              "Resources, status codes, and idempotent PUT vs accidental POST",
+              "Validation annotations that match the contract",
+              "Controller → service → repository without a 2,000-line God class",
+              "DTOs vs entities — do not leak JPA out the door",
+              "OpenAPI/Swagger you would show a frontend teammate",
+              "A README: how to run, what port, what DB"
+            ]
+          },
+          {
+            "title": "Module 4: JPA and persistence",
+            "lead": "JPA is useful until it is magic. You will map entities, write queries you can explain, and catch N+1 before it is production.",
+            "blocks": [
+              {
+                "heading": "Mapping",
+                "items": [
+                  "Entities, IDs, relations (one-to-many without a cartoon)",
+                  "Lazy vs eager — measure, do not guess",
+                  "Flyway/Liquibase-shaped migrations as an idea"
+                ]
+              },
+              {
+                "heading": "Queries",
+                "items": [
+                  "Derived queries vs JPQL vs native when SQL is the truth",
+                  "Transactions: where they start",
+                  "Indexes you mention in the review"
+                ]
+              },
+              {
+                "heading": "Failure modes",
+                "items": [
+                  "N+1, detached entities, dirty sessions",
+                  "A log of SQL during a request",
+                  "Rollback on a failed write"
+                ]
+              },
+              {
+                "heading": "Security-lite",
+                "items": [
+                  "AuthN at a filter or Spring Security starter level",
+                  "Do not return password hashes",
+                  "CORS only if a browser UI needs it"
+                ]
+              }
+            ],
+            "outcome": "You leave with JPA mappings plus a note on the SQL Hibernate actually ran.",
+            "topics": [
+              "Entities, IDs, relations (one-to-many without a cartoon)",
+              "Lazy vs eager — measure, do not guess",
+              "Derived queries vs JPQL vs native when SQL is the truth",
+              "Transactions: where they start",
+              "N+1, detached entities, dirty sessions",
+              "A log of SQL during a request",
+              "AuthN at a filter or Spring Security starter level",
+              "Do not return password hashes"
+            ]
+          },
+          {
+            "title": "Module 5: Tests and capstone",
+            "lead": "The capstone is a small Spring service you can walk through: domain, API, persistence, tests.",
+            "blocks": [
+              {
+                "heading": "Testing",
+                "items": [
+                  "Slice tests vs a few integration tests",
+                  "Testcontainers or an H2 you do not treat as production",
+                  "A failing test you keep"
+                ]
+              },
+              {
+                "heading": "Capstone",
+                "items": [
+                  "One bounded domain (orders, tickets, or catalog)",
+                  "README + architecture sketch",
+                  "A 3-minute defense script"
+                ]
+              },
+              {
+                "heading": "Career call",
+                "items": [
+                  "What you would not ship to a bank tomorrow",
+                  "Java vs Frontend vs DevOps — which next",
+                  "Fee and duration as published"
+                ]
+              },
+              {
+                "heading": "Boundaries",
+                "items": [
+                  "Not Android",
+                  "Not Kafka-as-the-whole-course",
+                  "Not a fake CTC"
+                ]
+              }
+            ],
+            "outcome": "You leave with a GitHub-ready Spring Boot service, tests, and a walkthrough.",
+            "topics": [
+              "Slice tests vs a few integration tests",
+              "Testcontainers or an H2 you do not treat as production",
+              "One bounded domain (orders, tickets, or catalog)",
+              "README + architecture sketch",
+              "What you would not ship to a bank tomorrow",
+              "Java vs Frontend vs DevOps — which next",
+              "Not Android",
+              "Not Kafka-as-the-whole-course"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "devops-course": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "Foundations",
+        "modules": [
+          {
+            "title": "Module 1: Linux, networking, Git",
+            "lead": "Six months of DevOps starts on a box you can SSH into. You will read logs, permissions, and a packet path before you touch Kubernetes.",
+            "blocks": [
+              {
+                "heading": "Linux",
+                "items": [
+                  "Users, processes, systemd, disks",
+                  "ssh, scp, and why root login is a smell",
+                  "A broken permission you fix without Stack Overflow first"
+                ]
+              },
+              {
+                "heading": "Networking enough",
+                "items": [
+                  "DNS, ports, TLS at a practical level",
+                  "curl, ss, and ‘connection refused’ vs timeout",
+                  "Firewalls as a product decision"
+                ]
+              },
+              {
+                "heading": "Git and PRs",
+                "items": [
+                  "Branch, rebase-or-merge as a team rule",
+                  "Reviews that catch a secret",
+                  "Tags for releases"
+                ]
+              },
+              {
+                "heading": "Not this module",
+                "items": [
+                  "Not ML training pipelines",
+                  "Not Power BI",
+                  "Not a cloud certification dump on day one"
+                ]
+              }
+            ],
+            "outcome": "You leave with a Linux lab note: users, a service, and a git history that is readable.",
+            "topics": [
+              "Users, processes, systemd, disks",
+              "ssh, scp, and why root login is a smell",
+              "DNS, ports, TLS at a practical level",
+              "curl, ss, and ‘connection refused’ vs timeout",
+              "Branch, rebase-or-merge as a team rule",
+              "Reviews that catch a secret",
+              "Not ML training pipelines",
+              "Not Power BI"
+            ]
+          },
+          {
+            "title": "Module 2: CI/CD",
+            "lead": "If it is not in the pipeline, it is not a release. You will build, test, and promote with a gate that can fail.",
+            "blocks": [
+              {
+                "heading": "Pipeline design",
+                "items": [
+                  "Build → test → artifact → deploy",
+                  "Environments: dev/stage/prod as config, not hope",
+                  "Secrets in the runner, not in YAML"
+                ]
+              },
+              {
+                "heading": "GitHub Actions-class",
+                "items": [
+                  "Workflows, caches, matrix builds",
+                  "Required checks on the default branch",
+                  "A failed job you debug from logs"
+                ]
+              },
+              {
+                "heading": "Artifacts",
+                "items": [
+                  "Versioned images or packages",
+                  "SBOM-lite thinking",
+                  "Rollback is a previous artifact, not a prayer"
+                ]
+              },
+              {
+                "heading": "Culture",
+                "items": [
+                  "You do not hotfix prod from a laptop as the process",
+                  "A runbook: how to revert in 15 minutes"
+                ]
+              }
+            ],
+            "outcome": "You leave with a CI workflow that builds and fails closed on tests.",
+            "topics": [
+              "Build → test → artifact → deploy",
+              "Environments: dev/stage/prod as config, not hope",
+              "Workflows, caches, matrix builds",
+              "Required checks on the default branch",
+              "Versioned images or packages",
+              "SBOM-lite thinking",
+              "You do not hotfix prod from a laptop as the process",
+              "A runbook: how to revert in 15 minutes"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Containers and cloud",
+        "modules": [
+          {
+            "title": "Module 3: Docker",
+            "lead": "Images are how you stop ‘works on my machine’. You will write Dockerfiles that are boring and reproducible.",
+            "blocks": [
+              {
+                "heading": "Images",
+                "items": [
+                  "Multi-stage builds, non-root, .dockerignore",
+                  "Pin tags; latest is an incident",
+                  "Scan-lite: know what you shipped"
+                ]
+              },
+              {
+                "heading": "Compose",
+                "items": [
+                  "App + db locally",
+                  "Healthchecks",
+                  "The same entrypoint CI will use"
+                ]
+              },
+              {
+                "heading": "Registries",
+                "items": [
+                  "Push/pull, tags as versions",
+                  "Never bake secrets"
+                ]
+              },
+              {
+                "heading": "Handoff to k8s",
+                "items": [
+                  "A container that probes can understand",
+                  "Resource needs written down"
+                ]
+              }
+            ],
+            "outcome": "You leave with a Dockerfile and compose file that run from a cold clone.",
+            "topics": [
+              "Multi-stage builds, non-root, .dockerignore",
+              "Pin tags; latest is an incident",
+              "App + db locally",
+              "Healthchecks",
+              "Push/pull, tags as versions",
+              "Never bake secrets",
+              "A container that probes can understand",
+              "Resource needs written down"
+            ]
+          },
+          {
+            "title": "Module 4: Kubernetes and IaC",
+            "lead": "Kubernetes is a workload API. Terraform (or equivalent) is how the cluster and cloud bits stop being click-ops.",
+            "blocks": [
+              {
+                "heading": "Kubernetes",
+                "items": [
+                  "Deployments, services, probes, ConfigMaps/Secrets",
+                  "Requests/limits",
+                  "A rollout and a rollback"
+                ]
+              },
+              {
+                "heading": "Ingress and DNS",
+                "items": [
+                  "How traffic enters",
+                  "TLS at the edge",
+                  "A 502 you can explain"
+                ]
+              },
+              {
+                "heading": "Terraform / IaC",
+                "items": [
+                  "State, plans, and why apply is a review",
+                  "Modules without a 4,000-line main",
+                  "Destroy is a skill"
+                ]
+              },
+              {
+                "heading": "Cloud",
+                "items": [
+                  "One provider enough to be honest (IAM, networks, a cluster or VMs)",
+                  "Cost as a dashboard item",
+                  "This is still not MLOps"
+                ]
+              }
+            ],
+            "outcome": "You leave with manifests plus an IaC sketch that creates something you can destroy.",
+            "topics": [
+              "Deployments, services, probes, ConfigMaps/Secrets",
+              "Requests/limits",
+              "How traffic enters",
+              "TLS at the edge",
+              "State, plans, and why apply is a review",
+              "Modules without a 4,000-line main",
+              "One provider enough to be honest (IAM, networks, a cluster or VMs)",
+              "Cost as a dashboard item"
+            ]
+          },
+          {
+            "title": "Module 5: Observe and operate",
+            "lead": "Ops dashboards here are Prometheus/Grafana-style. You will page on symptoms, not vibes. Distinct from MLOps drift jobs.",
+            "blocks": [
+              {
+                "heading": "Observability",
+                "items": [
+                  "Logs, metrics, traces at a practical trio",
+                  "SLOs: latency and error rate",
+                  "Alerts a human will not mute"
+                ]
+              },
+              {
+                "heading": "Incidents",
+                "items": [
+                  "A runbook: deploy went bad",
+                  "On-call notes without hero culture as the product",
+                  "Postmortem: blameless, one action"
+                ]
+              },
+              {
+                "heading": "Security-lite",
+                "items": [
+                  "Least privilege IAM",
+                  "Image and secret hygiene",
+                  "Audit: who applied what"
+                ]
+              },
+              {
+                "heading": "Career call",
+                "items": [
+                  "DevOps vs MLOps vs LLMOps — pick one gate",
+                  "Fee ₹60,000 / 6 months as published"
+                ]
+              }
+            ],
+            "outcome": "You leave with a Grafana-style board (or substitute) and an incident runbook you tested.",
+            "topics": [
+              "Logs, metrics, traces at a practical trio",
+              "SLOs: latency and error rate",
+              "A runbook: deploy went bad",
+              "On-call notes without hero culture as the product",
+              "Least privilege IAM",
+              "Image and secret hygiene",
+              "DevOps vs MLOps vs LLMOps — pick one gate",
+              "Fee ₹60,000 / 6 months as published"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "frontend-course": {
+    "title": "Course Curriculum",
+    "levels": [
+      {
+        "title": "The web platform",
+        "modules": [
+          {
+            "title": "Module 1: HTML and CSS",
+            "lead": "Faculty: Deepak Rohilla, senior frontend engineer. You start with documents and layout — not a React tutorial on day one.",
+            "blocks": [
+              {
+                "heading": "HTML that means something",
+                "items": [
+                  "Landmarks, headings, forms, buttons that are buttons",
+                  "Images with alt that is honest",
+                  "A page that works without CSS as a check"
+                ]
+              },
+              {
+                "heading": "CSS layout",
+                "items": [
+                  "Flex and grid for real UI, not a gallery of tricks",
+                  "Responsive breakpoints you can defend",
+                  "Spacing and type as a system, not magic numbers"
+                ]
+              },
+              {
+                "heading": "States",
+                "items": [
+                  "Hover, focus, disabled — visible, not decorative",
+                  "Dark/light only if you can keep contrast",
+                  "A broken layout you fix in DevTools"
+                ]
+              },
+              {
+                "heading": "Review bar",
+                "items": [
+                  "Deepak’s bar: can a keyboard user finish the form?",
+                  "Does the title match the page?",
+                  "No div soup without a reason"
+                ]
+              }
+            ],
+            "outcome": "You leave with a multi-section landing page Deepak would not reject for semantics.",
+            "topics": [
+              "Landmarks, headings, forms, buttons that are buttons",
+              "Images with alt that is honest",
+              "Flex and grid for real UI, not a gallery of tricks",
+              "Responsive breakpoints you can defend",
+              "Hover, focus, disabled — visible, not decorative",
+              "Dark/light only if you can keep contrast",
+              "Deepak’s bar: can a keyboard user finish the form?",
+              "Does the title match the page?"
+            ]
+          },
+          {
+            "title": "Module 2: JavaScript",
+            "lead": "The language of the browser. You will manipulate the DOM, fetch data, and handle errors without a framework hiding them.",
+            "blocks": [
+              {
+                "heading": "Language",
+                "items": [
+                  "let/const, functions, arrays/objects, modules",
+                  "Async: promises, fetch, abort",
+                  "Events and when not to add a listener per pixel"
+                ]
+              },
+              {
+                "heading": "DOM",
+                "items": [
+                  "Query, create, update without innerHTML as a habit",
+                  "Forms: validate, then submit",
+                  "Accessibility: focus management on a modal"
+                ]
+              },
+              {
+                "heading": "Debugging",
+                "items": [
+                  "Breakpoints, network tab, a 4xx you caused",
+                  "Source maps in a tiny bundler or none"
+                ]
+              },
+              {
+                "heading": "Boundaries",
+                "items": [
+                  "Not Java/Spring",
+                  "Not ‘learn 12 frameworks’",
+                  "Not a design-tool certification"
+                ]
+              }
+            ],
+            "outcome": "You leave with a vanilla JS app that fetches, renders, and fails visibly.",
+            "topics": [
+              "let/const, functions, arrays/objects, modules",
+              "Async: promises, fetch, abort",
+              "Query, create, update without innerHTML as a habit",
+              "Forms: validate, then submit",
+              "Breakpoints, network tab, a 4xx you caused",
+              "Source maps in a tiny bundler or none",
+              "Not Java/Spring",
+              "Not ‘learn 12 frameworks’"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "React",
+        "modules": [
+          {
+            "title": "Module 3: React foundations",
+            "lead": "React after you can do it without React. Components, state, effects, and lists that do not remount the universe.",
+            "blocks": [
+              {
+                "heading": "Components",
+                "items": [
+                  "Props down, events up",
+                  "Composition over a 400-line App.jsx",
+                  "Keys that are ids, not indexes, when the list mutates"
+                ]
+              },
+              {
+                "heading": "State and effects",
+                "items": [
+                  "useState for UI state, not a global dump",
+                  "useEffect: fetch, subscribe, cleanup",
+                  "The bug: effect that loops"
+                ]
+              },
+              {
+                "heading": "Routing and forms",
+                "items": [
+                  "Client routes without breaking refresh",
+                  "Controlled inputs, errors, disabled submit",
+                  "A loading and empty state"
+                ]
+              },
+              {
+                "heading": "Deepak’s review",
+                "items": [
+                  "Name the state. Name the server data.",
+                  "No ‘any’ if you use TypeScript — optional but encouraged",
+                  "A11y on custom controls"
+                ]
+              }
+            ],
+            "outcome": "You leave with a React UI that lists, filters, and submits without a tutorial repo clone.",
+            "topics": [
+              "Props down, events up",
+              "Composition over a 400-line App.jsx",
+              "useState for UI state, not a global dump",
+              "useEffect: fetch, subscribe, cleanup",
+              "Client routes without breaking refresh",
+              "Controlled inputs, errors, disabled submit",
+              "Name the state. Name the server data.",
+              "No ‘any’ if you use TypeScript — optional but encouraged"
+            ]
+          },
+          {
+            "title": "Module 4: Quality — a11y and performance",
+            "lead": "Senior frontend work is constraint. You will measure, not decorate.",
+            "blocks": [
+              {
+                "heading": "Accessibility",
+                "items": [
+                  "Keyboard, labels, live regions when needed",
+                  "Color contrast you check",
+                  "A screen-reader pass on the capstone"
+                ]
+              },
+              {
+                "heading": "Performance",
+                "items": [
+                  "Bundle size, images, waterfalls",
+                  "Lighthouse as a conversation, not a trophy",
+                  "Code-split a route"
+                ]
+              },
+              {
+                "heading": "CSS in a React app",
+                "items": [
+                  "Modules or a small token file — pick one",
+                  "No 40 competing CSS-in-JS religions as the syllabus"
+                ]
+              },
+              {
+                "heading": "Testing-lite",
+                "items": [
+                  "A few component tests or Playwright-shaped smoke",
+                  "A bug you caught before the call"
+                ]
+              }
+            ],
+            "outcome": "You leave with a checklist Deepak uses: a11y, perf, and a note on what you skipped.",
+            "topics": [
+              "Keyboard, labels, live regions when needed",
+              "Color contrast you check",
+              "Bundle size, images, waterfalls",
+              "Lighthouse as a conversation, not a trophy",
+              "Modules or a small token file — pick one",
+              "No 40 competing CSS-in-JS religions as the syllabus",
+              "A few component tests or Playwright-shaped smoke",
+              "A bug you caught before the call"
+            ]
+          },
+          {
+            "title": "Module 5: Capstone",
+            "lead": "Ship a UI someone can use on a phone. Mentored review with Deepak Rohilla.",
+            "blocks": [
+              {
+                "heading": "Capstone",
+                "items": [
+                  "One product surface: dashboard, checkout-lite, or content app",
+                  "README: how to run, stack, known gaps",
+                  "Deploy or a recorded demo"
+                ]
+              },
+              {
+                "heading": "Walkthrough",
+                "items": [
+                  "Three minutes: decisions, not a feature tour",
+                  "What you would rewrite with more time",
+                  "Career call: Frontend vs Java vs Gen AI for Developers"
+                ]
+              },
+              {
+                "heading": "Professional habits",
+                "items": [
+                  "PR description",
+                  "Issue a teammate could pick up",
+                  "No fake CTC"
+                ]
+              },
+              {
+                "heading": "Published terms",
+                "items": [
+                  "₹40,000, 3 months, live online",
+                  "Placement support, certificate, internships as on the page"
+                ]
+              }
+            ],
+            "outcome": "You leave with a deployed or demoable React app and a review note from the frontend track.",
+            "topics": [
+              "One product surface: dashboard, checkout-lite, or content app",
+              "README: how to run, stack, known gaps",
+              "Three minutes: decisions, not a feature tour",
+              "What you would rewrite with more time",
+              "PR description",
+              "Issue a teammate could pick up",
+              "₹40,000, 3 months, live online",
+              "Placement support, certificate, internships as on the page"
+            ]
+          }
         ]
       }
     ]

@@ -1,8 +1,8 @@
 
 (function () {
   var stage = document.querySelector('.chart-stage');
-  var listbox = document.querySelector('.towers');
-  var towers = Array.prototype.slice.call(document.querySelectorAll('.tower'));
+  var listbox = document.querySelector('.lanes');
+  var towers = Array.prototype.slice.call(document.querySelectorAll('.lane'));
   var readoutTitle = document.getElementById('readoutTitle');
   var readoutBody = document.getElementById('readoutBody');
   if (!towers.length) return;
@@ -26,7 +26,7 @@
     },
     all: {
       title: 'All occupations · +3.1%',
-      body: 'The grey stub is the average. AI-adjacent roles sit far above it in this U.S. table. India does not publish an equivalent official series — so we refuse to invent one. Book a call if you want a role map, not a slogan.'
+      body: 'The short bar is the average. AI-adjacent roles sit far above it in this U.S. table. India does not publish an equivalent official series — so we refuse to invent one. Book a call if you want a role map, not a slogan.'
     }
   };
 
@@ -78,4 +78,55 @@
   } else {
     draw();
   }
+})();
+
+(function () {
+  var boards = Array.prototype.slice.call(document.querySelectorAll('#market-shift .js-reveal'));
+  if (!boards.length) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function formatCount(el, value) {
+    var suf = el.getAttribute('data-suf') || '';
+    var decimals = String(el.getAttribute('data-to') || '').indexOf('.') >= 0 ? 1 : 0;
+    el.textContent = value.toFixed(decimals) + suf;
+  }
+
+  function countUp(el) {
+    if (el.getAttribute('data-done') === '1') return;
+    el.setAttribute('data-done', '1');
+    var to = parseFloat(el.getAttribute('data-to') || '0');
+    if (reduce) {
+      formatCount(el, to);
+      return;
+    }
+    var start = performance.now();
+    var dur = 900;
+    function tick(now) {
+      var t = Math.min(1, (now - start) / dur);
+      var eased = 1 - Math.pow(1 - t, 3);
+      formatCount(el, to * eased);
+      if (t < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function activate(board) {
+    if (board.classList.contains('is-in')) return;
+    board.classList.add('is-in');
+    Array.prototype.forEach.call(board.querySelectorAll('.js-count'), countUp);
+  }
+
+  if (reduce || !('IntersectionObserver' in window)) {
+    boards.forEach(activate);
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        activate(entry.target);
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.28, rootMargin: '0px 0px -8% 0px' });
+  boards.forEach(function (b) { io.observe(b); });
 })();

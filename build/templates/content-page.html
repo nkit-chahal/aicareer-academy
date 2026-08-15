@@ -1,10 +1,21 @@
 {% extends "base.html" %}
 {% from "fee-block.html" import fee_block %}
+{% from "macros.html" import employer_marquee %}
 {% block content %}
-<section class="page-hero">
+{% if page_id == 'contact-us' %}
+<section class="playfield playfield-short" id="top">
+  <canvas id="gridCanvas" aria-hidden="true"></canvas>
+  <div class="play-copy">
+    <p class="mix">The desk is in <em>Gurugram</em></p>
+    <p class="mix mix-2 ringed">Cohorts are <em>online</em></p>
+  </div>
+</section>
+{% endif %}
+<section class="page-hero band">
   <div class="container">
-    <h1 class="page-hero-title">{{ data.hero_title }}</h1>
-    {% if data.hero_sub %}<p class="page-hero-sub">{{ data.hero_sub }}</p>{% endif %}
+    <h1 class="h-scribble">{{ data.hero_title }}</h1>
+    <svg class="scratch" viewBox="0 0 96 14" aria-hidden="true"><path d="M4 9 Q24 2 48 8 T92 7"/></svg>
+    {% if data.hero_sub %}<p class="center-copy">{{ data.hero_sub }}</p>{% endif %}
     {% if data.page_links %}
     <ul class="content-list">
       {% for link in data.page_links %}
@@ -14,6 +25,43 @@
     {% endif %}
   </div>
 </section>
+
+{% if page_id == 'contact-us' %}
+<section class="contact-split" aria-label="Studio address">
+  <div class="box">
+    <h2>Studio address</h2>
+    <p>68 Avenue, Badshahpur, Sector 68, Gurugram, Haryana 122101</p>
+    <p>Contact: <a href="tel:+918708752385">+91 87087 52385</a></p>
+    <p>Email: <a href="mailto:{{ email }}">{{ email }}</a></p>
+    <p>Mon–Sat, 10am–7pm IST</p>
+    <a class="btn-yellow" href="{{ base }}register/index.html">Register your interest</a>
+  </div>
+  <div class="box" style="padding:0;overflow:hidden;background:#fff;">
+    <iframe title="Map of AI Career Academy, Gurugram" src="https://www.google.com/maps?q=68+Avenue+Badshahpur+Sector+68+Gurugram&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+{% endif %}
+
+{% if page_id == 'hire-from-us' %}
+<section class="band" id="hire-jobs">
+  <h2 class="h-scribble">Companies hire for these jobs</h2>
+  <svg class="scratch" viewBox="0 0 96 14" aria-hidden="true"><path d="M4 9 Q24 2 48 8 T92 7"/></svg>
+  <p class="center-copy">Sectors that typically hire the roles our programs map to — not a claim those firms hired our alumni.</p>
+  <div class="hire-sectors"><span>Product</span><span>IT services</span><span>BFSI</span><span>Ops / platform</span></div>
+  {{ employer_marquee(base) }}
+  <div class="role-grid">
+    <article><h3>Data analyst</h3><p>Analytics sequence.</p></article>
+    <article><h3>Data scientist</h3><p>Data Science Gen AI.</p></article>
+    <article><h3>AI developer</h3><p>Gen AI for Developers.</p></article>
+    <article><h3>GenAI specialist</h3><p>Gen AI Specialization.</p></article>
+    <article><h3>MLOps engineer</h3><p>MLOps.</p></article>
+    <article><h3>LLMOps engineer</h3><p>LLMOps.</p></article>
+    <article><h3>Java developer</h3><p>Java sequence.</p></article>
+    <article><h3>DevOps engineer</h3><p>DevOps.</p></article>
+    <article><h3>Frontend engineer</h3><p>Frontend — Deepak Rohilla.</p></article>
+  </div>
+</section>
+{% endif %}
 
 {% if fees %}{{ fee_block(fees, "city-fees-title", "Course fee") }}{% endif %}
 

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="88" viewBox="0 0 220 88" role="img" aria-label="NVIDIA">
+  <rect width="220" height="88" fill="#fff"/>
+  <rect x="3" y="3" width="214" height="82" fill="#fff" stroke="#111" stroke-width="3"/>
+  <path d="M3 3h214" stroke="#1565c0" stroke-width="8"/>
+  <g stroke="#e8e8e8" stroke-width="1">
+    <path d="M22 0v88M44 0v88M66 0v88M88 0v88M110 0v88M132 0v88M154 0v88M176 0v88M198 0v88"/>
+    <path d="M0 22h220M0 44h220M0 66h220"/>
+  </g>
+  <rect x="3" y="3" width="214" height="82" fill="none" stroke="#111" stroke-width="3"/>
+  <text x="110" y="54" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" fill="#111">NVIDIA</text>
+</svg>

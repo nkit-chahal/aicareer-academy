@@ -1,4 +1,4 @@
-const TOTAL = 17;
+const TOTAL = 9;
 
 function applyFilter(filter) {
   var cards = document.querySelectorAll('.card');
@@ -10,7 +10,10 @@ function applyFilter(filter) {
     if (show) visible++;
   });
   ['featuredSection', 'moreSection'].forEach(function(id) {
-    var grid = document.getElementById(id).querySelector('.grid');
+    var section = document.getElementById(id);
+    if (!section) return;
+    var grid = section.querySelector('.grid');
+    if (!grid) return;
     var visibleInSection = grid.querySelectorAll('.card:not(.hidden)').length;
     var existing = grid.querySelector('.empty-state');
     if (visibleInSection === 0) {

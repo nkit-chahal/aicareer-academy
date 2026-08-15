@@ -1,0 +1,21 @@
+{
+  "id": "prog-frontend",
+  "source": "/courses/frontend-course",
+  "output": "courses/frontend-course/index.html",
+  "type": "program",
+  "title": "Frontend — AI Career Academy",
+  "description": "Live 3-month frontend sequence. Mentored by Deepak Rohilla. Fee ₹40,000.",
+  "hero_title": "Frontend",
+  "hero_sub": "Three months live, online. Faculty: Deepak Rohilla.",
+  "sections": [],
+  "faqs": [],
+  "lists": [],
+  "images": [],
+  "raw_html": "",
+  "fees": {
+    "amounts": ["₹40,000"],
+    "plans": ["No hidden charges. Batch timings confirmed on call."],
+    "notes": ["One-time payment for 3 months live online with capstone and certificate."],
+    "amount_notes": ["One-time payment"]
+  }
+}

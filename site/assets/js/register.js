@@ -74,6 +74,7 @@
       return;
     }
 
+    var cityEl = document.getElementById('cityField');
     var lines = [
       "Hi, I'd like to book a career call.",
       'Name: ' + name,
@@ -82,7 +83,9 @@
       'Experience: ' + experience,
       'Course: ' + courseLabel()
     ];
+    if (cityEl && cityEl.value.trim()) lines.push('City: ' + cityEl.value.trim());
     if (message) lines.push('Message: ' + message);
+    lines.push('Page: ' + window.location.href);
 
     var url = 'https://wa.me/918708752385?text=' + encodeURIComponent(lines.join('\n'));
     window.open(url, '_blank');

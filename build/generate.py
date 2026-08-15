@@ -6,6 +6,7 @@ import json
 import re
 import shutil
 from pathlib import Path
+from xml.sax.saxutils import escape as xml_escape
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
@@ -36,6 +37,26 @@ DATA_DIR = BUILD / "data"
 SITE = ROOT / "site"
 TEMPLATES = BUILD / "templates"
 
+# Studio wordmarks — not official logos.
+EMPLOYERS = [
+    ("amazon", "Amazon"),
+    ("microsoft", "Microsoft"),
+    ("google", "Google"),
+    ("flipkart", "Flipkart"),
+    ("infosys", "Infosys"),
+    ("tcs", "TCS"),
+    ("accenture", "Accenture"),
+    ("deloitte", "Deloitte"),
+    ("wipro", "Wipro"),
+    ("ibm", "IBM"),
+    ("nvidia", "NVIDIA"),
+    ("salesforce", "Salesforce"),
+    ("swiggy", "Swiggy"),
+    ("razorpay", "Razorpay"),
+    ("zoho", "Zoho"),
+    ("paytm", "Paytm"),
+]
+
 def _initials(name: str) -> str:
     parts = [p for p in name.split() if p]
     if not parts:
@@ -52,6 +73,7 @@ MENTORS = [
     {"name": "Aayush", "role": "Senior AI Engineer", "tags": ["Machine Learning", "Computer Vision", "LLMOPS", "AIOPS", "GenAI"], "focus": "Focuses on helping learners build strong model-building intuition and debugging skills."},
     {"name": "Rahul Bhardwaj", "role": "ML Engineer", "tags": ["MLOps", "Data Engineering", "Python", "Cloud"], "focus": "Brings production ML deployment experience to mentor data pipeline and serving projects."},
     {"name": "Vaibhav Sharma", "role": "GenAI Specialist", "tags": ["RAG", "LLM Fine-tuning", "LangChain", "Agents"], "focus": "Specializes in RAG architecture and agentic workflow design for real-world applications."},
+    {"name": "Deepak Rohilla", "role": "Senior Frontend Engineer", "tags": ["HTML", "CSS", "JavaScript", "React", "Accessibility"], "focus": "Mentors the three-month Frontend program — UI that ships, not a tutorial dump."},
 ]
 for _m in MENTORS:
     _m["initials"] = _initials(_m["name"])
@@ -185,6 +207,8 @@ def resolve_salaries(data: dict, page: dict):
     """Extract structured salary tables from raw HTML or flattened section text."""
     if page["type"] != "program":
         return None
+    if data.get("skip_extracted_salaries"):
+        return None
     if data.get("salaries"):
         return data["salaries"]
     return extract_salaries(data)
@@ -232,15 +256,53 @@ def setup_assets():
     (js_dir / "courses.js").write_text(_courses_js(), encoding="utf-8")
     (js_dir / "register.js").write_text(REGISTER_JS, encoding="utf-8")
     (js_dir / "home.js").write_text(HOME_JS, encoding="utf-8")
+    static = BUILD / "static"
+    if (static / "studio.css").exists():
+        shutil.copy(static / "studio.css", css_dir / "studio.css")
+    if (static / "studio.js").exists():
+        shutil.copy(static / "studio.js", js_dir / "studio.js")
+    if (static / "grid.js").exists():
+        shutil.copy(static / "grid.js", js_dir / "grid.js")
 
     (assets / "favicon.svg").write_text(FAVICON_SVG, encoding="utf-8")
-    og_src = BUILD / "og.png"
-    if not og_src.exists():
-        og_src = Path(r"C:\Users\Pc\.cursor\projects\d-personal-app\assets\og.png")
-    if og_src.exists():
-        shutil.copy(og_src, assets / "og.png")
-        if not (BUILD / "og.png").exists():
-            shutil.copy(og_src, BUILD / "og.png")
+    img_dir = assets / "img"
+    img_dir.mkdir(parents=True, exist_ok=True)
+    people_src = BUILD / "assets" / "people"
+    people_dst = img_dir / "people"
+    if people_src.exists():
+        people_dst.mkdir(parents=True, exist_ok=True)
+        for img in people_src.iterdir():
+            if img.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp"):
+                shutil.copy(img, people_dst / img.name)
+    src_img = BUILD / "assets"
+    cursor_assets = Path(r"C:\Users\Pc\.cursor\projects\d-personal-app\assets")
+    for name in (
+        "og.png",
+        "home-figure.png",
+        "poster-data-analytics.png",
+        "poster-data-science.png",
+        "poster-genai-devs.png",
+        "poster-genai-spec.png",
+        "poster-mlops.png",
+        "poster-llmops.png",
+        "poster-java.png",
+        "poster-devops.png",
+        "poster-frontend.png",
+    ):
+        src = src_img / name
+        if not src.exists() and (cursor_assets / name).exists():
+            src_img.mkdir(parents=True, exist_ok=True)
+            shutil.copy(cursor_assets / name, src_img / name)
+            src = src_img / name
+        if not src.exists() and name == "og.png":
+            src = cursor_assets / "og.png"
+        if src.exists():
+            shutil.copy(src, img_dir / name)
+            if name == "og.png":
+                shutil.copy(src, assets / "og.png")
+                if not (BUILD / "og.png").exists():
+                    shutil.copy(src, BUILD / "og.png")
+    write_employer_stamps(img_dir / "stamps")
 
 
 def generate():
@@ -304,13 +366,15 @@ def generate():
             "salaries": salaries,
             "curriculum": curriculum,
             "jump_nav": build_jump_nav(fees, salaries, data, curriculum) if page["type"] == "program" else [],
+            "page_id": page.get("id", ""),
             "programs": list_programs if page["type"] in ("courses-list", "register", "home") else [],
             "paths": load_json(BUILD / "career-paths.json") if page["type"] == "home" else None,
             "mentors": MENTORS,
             "brand": BRAND,
             "email": EMAIL,
             "extra_css": _extra_css(page["type"], page.get("id", "")),
-            "extra_js": _extra_js(page["type"]),
+            "extra_js": _extra_js(page["type"], page.get("id", "")),
+            "employers": EMPLOYERS,
         }
 
         html = template.render(**ctx)
@@ -324,6 +388,7 @@ def generate():
         print(f"  Generated: {page['output']}")
 
     write_robots_and_sitemap(SITE, manifest["pages"])
+    prune_unpublished_courses(manifest)
     not_found = env.get_template("404.html").render(
         page_title=f"Page not found — {BRAND}",
         meta_description=f"That page is not on {BRAND}. Browse programs or book a career call.",
@@ -343,6 +408,22 @@ def generate():
     print(f"\nDone: {generated} pages generated, {skipped} skipped")
 
 
+def prune_unpublished_courses(manifest: dict):
+    """Remove generated course folders that are no longer in pages.json."""
+    keep = {
+        page["source"].strip("/").split("/")[-1]
+        for page in manifest.get("pages", [])
+        if page.get("type") == "program"
+    }
+    courses_root = SITE / "courses"
+    if not courses_root.exists():
+        return
+    for child in courses_root.iterdir():
+        if child.is_dir() and child.name not in keep:
+            shutil.rmtree(child)
+            print(f"  Removed unpublished: courses/{child.name}")
+
+
 def _extra_css(page_type: str, page_id: str = "") -> list:
     if page_type == "home":
         return []
@@ -355,13 +436,37 @@ def _extra_css(page_type: str, page_id: str = "") -> list:
     return []
 
 
-def _extra_js(page_type: str) -> list:
+def write_employer_stamps(dest: Path) -> None:
+    dest.mkdir(parents=True, exist_ok=True)
+    bars = ("#1a3d6e", "#e23b2b", "#f5c400", "#2e7d32", "#1565c0", "#6a1b9a")
+    for i, (slug, name) in enumerate(EMPLOYERS):
+        bar = bars[i % len(bars)]
+        label = xml_escape(name.upper())
+        size = 28 if len(name) < 10 else 22 if len(name) < 14 else 18
+        svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="220" height="88" viewBox="0 0 220 88" role="img" aria-label="{xml_escape(name)}">
+  <rect width="220" height="88" fill="#fff"/>
+  <rect x="3" y="3" width="214" height="82" fill="#fff" stroke="#111" stroke-width="3"/>
+  <path d="M3 3h214" stroke="{bar}" stroke-width="8"/>
+  <g stroke="#e8e8e8" stroke-width="1">
+    <path d="M22 0v88M44 0v88M66 0v88M88 0v88M110 0v88M132 0v88M154 0v88M176 0v88M198 0v88"/>
+    <path d="M0 22h220M0 44h220M0 66h220"/>
+  </g>
+  <rect x="3" y="3" width="214" height="82" fill="none" stroke="#111" stroke-width="3"/>
+  <text x="110" y="54" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="{size}" font-weight="800" fill="#111">{label}</text>
+</svg>
+'''
+        (dest / f"{slug}.svg").write_text(svg, encoding="utf-8")
+
+
+def _extra_js(page_type: str, page_id: str = "") -> list:
     if page_type == "courses-list":
         return ["courses.js"]
     if page_type == "register":
         return ["register.js"]
     if page_type == "home":
-        return ["home.js"]
+        return ["grid.js", "home.js"]
+    if page_id == "contact-us":
+        return ["grid.js"]
     return []
 
 
@@ -373,6 +478,8 @@ def post_process_html(html: str) -> str:
         tag = match.group(0)
         if "loading=" in tag.lower():
             return tag
+        if tag.rstrip().endswith("/>"):
+            return tag[:-2].rstrip() + ' loading="lazy" decoding="async" />'
         return tag[:-1] + ' loading="lazy" decoding="async">'
 
     html = re.sub(
@@ -387,6 +494,7 @@ def post_process_html(html: str) -> str:
 
 def rewrite_internal_links(html: str, base: str) -> str:
     """Fix absolute paths to work as static files."""
+    live = {p["slug"] for p in load_programs()}
 
     def repl_href(m):
         path = m.group(1)
@@ -395,6 +503,9 @@ def rewrite_internal_links(html: str, base: str) -> str:
         if path == "/":
             return f'href="{base}index.html"'
         clean = path.strip("/")
+        parts = [p for p in clean.split("/") if p]
+        if len(parts) >= 2 and parts[0] == "courses" and parts[1] not in live:
+            return f'href="{base}courses/index.html"'
         return f'href="{base}{clean}/index.html"'
 
     html = re.sub(r'href="(/[^"]*)"', repl_href, html)
@@ -441,7 +552,61 @@ V5_INNER_CSS = """
   transform: none;
   box-shadow: none;
 }
-.form-group .required { color: var(--hot); }
+.card {
+  padding: 0;
+  overflow: hidden;
+}
+.card-cover {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-bottom: 3px solid var(--fg);
+  background: #09090B;
+}
+.card-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-body { padding: 22px 22px 18px; }
+.card-footer { padding: 0 22px 22px; }
+.home-figure {
+  display: block;
+  width: 100%;
+  max-width: 36rem;
+  max-height: 220px;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  margin: 0 0 28px;
+  background: #09090B;
+}
+.prog-thumb-spacer {
+  width: 56px;
+  height: 42px;
+  display: block;
+}
+.prog {
+  grid-template-columns: 56px 64px 1fr auto !important;
+}
+.ticker {
+  width: 100%;
+}
+@media (max-width: 1099px) {
+  .honest {
+    grid-template-columns: 1fr !important;
+  }
+  .honest .no {
+    border-left: 0 !important;
+    border-top: var(--border) solid var(--fg);
+  }
+}
+.prog .prog-thumb {
+  width: 56px;
+  height: 42px;
+  object-fit: cover;
+  border: 2px solid var(--line);
+}
 @media (max-width: 900px) {
   .site-foot .footer-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -472,22 +637,30 @@ V5_INNER_CSS = """
   text-align: center;
   width: 100%;
 }
-.is-home .demand .chart-stage,
-.is-home .towers {
-  min-height: min(62vh, 640px);
-}
-@media (max-width: 640px) {
-  .is-home .demand .chart-stage,
-  .is-home .towers { min-height: 0; }
+.is-home .demand .chart-stage {
+  min-height: 0;
 }
 """
 
 PROGRAM_CSS = """
-/* Program hero */
-.prog-hero { padding: 56px 0 48px; background: var(--paper); border-bottom: 1px solid var(--line); }
-.prog-hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(200px, 0.7fr); gap: 32px; align-items: center; }
-@media (max-width: 768px) { .prog-hero-grid { grid-template-columns: 1fr; } .prog-hero-art { display: none; } }
-.prog-hero-art { justify-self: end; max-width: 280px; width: 100%; }
+/* Program hero — rem-capped so 175% zoom / short viewports still show fees below */
+.prog-hero { padding: clamp(1.25rem, 4vh, 2.75rem) 0 clamp(1rem, 3.5vh, 2.25rem); background: var(--paper); border-bottom: 1px solid var(--line); }
+.prog-hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(180px, 0.65fr); gap: 28px; align-items: center; }
+.prog-hero-art { justify-self: end; max-width: min(380px, 34vw); width: 100%; }
+@media (max-width: 1024px) {
+  .prog-hero-grid { grid-template-columns: 1fr; gap: 18px; }
+  .prog-hero-art { justify-self: start; max-width: min(420px, 100%); }
+}
+.prog-hero-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(280px, 38vh);
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid var(--accent);
+  background: #09090B;
+}
 #fees, #salary, #curriculum, #faq { scroll-margin-top: calc(var(--header-h) + 56px); }
 
 .prog-jump {
@@ -531,10 +704,15 @@ PROGRAM_CSS = """
 .prog-jump a:hover { color: var(--accent); border-color: var(--accent-line); background: var(--accent-soft); }
 .breadcrumb { font-family: var(--font-mono); font-size: 12px; margin-bottom: 16px; display: flex; gap: 8px; align-items: center; color: var(--ink-3); }
 .breadcrumb a:hover { color: var(--accent); text-decoration: underline; }
-.prog-hero-title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; color: var(--ink); }
-.prog-hero-sub { font-size: 17px; color: var(--ink-3); line-height: 1.7; max-width: 680px; margin-bottom: 24px; }
-.prog-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.prog-hero-title { font-size: clamp(1.65rem, 2.4vw + 1rem, 2.6rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 12px; color: var(--ink); }
+.prog-hero-sub { font-size: 1rem; color: var(--ink-3); line-height: 1.6; max-width: 42rem; margin-bottom: 20px; }
+.prog-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
 .prog-cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.prog-cta-row .btn-lg { padding: 12px 22px; font-size: 0.9rem; }
+@media (max-height: 720px) {
+  .prog-hero-art img { max-height: 28vh; }
+  .prog-hero-sub { margin-bottom: 14px; }
+}
 
 /* Fee block */
 .prog-fees { padding: 48px 0; background: var(--chip); border-bottom: 1px solid var(--line); }
@@ -783,8 +961,8 @@ NAV_JS = """
 HOME_JS = """
 (function () {
   var stage = document.querySelector('.chart-stage');
-  var listbox = document.querySelector('.towers');
-  var towers = Array.prototype.slice.call(document.querySelectorAll('.tower'));
+  var listbox = document.querySelector('.lanes');
+  var towers = Array.prototype.slice.call(document.querySelectorAll('.lane'));
   var readoutTitle = document.getElementById('readoutTitle');
   var readoutBody = document.getElementById('readoutBody');
   if (!towers.length) return;
@@ -808,7 +986,7 @@ HOME_JS = """
     },
     all: {
       title: 'All occupations · +3.1%',
-      body: 'The grey stub is the average. AI-adjacent roles sit far above it in this U.S. table. India does not publish an equivalent official series — so we refuse to invent one. Book a call if you want a role map, not a slogan.'
+      body: 'The short bar is the average. AI-adjacent roles sit far above it in this U.S. table. India does not publish an equivalent official series — so we refuse to invent one. Book a call if you want a role map, not a slogan.'
     }
   };
 
@@ -861,48 +1039,103 @@ HOME_JS = """
     draw();
   }
 })();
+
+(function () {
+  var boards = Array.prototype.slice.call(document.querySelectorAll('#market-shift .js-reveal'));
+  if (!boards.length) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function formatCount(el, value) {
+    var suf = el.getAttribute('data-suf') || '';
+    var decimals = String(el.getAttribute('data-to') || '').indexOf('.') >= 0 ? 1 : 0;
+    el.textContent = value.toFixed(decimals) + suf;
+  }
+
+  function countUp(el) {
+    if (el.getAttribute('data-done') === '1') return;
+    el.setAttribute('data-done', '1');
+    var to = parseFloat(el.getAttribute('data-to') || '0');
+    if (reduce) {
+      formatCount(el, to);
+      return;
+    }
+    var start = performance.now();
+    var dur = 900;
+    function tick(now) {
+      var t = Math.min(1, (now - start) / dur);
+      var eased = 1 - Math.pow(1 - t, 3);
+      formatCount(el, to * eased);
+      if (t < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function activate(board) {
+    if (board.classList.contains('is-in')) return;
+    board.classList.add('is-in');
+    Array.prototype.forEach.call(board.querySelectorAll('.js-count'), countUp);
+  }
+
+  if (reduce || !('IntersectionObserver' in window)) {
+    boards.forEach(activate);
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        activate(entry.target);
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.28, rootMargin: '0px 0px -8% 0px' });
+  boards.forEach(function (b) { io.observe(b); });
+})();
 """
 
 def _courses_js() -> str:
-    return """const TOTAL = 17;
+    total = len(load_programs())
+    return f"""const TOTAL = {total};
 
-function applyFilter(filter) {
+function applyFilter(filter) {{
   var cards = document.querySelectorAll('.card');
   var visible = 0;
-  cards.forEach(function(card) {
+  cards.forEach(function(card) {{
     var tags = card.dataset.tags.split(',');
     var show = filter === 'all' || tags.indexOf(filter) !== -1;
     card.classList.toggle('hidden', !show);
     if (show) visible++;
-  });
-  ['featuredSection', 'moreSection'].forEach(function(id) {
-    var grid = document.getElementById(id).querySelector('.grid');
+  }});
+  ['featuredSection', 'moreSection'].forEach(function(id) {{
+    var section = document.getElementById(id);
+    if (!section) return;
+    var grid = section.querySelector('.grid');
+    if (!grid) return;
     var visibleInSection = grid.querySelectorAll('.card:not(.hidden)').length;
     var existing = grid.querySelector('.empty-state');
-    if (visibleInSection === 0) {
-      if (!existing) {
+    if (visibleInSection === 0) {{
+      if (!existing) {{
         var tpl = document.getElementById('emptyTpl');
         grid.appendChild(tpl.content.cloneNode(true));
-      }
-    } else if (existing) {
+      }}
+    }} else if (existing) {{
       existing.remove();
-    }
-  });
+    }}
+  }});
   document.getElementById('showingCount').textContent =
     filter === 'all' ? 'Showing all ' + TOTAL + ' programs' : 'Showing ' + visible + ' of ' + TOTAL + ' programs';
-}
+}}
 
-document.querySelectorAll('.filter-pill').forEach(function(pill) {
-  pill.addEventListener('click', function() {
-    document.querySelectorAll('.filter-pill').forEach(function(p) {
+document.querySelectorAll('.filter-pill').forEach(function(pill) {{
+  pill.addEventListener('click', function() {{
+    document.querySelectorAll('.filter-pill').forEach(function(p) {{
       p.classList.remove('active');
       p.setAttribute('aria-selected', 'false');
-    });
+    }});
     pill.classList.add('active');
     pill.setAttribute('aria-selected', 'true');
     applyFilter(pill.dataset.filter);
-  });
-});
+  }});
+}});
 """
 
 REGISTER_JS = """
@@ -981,6 +1214,7 @@ REGISTER_JS = """
       return;
     }
 
+    var cityEl = document.getElementById('cityField');
     var lines = [
       "Hi, I'd like to book a career call.",
       'Name: ' + name,
@@ -989,7 +1223,9 @@ REGISTER_JS = """
       'Experience: ' + experience,
       'Course: ' + courseLabel()
     ];
+    if (cityEl && cityEl.value.trim()) lines.push('City: ' + cityEl.value.trim());
     if (message) lines.push('Message: ' + message);
+    lines.push('Page: ' + window.location.href);
 
     var url = 'https://wa.me/918708752385?text=' + encodeURIComponent(lines.join('\\n'));
     window.open(url, '_blank');

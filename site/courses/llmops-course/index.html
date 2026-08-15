@@ -3,46 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LLMOps Course — AI Career Academy</title>
-  <meta name="description" content="Master LLMOps: vLLM serving, LangServe deployment, LangSmith/Langfuse observability, eval gates, security guardrails, and GPU cost optimization in 12 weeks." />
+  <title>LLMOps — AI Career Academy</title>
+  <meta name="description" content="Live 3-month LLM operations path: inference serving, RAG eval gates, prompt/adapter versioning, traces, guardrails, and cost control. Fee ₹35,000." />
   
   <meta name="robots" content="index, follow" />
   
   <link rel="canonical" href="https://aicareer.academy/courses/llmops-course/" />
   <meta property="og:site_name" content="AI Career Academy" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="LLMOps Course — AI Career Academy" />
-  <meta property="og:description" content="Master LLMOps: vLLM serving, LangServe deployment, LangSmith/Langfuse observability, eval gates, security guardrails, and GPU cost optimization in 12 weeks." />
+  <meta property="og:title" content="LLMOps — AI Career Academy" />
+  <meta property="og:description" content="Live 3-month LLM operations path: inference serving, RAG eval gates, prompt/adapter versioning, traces, guardrails, and cost control. Fee ₹35,000." />
   <meta property="og:url" content="https://aicareer.academy/courses/llmops-course/" />
   
   <meta property="og:image" content="https://aicareer.academy/assets/og.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://aicareer.academy/assets/og.png" />
   
-  <meta name="twitter:title" content="LLMOps Course — AI Career Academy" />
-  <meta name="twitter:description" content="Master LLMOps: vLLM serving, LangServe deployment, LangSmith/Langfuse observability, eval gates, security guardrails, and GPU cost optimization in 12 weeks." />
-  <meta name="theme-color" content="#09090B" />
+  <meta name="twitter:title" content="LLMOps — AI Career Academy" />
+  <meta name="twitter:description" content="Live 3-month LLM operations path: inference serving, RAG eval gates, prompt/adapter versioning, traces, guardrails, and cost control. Fee ₹35,000." />
+  <meta name="theme-color" content="#111111" />
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
   
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@id": "https://aicareer.academy/#org", "@type": "EducationalOrganization", "address": {"@type": "PostalAddress", "addressCountry": "IN", "addressLocality": "Gurugram", "addressRegion": "Haryana", "postalCode": "122101", "streetAddress": "68 Avenue, Badshahpur, Sector 68"}, "email": "hello@aicareer.academy", "name": "AI Career Academy", "telephone": "+918708752385", "url": "https://aicareer.academy/"}, {"@id": "https://aicareer.academy/#website", "@type": "WebSite", "name": "AI Career Academy", "publisher": {"@id": "https://aicareer.academy/#org"}, "url": "https://aicareer.academy/"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://aicareer.academy/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://aicareer.academy/courses/", "name": "Programs", "position": 2}, {"@type": "ListItem", "item": "https://aicareer.academy/courses/llmops-course/", "name": "LLMOps Course", "position": 3}]}, {"@type": "Course", "description": "Master LLMOps: vLLM serving, LangServe deployment, LangSmith/Langfuse observability, eval gates, security guardrails, and GPU cost optimization in 12 weeks.", "name": "LLMOps Course", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "price": "35000", "priceCurrency": "INR", "url": "https://aicareer.academy/courses/llmops-course/"}, "provider": {"@id": "https://aicareer.academy/#org"}, "url": "https://aicareer.academy/courses/llmops-course/"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "6 production systems \u2014 each with deployable infra artifacts you present in interviews and ship at work. 01 Multi-Model Inference Gateway Unified API with latency SLAs, concurrency limits, and fallback routing. Load test report (p95/p99 at representative concurrency \u2014 e.g., 500 concurrent users) Grafana dashboard: throughput, error rate, GPU utilization Canary rollout config with eval gate and auto-rollback 02 RAG Pipeline with Eval Harness Retrieval-augmented generation with continuous evaluation \u2014 not a one-off demo. Ragas faithfulness + relevancy scores with acceptance thresholds LangSmith trace dashboard: retriever latency, chunk hit-rate CI gate: golden-set regression blocks deploy if recall drops beyond an agreed threshold (e.g., 5%) 03 Fine-Tuning Ops Pipeline LoRA/QLoRA adapter to m"}, "name": "What You Will Build"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Every module is designed around what actually breaks in production \u2014 and how to prevent, detect, and recover from it. Master LLM Deployment at Scale Deploy models with vLLM and DeepSpeed across GPU clusters \u2014 continuous batching, canary rollouts, and automatic rollback on eval gate failure. PromptOps \u0026 Evaluation Pipelines Version, trace, and regression-test prompts with LangSmith. Golden-set pass rate is evaluated against an agreed benchmark (for example, 92%+) before promoting a prompt version. Quantization \u0026 Fine-Tuning LoRA/QLoRA adapters to merged production models with eval gates. Quantization tradeoff matrix: INT4 vs INT8 vs FP16 on latency, accuracy, and VRAM. LangChain \u0026 LangServe in Production Structured LLM deployment with per-step timeouts, circuit breakers, streaming error rec"}, "name": "Why Choose Our LLMOps Course?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "LLMOps (Large Language Model Operations) is the discipline of deploying, monitoring, and scaling production LLM systems. It covers model serving, evaluation gates, prompt and adapter versioning, observability, security guardrails, and cost control. LLMOps vs MLOps (Engineering Comparison) Area MLOps LLMOps Primary workload Training + batch/online inference for ML models Real-time LLM APIs with token streaming and tool calls Serving \u0026 latency Model servers, feature stores, predictable payloads Inference engines (vLLM/TGI/Triton), batching, KV-cache, p95/p99 under load Quality control Offline metrics, data drift, model monitoring Golden-set eval gates, prompt regressions, RAG retrieval quality (Ragas/Promptfoo) Versioning Datasets + model versions Prompts, adapters (LoRA/QLoRA), chains/agent"}, "name": "What is LLMOps?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Most failures aren\u0027t about prompts \u2014 they\u0027re operational: serving bottlenecks, missing eval gates, weak observability, and uncontrolled cost. This program teaches the failure modes and the infrastructure patterns to prevent, detect, and recover. Latency spikes \u0026 queueing collapse Burst traffic, KV-cache pressure, batching misconfig, cold starts, or upstream dependency failures. Silent quality regressions Prompt edits, adapter updates, or RAG changes ship without golden-set regression testing and acceptance gates. Observability blind spots No traces for tool calls, no cost-per-request visibility, and no drift/hallucination alerting. Security \u0026 data leakage Prompt injection, weak authN/authZ, missing tool allowlists, and inadequate audit logging. RAG retrieval mismatch Stale embeddings, brok"}, "name": "Why LLM Systems Fail in Production"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Six operational pillars \u2014 each taught through hands-on projects with measurable infrastructure outcomes, not slides."}, "name": "What You Will Actually Learn in This LLMOps Program"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "No marketing fluff \u2014 here is exactly how we back up every claim on this page."}, "name": "Why Engineers Trust This Program"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Live instruction, async reviews, and always-on support \u2014 designed so working engineers don\u0027t have to pause their day jobs to level up."}, "name": "How the Cohort Works"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Three tracks, one goal \u2014 production-ready AI. Pick the depth that matches where you are. MLOps End-to-end ML pipelines Model versioning \u0026 CI/CD Docker + K8s for ML MLflow \u0026 feature stores Explore MLOps YOU ARE HERE LLMOps LLM deployment \u0026 operations vLLM, LangServe, TGI serving LangSmith \u0026 Langfuse tracing Quantization \u0026 cost control AIOps MLOps + LLMOps + AgentOps combined Full-stack AI infrastructure RAG pipelines \u0026 PromptOps Agent deployment \u0026 governance Explore AIOps"}, "name": "Which AI Infrastructure Track Fits You?"}]}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@id": "https://aicareer.academy/#org", "@type": "EducationalOrganization", "address": {"@type": "PostalAddress", "addressCountry": "IN", "addressLocality": "Gurugram", "addressRegion": "Haryana", "postalCode": "122101", "streetAddress": "68 Avenue, Badshahpur, Sector 68"}, "email": "hello@aicareer.academy", "name": "AI Career Academy", "telephone": "+918708752385", "url": "https://aicareer.academy/"}, {"@id": "https://aicareer.academy/#website", "@type": "WebSite", "name": "AI Career Academy", "publisher": {"@id": "https://aicareer.academy/#org"}, "url": "https://aicareer.academy/"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://aicareer.academy/", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://aicareer.academy/courses/", "name": "Programs", "position": 2}, {"@type": "ListItem", "item": "https://aicareer.academy/courses/llmops-course/", "name": "LLMOps", "position": 3}]}, {"@type": "Course", "description": "Live 3-month LLM operations path: inference serving, RAG eval gates, prompt/adapter versioning, traces, guardrails, and cost control. Fee \u20b935,000.", "name": "LLMOps", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "price": "35000", "priceCurrency": "INR", "url": "https://aicareer.academy/courses/llmops-course/"}, "provider": {"@id": "https://aicareer.academy/#org"}, "url": "https://aicareer.academy/courses/llmops-course/"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "\u20b935,000, one-time, 3 months live."}, "name": "What is the fee and duration?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "No. Observability is Langfuse/Grafana. Power BI is only on Data Analytics with AI."}, "name": "Do you teach Power BI?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Helpful if you already ship services. Take MLOps if your job is tabular/training pipelines; take this if your job is LLM APIs."}, "name": "Do I need MLOps first?"}]}]}</script>
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Playfair+Display:ital,wght@1,600&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../../assets/css/base.css" />
+  <link rel="stylesheet" href="../../assets/css/studio.css" />
   <link rel="stylesheet" href="../../assets/css/program.css" /><link rel="stylesheet" href="../../assets/css/content.css" />
 </head>
-<body class="">
+<body class="studio ">
   <a class="skip skip-link" href="#main">Skip to content</a>
 
-  
-
-  <header class="site-head" id="header">
+  <header class="studio-head" id="header">
     <a href="../../index.html" class="brand">
       <span class="brand-mark" aria-hidden="true">ACA</span>
       <span>AI Career<em>.academy</em></span>
     </a>
-    <a class="head-cta" href="../../register/index.html"><span>Book a career call</span></a>
+    <nav class="pill-nav" aria-label="Primary">
+      <a href="../../about-us/index.html">About us</a>
+      <a href="../../courses/index.html">Courses offered</a>
+      <a href="../../register/index.html">Enrollment form</a>
+      <a href="../../mentors/index.html">Studio hub</a>
+      <a href="../../contact-us/index.html">Contact</a>
+      <a class="login" href="../../register/index.html">Enquire</a>
+    </nav>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
       <span></span><span></span><span></span>
     </button>
@@ -50,15 +56,14 @@
 
   <div class="menu" id="menu" aria-hidden="true">
     <button class="menu-close" id="menuClose" type="button">Close</button>
-    <nav aria-label="Primary">
+    <nav aria-label="Mobile">
       <a href="../../index.html">Home</a>
-      <a href="../../index.html#demand">Demand chart</a>
-      <a href="../../courses/index.html">All programs</a>
-      <a href="../../comparisons/index.html">Comparisons</a>
-      <a href="../../roadmaps/data-science-roadmap/index.html">Roadmaps</a>
+      <a href="../../about-us/index.html">About us</a>
+      <a href="../../courses/index.html">Courses offered</a>
+      <a href="../../register/index.html">Enrollment form</a>
       <a href="../../mentors/index.html">Mentors</a>
+      <a href="../../hire-from-us/index.html">Hire from us</a>
       <a href="../../contact-us/index.html">Contact</a>
-      <a href="../../register/index.html">Book a call</a>
       <a href="https://wa.me/918708752385">WhatsApp</a>
       <a href="tel:+918708752385">+91 87087 52385</a>
     </nav>
@@ -72,9 +77,9 @@
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="../../courses/index.html">All programs</a>
         <span aria-hidden="true">/</span>
-        <span>LLMOP&#39;s</span>
+        <span>LLMOps</span>
       </nav>
-      <h1 class="prog-hero-title">LLMOps Course</h1>
+      <h1 class="prog-hero-title">LLMOps</h1>
       
       <div class="prog-meta">
         <span class="card-duration">3 Months</span>
@@ -88,23 +93,16 @@
         
       </div>
       
-      <p class="prog-hero-sub">Production LLM infrastructure training for engineers — serving, observability, evaluation gates, secure releases, and cost control.</p>
+      <p class="prog-hero-sub">Three months live for engineers who already ship services and now need LLM production habits: serving (vLLM-class), golden-set eval gates, prompt and adapter versioning, traces (LangSmith/Langfuse), guardrails, and token budgets. Not MLOps-for-tabular and not Power BI.</p>
       <div class="prog-cta-row">
-        <a href="../../register/index.html?course=llmops-course" class="btn btn-primary btn-lg">Book a session</a>
-        <a href="https://wa.me/918708752385" class="btn btn-ghost btn-lg">Chat on WhatsApp</a>
+        <a href="../../register/index.html?course=llmops-course" class="btn-yellow">Book a session</a>
+        <a href="https://wa.me/918708752385" class="btn-black" data-wa-course="LLMOps">Chat on WhatsApp</a>
       </div>
     </div>
-    <div class="prog-hero-art" aria-hidden="true">
-      <svg viewBox="0 0 280 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="16" y="24" width="248" height="152" fill="#09090B" stroke="#DFE104" stroke-width="3"/>
-        <rect x="40" y="48" width="120" height="12" fill="#DFE104"/>
-        <rect x="40" y="72" width="200" height="8" fill="#3F3F46"/>
-        <rect x="40" y="92" width="176" height="8" fill="#3F3F46"/>
-        <rect x="42" y="118" width="28" height="28" fill="#FF2D2D"/>
-        <rect x="78" y="118" width="28" height="28" fill="#DFE104"/>
-        <rect x="114" y="118" width="28" height="28" fill="#5CE1FF"/>
-        <path d="M42 132h140" stroke="#DFE104" stroke-width="3" stroke-dasharray="4 6"/>
-      </svg>
+    <div class="prog-hero-art">
+      
+      <img src="../../assets/img/poster-llmops.png" alt="" width="800" height="600" loading="lazy" decoding="async" />
+      
     </div>
   </div>
 </section>
@@ -159,156 +157,23 @@
   <div class="container">
     
     <div class="prog-section">
-      <h2 class="prog-section-title">What You Will Build</h2>
+      <h2 class="prog-section-title">What you learn</h2>
       
-      <div class="prog-section-body">6 production systems — each with deployable infra artifacts you present in interviews and ship at work.
-
-01 Multi-Model Inference Gateway Unified API with latency SLAs, concurrency limits, and fallback routing. Load test report (p95/p99 at representative concurrency — e.g., 500 concurrent users) Grafana dashboard: throughput, error rate, GPU utilization Canary rollout config with eval gate and auto-rollback 02 RAG Pipeline with Eval Harness Retrieval-augmented generation with continuous evaluation — not a one-off demo. Ragas faithfulness + relevancy scores with acceptance thresholds LangSmith trace dashboard: retriever latency, chunk hit-rate CI gate: golden-set regression blocks deploy if recall drops beyond an agreed threshold (e.g., 5%) 03 Fine-Tuning Ops Pipeline LoRA/QLoRA adapter to merged production model with eval gates and version control. MLflow experiment tracker: adapter lineage and eval pass/fail Merge + quantization script with before/after benchmark Blue-green deploy manifest with traffic-split config 04 LLM Observability Stack Instrument, monitor, and debug LLM systems under production load. Langfuse integration: per-request cost tracking and token burn dashboards Alert rules: p95 breach, hallucination spike, budget cap exceeded Drift detection: semantic similarity regression across weekly snapshots 05 Secure Multi-Agent System Agentic workflows with tool allowlisting, circuit breakers, and audit trails. LangGraph agent DAG with retry nodes and timeout policies Security config: tool allowlist, schema validation, RBAC Agent observability: step-level tracing and failure modes 06 Cost-Optimized Multi-Cloud Deploy Route traffic across providers and stay within budget caps. Model router config: latency-aware routing with cost thresholds Budget burn dashboard with Slack alerts at 80% cap Failover test: provider-down scenario with auto-switch latency</div>
+      <div class="prog-section-body">Inference latency (p95/p99), batching, RAG evaluation harnesses, CI gates that block bad prompts or retrievers, observability and cost dashboards, tool allowlists, and rollback. Grafana/Langfuse for ops visibility — we do not teach Power BI here.</div>
       
     </div>
     
     <div class="prog-section">
-      <h2 class="prog-section-title">Multi-Model Inference Gateway</h2>
+      <h2 class="prog-section-title">Who it is for</h2>
       
-      <div class="prog-section-body">Unified API with latency SLAs, concurrency limits, and fallback routing.</div>
-      
-    </div>
-    
-    <div class="prog-section">
-      <h2 class="prog-section-title">RAG Pipeline with Eval Harness</h2>
-      
-      <div class="prog-section-body">Retrieval-augmented generation with continuous evaluation — not a one-off demo.</div>
+      <div class="prog-section-body">ML, platform, and backend engineers operating LLM APIs. If you need classic ML pipelines (DVC, training CI, tabular drift), take MLOps. If you need to build the app, take Gen AI for Developers.</div>
       
     </div>
     
     <div class="prog-section">
-      <h2 class="prog-section-title">Fine-Tuning Ops Pipeline</h2>
+      <h2 class="prog-section-title">Career support</h2>
       
-      <div class="prog-section-body">LoRA/QLoRA adapter to merged production model with eval gates and version control.</div>
-      
-    </div>
-    
-    <div class="prog-section">
-      <h2 class="prog-section-title">LLM Observability Stack</h2>
-      
-      <div class="prog-section-body">Instrument, monitor, and debug LLM systems under production load.</div>
-      
-    </div>
-    
-    <div class="prog-section">
-      <h2 class="prog-section-title">Secure Multi-Agent System</h2>
-      
-      <div class="prog-section-body">Agentic workflows with tool allowlisting, circuit breakers, and audit trails.</div>
-      
-    </div>
-    
-    <div class="prog-section">
-      <h2 class="prog-section-title">Cost-Optimized Multi-Cloud Deploy</h2>
-      
-      <div class="prog-section-body">Route traffic across providers and stay within budget caps.</div>
-      
-    </div>
-    
-    <div class="prog-section">
-      <h2 class="prog-section-title">Why Choose Our LLMOps Course?</h2>
-      
-      <div class="prog-section-body">Every module is designed around what actually breaks in production — and how to prevent, detect, and recover from it.
-
-Master LLM Deployment at Scale Deploy models with vLLM and DeepSpeed across GPU clusters — continuous batching, canary rollouts, and automatic rollback on eval gate failure. PromptOps &amp; Evaluation Pipelines Version, trace, and regression-test prompts with LangSmith. Golden-set pass rate is evaluated against an agreed benchmark (for example, 92%+) before promoting a prompt version. Quantization &amp; Fine-Tuning LoRA/QLoRA adapters to merged production models with eval gates. Quantization tradeoff matrix: INT4 vs INT8 vs FP16 on latency, accuracy, and VRAM. LangChain &amp; LangServe in Production Structured LLM deployment with per-step timeouts, circuit breakers, streaming error recovery, and session-scoped memory with TTL cleanup. Inference Optimization with vLLM High-throughput serving with PagedAttention and tensor parallelism. KV-cache budget sizing, continuous batching, and p95/p99 latency profiling under load. Secure Function Calling &amp; Guardrails Tool allowlisting with schema validation, multi-layer prompt injection defense, and full audit logging — every tool call traced with identity and timestamp. Observability &amp; Cost Control Token-level cost dashboards via Langfuse, budget caps per team/model with auto-throttle, and semantic drift detection with Slack alerting. Multi-Model &amp; Hybrid Deployments Route queries across OpenAI, Claude, and self-hosted models with cost-aware routing, latency SLA tiers, and auto-failover on provider outages. Mentorship from LLMOps Engineers PR-style code reviews on every project, simulated ops drills (latency spikes, GPU failures), and twice-weekly office hours for architecture review.</div>
-      
-    </div>
-    
-    <div class="prog-section">
-      <h2 class="prog-section-title">What is LLMOps?</h2>
-      
-      <div class="prog-section-body">LLMOps (Large Language Model Operations) is the discipline of deploying, monitoring, and scaling production LLM systems. It covers model serving, evaluation gates, prompt and adapter versioning, observability, security guardrails, and cost control.
-
-LLMOps vs MLOps (Engineering Comparison) Area MLOps LLMOps Primary workload Training + batch/online inference for ML models Real-time LLM APIs with token streaming and tool calls Serving &amp; latency Model servers, feature stores, predictable payloads Inference engines (vLLM/TGI/Triton), batching, KV-cache, p95/p99 under load Quality control Offline metrics, data drift, model monitoring Golden-set eval gates, prompt regressions, RAG retrieval quality (Ragas/Promptfoo) Versioning Datasets + model versions Prompts, adapters (LoRA/QLoRA), chains/agents, and configs (MLflow + Git) Observability System + model monitoring Trace-level observability (LangSmith/Langfuse): cost, latency, tool calls, failures Security &amp; governance PII, access control, data lineage Prompt injection defense, tool allowlists, audit logs, policy guardrails</div>
-      
-    </div>
-    
-    <div class="prog-section">
-      <h2 class="prog-section-title">Why LLM Systems Fail in Production</h2>
-      
-      <div class="prog-section-body">Most failures aren&#39;t about prompts — they&#39;re operational: serving bottlenecks, missing eval gates, weak observability, and uncontrolled cost. This program teaches the failure modes and the infrastructure patterns to prevent, detect, and recover.
-
-Latency spikes &amp; queueing collapse Burst traffic, KV-cache pressure, batching misconfig, cold starts, or upstream dependency failures. Silent quality regressions Prompt edits, adapter updates, or RAG changes ship without golden-set regression testing and acceptance gates. Observability blind spots No traces for tool calls, no cost-per-request visibility, and no drift/hallucination alerting. Security &amp; data leakage Prompt injection, weak authN/authZ, missing tool allowlists, and inadequate audit logging. RAG retrieval mismatch Stale embeddings, broken indexing jobs, chunking issues, and untested retriever changes. Cost explosion No token budgets, no caching strategy, no routing tiers, and no team-level caps with throttle/alerts.</div>
-      
-    </div>
-    
-    <div class="prog-section">
-      <h2 class="prog-section-title">Latency spikes &amp; queueing collapse</h2>
-      
-      <div class="prog-section-body">Burst traffic, KV-cache pressure, batching misconfig, cold starts, or upstream dependency failures.</div>
-      
-    </div>
-    
-    <div class="prog-section">
-      <h2 class="prog-section-title">Silent quality regressions</h2>
-      
-      <div class="prog-section-body">Prompt edits, adapter updates, or RAG changes ship without golden-set regression testing and acceptance gates.</div>
-      
-    </div>
-    
-    <div class="prog-section">
-      <h2 class="prog-section-title">Observability blind spots</h2>
-      
-      <div class="prog-section-body">No traces for tool calls, no cost-per-request visibility, and no drift/hallucination alerting.</div>
-      
-    </div>
-    
-    <div class="prog-section">
-      <h2 class="prog-section-title">Security &amp; data leakage</h2>
-      
-      <div class="prog-section-body">Prompt injection, weak authN/authZ, missing tool allowlists, and inadequate audit logging.</div>
-      
-    </div>
-    
-    <div class="prog-section">
-      <h2 class="prog-section-title">RAG retrieval mismatch</h2>
-      
-      <div class="prog-section-body">Stale embeddings, broken indexing jobs, chunking issues, and untested retriever changes.</div>
-      
-    </div>
-    
-    <div class="prog-section">
-      <h2 class="prog-section-title">Cost explosion</h2>
-      
-      <div class="prog-section-body">No token budgets, no caching strategy, no routing tiers, and no team-level caps with throttle/alerts.</div>
-      
-    </div>
-    
-    <div class="prog-section">
-      <h2 class="prog-section-title">What You Will Actually Learn in This LLMOps Program</h2>
-      
-      <div class="prog-section-body">Six operational pillars — each taught through hands-on projects with measurable infrastructure outcomes, not slides.</div>
-      
-    </div>
-    
-    <div class="prog-section">
-      <h2 class="prog-section-title">Serving</h2>
-      
-      <div class="prog-section-body">Deploy LLMs behind production APIs using vLLM, LangServe, and Triton with continuous batching, auto-scaling, and latency SLAs.
-
-▸ p95/p99 latency targets with continuous batching and max-batch-wait tuning ▸ Concurrency limits, queueing policies, and circuit breakers for upstream failures ▸ GPU utilization monitoring with VRAM headroom and KV-cache budget allocation</div>
-      
-    </div>
-    
-    <div class="prog-section">
-      <h2 class="prog-section-title">Fine-Tuning Ops</h2>
-      
-      <div class="prog-section-body">Run parameter-efficient fine-tuning (LoRA, QLoRA, DPO) with automated evaluation, version control, and artifact tracking via MLflow.
-
-▸ Evaluation gates block adapter promotion if accuracy drops below acceptance threshold ▸ Cost-per-run tracking: GPU-hours, token count, and improvement-per-dollar metrics ▸ Safe adapter merging with runtime compatibility checks and safetensors export</div>
-      
-    </div>
-    
-    <div class="prog-section">
-      <h2 class="prog-section-title">Observability</h2>
-      
-      <div class="prog-section-body">Instrument every LLM call with LangSmith and Langfuse — trace prompts, measure cost-per-token, detect drift, and set alerts.
-
-▸ Structured trace export via OpenTelemetry with session-based token tracking ▸ Drift detection: semantic similarity regression across weekly golden-set snapshots ▸ Alert rules: p95 latency breach, hallucination spike, budget cap exceeded → Slack/PagerDuty</div>
+      <div class="prog-section-body">Fee is ₹35,000 one-time. A 12-week-style cohort will not replace years of platform engineering. Placement support, a course certificate, and internship opportunities are included.</div>
       
     </div>
     
@@ -317,113 +182,348 @@ Latency spikes &amp; queueing collapse Burst traffic, KV-cache pressure, batchin
 
 
 
-<section class="prog-curriculum" id="curriculum">
+<section class="prog-curriculum band" id="curriculum">
+  <h2 class="h-scribble">Course Curriculum</h2>
+  <svg class="scratch" viewBox="0 0 96 14" aria-hidden="true"><path d="M4 9 Q24 2 48 8 T92 7"/></svg>
+  <div class="offer-ui">
+    <div class="offer-tabs" role="tablist" aria-label="Curriculum modules">
+      
+      
+        
+          
+          
+          <button type="button" data-offer="1" class="is-on" role="tab">Module 1: Inference</button>
+          
+          
+          <button type="button" data-offer="2" class="" role="tab">Module 2: Observability</button>
+          
+        
+      
+        
+          
+          
+          <button type="button" data-offer="3" class="" role="tab">Module 3: RAG in production</button>
+          
+          
+          <button type="button" data-offer="4" class="" role="tab">Module 4: Prompt operations</button>
+          
+        
+      
+        
+          
+          
+          <button type="button" data-offer="5" class="" role="tab">Module 5: Agent operations</button>
+          
+        
+      
+    </div>
+    <div>
+      
+      
+        
+          
+          
+          <div class="offer-panel" id="offer-1" >
+            <h3>Module 1: Inference</h3>
+            <p class="offer-track">Serving LLMs</p>
+            <p class="offer-lead">LLMOps starts at the server. You will talk about batching, caching, and p95 as if they were SLOs — because they are.</p>
+            
+              
+              <h4>LLM serving and scaling</h4>
+              <ul>
+                
+                <li>vLLM-class ideas: paging, batching, continuous batching</li>
+                
+                <li>Self-host vs API: when each is honest</li>
+                
+                <li>Context length vs throughput</li>
+                
+              </ul>
+              
+              <h4>Batching and caching</h4>
+              <ul>
+                
+                <li>Prefix cache, prompt cache, semantic cache with a danger label</li>
+                
+                <li>What not to cache (personalized, secret, stale policy)</li>
+                
+                <li>Queueing: user-visible wait vs 500s</li>
+                
+              </ul>
+              
+              <h4>p95/p99 latency</h4>
+              <ul>
+                
+                <li>Measure tokens/sec and time-to-first-token separately</li>
+                
+                <li>Streaming as a latency lie if the last token is late</li>
+                
+                <li>Load test with a realistic mix, not one prompt</li>
+                
+              </ul>
+              
+              <h4>Capacity</h4>
+              <ul>
+                
+                <li>A back-of-envelope: QPS × tokens × cost</li>
+                
+                <li>Shed load before you melt the GPU</li>
+                
+                <li>Not Power BI — this is inference math</li>
+                
+              </ul>
+              
+            
+            <p class="offer-out">You leave with a serving note: architecture choice, a latency SLO, and a load-test screenshot or table.</p>
+          </div>
+          
+          
+          <div class="offer-panel" id="offer-2" hidden>
+            <h3>Module 2: Observability</h3>
+            <p class="offer-track">Serving LLMs</p>
+            <p class="offer-lead">If you cannot see traces, you cannot debug a prompt. Dashboards here are Langfuse/Grafana-class, not analyst BI.</p>
+            
+              
+              <h4>Traces and dashboards</h4>
+              <ul>
+                
+                <li>Trace every call: prompt version, model, tokens, latency, user/tenant</li>
+                
+                <li>Redact secrets in traces</li>
+                
+                <li>A board: error rate, cost, p95</li>
+                
+              </ul>
+              
+              <h4>Error budgets</h4>
+              <ul>
+                
+                <li>What is an ‘LLM error’ — timeout, empty, unsafe, ungrounded</li>
+                
+                <li>Budget per week, not vibes</li>
+                
+                <li>Page a human only when the budget burns</li>
+                
+              </ul>
+              
+              <h4>Cost optimization</h4>
+              <ul>
+                
+                <li>Cost per successful task, not per token vanity</li>
+                
+                <li>Route easy traffic to a small model</li>
+                
+                <li>A weekly review that actually happens</li>
+                
+              </ul>
+              
+              <h4>On-call habits</h4>
+              <ul>
+                
+                <li>A runbook: provider outage, cost spike, quality drop</li>
+                
+                <li>Feature flags for prompts</li>
+                
+                <li>This is not tabular MLOps</li>
+                
+              </ul>
+              
+            
+            <p class="offer-out">You leave with a trace pipeline and a three-panel ops board: latency, cost, quality proxy.</p>
+          </div>
+          
+        
+      
+        
+          
+          
+          <div class="offer-panel" id="offer-3" hidden>
+            <h3>Module 3: RAG in production</h3>
+            <p class="offer-track">RAGOps</p>
+            <p class="offer-lead">RAG in prod is an eval problem. You will gate retrieval quality the way MLOps gates accuracy.</p>
+            
+              
+              <h4>Retrieval evaluation</h4>
+              <ul>
+                
+                <li>Hit rate, MRR, groundedness on a frozen set</li>
+                
+                <li>Slice by doc type (PDF vs wiki vs ticket)</li>
+                
+                <li>Index build as a versioned artifact</li>
+                
+              </ul>
+              
+              <h4>Golden-set regression</h4>
+              <ul>
+                
+                <li>CI job that fails if groundedness drops</li>
+                
+                <li>Canary a chunker change</li>
+                
+                <li>Do not eval only on the founder’s favourite PDF</li>
+                
+              </ul>
+              
+              <h4>Chunk hit-rate</h4>
+              <ul>
+                
+                <li>Log retrieved ids; debug misses</li>
+                
+                <li>Hybrid search when names and SKUs fail embed</li>
+                
+                <li>Access control regressions</li>
+                
+              </ul>
+              
+              <h4>Incidents</h4>
+              <ul>
+                
+                <li>Stale index after a doc purge</li>
+                
+                <li>Duplicate chunks flooding context</li>
+                
+                <li>A rollback of the index, not the whole app</li>
+                
+              </ul>
+              
+            
+            <p class="offer-out">You leave with a RAG eval harness in CI and a golden set you refuse to eyeball-only.</p>
+          </div>
+          
+          
+          <div class="offer-panel" id="offer-4" hidden>
+            <h3>Module 4: Prompt operations</h3>
+            <p class="offer-track">RAGOps</p>
+            <p class="offer-lead">Prompts are code. You will version them, canary them, and block merges that fail eval.</p>
+            
+              
+              <h4>Prompt versioning and governance</h4>
+              <ul>
+                
+                <li>Prompt + model + tools as a tuple</li>
+                
+                <li>Who can edit production prompts</li>
+                
+                <li>Diffs in git, not in a Slack thread</li>
+                
+              </ul>
+              
+              <h4>Canary rollouts</h4>
+              <ul>
+                
+                <li>1% traffic, watch traces, then 100%</li>
+                
+                <li>Kill switch</li>
+                
+                <li>User-visible A/B only if you can score it</li>
+                
+              </ul>
+              
+              <h4>Eval gates</h4>
+              <ul>
+                
+                <li>Offline set + online proxy (thumbs, task success)</li>
+                
+                <li>Safety tests in the same gate</li>
+                
+                <li>A failed gate is a red build</li>
+                
+              </ul>
+              
+              <h4>Adapters</h4>
+              <ul>
+                
+                <li>If you ship LoRA, version it like a prompt</li>
+                
+                <li>Do not mix adapter v3 with prompt v1 silently</li>
+                
+              </ul>
+              
+            
+            <p class="offer-out">You leave with prompts in git, a canary path, and a CI gate that has failed at least once on purpose.</p>
+          </div>
+          
+        
+      
+        
+          
+          
+          <div class="offer-panel" id="offer-5" hidden>
+            <h3>Module 5: Agent operations</h3>
+            <p class="offer-track">AgentOps</p>
+            <p class="offer-lead">Agents in production need audits. You will log tool calls, cap steps, and put safety filters where money and PII live.</p>
+            
+              
+              <h4>AgentOps</h4>
+              <ul>
+                
+                <li>Step cap, time cap, cost cap</li>
+                
+                <li>Idempotent tools</li>
+                
+                <li>Human approval on irreversible actions</li>
+                
+              </ul>
+              
+              <h4>Tool-call auditing</h4>
+              <ul>
+                
+                <li>Every call: args, result hash, user</li>
+                
+                <li>Replay a bad session</li>
+                
+                <li>Allowlist changes go through review</li>
+                
+              </ul>
+              
+              <h4>Safety filters</h4>
+              <ul>
+                
+                <li>Input and output filters</li>
+                
+                <li>Jailbreak evals on a fixed set</li>
+                
+                <li>What you still cannot promise: a perfect model</li>
+                
+              </ul>
+              
+              <h4>Career-call close</h4>
+              <ul>
+                
+                <li>This cohort is 3 months — it does not replace platform years</li>
+                
+                <li>Placement support, certificate, internships as published</li>
+                
+                <li>If you need training pipelines, that is MLOps</li>
+                
+              </ul>
+              
+            
+            <p class="offer-out">You leave with an agent policy, an audit log sample, and a safety eval you ran before ‘demo day’.</p>
+          </div>
+          
+        
+      
+    </div>
+  </div>
+</section>
+
+
+
+<section class="prog-sections" id="related">
   <div class="container">
-    <h2 class="section-title">Course Curriculum</h2>
-    <div class="curriculum-tree">
-      
-      <details class="curr-level" open>
-        <summary>Serving LLMs</summary>
-        <div class="curr-level-body">
+    <div class="prog-section">
+      <h2 class="prog-section-title">Related programs</h2>
+      <div class="prog-section-body">
+        <ul>
           
-            
-            <details class="curr-module">
-              <summary>Module 1: Inference</summary>
-              
-              <ul class="curr-topics">
-                
-                <li>LLM Serving and Scaling</li>
-                
-                <li>Batching and caching</li>
-                
-                <li>p95/p99 latency</li>
-                
-              </ul>
-              
-            </details>
-            
-            <details class="curr-module">
-              <summary>Module 2: Observability</summary>
-              
-              <ul class="curr-topics">
-                
-                <li>Traces and dashboards</li>
-                
-                <li>Error budgets</li>
-                
-                <li>Cost Optimization</li>
-                
-              </ul>
-              
-            </details>
-            
+          <li><a href="../../courses/mlops-course/index.html">MLOps</a></li>
           
-        </div>
-      </details>
-      
-      <details class="curr-level">
-        <summary>RAGOps</summary>
-        <div class="curr-level-body">
+          <li><a href="../../courses/generative-ai-course/index.html">Gen AI Specialization</a></li>
           
-            
-            <details class="curr-module">
-              <summary>Module 3: RAG in production</summary>
-              
-              <ul class="curr-topics">
-                
-                <li>Retrieval evaluation</li>
-                
-                <li>Golden-set regression</li>
-                
-                <li>Chunk hit-rate</li>
-                
-              </ul>
-              
-            </details>
-            
-            <details class="curr-module">
-              <summary>Module 4: Prompt operations</summary>
-              
-              <ul class="curr-topics">
-                
-                <li>Prompt Versioning and Governance</li>
-                
-                <li>Canary rollouts</li>
-                
-                <li>Eval gates</li>
-                
-              </ul>
-              
-            </details>
-            
-          
-        </div>
-      </details>
-      
-      <details class="curr-level">
-        <summary>AgentOps</summary>
-        <div class="curr-level-body">
-          
-            
-            <details class="curr-module">
-              <summary>Module 5: Agent operations</summary>
-              
-              <ul class="curr-topics">
-                
-                <li>AgentOps</li>
-                
-                <li>Tool-call auditing</li>
-                
-                <li>Safety filters</li>
-                
-              </ul>
-              
-            </details>
-            
-          
-        </div>
-      </details>
-      
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -436,43 +536,18 @@ Latency spikes &amp; queueing collapse Burst traffic, KV-cache pressure, batchin
     <div class="faq-list">
       
       <details class="faq-item">
-        <summary>What You Will Build</summary>
-        <p>6 production systems — each with deployable infra artifacts you present in interviews and ship at work. 01 Multi-Model Inference Gateway Unified API with latency SLAs, concurrency limits, and fallback routing. Load test report (p95/p99 at representative concurrency — e.g., 500 concurrent users) Grafana dashboard: throughput, error rate, GPU utilization Canary rollout config with eval gate and auto-rollback 02 RAG Pipeline with Eval Harness Retrieval-augmented generation with continuous evaluation — not a one-off demo. Ragas faithfulness + relevancy scores with acceptance thresholds LangSmith trace dashboard: retriever latency, chunk hit-rate CI gate: golden-set regression blocks deploy if recall drops beyond an agreed threshold (e.g., 5%) 03 Fine-Tuning Ops Pipeline LoRA/QLoRA adapter to m</p>
+        <summary>What is the fee and duration?</summary>
+        <p>₹35,000, one-time, 3 months live.</p>
       </details>
       
       <details class="faq-item">
-        <summary>Why Choose Our LLMOps Course?</summary>
-        <p>Every module is designed around what actually breaks in production — and how to prevent, detect, and recover from it. Master LLM Deployment at Scale Deploy models with vLLM and DeepSpeed across GPU clusters — continuous batching, canary rollouts, and automatic rollback on eval gate failure. PromptOps &amp; Evaluation Pipelines Version, trace, and regression-test prompts with LangSmith. Golden-set pass rate is evaluated against an agreed benchmark (for example, 92%+) before promoting a prompt version. Quantization &amp; Fine-Tuning LoRA/QLoRA adapters to merged production models with eval gates. Quantization tradeoff matrix: INT4 vs INT8 vs FP16 on latency, accuracy, and VRAM. LangChain &amp; LangServe in Production Structured LLM deployment with per-step timeouts, circuit breakers, streaming error rec</p>
+        <summary>Do you teach Power BI?</summary>
+        <p>No. Observability is Langfuse/Grafana. Power BI is only on Data Analytics with AI.</p>
       </details>
       
       <details class="faq-item">
-        <summary>What is LLMOps?</summary>
-        <p>LLMOps (Large Language Model Operations) is the discipline of deploying, monitoring, and scaling production LLM systems. It covers model serving, evaluation gates, prompt and adapter versioning, observability, security guardrails, and cost control. LLMOps vs MLOps (Engineering Comparison) Area MLOps LLMOps Primary workload Training + batch/online inference for ML models Real-time LLM APIs with token streaming and tool calls Serving &amp; latency Model servers, feature stores, predictable payloads Inference engines (vLLM/TGI/Triton), batching, KV-cache, p95/p99 under load Quality control Offline metrics, data drift, model monitoring Golden-set eval gates, prompt regressions, RAG retrieval quality (Ragas/Promptfoo) Versioning Datasets + model versions Prompts, adapters (LoRA/QLoRA), chains/agent</p>
-      </details>
-      
-      <details class="faq-item">
-        <summary>Why LLM Systems Fail in Production</summary>
-        <p>Most failures aren&#39;t about prompts — they&#39;re operational: serving bottlenecks, missing eval gates, weak observability, and uncontrolled cost. This program teaches the failure modes and the infrastructure patterns to prevent, detect, and recover. Latency spikes &amp; queueing collapse Burst traffic, KV-cache pressure, batching misconfig, cold starts, or upstream dependency failures. Silent quality regressions Prompt edits, adapter updates, or RAG changes ship without golden-set regression testing and acceptance gates. Observability blind spots No traces for tool calls, no cost-per-request visibility, and no drift/hallucination alerting. Security &amp; data leakage Prompt injection, weak authN/authZ, missing tool allowlists, and inadequate audit logging. RAG retrieval mismatch Stale embeddings, brok</p>
-      </details>
-      
-      <details class="faq-item">
-        <summary>What You Will Actually Learn in This LLMOps Program</summary>
-        <p>Six operational pillars — each taught through hands-on projects with measurable infrastructure outcomes, not slides.</p>
-      </details>
-      
-      <details class="faq-item">
-        <summary>Why Engineers Trust This Program</summary>
-        <p>No marketing fluff — here is exactly how we back up every claim on this page.</p>
-      </details>
-      
-      <details class="faq-item">
-        <summary>How the Cohort Works</summary>
-        <p>Live instruction, async reviews, and always-on support — designed so working engineers don&#39;t have to pause their day jobs to level up.</p>
-      </details>
-      
-      <details class="faq-item">
-        <summary>Which AI Infrastructure Track Fits You?</summary>
-        <p>Three tracks, one goal — production-ready AI. Pick the depth that matches where you are. MLOps End-to-end ML pipelines Model versioning &amp; CI/CD Docker + K8s for ML MLflow &amp; feature stores Explore MLOps YOU ARE HERE LLMOps LLM deployment &amp; operations vLLM, LangServe, TGI serving LangSmith &amp; Langfuse tracing Quantization &amp; cost control AIOps MLOps + LLMOps + AgentOps combined Full-stack AI infrastructure RAG pipelines &amp; PromptOps Agent deployment &amp; governance Explore AIOps</p>
+        <summary>Do I need MLOps first?</summary>
+        <p>Helpful if you already ship services. Take MLOps if your job is tabular/training pipelines; take this if your job is LLM APIs.</p>
       </details>
       
     </div>
@@ -487,8 +562,8 @@ Latency spikes &amp; queueing collapse Burst traffic, KV-cache pressure, batchin
       <p class="cta-sub">Talk to an advisor about this program — 15 minutes, no sales pitch.</p>
     </div>
     <div class="cta-actions">
-      <a href="../../register/index.html?course=llmops-course" class="btn btn-light btn-lg">Book a career call</a>
-      <a href="https://wa.me/918708752385" class="btn btn-outline-light btn-lg">Chat on WhatsApp</a>
+      <a href="../../register/index.html?course=llmops-course" class="btn-yellow">Book a career call</a>
+      <a href="https://wa.me/918708752385" class="btn-black" data-wa-course="LLMOps">Chat on WhatsApp</a>
       <p class="cta-phone">+91 87087 52385</p>
     </div>
   </div>
@@ -496,52 +571,44 @@ Latency spikes &amp; queueing collapse Burst traffic, KV-cache pressure, batchin
 
   </main>
 
-  <footer class="site-foot footer">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <p class="kicker">Studio</p>
-        <p>Live cohorts. Published fees. A sequence for a job — not a certificate dump.</p>
+  <footer class="studio-foot">
+    <div class="foot-grid">
+      <div>
+        <p class="brand-word">AI Career Academy</p>
+        <p>Live online cohorts. Published fees. Placement support, certification, and internships — not a pass-rate slogan.</p>
+        <p>68 Avenue, Badshahpur, Sector 68, Gurugram, Haryana 122101</p>
+        <p><a href="tel:+918708752385">+91 87087 52385</a> · <a href="mailto:hello@aicareer.academy">hello@aicareer.academy</a></p>
       </div>
-      <div class="footer-col">
-        <h4>Learn</h4>
-        <a href="../../index.html#demand">Demand chart</a>
-        <a href="../../courses/index.html">All programs</a>
-        <a href="../../comparisons/index.html">Comparisons</a>
-        <a href="../../roadmaps/data-science-roadmap/index.html">Roadmaps</a>
-        <a href="../../blogs/index.html">Blogs</a>
-        <a href="../../register/index.html">Register</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
+      <div>
+        <h4>Quick links</h4>
         <a href="../../about-us/index.html">About us</a>
+        <a href="../../courses/index.html">Courses offered</a>
         <a href="../../mentors/index.html">Mentors</a>
         <a href="../../hire-from-us/index.html">Hire from us</a>
-        <a href="../../enterprise-ai-upskilling/index.html">For teams</a>
-        <a href="../../contact-us/index.html">Contact</a>
+        <a href="../../blogs/index.html">Blogs</a>
       </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
+      <div>
+        <h4>On paper</h4>
         <a href="../../privacy-policy/index.html">Privacy policy</a>
-        <a href="../../terms-and-conditions/index.html">Terms of service</a>
-        <a href="../../refund-policy/index.html">Refund policy</a>
+        <a href="../../terms-and-conditions/index.html">Terms</a>
+        <a href="../../refund-policy/index.html">Refunds</a>
       </div>
-      <div class="footer-col">
-        <h4>Get in touch</h4>
-        <a href="mailto:hello@aicareer.academy">hello@aicareer.academy</a>
-        <a href="tel:+918708752385">+91 87087 52385</a>
-        <p class="footer-addr">68 Avenue, Badshahpur,<br />Sector 68, Gurugram, Haryana 122101</p>
-        <p class="footer-hours">Mon–Sat, 10am–7pm IST</p>
+      <div>
+        <h4>Stay on the desk</h4>
+        <a href="../../register/index.html">Register your interest</a>
+        <a href="https://wa.me/918708752385">WhatsApp</a>
       </div>
     </div>
-    <p>© <span id="year"></span> AI Career Academy. Demand slabs cite U.S. BLS 2024–34 projections. They are not a promise about your job.</p>
+    <p class="copy">© <span id="year"></span> AI Career Academy. U.S. BLS figures on the demand chart are not a promise about your job.</p>
   </footer>
 
-  <div class="dock" aria-label="Quick actions">
-    <a class="dock-call" href="../../register/index.html">Career call</a>
-    <a class="dock-wa" href="https://wa.me/918708752385">WhatsApp</a>
+  <div class="studio-dock" aria-label="Quick actions">
+    <button class="chat-pop" type="button" id="chatBtn">Talk to studio<br /><small>WhatsApp · career call</small></button>
+    <a class="dock-cta" href="../../register/index.html">Register your interest</a>
   </div>
 
   <script src="../../assets/js/nav.js" defer></script>
+  <script src="../../assets/js/studio.js" defer></script>
   
 </body>
 </html>

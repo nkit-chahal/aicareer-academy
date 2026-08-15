@@ -1,0 +1,21 @@
+{
+  "id": "prog-java",
+  "source": "/courses/java-course",
+  "output": "courses/java-course/index.html",
+  "type": "program",
+  "title": "Java — AI Career Academy",
+  "description": "Live 3-month Java sequence. Fee ₹40,000.",
+  "hero_title": "Java",
+  "hero_sub": "Three months live, online.",
+  "sections": [],
+  "faqs": [],
+  "lists": [],
+  "images": [],
+  "raw_html": "",
+  "fees": {
+    "amounts": ["₹40,000"],
+    "plans": ["No hidden charges. Batch timings confirmed on call."],
+    "notes": ["One-time payment for 3 months live online with capstone and certificate."],
+    "amount_notes": ["One-time payment"]
+  }
+}

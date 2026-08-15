@@ -1,15 +1,16 @@
 {% extends "base.html" %}
-{% from "macros.html" import program_card %}
+{% from "macros.html" import scratch %}
+{% set colors = ['red', 'green', 'yellow', 'blue', 'orange', 'navy', 'teal', 'purple', 'rust'] %}
 {% block content %}
-<section class="catalog-hero">
+<section class="catalog-hero band">
   <div class="container hero-inner">
-    <p class="eyebrow">All programs</p>
-    <h1 class="hero-title">Industry-ready AI &amp;<br />data science programs.</h1>
-    <p class="hero-sub">Live, instructor-led courses in Generative AI, Machine Learning, MLOps and Data Science. Learn by building real projects, guided by practitioners who work in the field every day.</p>
+    <h1 class="h-scribble">{{ programs|length }} live programs. Published fees.</h1>
+    {{ scratch() }}
+    <p class="center-copy">Analytics, data science, GenAI, MLOps, LLMOps, Java, DevOps, and Frontend. Live cohorts with placement support, certification, and internships.</p>
     <div class="hero-stats">
-      <div class="stat"><span class="stat-value">17</span><span class="stat-label">Programs</span></div>
+      <div class="stat"><span class="stat-value">{{ programs|length }}</span><span class="stat-label">Programs</span></div>
       <span class="stat-sep" aria-hidden="true"></span>
-      <div class="stat"><span class="stat-value">1–10 mo</span><span class="stat-label">Duration range</span></div>
+      <div class="stat"><span class="stat-value">3–6 mo</span><span class="stat-label">Duration range</span></div>
       <span class="stat-sep" aria-hidden="true"></span>
       <div class="stat"><span class="stat-value">100% live</span><span class="stat-label">Online classes</span></div>
     </div>
@@ -25,31 +26,52 @@
       <button class="filter-pill" data-filter="architect" role="tab" aria-selected="false">Architect</button>
       <button class="filter-pill" data-filter="career" role="tab" aria-selected="false">Career track</button>
     </div>
-    <p class="showing-count" id="showingCount" aria-live="polite">Showing all 17 programs</p>
+    <p class="showing-count" id="showingCount" aria-live="polite">Showing all {{ programs|length }} programs</p>
   </div>
 </section>
 
 <section class="programs-section" id="featuredSection">
   <div class="container">
     <div class="section-head"><span class="section-num">01</span><h2 class="section-title">Featured programs</h2><span class="section-rule" aria-hidden="true"></span></div>
-    <div class="grid" id="featuredGrid">
+    <div class="course-row grid" id="featuredGrid">
       {% for p in programs if p.section == 'featured' %}
-      {{ program_card(p) }}
+      <article class="card course-card {{ colors[loop.index0 % 6] }}" data-tags="{{ p.tags | join(',') }}">
+        <h3>{{ p.title }}</h3>
+        <p class="sub">{{ p.duration }}{% if p.fee_label %} · {{ p.fee_label }}{% endif %}</p>
+        <ul>
+          {% for t in p.topics[:4] %}
+          <li>{{ t }}</li>
+          {% endfor %}
+        </ul>
+        <a class="btn-yellow" href="{{ base }}courses/{{ p.slug }}/index.html">Enrol now →</a>
+      </article>
       {% endfor %}
     </div>
   </div>
 </section>
 
+{% set more_programs = programs | selectattr('section', 'equalto', 'more') | list %}
+{% if more_programs %}
 <section class="programs-section programs-section-alt" id="moreSection">
   <div class="container">
     <div class="section-head"><span class="section-num">02</span><h2 class="section-title">More programs</h2><span class="section-rule" aria-hidden="true"></span></div>
-    <div class="grid" id="moreGrid">
-      {% for p in programs if p.section == 'more' %}
-      {{ program_card(p) }}
+    <div class="course-row grid" id="moreGrid">
+      {% for p in more_programs %}
+      <article class="card course-card {{ colors[(loop.index0 + 3) % 6] }}" data-tags="{{ p.tags | join(',') }}">
+        <h3>{{ p.title }}</h3>
+        <p class="sub">{{ p.duration }}{% if p.fee_label %} · {{ p.fee_label }}{% endif %}</p>
+        <ul>
+          {% for t in p.topics[:4] %}
+          <li>{{ t }}</li>
+          {% endfor %}
+        </ul>
+        <a class="btn-yellow" href="{{ base }}courses/{{ p.slug }}/index.html">Enrol now →</a>
+      </article>
       {% endfor %}
     </div>
   </div>
 </section>
+{% endif %}
 
 <template id="emptyTpl">
   <div class="empty-state">

@@ -1,34 +1,63 @@
 {% if curriculum and curriculum.levels %}
-<section class="prog-curriculum" id="curriculum">
-  <div class="container">
-    <h2 class="section-title">{{ curriculum.title }}</h2>
-    <div class="curriculum-tree">
+<section class="prog-curriculum band" id="curriculum">
+  <h2 class="h-scribble">{{ curriculum.title }}</h2>
+  <svg class="scratch" viewBox="0 0 96 14" aria-hidden="true"><path d="M4 9 Q24 2 48 8 T92 7"/></svg>
+  <div class="offer-ui">
+    <div class="offer-tabs" role="tablist" aria-label="Curriculum modules">
+      {% set ns = namespace(i=0) %}
       {% for level in curriculum.levels %}
-      <details class="curr-level"{% if loop.first %} open{% endif %}>
-        <summary>{{ level.title }}</summary>
-        <div class="curr-level-body">
-          {% if level.modules %}
-            {% for module in level.modules %}
-            <details class="curr-module">
-              <summary>{{ module.title }}</summary>
-              {% if module.topics %}
-              <ul class="curr-topics">
-                {% for topic in module.topics %}
-                <li>{{ topic }}</li>
+        {% if level.modules %}
+          {% for module in level.modules %}
+          {% set ns.i = ns.i + 1 %}
+          <button type="button" data-offer="{{ ns.i }}" class="{% if ns.i == 1 %}is-on{% endif %}" role="tab">{{ module.title }}</button>
+          {% endfor %}
+        {% else %}
+          {% set ns.i = ns.i + 1 %}
+          <button type="button" data-offer="{{ ns.i }}" class="{% if ns.i == 1 %}is-on{% endif %}" role="tab">{{ level.title }}</button>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div>
+      {% set ns = namespace(i=0) %}
+      {% for level in curriculum.levels %}
+        {% if level.modules %}
+          {% for module in level.modules %}
+          {% set ns.i = ns.i + 1 %}
+          <div class="offer-panel" id="offer-{{ ns.i }}" {% if ns.i != 1 %}hidden{% endif %}>
+            <h3>{{ module.title }}</h3>
+            <p class="offer-track">{{ level.title }}</p>
+            {% if module.lead %}<p class="offer-lead">{{ module.lead }}</p>{% endif %}
+            {% if module.blocks %}
+              {% for block in module.blocks %}
+              <h4>{{ block.heading }}</h4>
+              <ul>
+                {% for item in block['items'] %}
+                <li>{{ item }}</li>
                 {% endfor %}
               </ul>
-              {% endif %}
-            </details>
-            {% endfor %}
-          {% elif level.topics %}
-          <ul class="curr-topics">
-            {% for topic in level.topics %}
-            <li>{{ topic }}</li>
-            {% endfor %}
-          </ul>
-          {% endif %}
-        </div>
-      </details>
+              {% endfor %}
+            {% elif module.topics %}
+            <ul>
+              {% for topic in module.topics %}
+              <li>{{ topic }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+            {% if module.outcome %}<p class="offer-out">{{ module.outcome }}</p>{% endif %}
+          </div>
+          {% endfor %}
+        {% elif level.topics %}
+          {% set ns.i = ns.i + 1 %}
+          <div class="offer-panel" id="offer-{{ ns.i }}" {% if ns.i != 1 %}hidden{% endif %}>
+            <h3>{{ level.title }}</h3>
+            {% if level.lead %}<p class="offer-lead">{{ level.lead }}</p>{% endif %}
+            <ul>
+              {% for topic in level.topics %}
+              <li>{{ topic }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
       {% endfor %}
     </div>
   </div>

@@ -25,12 +25,15 @@
       {% endif %}
       {% if data.hero_sub %}<p class="prog-hero-sub">{{ data.hero_sub }}</p>{% endif %}
       <div class="prog-cta-row">
-        <a href="{{ base }}register/index.html{% if course_slug %}?course={{ course_slug }}{% endif %}" class="btn btn-primary btn-lg">Book a session</a>
-        <a href="https://wa.me/918708752385" class="btn btn-ghost btn-lg">Chat on WhatsApp</a>
+        <a href="{{ base }}register/index.html{% if course_slug %}?course={{ course_slug }}{% endif %}" class="btn-yellow">Book a session</a>
+        <a href="https://wa.me/918708752385" class="btn-black" data-wa-course="{{ program.title if program else data.hero_title }}">Chat on WhatsApp</a>
       </div>
     </div>
-    <div class="prog-hero-art" aria-hidden="true">
-      <svg viewBox="0 0 280 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="prog-hero-art">
+      {% if program and program.poster %}
+      <img src="{{ base }}assets/img/{{ program.poster }}" alt="" width="800" height="600" />
+      {% else %}
+      <svg viewBox="0 0 280 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <rect x="16" y="24" width="248" height="152" fill="#09090B" stroke="#DFE104" stroke-width="3"/>
         <rect x="40" y="48" width="120" height="12" fill="#DFE104"/>
         <rect x="40" y="72" width="200" height="8" fill="#3F3F46"/>
@@ -40,6 +43,7 @@
         <rect x="114" y="118" width="28" height="28" fill="#5CE1FF"/>
         <path d="M42 132h140" stroke="#DFE104" stroke-width="3" stroke-dasharray="4 6"/>
       </svg>
+      {% endif %}
     </div>
   </div>
 </section>
@@ -150,6 +154,23 @@
 
 {% include "curriculum-tree.html" %}
 
+{% if data.related %}
+<section class="prog-sections" id="related">
+  <div class="container">
+    <div class="prog-section">
+      <h2 class="prog-section-title">Related programs</h2>
+      <div class="prog-section-body">
+        <ul>
+          {% for rel in data.related %}
+          <li><a href="{{ base }}courses/{{ rel.slug }}/index.html">{{ rel.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
 {% if data.faqs %}
 <section class="prog-faq" id="faq">
   <div class="container">
@@ -173,8 +194,8 @@
       <p class="cta-sub">Talk to an advisor about this program — 15 minutes, no sales pitch.</p>
     </div>
     <div class="cta-actions">
-      <a href="{{ base }}register/index.html{% if course_slug %}?course={{ course_slug }}{% endif %}" class="btn btn-light btn-lg">Book a career call</a>
-      <a href="https://wa.me/918708752385" class="btn btn-outline-light btn-lg">Chat on WhatsApp</a>
+      <a href="{{ base }}register/index.html{% if course_slug %}?course={{ course_slug }}{% endif %}" class="btn-yellow">Book a career call</a>
+      <a href="https://wa.me/918708752385" class="btn-black" data-wa-course="{{ program.title if program else data.hero_title }}">Chat on WhatsApp</a>
       <p class="cta-phone">+91 87087 52385</p>
     </div>
   </div>
