@@ -16,8 +16,12 @@ from fees import extract_city_fees, extract_fees
 from salaries import extract_salaries, filter_sections, format_section_html
 from seo import (
     BRAND,
+    CONTACT_NAME,
     EMAIL,
+    PHONE_DISPLAY,
+    PHONE_E164,
     SITE_ORIGIN,
+    WA_ME,
     apply_overrides,
     canonical_url,
     is_noindex,
@@ -288,6 +292,11 @@ def setup_assets():
         "poster-java.png",
         "poster-devops.png",
         "poster-frontend.png",
+        "offer-live.png",
+        "offer-whatsapp.png",
+        "offer-curriculum.png",
+        "offer-projects.png",
+        "offer-career.png",
     ):
         src = src_img / name
         if not src.exists() and (cursor_assets / name).exists():
@@ -372,6 +381,10 @@ def generate():
             "mentors": MENTORS,
             "brand": BRAND,
             "email": EMAIL,
+            "contact_name": CONTACT_NAME,
+            "phone_display": PHONE_DISPLAY,
+            "phone_e164": PHONE_E164,
+            "wa_url": WA_ME,
             "extra_css": _extra_css(page["type"], page.get("id", "")),
             "extra_js": _extra_js(page["type"], page.get("id", "")),
             "employers": EMPLOYERS,
@@ -403,6 +416,10 @@ def generate():
         extra_js=[],
         brand=BRAND,
         email=EMAIL,
+        contact_name=CONTACT_NAME,
+        phone_display=PHONE_DISPLAY,
+        phone_e164=PHONE_E164,
+        wa_url=WA_ME,
     )
     write_404(SITE, post_process_html(not_found))
     print(f"\nDone: {generated} pages generated, {skipped} skipped")
@@ -442,17 +459,17 @@ def write_employer_stamps(dest: Path) -> None:
     for i, (slug, name) in enumerate(EMPLOYERS):
         bar = bars[i % len(bars)]
         label = xml_escape(name.upper())
-        size = 28 if len(name) < 10 else 22 if len(name) < 14 else 18
-        svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="220" height="88" viewBox="0 0 220 88" role="img" aria-label="{xml_escape(name)}">
-  <rect width="220" height="88" fill="#fff"/>
-  <rect x="3" y="3" width="214" height="82" fill="#fff" stroke="#111" stroke-width="3"/>
-  <path d="M3 3h214" stroke="{bar}" stroke-width="8"/>
-  <g stroke="#e8e8e8" stroke-width="1">
-    <path d="M22 0v88M44 0v88M66 0v88M88 0v88M110 0v88M132 0v88M154 0v88M176 0v88M198 0v88"/>
-    <path d="M0 22h220M0 44h220M0 66h220"/>
+        size = 34 if len(name) < 10 else 26 if len(name) < 14 else 22
+        svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="280" height="110" viewBox="0 0 280 110" role="img" aria-label="{xml_escape(name)}">
+  <rect width="280" height="110" fill="#fff8e8"/>
+  <rect x="4" y="4" width="272" height="102" fill="#fffdf7" stroke="#111" stroke-width="5"/>
+  <path d="M4 4h272" stroke="{bar}" stroke-width="12"/>
+  <g stroke="#c8c4b8" stroke-width="1.2">
+    <path d="M28 0v110M56 0v110M84 0v110M112 0v110M140 0v110M168 0v110M196 0v110M224 0v110M252 0v110"/>
+    <path d="M0 28h280M0 55h280M0 82h280"/>
   </g>
-  <rect x="3" y="3" width="214" height="82" fill="none" stroke="#111" stroke-width="3"/>
-  <text x="110" y="54" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="{size}" font-weight="800" fill="#111">{label}</text>
+  <rect x="4" y="4" width="272" height="102" fill="none" stroke="#111" stroke-width="5"/>
+  <text x="140" y="68" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="{size}" font-weight="800" fill="#111">{label}</text>
 </svg>
 '''
         (dest / f"{slug}.svg").write_text(svg, encoding="utf-8")
@@ -939,8 +956,19 @@ NAV_JS = """
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     document.body.style.overflow = open ? 'hidden' : '';
-    if (open && closeBtn) closeBtn.focus();
-    else toggle.focus();
+    if (open) {
+      if (closeBtn) closeBtn.focus();
+      return;
+    }
+    if (closeBtn) closeBtn.blur();
+    if (document.activeElement && menu.contains(document.activeElement)) {
+      document.activeElement.blur();
+    }
+    if (window.getSelection) {
+      var sel = window.getSelection();
+      if (sel && sel.removeAllRanges) sel.removeAllRanges();
+    }
+    toggle.focus();
   }
 
   toggle.addEventListener('click', function () {
@@ -969,24 +997,24 @@ HOME_JS = """
 
   var facts = {
     ds: {
-      title: 'Data scientists · +33.5%',
-      body: 'U.S. BLS projects data scientist employment to grow 33.5% from 2024 to 2034 — among the fastest of all occupations, versus 3.1% for all jobs. That is a labour forecast, not an Indian placement promise. If this is the job you want, we map Excel/SQL/Python into a live program.'
+      title: 'Data scientists · U.S. BLS +33.5%',
+      body: 'U.S. BLS (not MoSPI/PLFS, not Indian CTC) projects data scientist employment to grow 33.5% from 2024 to 2034 — among the fastest of all occupations, versus 3.1% for all jobs. We show it as a published international benchmark because India has no matching official occupation series. Not a placement promise. If this is the job you want, we map Excel/SQL/Python into a live program.'
     },
     sec: {
-      title: 'Information security analysts · +28.5%',
-      body: 'BLS: +28.5% employment change, 2024–34. Security is not our core catalog, but production AI work still needs people who can think about access, logs, and failure. A career call will say so if another path fits better.'
+      title: 'Information security analysts · U.S. BLS +28.5%',
+      body: 'U.S. BLS: +28.5% employment change, 2024–34 — an international benchmark, not an Indian official occupation rate. Security is not our core catalog, but production AI work still needs people who can think about access, logs, and failure. A career call will say so if another path fits better.'
     },
     rs: {
-      title: 'Computer & information research scientists · +19.7%',
-      body: 'BLS: +19.7%, 2024–34. Research-scientist titles usually want a deeper academic track than a 3–6 month cohort. We still teach the engineering stack used next to that work — models, evaluation, shipping.'
+      title: 'Computer & information research scientists · U.S. BLS +19.7%',
+      body: 'U.S. BLS: +19.7%, 2024–34. Not Indian CTC and not a placement rate. Research-scientist titles usually want a deeper academic track than a 3–6 month cohort. We still teach the engineering stack used next to that work — models, evaluation, shipping.'
     },
     sw: {
-      title: 'Software developers · +16%',
-      body: 'BLS: software developers +16% (2024–34); the broader developers / QA / testers group is +15%. Developers who can work with data, APIs, and LLMs are the people companies actually interview. That is the sequence we teach.'
+      title: 'Software developers · U.S. BLS +16%',
+      body: 'U.S. BLS: software developers +16% (2024–34); the broader developers / QA / testers group is +15%. This is a U.S. labour forecast shown for Indian learners as a published benchmark, not an Indian salary table. Developers who can work with data, APIs, and LLMs are the people companies actually interview. That is the sequence we teach.'
     },
     all: {
-      title: 'All occupations · +3.1%',
-      body: 'The short bar is the average. AI-adjacent roles sit far above it in this U.S. table. India does not publish an equivalent official series — so we refuse to invent one. Book a call if you want a role map, not a slogan.'
+      title: 'All occupations · U.S. BLS +3.1%',
+      body: 'The short bar is the U.S. BLS all-occupations average. AI-adjacent roles sit far above it in this table. India does not publish an equivalent official occupation-level series — so we refuse to invent one. Book a call if you want a role map, not a slogan.'
     }
   };
 
@@ -1047,8 +1075,9 @@ HOME_JS = """
 
   function formatCount(el, value) {
     var suf = el.getAttribute('data-suf') || '';
+    var pre = el.getAttribute('data-pre') || '';
     var decimals = String(el.getAttribute('data-to') || '').indexOf('.') >= 0 ? 1 : 0;
-    el.textContent = value.toFixed(decimals) + suf;
+    el.textContent = pre + value.toFixed(decimals) + suf;
   }
 
   function countUp(el) {
@@ -1216,7 +1245,7 @@ REGISTER_JS = """
 
     var cityEl = document.getElementById('cityField');
     var lines = [
-      "Hi, I'd like to book a career call.",
+      "Hi Prerna, I'd like to book a career call.",
       'Name: ' + name,
       'Phone: ' + phone,
       'Email: ' + email,
@@ -1227,7 +1256,7 @@ REGISTER_JS = """
     if (message) lines.push('Message: ' + message);
     lines.push('Page: ' + window.location.href);
 
-    var url = 'https://wa.me/918708752385?text=' + encodeURIComponent(lines.join('\\n'));
+    var url = 'https://wa.me/918368122877?text=' + encodeURIComponent(lines.join('\\n'));
     window.open(url, '_blank');
   });
 })();

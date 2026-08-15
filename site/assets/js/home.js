@@ -9,24 +9,24 @@
 
   var facts = {
     ds: {
-      title: 'Data scientists · +33.5%',
-      body: 'U.S. BLS projects data scientist employment to grow 33.5% from 2024 to 2034 — among the fastest of all occupations, versus 3.1% for all jobs. That is a labour forecast, not an Indian placement promise. If this is the job you want, we map Excel/SQL/Python into a live program.'
+      title: 'Data scientists · U.S. BLS +33.5%',
+      body: 'U.S. BLS (not MoSPI/PLFS, not Indian CTC) projects data scientist employment to grow 33.5% from 2024 to 2034 — among the fastest of all occupations, versus 3.1% for all jobs. We show it as a published international benchmark because India has no matching official occupation series. Not a placement promise. If this is the job you want, we map Excel/SQL/Python into a live program.'
     },
     sec: {
-      title: 'Information security analysts · +28.5%',
-      body: 'BLS: +28.5% employment change, 2024–34. Security is not our core catalog, but production AI work still needs people who can think about access, logs, and failure. A career call will say so if another path fits better.'
+      title: 'Information security analysts · U.S. BLS +28.5%',
+      body: 'U.S. BLS: +28.5% employment change, 2024–34 — an international benchmark, not an Indian official occupation rate. Security is not our core catalog, but production AI work still needs people who can think about access, logs, and failure. A career call will say so if another path fits better.'
     },
     rs: {
-      title: 'Computer & information research scientists · +19.7%',
-      body: 'BLS: +19.7%, 2024–34. Research-scientist titles usually want a deeper academic track than a 3–6 month cohort. We still teach the engineering stack used next to that work — models, evaluation, shipping.'
+      title: 'Computer & information research scientists · U.S. BLS +19.7%',
+      body: 'U.S. BLS: +19.7%, 2024–34. Not Indian CTC and not a placement rate. Research-scientist titles usually want a deeper academic track than a 3–6 month cohort. We still teach the engineering stack used next to that work — models, evaluation, shipping.'
     },
     sw: {
-      title: 'Software developers · +16%',
-      body: 'BLS: software developers +16% (2024–34); the broader developers / QA / testers group is +15%. Developers who can work with data, APIs, and LLMs are the people companies actually interview. That is the sequence we teach.'
+      title: 'Software developers · U.S. BLS +16%',
+      body: 'U.S. BLS: software developers +16% (2024–34); the broader developers / QA / testers group is +15%. This is a U.S. labour forecast shown for Indian learners as a published benchmark, not an Indian salary table. Developers who can work with data, APIs, and LLMs are the people companies actually interview. That is the sequence we teach.'
     },
     all: {
-      title: 'All occupations · +3.1%',
-      body: 'The short bar is the average. AI-adjacent roles sit far above it in this U.S. table. India does not publish an equivalent official series — so we refuse to invent one. Book a call if you want a role map, not a slogan.'
+      title: 'All occupations · U.S. BLS +3.1%',
+      body: 'The short bar is the U.S. BLS all-occupations average. AI-adjacent roles sit far above it in this table. India does not publish an equivalent official occupation-level series — so we refuse to invent one. Book a call if you want a role map, not a slogan.'
     }
   };
 
@@ -87,8 +87,9 @@
 
   function formatCount(el, value) {
     var suf = el.getAttribute('data-suf') || '';
+    var pre = el.getAttribute('data-pre') || '';
     var decimals = String(el.getAttribute('data-to') || '').indexOf('.') >= 0 ? 1 : 0;
-    el.textContent = value.toFixed(decimals) + suf;
+    el.textContent = pre + value.toFixed(decimals) + suf;
   }
 
   function countUp(el) {

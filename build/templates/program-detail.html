@@ -26,7 +26,7 @@
       {% if data.hero_sub %}<p class="prog-hero-sub">{{ data.hero_sub }}</p>{% endif %}
       <div class="prog-cta-row">
         <a href="{{ base }}register/index.html{% if course_slug %}?course={{ course_slug }}{% endif %}" class="btn-yellow">Book a session</a>
-        <a href="https://wa.me/918708752385" class="btn-black" data-wa-course="{{ program.title if program else data.hero_title }}">Chat on WhatsApp</a>
+        <a href="{{ wa_url }}" class="btn-black" data-wa-course="{{ program.title if program else data.hero_title }}">Chat on WhatsApp</a>
       </div>
     </div>
     <div class="prog-hero-art">
@@ -191,12 +191,12 @@
   <div class="container cta-inner">
     <div>
       <h2 class="cta-title">Ready to start?</h2>
-      <p class="cta-sub">Talk to an advisor about this program — 15 minutes, no sales pitch.</p>
+      <p class="cta-sub">Talk to {{ contact_name }} about this program — 15 minutes, no sales pitch.</p>
     </div>
     <div class="cta-actions">
       <a href="{{ base }}register/index.html{% if course_slug %}?course={{ course_slug }}{% endif %}" class="btn-yellow">Book a career call</a>
-      <a href="https://wa.me/918708752385" class="btn-black" data-wa-course="{{ program.title if program else data.hero_title }}">Chat on WhatsApp</a>
-      <p class="cta-phone">+91 87087 52385</p>
+      <a href="{{ wa_url }}" class="btn-black" data-wa-course="{{ program.title if program else data.hero_title }}">Chat on WhatsApp</a>
+      <p class="cta-phone">{{ phone_display }}</p>
     </div>
   </div>
 </section>

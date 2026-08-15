@@ -76,7 +76,7 @@
 
     var cityEl = document.getElementById('cityField');
     var lines = [
-      "Hi, I'd like to book a career call.",
+      "Hi Prerna, I'd like to book a career call.",
       'Name: ' + name,
       'Phone: ' + phone,
       'Email: ' + email,
@@ -87,7 +87,7 @@
     if (message) lines.push('Message: ' + message);
     lines.push('Page: ' + window.location.href);
 
-    var url = 'https://wa.me/918708752385?text=' + encodeURIComponent(lines.join('\n'));
+    var url = 'https://wa.me/918368122877?text=' + encodeURIComponent(lines.join('\n'));
     window.open(url, '_blank');
   });
 })();

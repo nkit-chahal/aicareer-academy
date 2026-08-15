@@ -84,12 +84,12 @@
   <div class="container cta-inner">
     <div>
       <h2 class="cta-title">Not sure which track fits?</h2>
-      <p class="cta-sub">Talk to an advisor — 15 minutes, no sales pitch. We'll map your background to the right program.</p>
+      <p class="cta-sub">Talk to {{ contact_name }} — 15 minutes, no sales pitch. We'll map your background to the right program.</p>
     </div>
     <div class="cta-actions">
       <a href="{{ base }}register/index.html" class="btn btn-light btn-lg">Book a career call</a>
-      <a href="https://wa.me/918708752385" class="btn btn-outline-light btn-lg">Chat on WhatsApp</a>
-      <p class="cta-phone">Prefer the phone? <a href="tel:+918708752385">+91 87087 52385</a></p>
+      <a href="{{ wa_url }}" class="btn btn-outline-light btn-lg">Chat on WhatsApp</a>
+      <p class="cta-phone">Prefer the phone? <a href="tel:{{ phone_e164 }}">{{ phone_display }}</a></p>
     </div>
   </div>
 </section>

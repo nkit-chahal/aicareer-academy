@@ -31,24 +31,24 @@
   <div class="box">
     <h2>Studio address</h2>
     <p>68 Avenue, Badshahpur, Sector 68, Gurugram, Haryana 122101</p>
-    <p>Contact: <a href="tel:+918708752385">+91 87087 52385</a></p>
+    <p>Contact {{ contact_name }}: <a href="tel:{{ phone_e164 }}">{{ phone_display }}</a></p>
     <p>Email: <a href="mailto:{{ email }}">{{ email }}</a></p>
     <p>Mon–Sat, 10am–7pm IST</p>
     <a class="btn-yellow" href="{{ base }}register/index.html">Register your interest</a>
   </div>
   <div class="box" style="padding:0;overflow:hidden;background:#fff;">
-    <iframe title="Map of AI Career Academy, Gurugram" src="https://www.google.com/maps?q=68+Avenue+Badshahpur+Sector+68+Gurugram&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe title="Map of AI Career Academy, Gurugram" src="https://maps.google.com/maps?q=28.385278,77.051389&ll=28.385278,77.051389&z=16&hl=en&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </section>
 {% endif %}
 
 {% if page_id == 'hire-from-us' %}
 <section class="band" id="hire-jobs">
-  <h2 class="h-scribble">Companies hire for these jobs</h2>
+  <h2 class="h-scribble hire-heading">Companies that hire for these jobs</h2>
   <svg class="scratch" viewBox="0 0 96 14" aria-hidden="true"><path d="M4 9 Q24 2 48 8 T92 7"/></svg>
   <p class="center-copy">Sectors that typically hire the roles our programs map to — not a claim those firms hired our alumni.</p>
   <div class="hire-sectors"><span>Product</span><span>IT services</span><span>BFSI</span><span>Ops / platform</span></div>
-  {{ employer_marquee(base) }}
+  {{ employer_marquee(base, employers) }}
   <div class="role-grid">
     <article><h3>Data analyst</h3><p>Analytics sequence.</p></article>
     <article><h3>Data scientist</h3><p>Data Science Gen AI.</p></article>
@@ -109,12 +109,12 @@
   <div class="container cta-inner">
     <div>
       <h2 class="cta-title">Have questions?</h2>
-      <p class="cta-sub">Talk to our team — we're here Mon–Sat, 10am–7pm IST.</p>
+      <p class="cta-sub">Talk to {{ contact_name }} — we're here Mon–Sat, 10am–7pm IST.</p>
     </div>
     <div class="cta-actions">
       <a href="{{ base }}register/index.html" class="btn btn-light btn-lg">Book a career call</a>
-      <a href="https://wa.me/918708752385" class="btn btn-outline-light btn-lg">Chat on WhatsApp</a>
-      <p class="cta-phone">+91 87087 52385</p>
+      <a href="{{ wa_url }}" class="btn btn-outline-light btn-lg">Chat on WhatsApp</a>
+      <p class="cta-phone">{{ phone_display }}</p>
     </div>
   </div>
 </section>

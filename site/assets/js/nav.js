@@ -13,8 +13,19 @@
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     document.body.style.overflow = open ? 'hidden' : '';
-    if (open && closeBtn) closeBtn.focus();
-    else toggle.focus();
+    if (open) {
+      if (closeBtn) closeBtn.focus();
+      return;
+    }
+    if (closeBtn) closeBtn.blur();
+    if (document.activeElement && menu.contains(document.activeElement)) {
+      document.activeElement.blur();
+    }
+    if (window.getSelection) {
+      var sel = window.getSelection();
+      if (sel && sel.removeAllRanges) sel.removeAllRanges();
+    }
+    toggle.focus();
   }
 
   toggle.addEventListener('click', function () {

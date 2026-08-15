@@ -11,14 +11,16 @@ from program_copy import PROGRAM_COPY
 
 SITE_ORIGIN = os.environ.get("SITE_ORIGIN", "https://aicareer.academy").rstrip("/")
 BRAND = "AI Career Academy"
-PHONE_DISPLAY = "+91 87087 52385"
-PHONE_E164 = "+918708752385"
+CONTACT_NAME = "Prerna"
+PHONE_DISPLAY = "+91 83681 22877"
+PHONE_E164 = "+918368122877"
+WA_ME = f"https://wa.me/{PHONE_E164.lstrip('+')}"
 EMAIL = os.environ.get("SITE_EMAIL", "hello@aicareer.academy")
 ORG_ID = f"{SITE_ORIGIN}/#org"
 
 SEO_OVERRIDES = {
     "home": {
-        "title": f"{BRAND} — The job is the syllabus",
+        "title": f"{BRAND} — Learning AI is the skill that fits everywhere",
         "description": f"Live online cohorts mapped to a job — Analyst, Data Science, GenAI, MLOps, LLMOps, Java, DevOps, Frontend. Placement support, certification, and internships. Nine published programs. Book a 15-minute career call.",
     },
     "courses": {
@@ -35,7 +37,7 @@ SEO_OVERRIDES = {
     },
     "contact-us": {
         "title": f"Contact {BRAND}",
-        "description": f"Reach {BRAND}: {PHONE_DISPLAY}, {EMAIL}, or WhatsApp. Office: 68 Avenue, Badshahpur, Sector 68, Gurugram, Haryana 122101. Mon–Sat, 10am–7pm IST.",
+        "description": f"Reach {CONTACT_NAME} at {BRAND}: {PHONE_DISPLAY}, {EMAIL}, or WhatsApp. Office: 68 Avenue, Badshahpur, Sector 68, Gurugram, Haryana 122101. Mon–Sat, 10am–7pm IST.",
     },
     "enterprise": {
         "title": f"Enterprise AI upskilling — {BRAND}",
@@ -61,7 +63,7 @@ SEO_OVERRIDES = {
     },
     "register": {
         "title": f"Book a career call — {BRAND}",
-        "description": "Book a 15-minute career call on WhatsApp. Tell us your background and the role you want; we will map a sequence.",
+        "description": f"Book a 15-minute career call with {CONTACT_NAME} on WhatsApp. Tell us your background and the role you want; we will map a sequence.",
     },
     "mentors": {
         "title": f"Mentors — {BRAND}",
@@ -149,7 +151,7 @@ LEGAL_SECTIONS = {
         },
         {
             "heading": "Talk to the desk",
-            "content": f"WhatsApp or email {EMAIL} with team size, stack, and the role you want people to grow into.",
+            "content": f"WhatsApp {CONTACT_NAME} or email {EMAIL} with team size, stack, and the role you want people to grow into.",
         },
     ],
 }
@@ -169,7 +171,7 @@ ABOUT_SECTIONS = [
     },
     {
         "heading": "Talk to us",
-        "content": f"Book a career call, WhatsApp {PHONE_DISPLAY}, or write {EMAIL}. If the sequence does not fit, we will say so.",
+        "content": f"Book a career call with {CONTACT_NAME}, WhatsApp {PHONE_DISPLAY}, or write {EMAIL}. If the sequence does not fit, we will say so.",
     },
 ]
 
@@ -267,12 +269,17 @@ def sanitize_text(value: str) -> str:
     s = s.replace("hello@schoolofcoreai.com", EMAIL)
     s = s.replace("info@schoolofcoreai.com", EMAIL)
     s = s.replace("hello@resonanceai.com", EMAIL)
-    s = s.replace("https://wa.me/9196914 40998", f"https://wa.me/{PHONE_E164.lstrip('+')}")
-    s = s.replace("https://wa.me/919691440998", f"https://wa.me/{PHONE_E164.lstrip('+')}")
+    s = s.replace("https://wa.me/9196914 40998", WA_ME)
+    s = s.replace("https://wa.me/919691440998", WA_ME)
+    s = s.replace("https://wa.me/918708752385", WA_ME)
     s = s.replace("+91 96914 40998", PHONE_DISPLAY)
+    s = s.replace("+91 87087 52385", PHONE_DISPLAY)
     s = s.replace("+919691440998", PHONE_E164)
-    s = s.replace("96914 40998", "87087 52385")
-    s = s.replace("9691440998", "8708752385")
+    s = s.replace("+918708752385", PHONE_E164)
+    s = s.replace("96914 40998", "83681 22877")
+    s = s.replace("87087 52385", "83681 22877")
+    s = s.replace("9691440998", "8368122877")
+    s = s.replace("8708752385", "8368122877")
     s = re.sub(r"\b100%\s+placement support\b", "placement support", s, flags=re.I)
     s = re.sub(r"\b100%\s+placement\b", "placement support", s, flags=re.I)
     s = re.sub(

@@ -2,14 +2,14 @@
 <svg class="scratch" viewBox="0 0 96 14" aria-hidden="true"><path d="M4 9 Q24 2 48 8 T92 7"/></svg>
 {% endmacro %}
 
-{% macro employer_marquee(base='') %}
+{% macro employer_marquee(base='', names=[]) %}
 <div class="logo-marquee" role="region" aria-label="Company names that commonly post these jobs. Studio wordmarks, not official logos, not a claim they hired our alumni.">
   <div class="logo-track">
     {% for _dup in [1, 2] %}
     <ul class="logo-set" {% if _dup == 2 %}aria-hidden="true"{% endif %}>
-      {% for slug, name in employers %}
+      {% for slug, name in names %}
       <li>
-        <img src="{{ base }}assets/img/stamps/{{ slug }}.svg" alt="{% if _dup == 1 %}{{ name }}{% endif %}" width="220" height="88" />
+        <img src="{{ base }}assets/img/stamps/{{ slug }}.svg" alt="{% if _dup == 1 %}{{ name }}{% endif %}" width="280" height="110" />
       </li>
       {% endfor %}
     </ul>

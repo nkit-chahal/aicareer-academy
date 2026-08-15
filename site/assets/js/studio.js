@@ -1,5 +1,5 @@
 (function () {
-  var WA = "https://wa.me/918708752385?text=";
+  var WA = "https://wa.me/918368122877?text=";
 
   function openWa(lines) {
     window.open(WA + encodeURIComponent(lines.join("\n")), "_blank", "noopener");
@@ -9,7 +9,7 @@
   if (chat) {
     chat.addEventListener("click", function () {
       openWa([
-        "Hi AI Career Academy — I'd like a career call.",
+        "Hi Prerna — I'd like a career call.",
         "Page: " + window.location.href
       ]);
     });
@@ -26,7 +26,7 @@
       var city = document.getElementById("dqCity").value.trim();
       var status = document.getElementById("dqStatus");
       openWa([
-        "Hi, I'd like to book a career call.",
+        "Hi Prerna, I'd like to book a career call.",
         "Name: " + name,
         "Phone: " + phone,
         "Program: " + course,
@@ -56,7 +56,7 @@
     a.addEventListener("click", function (e) {
       e.preventDefault();
       openWa([
-        "Hi, I want to talk about " + a.getAttribute("data-wa-course") + ".",
+        "Hi Prerna, I want to talk about " + a.getAttribute("data-wa-course") + ".",
         "Page: " + window.location.href
       ]);
     });
