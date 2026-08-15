@@ -81,7 +81,7 @@ LEGAL_SECTIONS = {
     "privacy": [
         {
             "heading": "Who we are",
-            "content": f"{BRAND} operates this website and the enquiry forms on it. For privacy requests email {EMAIL} or call {PHONE_DISPLAY}. Office: Sector 44, Gurugram, Haryana 122003.",
+            "content": f"{BRAND} operates this website and the enquiry forms on it. For privacy requests email {EMAIL} or call {PHONE_DISPLAY}. Office: 68 Avenue, Badshahpur, Sector 68, Gurugram, Haryana 122101.",
         },
         {
             "heading": "What we collect",
@@ -297,10 +297,10 @@ def json_ld(page: dict, data: dict, fees=None) -> list:
         "telephone": PHONE_E164,
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Sector 44",
+            "streetAddress": "68 Avenue, Badshahpur, Sector 68",
             "addressLocality": "Gurugram",
             "addressRegion": "Haryana",
-            "postalCode": "122003",
+            "postalCode": "122101",
             "addressCountry": "IN",
         },
     }
