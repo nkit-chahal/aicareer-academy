@@ -1519,18 +1519,18 @@ img { max-width: 100%; display: block; }
 
 .hero-stamp {
   position: absolute;
-  top: 28px;
-  right: 8%;
+  top: 20px;
+  right: 4%;
   z-index: 2;
-  width: min(180px, 42vw);
-  height: min(180px, 42vw);
-  border: 4px solid var(--hot);
+  width: min(110px, 22vw);
+  height: min(110px, 22vw);
+  border: 3px solid var(--hot);
   color: var(--hot);
   display: grid;
   place-items: center;
   text-align: center;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.62rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   transform: rotate(12deg);
@@ -1539,11 +1539,11 @@ img { max-width: 100%; display: block; }
 
 .hero h1 {
   margin: 0;
-  padding: 8vw 4vw 4vw;
-  font-size: clamp(3.2rem, 16vw, 14rem);
+  padding: clamp(1.25rem, 3vh, 2.25rem) 1.5rem 1rem;
+  font-size: clamp(1.85rem, 8vw, 4.25rem);
   font-weight: 700;
   letter-spacing: -0.07em;
-  line-height: 0.82;
+  line-height: 0.86;
   text-transform: uppercase;
 }
 
@@ -2136,6 +2136,7 @@ th {
 
   .hero h1 {
     padding-left: 28px;
+    font-size: clamp(2.25rem, 6vw, 4.25rem);
   }
 
   .demand-head,
@@ -2300,4 +2301,36 @@ th {
 }
 @media (max-width: 640px) {
   .site-foot .footer-grid { grid-template-columns: 1fr; }
+}
+
+/* Hero: rem-capped type so browser zoom-out reveals more page (vw-only type stays viewport-tall). */
+.is-home .hero h1 {
+  padding: clamp(1.25rem, 3vh, 2.25rem) 1.5rem 1rem;
+  font-size: clamp(1.85rem, 8vw, 4.25rem);
+  line-height: 0.86;
+}
+.is-home .hero-stamp {
+  width: min(110px, 22vw);
+  height: min(110px, 22vw);
+  top: 20px;
+  right: 4%;
+}
+.is-home .hero-copy,
+.is-home .hero-act {
+  padding: 20px 24px;
+  min-width: 0;
+}
+.is-home .hero-act .cta,
+.is-home .hero-act .ghost {
+  white-space: normal;
+  text-align: center;
+  width: 100%;
+}
+.is-home .demand .chart-stage,
+.is-home .towers {
+  min-height: min(62vh, 640px);
+}
+@media (max-width: 640px) {
+  .is-home .demand .chart-stage,
+  .is-home .towers { min-height: 0; }
 }

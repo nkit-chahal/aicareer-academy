@@ -448,6 +448,38 @@ V5_INNER_CSS = """
 @media (max-width: 640px) {
   .site-foot .footer-grid { grid-template-columns: 1fr; }
 }
+
+/* Hero: rem-capped type so browser zoom-out reveals more page (vw-only type stays viewport-tall). */
+.is-home .hero h1 {
+  padding: clamp(1.25rem, 3vh, 2.25rem) 1.5rem 1rem;
+  font-size: clamp(1.85rem, 8vw, 4.25rem);
+  line-height: 0.86;
+}
+.is-home .hero-stamp {
+  width: min(110px, 22vw);
+  height: min(110px, 22vw);
+  top: 20px;
+  right: 4%;
+}
+.is-home .hero-copy,
+.is-home .hero-act {
+  padding: 20px 24px;
+  min-width: 0;
+}
+.is-home .hero-act .cta,
+.is-home .hero-act .ghost {
+  white-space: normal;
+  text-align: center;
+  width: 100%;
+}
+.is-home .demand .chart-stage,
+.is-home .towers {
+  min-height: min(62vh, 640px);
+}
+@media (max-width: 640px) {
+  .is-home .demand .chart-stage,
+  .is-home .towers { min-height: 0; }
+}
 """
 
 PROGRAM_CSS = """
