@@ -6,6 +6,12 @@
   "outputDirectory": "site",
   "trailingSlash": true,
   "cleanUrls": false,
+  "rewrites": [
+    {
+      "source": "/google114699eecbb71cd9.html/",
+      "destination": "/google114699eecbb71cd9.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

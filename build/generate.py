@@ -312,6 +312,8 @@ def setup_assets():
                 if not (BUILD / "og.png").exists():
                     shutil.copy(src, BUILD / "og.png")
     write_employer_stamps(img_dir / "stamps")
+    for verify in src_img.glob("google*.html"):
+        shutil.copy(verify, SITE / verify.name)
 
 
 def generate():
