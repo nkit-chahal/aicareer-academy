@@ -528,6 +528,20 @@ img { max-width: 100%; display: block; }
   align-items: center;
 }
 
+.card-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--chip);
+  color: var(--accent-dark);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .card-duration {
   font-family: var(--font-mono);
   font-size: 12px;
@@ -628,9 +642,6 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
 }
 .card-cta svg { width: 16px; height: 16px; }
-
-.card-thumb { margin: -8px 0 16px; }
-.card-thumb svg { width: 100%; height: auto; border-radius: 10px; }
 
 .card-link {
   display: inline-flex;
@@ -1275,8 +1286,6 @@ img { max-width: 100%; display: block; }
   .path-panel.is-enter { animation: none; }
 }
 
-.card-thumb { margin: -8px 0 16px; }
-.card-thumb svg { width: 100%; height: auto; border-radius: 10px; }
 .path-pick-icon svg { width: 18px; height: 18px; }
 .mentor-avatar {
   width: 56px; height: 56px; border-radius: 50%; margin-bottom: 14px;
