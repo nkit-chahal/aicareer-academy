@@ -17,11 +17,34 @@ PHONE_E164 = "+918368122877"
 WA_ME = f"https://wa.me/{PHONE_E164.lstrip('+')}"
 EMAIL = os.environ.get("SITE_EMAIL", "hello@aicareer.academy")
 ORG_ID = f"{SITE_ORIGIN}/#org"
+PLACE_ID = f"{SITE_ORIGIN}/#studio"
+GEO_LAT = 28.385278
+GEO_LNG = 77.051389
+STREET = "68 Avenue, Badshahpur, Sector 68"
+POSTAL = "122101"
+NAP_LINE = f"{STREET}, Gurugram, Haryana {POSTAL}"
+MAPS_QUERY = f"{GEO_LAT},{GEO_LNG}"
+MAPS_EMBED = (
+    f"https://maps.google.com/maps?q={MAPS_QUERY}&ll={MAPS_QUERY}&z=16&hl=en&output=embed"
+)
+MAPS_PLACE = f"https://www.google.com/maps/search/?api=1&query={GEO_LAT}%2C{GEO_LNG}"
+GURGAON_CANONICAL_PATH = "/ai-courses-in-gurgaon/"
+# Search aliases → one canonical URL (301). Do not add a doorway farm.
+LOCAL_REDIRECTS = [
+    "/ai-institute-in-gurgaon",
+    "/ai-institute-in-gurugram",
+    "/ai-courses-in-gurugram",
+    "/ai-training-in-gurgaon",
+]
 
 SEO_OVERRIDES = {
     "home": {
-        "title": f"{BRAND} — Learning AI is the skill that fits everywhere",
-        "description": f"Live online cohorts mapped to a job — Analyst, Data Science, GenAI, MLOps, LLMOps, Java, DevOps, Frontend. Placement support, certification, and internships. Nine published programs. Book a 15-minute career call.",
+        "title": f"AI institute in Gurugram (Gurgaon) — {BRAND} | live online",
+        "description": (
+            f"{BRAND} is an AI training studio in Gurugram: desk at {NAP_LINE}. "
+            "Nine live online programs — Analytics, Data Science, GenAI, MLOps, LLMOps, Java, DevOps, Frontend. "
+            f"Walk-in counselling Mon–Sat 10am–7pm. Call {CONTACT_NAME} on {PHONE_DISPLAY}."
+        ),
     },
     "courses": {
         "title": f"AI and data programs — {BRAND}",
@@ -36,18 +59,37 @@ SEO_OVERRIDES = {
         "description": f"Talk to {BRAND} about hiring learners trained on RAG, MLOps, and agentic workflows. Portfolios, practitioner-led projects, and internship pipelines.",
     },
     "contact-us": {
-        "title": f"Contact {BRAND}",
-        "description": f"Reach {CONTACT_NAME} at {BRAND}: {PHONE_DISPLAY}, {EMAIL}, or WhatsApp. Office: 68 Avenue, Badshahpur, Sector 68, Gurugram, Haryana 122101. Mon–Sat, 10am–7pm IST.",
+        "title": f"Contact {BRAND} | Gurugram Sector 68 desk",
+        "description": (
+            f"Visit {BRAND} at {NAP_LINE}. {CONTACT_NAME}: {PHONE_DISPLAY}, {EMAIL}, WhatsApp. "
+            "Mon–Sat, 10am–7pm IST. Career call and walk-in counselling. Classes are live online."
+        ),
+        "hero_title": "Gurugram desk — Sector 68",
+        "hero_sub": f"{NAP_LINE}. Counselling here. Live cohorts on a screen. Mon–Sat, 10am–7pm IST.",
     },
     "ncr": {
         "title": f"AI courses in Delhi NCR (live online) — {BRAND}, Gurugram",
         "description": (
             f"Live online AI, data, Java, DevOps, and frontend programs for Delhi NCR. "
-            f"Desk at 68 Avenue, Sector 68, Gurugram. Same published fees as the catalog. "
+            f"Desk at {NAP_LINE}. Same published fees as the catalog. "
             f"Talk to {CONTACT_NAME} on {PHONE_DISPLAY}."
         ),
         "hero_title": "AI courses in Delhi NCR — live online",
         "hero_sub": "The classroom is a screen. The desk is in Gurugram. Learners across Delhi, Gurugram, Noida, Faridabad, and Ghaziabad join the same live cohort.",
+    },
+    "gurgaon": {
+        "title": f"AI institute in Gurgaon (Gurugram) — {BRAND} | Sector 68",
+        "description": (
+            f"AI Career Academy is an AI institute in Gurgaon: {NAP_LINE}. "
+            "Live online AI, Data Science, GenAI, MLOps, Java, DevOps, and Frontend. "
+            f"Walk-in counselling Mon–Sat 10am–7pm. {CONTACT_NAME} {PHONE_DISPLAY}."
+        ),
+        "hero_title": "AI institute in Gurgaon — Sector 68 desk, live online classes",
+        "hero_sub": (
+            "Searchers looking for an AI institute in Gurugram / Gurgaon land here. "
+            "The studio desk is on Sohna Road (Badshahpur, Sector 68). Batches are live online. "
+            "Come in for a career call; join class from home."
+        ),
     },
     "enterprise": {
         "title": f"Enterprise AI upskilling — {BRAND}",
@@ -253,7 +295,93 @@ NCR_PAGE = {
         {"href": "courses/java-course/index.html", "title": "Java"},
         {"href": "courses/devops-course/index.html", "title": "DevOps"},
         {"href": "courses/frontend-course/index.html", "title": "Frontend"},
+        {"href": "ai-courses-in-gurgaon/index.html", "title": "AI institute in Gurgaon (Gurugram desk)"},
         {"href": "contact-us/index.html", "title": "Gurugram desk + map"},
+        {"href": "register/index.html", "title": "Book a career call"},
+    ],
+}
+
+GURGAON_PAGE = {
+    "sections": [
+        {
+            "heading": "The Gurgaon pin Google is looking for",
+            "content": (
+                f"{BRAND} (also searched as AI Career Academy Gurgaon / Gurugram) sits at {NAP_LINE}. "
+                "That is a real desk on the Sohna Road / Badshahpur belt — counselling, career calls with Prerna, and paperwork. "
+                "It is not a rented classroom you attend five days a week. Batches are live online, same fee as the catalog."
+            ),
+        },
+        {
+            "heading": "Who this page is for",
+            "content": (
+                "People typing “AI institute in Gurgaon”, “AI courses in Gurugram”, or “data science training near Sohna Road”. "
+                "If you live in Sector 65–69, Badshahpur, Sohna Road, Golf Course Extn, or can reach 68 Avenue, you can walk in Mon–Sat, 10am–7pm IST. "
+                "If you live elsewhere in NCR, you still join the same live cohort — you do not need a second campus."
+            ),
+        },
+        {
+            "heading": "What you get vs a typical Gurgaon training centre",
+            "content": (
+                "Nine published programs: Data Analytics with AI, Data Science Gen AI, Gen AI for Developers, Gen AI Specialization, MLOps, LLMOps, Java, DevOps, Frontend. "
+                "Fees are on the program page before WhatsApp. Placement support, a certificate, and internships — not a fabricated “100% placement in Cyber City” line, and not someone else’s review count."
+            ),
+        },
+        {
+            "heading": "How to visit",
+            "content": (
+                f"Address: {NAP_LINE}. Phone {PHONE_DISPLAY}. WhatsApp {CONTACT_NAME}. "
+                "Ask for AI Career Academy at 68 Avenue. Bring 20 minutes for a career call — background plus the role you want — then we map a sequence or say none fits yet."
+            ),
+        },
+        {
+            "heading": "Next step",
+            "content": (
+                "Open a program below, register your interest, or walk in. "
+                "Google Maps: search “AI Career Academy Sector 68 Gurugram” after the Business Profile is live — until then the pin on this page is the desk."
+            ),
+        },
+    ],
+    "faqs": [
+        {
+            "question": "Is AI Career Academy an AI institute in Gurgaon?",
+            "answer": (
+                f"Yes. The studio desk is at {NAP_LINE}. "
+                "Counselling is on-site. Classes are live online so you are not tied to a daily classroom."
+            ),
+        },
+        {
+            "question": "Do I have to attend class in Sector 68?",
+            "answer": "No. Cohorts are live online. Visit the Gurugram desk for counselling, doubts about fees, or paperwork.",
+        },
+        {
+            "question": "What AI courses do you offer in Gurugram?",
+            "answer": "All nine catalog programs: Data Analytics with AI, Data Science Gen AI, Gen AI for Developers, Gen AI Specialization, MLOps, LLMOps, Java, DevOps, and Frontend. Fees and modules are on each program page.",
+        },
+        {
+            "question": "Are you the same as School of CORE AI or other Sohna Road institutes?",
+            "answer": "No. AI Career Academy is a separate studio at 68 Avenue, Sector 68. Compare published fees and curriculum on this site — do not assume another institute’s reviews apply here.",
+        },
+        {
+            "question": "Do you guarantee a job in Gurgaon / Cyber City?",
+            "answer": "No. We offer placement support, a certificate, and internship opportunities. We do not invent a placement rate or a hiring-partner wall.",
+        },
+        {
+            "question": "What are the desk hours?",
+            "answer": "Monday to Saturday, 10am–7pm IST. Closed Sunday. Call or WhatsApp before you come if you want a booked slot.",
+        },
+    ],
+    "page_links": [
+        {"href": "courses/data-analytics-course-with-placement/index.html", "title": "Data Analytics with AI"},
+        {"href": "courses/data-science-course/index.html", "title": "Data Science Gen AI"},
+        {"href": "courses/ai-developers-course/index.html", "title": "Gen AI for Developers"},
+        {"href": "courses/generative-ai-course/index.html", "title": "Gen AI Specialization"},
+        {"href": "courses/mlops-course/index.html", "title": "MLOps"},
+        {"href": "courses/llmops-course/index.html", "title": "LLMOps"},
+        {"href": "courses/java-course/index.html", "title": "Java"},
+        {"href": "courses/devops-course/index.html", "title": "DevOps"},
+        {"href": "courses/frontend-course/index.html", "title": "Frontend"},
+        {"href": "ai-courses-in-delhi-ncr/index.html", "title": "AI courses in Delhi NCR"},
+        {"href": "contact-us/index.html", "title": "Map, phone, walk-in hours"},
         {"href": "register/index.html", "title": "Book a career call"},
     ],
 }
@@ -420,6 +548,41 @@ def apply_overrides(page: dict, data: dict) -> dict:
         data["raw_html"] = ""
         data["lists"] = []
         data["images"] = []
+    if page["id"] == "gurgaon":
+        data["sections"] = GURGAON_PAGE["sections"]
+        data["faqs"] = GURGAON_PAGE["faqs"]
+        data["page_links"] = GURGAON_PAGE["page_links"]
+        data["raw_html"] = ""
+        data["lists"] = []
+        data["images"] = []
+    if page["id"] == "contact-us":
+        data["page_links"] = [
+            {"href": "ai-courses-in-gurgaon/index.html", "title": "AI institute in Gurgaon — full local page"},
+            {"href": "ai-courses-in-delhi-ncr/index.html", "title": "AI courses in Delhi NCR"},
+            {"href": "register/index.html", "title": "Book a career call"},
+        ]
+        data["raw_html"] = ""
+        data["sections"] = [
+            {
+                "heading": "Walk in",
+                "content": f"{NAP_LINE}. Mon–Sat, 10am–7pm IST. Ask for {BRAND}. Counselling and paperwork here; class is live online.",
+            },
+            {
+                "heading": "Call or WhatsApp",
+                "content": f"{CONTACT_NAME} · {PHONE_DISPLAY} · {EMAIL}. Book a 15-minute career call if you cannot visit today.",
+            },
+        ]
+        data["faqs"] = [
+            {
+                "question": "Where is the Gurgaon office?",
+                "answer": f"{NAP_LINE}. Pin on the map on this page.",
+            },
+            {
+                "question": "Can I visit without an appointment?",
+                "answer": "Yes during desk hours. WhatsApp first if you want a reserved slot.",
+            },
+        ]
+        data["lists"] = []
     if str(page["id"]).startswith("city-"):
         city = {
             "city-delhi": "Delhi NCR",
@@ -434,9 +597,13 @@ def apply_overrides(page: dict, data: dict) -> dict:
         if page["id"] == "city-delhi":
             data["page_links"] = [
                 {
+                    "href": "ai-courses-in-gurgaon/index.html",
+                    "title": "AI institute in Gurgaon (Gurugram desk)",
+                },
+                {
                     "href": "ai-courses-in-delhi-ncr/index.html",
-                    "title": "AI courses in Delhi NCR (live online) — the indexed page",
-                }
+                    "title": "AI courses in Delhi NCR (live online)",
+                },
             ]
     if page["id"] in ROADMAP_BODIES:
         data.update(ROADMAP_BODIES[page["id"]])
@@ -569,11 +736,27 @@ def _offer(fees) -> dict | None:
     }
 
 
+def _postal_address() -> dict:
+    return {
+        "@type": "PostalAddress",
+        "streetAddress": STREET,
+        "addressLocality": "Gurugram",
+        "addressRegion": "Haryana",
+        "postalCode": POSTAL,
+        "addressCountry": "IN",
+    }
+
+
 def json_ld(page: dict, data: dict, fees=None) -> list:
     org = {
-        "@type": "EducationalOrganization",
+        "@type": ["EducationalOrganization"],
         "@id": ORG_ID,
         "name": BRAND,
+        "alternateName": [
+            "AI Career Academy Gurgaon",
+            "AI Career Academy Gurugram",
+            "ACA Gurugram",
+        ],
         "url": SITE_ORIGIN + "/",
         "email": EMAIL,
         "telephone": PHONE_E164,
@@ -584,17 +767,55 @@ def json_ld(page: dict, data: dict, fees=None) -> list:
             f"{SITE_ORIGIN}/assets/img/og-programs.png",
             f"{SITE_ORIGIN}/assets/img/og-gurugram.png",
         ],
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "68 Avenue, Badshahpur, Sector 68",
-            "addressLocality": "Gurugram",
-            "addressRegion": "Haryana",
-            "postalCode": "122101",
-            "addressCountry": "IN",
+        "address": _postal_address(),
+        "geo": {"@type": "GeoCoordinates", "latitude": GEO_LAT, "longitude": GEO_LNG},
+        "hasMap": MAPS_PLACE,
+        "location": {"@id": PLACE_ID},
+        "areaServed": [
+            {"@type": "City", "name": "Gurugram"},
+            {"@type": "City", "name": "Gurgaon"},
+            {"@type": "AdministrativeArea", "name": "Delhi NCR"},
+        ],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                ],
+                "opens": "10:00",
+                "closes": "19:00",
+            }
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": PHONE_E164,
+            "contactType": "admissions",
+            "areaServed": "IN",
+            "availableLanguage": ["en", "hi"],
         },
     }
     graph = [
         org,
+        {
+            "@type": ["Place", "LocalBusiness"],
+            "@id": PLACE_ID,
+            "name": f"{BRAND} Gurugram",
+            "alternateName": "AI Career Academy Gurgaon",
+            "url": f"{SITE_ORIGIN}{GURGAON_CANONICAL_PATH}",
+            "telephone": PHONE_E164,
+            "image": f"{SITE_ORIGIN}/assets/img/og-gurugram.png",
+            "address": _postal_address(),
+            "geo": {"@type": "GeoCoordinates", "latitude": GEO_LAT, "longitude": GEO_LNG},
+            "hasMap": MAPS_PLACE,
+            "parentOrganization": {"@id": ORG_ID},
+            "openingHoursSpecification": org["openingHoursSpecification"],
+            "priceRange": "₹₹",
+        },
         {
             "@type": "WebSite",
             "@id": f"{SITE_ORIGIN}/#website",
@@ -643,8 +864,30 @@ def json_ld(page: dict, data: dict, fees=None) -> list:
                 ],
             }
         )
+    if page.get("id") == "gurgaon":
+        graph.append(
+            {
+                "@type": "WebPage",
+                "@id": canonical_url(page) + "#webpage",
+                "name": data.get("hero_title") or "AI institute in Gurgaon",
+                "url": canonical_url(page),
+                "about": {"@id": PLACE_ID},
+                "primaryImageOfPage": f"{SITE_ORIGIN}/assets/img/og-gurugram.png",
+                "areaServed": [
+                    {"@type": "City", "name": "Gurugram"},
+                    {"@type": "City", "name": "Gurgaon"},
+                ],
+                "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": ["h1", ".center-copy"],
+                },
+            }
+        )
     faqs = data.get("faqs") or []
-    if faqs and (page.get("type") in ("program", "comparison", "blog") or page.get("id") == "ncr"):
+    if faqs and (
+        page.get("type") in ("program", "comparison", "blog")
+        or page.get("id") in ("ncr", "gurgaon", "contact-us")
+    ):
         graph.append(
             {
                 "@type": "FAQPage",
@@ -662,6 +905,16 @@ def json_ld(page: dict, data: dict, fees=None) -> list:
     return {"@context": "https://schema.org", "@graph": graph}
 
 
+def _local_redirect_rules() -> list[dict]:
+    dest = GURGAON_CANONICAL_PATH
+    rules = []
+    for src in LOCAL_REDIRECTS:
+        rules.append({"source": src, "destination": dest, "permanent": True})
+        if not src.endswith("/"):
+            rules.append({"source": src + "/", "destination": dest, "permanent": True})
+    return rules
+
+
 def write_robots_and_sitemap(site: Path, pages: list[dict]) -> None:
     sitemap_url = f"{SITE_ORIGIN}/sitemap.xml"
     (site / "robots.txt").write_text(
@@ -674,8 +927,14 @@ def write_robots_and_sitemap(site: Path, pages: list[dict]) -> None:
         if is_noindex(page):
             continue
         loc = canonical_url(page)
+        pid = page.get("id", "")
+        priority = "1.0" if pid in ("home", "gurgaon") else "0.8" if pid in ("ncr", "courses", "contact-us") else "0.6"
         urls.append(
-            f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{today}</lastmod>\n  </url>"
+            "  <url>\n"
+            f"    <loc>{loc}</loc>\n"
+            f"    <lastmod>{today}</lastmod>\n"
+            f"    <priority>{priority}</priority>\n"
+            "  </url>"
         )
     xml = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -685,10 +944,12 @@ def write_robots_and_sitemap(site: Path, pages: list[dict]) -> None:
     )
     (site / "sitemap.xml").write_text(xml, encoding="utf-8")
     host = SITE_ORIGIN.replace("https://", "").replace("http://", "")
-    (site / "_redirects").write_text(
-        f"https://www.{host}/* https://{host}/:splat 301\n",
-        encoding="utf-8",
-    )
+    netlify_lines = [f"https://www.{host}/* https://{host}/:splat 301"]
+    for src in LOCAL_REDIRECTS:
+        netlify_lines.append(f"{src} {GURGAON_CANONICAL_PATH} 301")
+        if not src.endswith("/"):
+            netlify_lines.append(f"{src}/ {GURGAON_CANONICAL_PATH} 301")
+    (site / "_redirects").write_text("\n".join(netlify_lines) + "\n", encoding="utf-8")
     (site / "_headers").write_text(
         "/*\n"
         "  X-Frame-Options: DENY\n"
@@ -696,29 +957,28 @@ def write_robots_and_sitemap(site: Path, pages: list[dict]) -> None:
         "  Referrer-Policy: strict-origin-when-cross-origin\n",
         encoding="utf-8",
     )
-    (site / "vercel.json").write_text(
-        '{\n'
-        '  "trailingSlash": true,\n'
-        '  "cleanUrls": false,\n'
-        '  "rewrites": [\n'
-        '    {\n'
-        '      "source": "/google114699eecbb71cd9.html/",\n'
-        '      "destination": "/google114699eecbb71cd9.html"\n'
-        '    }\n'
-        '  ],\n'
-        '  "headers": [\n'
-        '    {\n'
-        '      "source": "/(.*)",\n'
-        '      "headers": [\n'
-        '        { "key": "X-Frame-Options", "value": "DENY" },\n'
-        '        { "key": "X-Content-Type-Options", "value": "nosniff" },\n'
-        '        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }\n'
-        '      ]\n'
-        '    }\n'
-        '  ]\n'
-        '}\n',
-        encoding="utf-8",
-    )
+    vercel = {
+        "trailingSlash": True,
+        "cleanUrls": False,
+        "redirects": _local_redirect_rules(),
+        "rewrites": [
+            {
+                "source": "/google114699eecbb71cd9.html/",
+                "destination": "/google114699eecbb71cd9.html",
+            }
+        ],
+        "headers": [
+            {
+                "source": "/(.*)",
+                "headers": [
+                    {"key": "X-Frame-Options", "value": "DENY"},
+                    {"key": "X-Content-Type-Options", "value": "nosniff"},
+                    {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
+                ],
+            }
+        ],
+    }
+    (site / "vercel.json").write_text(json.dumps(vercel, indent=2) + "\n", encoding="utf-8")
 
 
 def write_404(site: Path, html: str) -> None:

@@ -1,6 +1,48 @@
 {
   "trailingSlash": true,
   "cleanUrls": false,
+  "redirects": [
+    {
+      "source": "/ai-institute-in-gurgaon",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-institute-in-gurgaon/",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-institute-in-gurugram",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-institute-in-gurugram/",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-courses-in-gurugram",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-courses-in-gurugram/",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-training-in-gurgaon",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-training-in-gurgaon/",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/google114699eecbb71cd9.html/",
@@ -11,9 +53,18 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     }
   ]

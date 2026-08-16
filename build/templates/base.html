@@ -24,6 +24,10 @@
   <meta name="twitter:title" content="{{ page_title }}" />
   {% if meta_description %}<meta name="twitter:description" content="{{ meta_description }}" />{% endif %}
   <meta name="theme-color" content="#111111" />
+  <meta name="geo.region" content="IN-HR" />
+  <meta name="geo.placename" content="Gurugram" />
+  <meta name="geo.position" content="{{ geo_lat | default('28.385278') }};{{ geo_lng | default('77.051389') }}" />
+  <meta name="ICBM" content="{{ geo_lat | default('28.385278') }}, {{ geo_lng | default('77.051389') }}" />
   <link rel="icon" href="{{ base }}assets/favicon.svg" type="image/svg+xml" />
   {% if json_ld %}
   <script type="application/ld+json">{{ json_ld | tojson }}</script>
@@ -63,6 +67,7 @@
     </button>
     <nav aria-label="Mobile">
       <a href="{{ base }}index.html">Home</a>
+      <a href="{{ base }}ai-courses-in-gurgaon/index.html">Gurgaon</a>
       <a href="{{ base }}ai-courses-in-delhi-ncr/index.html">Delhi NCR</a>
       <a href="{{ base }}about-us/index.html">About us</a>
       <a href="{{ base }}courses/index.html">Courses offered</a>
@@ -84,11 +89,16 @@
       <div>
         <p class="brand-word">AI Career Academy</p>
         <p>Live online cohorts. Published fees. Placement support, certification, and internships — not a pass-rate slogan.</p>
-        <p>68 Avenue, Badshahpur, Sector 68, Gurugram, Haryana 122101</p>
+        <address>
+          <a href="{{ base }}ai-courses-in-gurgaon/index.html">AI institute in Gurgaon</a><br />
+          68 Avenue, Badshahpur, Sector 68, Gurugram, Haryana 122101<br />
+          Mon–Sat, 10am–7pm IST
+        </address>
         <p>{{ contact_name }} · <a href="tel:{{ phone_e164 }}">{{ phone_display }}</a> · <a href="mailto:{{ email }}">{{ email }}</a></p>
       </div>
       <div>
         <h4>Quick links</h4>
+        <a href="{{ base }}ai-courses-in-gurgaon/index.html">AI institute in Gurgaon</a>
         <a href="{{ base }}ai-courses-in-delhi-ncr/index.html">Delhi NCR</a>
         <a href="{{ base }}about-us/index.html">About us</a>
         <a href="{{ base }}courses/index.html">Courses offered</a>

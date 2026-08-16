@@ -18,6 +18,10 @@ from seo import (
     BRAND,
     CONTACT_NAME,
     EMAIL,
+    GEO_LAT,
+    GEO_LNG,
+    MAPS_EMBED,
+    MAPS_PLACE,
     PHONE_DISPLAY,
     PHONE_E164,
     SITE_ORIGIN,
@@ -369,7 +373,7 @@ def generate():
         description = meta_description(data, page)
         canon = canonical_url(page)
         og_image = f"{SITE_ORIGIN}/assets/og.png"
-        if page.get("id") == "ncr":
+        if page.get("id") in ("ncr", "gurgaon"):
             og_image = f"{SITE_ORIGIN}/assets/img/og-gurugram.png"
         ctx = {
             "page_title": page_title,
@@ -399,6 +403,10 @@ def generate():
             "phone_display": PHONE_DISPLAY,
             "phone_e164": PHONE_E164,
             "wa_url": WA_ME,
+            "geo_lat": GEO_LAT,
+            "geo_lng": GEO_LNG,
+            "maps_embed": MAPS_EMBED,
+            "maps_place": MAPS_PLACE,
             "extra_css": _extra_css(page["type"], page.get("id", "")),
             "extra_js": _extra_js(page["type"], page.get("id", "")),
             "employers": EMPLOYERS,
@@ -434,6 +442,10 @@ def generate():
         phone_display=PHONE_DISPLAY,
         phone_e164=PHONE_E164,
         wa_url=WA_ME,
+        geo_lat=GEO_LAT,
+        geo_lng=GEO_LNG,
+        maps_embed=MAPS_EMBED,
+        maps_place=MAPS_PLACE,
     )
     write_404(SITE, post_process_html(not_found))
     print(f"\nDone: {generated} pages generated, {skipped} skipped")
