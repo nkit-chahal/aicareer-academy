@@ -1,7 +1,6 @@
 
 (function () {
   var stage = document.querySelector('.chart-stage');
-  var listbox = document.querySelector('.lanes');
   var towers = Array.prototype.slice.call(document.querySelectorAll('.lane'));
   var readoutTitle = document.getElementById('readoutTitle');
   var readoutBody = document.getElementById('readoutBody');
@@ -33,14 +32,13 @@
   function selectTower(btn, focus) {
     towers.forEach(function (t) {
       t.classList.toggle('is-on', t === btn);
-      t.setAttribute('aria-selected', t === btn ? 'true' : 'false');
+      t.setAttribute('aria-pressed', t === btn ? 'true' : 'false');
     });
     var fact = facts[btn.getAttribute('data-id')];
     if (fact && readoutTitle && readoutBody) {
       readoutTitle.textContent = fact.title;
       readoutBody.textContent = fact.body;
     }
-    if (listbox) listbox.setAttribute('aria-activedescendant', btn.id);
     if (focus) btn.focus();
   }
 

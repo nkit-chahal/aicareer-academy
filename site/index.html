@@ -32,7 +32,9 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Playfair+Display:ital,wght@1,600&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" /></noscript>
   <link rel="stylesheet" href="assets/css/base.css" />
   <link rel="stylesheet" href="assets/css/studio.css" />
   
@@ -66,6 +68,9 @@
     <nav aria-label="Mobile">
       <a href="index.html">Home</a>
       <a href="ai-courses-in-gurgaon/index.html">Gurgaon</a>
+      <a href="ai-courses-in-delhi/index.html">Delhi</a>
+      <a href="ai-courses-in-noida/index.html">Noida</a>
+      <a href="ai-courses-in-ghaziabad/index.html">Ghaziabad</a>
       <a href="ai-courses-in-delhi-ncr/index.html">Delhi NCR</a>
       <a href="about-us/index.html">About us</a>
       <a href="courses/index.html">Courses offered</a>
@@ -85,7 +90,7 @@
   <div class="play-copy">
     <p class="live-pill">9 live programs · online</p>
     <p class="ncr-line"><a href="ai-courses-in-gurgaon/index.html">AI institute in Gurugram</a> · <a href="ai-courses-in-delhi-ncr/index.html">Delhi NCR</a> · live online</p>
-    <p class="mix">( <em>Learning AI</em> is the<br />skill that fits <em>everywhere</em> )</p>
+    <h1 class="mix">( <em>Learning AI</em> is the<br />skill that fits <em>everywhere</em> )</h1>
     <p class="mix mix-2 ringed">Live <em>online</em><br />cohorts</p>
   </div>
 </section>
@@ -106,27 +111,27 @@
     <div class="offer-five">
       <article class="c1">
         <h3>Live online classes</h3>
-        <img class="fig" src="assets/img/offer-live.png" width="640" height="480" alt="Instructor-led live class on a screen" loading="lazy" decoding="async" />
+        <img class="fig" src="assets/img/offer-live.webp" width="640" height="480" alt="Instructor-led live class on a screen" loading="lazy" decoding="async" />
         <p>Instructor-led sessions on a screen. Same published fee — batches are online as of now.</p>
       </article>
       <article class="c2">
         <h3>WhatsApp Prerna</h3>
-        <img class="fig" src="assets/img/offer-whatsapp.png" width="640" height="480" alt="Fifteen-minute career call on WhatsApp" loading="lazy" decoding="async" />
+        <img class="fig" src="assets/img/offer-whatsapp.webp" width="640" height="480" alt="Fifteen-minute career call on WhatsApp" loading="lazy" decoding="async" />
         <p>A 15-minute call with Prerna. We say which sequence fits — or that none does yet.</p>
       </article>
       <article class="c3">
         <h3>Published curriculum</h3>
-        <img class="fig" src="assets/img/offer-curriculum.png" width="640" height="480" alt="Published modules on a program page" loading="lazy" decoding="async" />
+        <img class="fig" src="assets/img/offer-curriculum.webp" width="640" height="480" alt="Published modules on a program page" loading="lazy" decoding="async" />
         <p>Modules on each program page. No mystery PDF after you pay.</p>
       </article>
       <article class="c4">
         <h3>Projects &amp; mocks</h3>
-        <img class="fig" src="assets/img/offer-projects.png" width="640" height="480" alt="Project work and interview mocks you can defend" loading="lazy" decoding="async" />
+        <img class="fig" src="assets/img/offer-projects.webp" width="640" height="480" alt="Project work and interview mocks you can defend" loading="lazy" decoding="async" />
         <p>Work you can defend. Interview practice when you are actually applying.</p>
       </article>
       <article class="c5">
         <h3>Career support</h3>
-        <img class="fig" src="assets/img/offer-career.png" width="640" height="480" alt="Placement support, certificate, and internships" loading="lazy" decoding="async" />
+        <img class="fig" src="assets/img/offer-career.webp" width="640" height="480" alt="Placement support, certificate, and internships" loading="lazy" decoding="async" />
         <p>Placement support, a course certificate, and internship opportunities — not a placement percentage.</p>
       </article>
     </div>
@@ -342,25 +347,36 @@
     </article>
     
   </div>
-  <h3 class="h-scribble">Duration available</h3>
+  <h2 class="h-scribble">Duration available</h2>
   
 <svg class="scratch" viewBox="0 0 96 14" aria-hidden="true"><path d="M4 9 Q24 2 48 8 T92 7"/></svg>
 
   <p class="script-label">How batches usually sit — confirm on the call</p>
-  <div class="sched" role="table" aria-label="Sample batch shape">
-    <div class="h b">Batch</div>
-    <div class="h y">Span</div>
-    <div class="h g">Days</div>
-    <div class="h o">Mode</div>
-    <div class="green-t">Weekends</div>
-    <div class="green-t">3–6 months</div>
-    <div class="green-t">Sat–Sun</div>
-    <div class="green-t">Online</div>
-    <div class="blue-t">Weekdays</div>
-    <div class="blue-t">3–6 months</div>
-    <div class="blue-t">Eve blocks</div>
-    <div class="blue-t">Online</div>
-  </div>
+  <table class="sched">
+    <caption class="sr-only">Sample batch shape — weekends or weekday evenings, live online</caption>
+    <thead>
+      <tr>
+        <th class="h b" scope="col">Batch</th>
+        <th class="h y" scope="col">Span</th>
+        <th class="h g" scope="col">Days</th>
+        <th class="h o" scope="col">Mode</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="green-t">Weekends</td>
+        <td class="green-t">3–6 months</td>
+        <td class="green-t">Sat–Sun</td>
+        <td class="green-t">Online</td>
+      </tr>
+      <tr>
+        <td class="blue-t">Weekdays</td>
+        <td class="blue-t">3–6 months</td>
+        <td class="blue-t">Eve blocks</td>
+        <td class="blue-t">Online</td>
+      </tr>
+    </tbody>
+  </table>
 </section>
 
 <section class="band hire-band" id="hire-jobs">
@@ -603,12 +619,12 @@
       <span class="lane-scale-ticks"><span>0</span><span>+10%</span><span>+20%</span><span>+30%</span></span>
       <span class="lane-scale-end">U.S. BLS</span>
     </div>
-    <div class="lanes" role="listbox" aria-label="U.S. BLS occupations by projected 2024 to 2034 growth, international benchmark not an Indian official series" aria-activedescendant="lane-ds">
-      <button class="lane is-on" id="lane-ds" type="button" role="option" aria-selected="true" data-id="ds" style="--w: 100%" aria-label="Data scientists, U.S. BLS projected plus 33.5 percent, 2024 to 2034"><span class="lane-name">Data scientists</span><span class="lane-track"><span class="lane-base" aria-hidden="true"></span><span class="lane-fill"></span><span class="lane-dot" aria-hidden="true"></span></span><span class="lane-pct">+33.5%</span></button>
-      <button class="lane" id="lane-sec" type="button" role="option" aria-selected="false" data-id="sec" style="--w: 85.1%" aria-label="Information security analysts, U.S. BLS projected plus 28.5 percent, 2024 to 2034"><span class="lane-name">Info security analysts</span><span class="lane-track"><span class="lane-base" aria-hidden="true"></span><span class="lane-fill"></span><span class="lane-dot" aria-hidden="true"></span></span><span class="lane-pct">+28.5%</span></button>
-      <button class="lane" id="lane-rs" type="button" role="option" aria-selected="false" data-id="rs" style="--w: 58.8%" aria-label="Research scientists, U.S. BLS projected plus 19.7 percent, 2024 to 2034"><span class="lane-name">Research scientists</span><span class="lane-track"><span class="lane-base" aria-hidden="true"></span><span class="lane-fill"></span><span class="lane-dot" aria-hidden="true"></span></span><span class="lane-pct">+19.7%</span></button>
-      <button class="lane" id="lane-sw" type="button" role="option" aria-selected="false" data-id="sw" style="--w: 47.8%" aria-label="Software developers, U.S. BLS projected plus 16 percent, 2024 to 2034"><span class="lane-name">Software developers</span><span class="lane-track"><span class="lane-base" aria-hidden="true"></span><span class="lane-fill"></span><span class="lane-dot" aria-hidden="true"></span></span><span class="lane-pct">+16%</span></button>
-      <button class="lane" id="lane-all" type="button" role="option" aria-selected="false" data-id="all" style="--w: 9.3%" aria-label="All occupations, U.S. BLS projected plus 3.1 percent, 2024 to 2034"><span class="lane-name">All occupations</span><span class="lane-track"><span class="lane-base" aria-hidden="true"></span><span class="lane-fill"></span><span class="lane-dot" aria-hidden="true"></span></span><span class="lane-pct">+3.1%</span></button>
+    <div class="lanes" role="group" aria-label="U.S. BLS occupations by projected 2024 to 2034 growth, international benchmark not an Indian official series">
+      <button class="lane is-on" id="lane-ds" type="button" aria-pressed="true" data-id="ds" style="--w: 100%" aria-label="Data scientists, U.S. BLS projected plus 33.5 percent, 2024 to 2034"><span class="lane-name">Data scientists</span><span class="lane-track"><span class="lane-base" aria-hidden="true"></span><span class="lane-fill"></span><span class="lane-dot" aria-hidden="true"></span></span><span class="lane-pct">+33.5%</span></button>
+      <button class="lane" id="lane-sec" type="button" aria-pressed="false" data-id="sec" style="--w: 85.1%" aria-label="Information security analysts, U.S. BLS projected plus 28.5 percent, 2024 to 2034"><span class="lane-name">Info security analysts</span><span class="lane-track"><span class="lane-base" aria-hidden="true"></span><span class="lane-fill"></span><span class="lane-dot" aria-hidden="true"></span></span><span class="lane-pct">+28.5%</span></button>
+      <button class="lane" id="lane-rs" type="button" aria-pressed="false" data-id="rs" style="--w: 58.8%" aria-label="Research scientists, U.S. BLS projected plus 19.7 percent, 2024 to 2034"><span class="lane-name">Research scientists</span><span class="lane-track"><span class="lane-base" aria-hidden="true"></span><span class="lane-fill"></span><span class="lane-dot" aria-hidden="true"></span></span><span class="lane-pct">+19.7%</span></button>
+      <button class="lane" id="lane-sw" type="button" aria-pressed="false" data-id="sw" style="--w: 47.8%" aria-label="Software developers, U.S. BLS projected plus 16 percent, 2024 to 2034"><span class="lane-name">Software developers</span><span class="lane-track"><span class="lane-base" aria-hidden="true"></span><span class="lane-fill"></span><span class="lane-dot" aria-hidden="true"></span></span><span class="lane-pct">+16%</span></button>
+      <button class="lane" id="lane-all" type="button" aria-pressed="false" data-id="all" style="--w: 9.3%" aria-label="All occupations, U.S. BLS projected plus 3.1 percent, 2024 to 2034"><span class="lane-name">All occupations</span><span class="lane-track"><span class="lane-base" aria-hidden="true"></span><span class="lane-fill"></span><span class="lane-dot" aria-hidden="true"></span></span><span class="lane-pct">+3.1%</span></button>
     </div>
   </div>
   <div class="demand-readout" aria-live="polite">
@@ -999,6 +1015,9 @@
       <div>
         <h4>Quick links</h4>
         <a href="ai-courses-in-gurgaon/index.html">AI institute in Gurgaon</a>
+        <a href="ai-courses-in-delhi/index.html">Delhi</a>
+        <a href="ai-courses-in-noida/index.html">Noida</a>
+        <a href="ai-courses-in-ghaziabad/index.html">Ghaziabad</a>
         <a href="ai-courses-in-delhi-ncr/index.html">Delhi NCR</a>
         <a href="about-us/index.html">About us</a>
         <a href="courses/index.html">Courses offered</a>

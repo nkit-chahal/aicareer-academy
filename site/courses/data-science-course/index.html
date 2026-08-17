@@ -32,7 +32,9 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Playfair+Display:ital,wght@1,600&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" /></noscript>
   <link rel="stylesheet" href="../../assets/css/base.css" />
   <link rel="stylesheet" href="../../assets/css/studio.css" />
   <link rel="stylesheet" href="../../assets/css/program.css" /><link rel="stylesheet" href="../../assets/css/content.css" />
@@ -66,6 +68,9 @@
     <nav aria-label="Mobile">
       <a href="../../index.html">Home</a>
       <a href="../../ai-courses-in-gurgaon/index.html">Gurgaon</a>
+      <a href="../../ai-courses-in-delhi/index.html">Delhi</a>
+      <a href="../../ai-courses-in-noida/index.html">Noida</a>
+      <a href="../../ai-courses-in-ghaziabad/index.html">Ghaziabad</a>
       <a href="../../ai-courses-in-delhi-ncr/index.html">Delhi NCR</a>
       <a href="../../about-us/index.html">About us</a>
       <a href="../../courses/index.html">Courses offered</a>
@@ -218,30 +223,30 @@
         
           
           
-          <button type="button" data-offer="1" class="is-on" role="tab">Module 1: Python for Data Science</button>
+          <button type="button" id="offer-tab-1" data-offer="1" class="is-on" role="tab" aria-selected="true" aria-controls="offer-1">Module 1: Python for Data Science</button>
           
           
-          <button type="button" data-offer="2" class="" role="tab">Module 2: NumPy, Pandas, and SQL</button>
+          <button type="button" id="offer-tab-2" data-offer="2" class="" role="tab" aria-selected="false" aria-controls="offer-2">Module 2: NumPy, Pandas, and SQL</button>
           
           
-          <button type="button" data-offer="3" class="" role="tab">Module 3: Statistics and EDA</button>
-          
-        
-      
-        
-          
-          
-          <button type="button" data-offer="4" class="" role="tab">Module 4: Core Machine Learning</button>
-          
-          
-          <button type="button" data-offer="5" class="" role="tab">Module 5: Deep learning and NLP</button>
+          <button type="button" id="offer-tab-3" data-offer="3" class="" role="tab" aria-selected="false" aria-controls="offer-3">Module 3: Statistics and EDA</button>
           
         
       
         
           
           
-          <button type="button" data-offer="6" class="" role="tab">Module 6: LLM and RAG intro</button>
+          <button type="button" id="offer-tab-4" data-offer="4" class="" role="tab" aria-selected="false" aria-controls="offer-4">Module 4: Core Machine Learning</button>
+          
+          
+          <button type="button" id="offer-tab-5" data-offer="5" class="" role="tab" aria-selected="false" aria-controls="offer-5">Module 5: Deep learning and NLP</button>
+          
+        
+      
+        
+          
+          
+          <button type="button" id="offer-tab-6" data-offer="6" class="" role="tab" aria-selected="false" aria-controls="offer-6">Module 6: LLM and RAG intro</button>
           
         
       
@@ -252,7 +257,7 @@
         
           
           
-          <div class="offer-panel" id="offer-1" >
+          <div class="offer-panel" id="offer-1" role="tabpanel" aria-labelledby="offer-tab-1" >
             <h3>Module 1: Python for Data Science</h3>
             <p class="offer-track">Python, SQL, and statistics</p>
             <p class="offer-lead">Six months only works if the language is a habit. This module is Python you will reuse in every later notebook — not a tour of trivia.</p>
@@ -307,7 +312,7 @@
           </div>
           
           
-          <div class="offer-panel" id="offer-2" hidden>
+          <div class="offer-panel" id="offer-2" role="tabpanel" aria-labelledby="offer-tab-2" hidden>
             <h3>Module 2: NumPy, Pandas, and SQL</h3>
             <p class="offer-track">Python, SQL, and statistics</p>
             <p class="offer-lead">Modeling tables are arrays and joins. You will wrangle in Pandas, think in NumPy shapes, and pull training tables with SQL — still no Power BI on this program.</p>
@@ -362,7 +367,7 @@
           </div>
           
           
-          <div class="offer-panel" id="offer-3" hidden>
+          <div class="offer-panel" id="offer-3" role="tabpanel" aria-labelledby="offer-tab-3" hidden>
             <h3>Module 3: Statistics and EDA</h3>
             <p class="offer-track">Python, SQL, and statistics</p>
             <p class="offer-lead">Statistics is how you stop lying to yourself with a lucky chart. Visualization on this program is Matplotlib and Seaborn — not Power BI.</p>
@@ -421,7 +426,7 @@
         
           
           
-          <div class="offer-panel" id="offer-4" hidden>
+          <div class="offer-panel" id="offer-4" role="tabpanel" aria-labelledby="offer-tab-4" hidden>
             <h3>Module 4: Core Machine Learning</h3>
             <p class="offer-track">Machine learning</p>
             <p class="offer-lead">Classical ML is still the interview and still the baseline. You will fit, evaluate, and pipeline models in scikit-learn — then beat a dumb baseline on purpose.</p>
@@ -476,7 +481,7 @@
           </div>
           
           
-          <div class="offer-panel" id="offer-5" hidden>
+          <div class="offer-panel" id="offer-5" role="tabpanel" aria-labelledby="offer-tab-5" hidden>
             <h3>Module 5: Deep learning and NLP</h3>
             <p class="offer-track">Machine learning</p>
             <p class="offer-lead">Enough neural nets and text models to talk to a hiring manager without faking a research paper. This is still data science, not Gen AI Specialization.</p>
@@ -535,7 +540,7 @@
         
           
           
-          <div class="offer-panel" id="offer-6" hidden>
+          <div class="offer-panel" id="offer-6" role="tabpanel" aria-labelledby="offer-tab-6" hidden>
             <h3>Module 6: LLM and RAG intro</h3>
             <p class="offer-track">Applied GenAI for scientists</p>
             <p class="offer-lead">A grounded intro so you can retrieve over your own notes and wrap it in a script. This is not a BI visualizer track and not the full developer or specialization slab.</p>
@@ -672,6 +677,9 @@
       <div>
         <h4>Quick links</h4>
         <a href="../../ai-courses-in-gurgaon/index.html">AI institute in Gurgaon</a>
+        <a href="../../ai-courses-in-delhi/index.html">Delhi</a>
+        <a href="../../ai-courses-in-noida/index.html">Noida</a>
+        <a href="../../ai-courses-in-ghaziabad/index.html">Ghaziabad</a>
         <a href="../../ai-courses-in-delhi-ncr/index.html">Delhi NCR</a>
         <a href="../../about-us/index.html">About us</a>
         <a href="../../courses/index.html">Courses offered</a>

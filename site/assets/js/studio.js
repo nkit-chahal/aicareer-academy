@@ -43,7 +43,11 @@
     tabs.forEach(function (btn) {
       btn.addEventListener("click", function () {
         var id = btn.getAttribute("data-offer");
-        tabs.forEach(function (t) { t.classList.toggle("is-on", t === btn); });
+        tabs.forEach(function (t) {
+          var on = t === btn;
+          t.classList.toggle("is-on", on);
+          t.setAttribute("aria-selected", on ? "true" : "false");
+        });
         panels.forEach(function (p) {
           var on = p.id === "offer-" + id;
           p.hidden = !on;

@@ -9,11 +9,11 @@
         {% if level.modules %}
           {% for module in level.modules %}
           {% set ns.i = ns.i + 1 %}
-          <button type="button" data-offer="{{ ns.i }}" class="{% if ns.i == 1 %}is-on{% endif %}" role="tab">{{ module.title }}</button>
+          <button type="button" id="offer-tab-{{ ns.i }}" data-offer="{{ ns.i }}" class="{% if ns.i == 1 %}is-on{% endif %}" role="tab" aria-selected="{% if ns.i == 1 %}true{% else %}false{% endif %}" aria-controls="offer-{{ ns.i }}">{{ module.title }}</button>
           {% endfor %}
         {% else %}
           {% set ns.i = ns.i + 1 %}
-          <button type="button" data-offer="{{ ns.i }}" class="{% if ns.i == 1 %}is-on{% endif %}" role="tab">{{ level.title }}</button>
+          <button type="button" id="offer-tab-{{ ns.i }}" data-offer="{{ ns.i }}" class="{% if ns.i == 1 %}is-on{% endif %}" role="tab" aria-selected="{% if ns.i == 1 %}true{% else %}false{% endif %}" aria-controls="offer-{{ ns.i }}">{{ level.title }}</button>
         {% endif %}
       {% endfor %}
     </div>
@@ -23,7 +23,7 @@
         {% if level.modules %}
           {% for module in level.modules %}
           {% set ns.i = ns.i + 1 %}
-          <div class="offer-panel" id="offer-{{ ns.i }}" {% if ns.i != 1 %}hidden{% endif %}>
+          <div class="offer-panel" id="offer-{{ ns.i }}" role="tabpanel" aria-labelledby="offer-tab-{{ ns.i }}" {% if ns.i != 1 %}hidden{% endif %}>
             <h3>{{ module.title }}</h3>
             <p class="offer-track">{{ level.title }}</p>
             {% if module.lead %}<p class="offer-lead">{{ module.lead }}</p>{% endif %}
@@ -48,7 +48,7 @@
           {% endfor %}
         {% elif level.topics %}
           {% set ns.i = ns.i + 1 %}
-          <div class="offer-panel" id="offer-{{ ns.i }}" {% if ns.i != 1 %}hidden{% endif %}>
+          <div class="offer-panel" id="offer-{{ ns.i }}" role="tabpanel" aria-labelledby="offer-tab-{{ ns.i }}" {% if ns.i != 1 %}hidden{% endif %}>
             <h3>{{ level.title }}</h3>
             {% if level.lead %}<p class="offer-lead">{{ level.lead }}</p>{% endif %}
             <ul>

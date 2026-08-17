@@ -26,10 +26,10 @@
   </div>
 </section>
 
-{% if page_id == 'ncr' or page_id == 'gurgaon' %}
+{% if page_id == 'ncr' or page_id == 'gurgaon' or page_id == 'delhi' or page_id == 'noida' or page_id == 'ghaziabad' %}
 <section class="contact-split" aria-label="Gurugram studio desk">
   <div class="box">
-    <h2>{% if page_id == 'gurgaon' %}AI Career Academy, Gurgaon{% else %}Desk in Gurugram{% endif %}</h2>
+    <h2>{% if page_id == 'gurgaon' %}AI Career Academy, Gurgaon{% elif page_id == 'delhi' %}Delhi learners · desk in Gurugram{% elif page_id == 'noida' %}Noida learners · desk in Gurugram{% elif page_id == 'ghaziabad' %}Ghaziabad learners · desk in Gurugram{% else %}Desk in Gurugram{% endif %}</h2>
     <p>68 Avenue, Badshahpur, Sector 68, Gurugram, Haryana 122101</p>
     <p>{{ contact_name }} (Sales Head): <a href="tel:{{ phone_e164 }}">{{ phone_display }}</a></p>
     <p>Mon–Sat, 10am–7pm IST · counselling on site · classes live online</p>

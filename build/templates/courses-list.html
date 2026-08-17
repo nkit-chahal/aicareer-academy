@@ -19,12 +19,12 @@
 
 <section class="filters-wrap">
   <div class="container filters-inner">
-    <div class="filters" id="filters" role="tablist" aria-label="Filter programs">
-      <button class="filter-pill active" data-filter="all" role="tab" aria-selected="true">All programs</button>
-      <button class="filter-pill" data-filter="beginner" role="tab" aria-selected="false">Beginner</button>
-      <button class="filter-pill" data-filter="specialization" role="tab" aria-selected="false">Specialization</button>
-      <button class="filter-pill" data-filter="architect" role="tab" aria-selected="false">Architect</button>
-      <button class="filter-pill" data-filter="career" role="tab" aria-selected="false">Career track</button>
+    <div class="filters" id="filters" role="group" aria-label="Filter programs">
+      <button class="filter-pill active" data-filter="all" type="button" aria-pressed="true">All programs</button>
+      <button class="filter-pill" data-filter="beginner" type="button" aria-pressed="false">Beginner</button>
+      <button class="filter-pill" data-filter="specialization" type="button" aria-pressed="false">Specialization</button>
+      <button class="filter-pill" data-filter="architect" type="button" aria-pressed="false">Architect</button>
+      <button class="filter-pill" data-filter="career" type="button" aria-pressed="false">Career track</button>
     </div>
     <p class="showing-count" id="showingCount" aria-live="polite">Showing all {{ programs|length }} programs</p>
   </div>

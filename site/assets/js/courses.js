@@ -33,10 +33,10 @@ document.querySelectorAll('.filter-pill').forEach(function(pill) {
   pill.addEventListener('click', function() {
     document.querySelectorAll('.filter-pill').forEach(function(p) {
       p.classList.remove('active');
-      p.setAttribute('aria-selected', 'false');
+      p.setAttribute('aria-pressed', 'false');
     });
     pill.classList.add('active');
-    pill.setAttribute('aria-selected', 'true');
+    pill.setAttribute('aria-pressed', 'true');
     applyFilter(pill.dataset.filter);
   });
 });

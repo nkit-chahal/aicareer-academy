@@ -34,7 +34,9 @@
   {% endif %}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Playfair+Display:ital,wght@1,600&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" /></noscript>
   <link rel="stylesheet" href="{{ base }}assets/css/base.css" />
   <link rel="stylesheet" href="{{ base }}assets/css/studio.css" />
   {% if extra_css %}{% for css in extra_css %}<link rel="stylesheet" href="{{ base }}assets/css/{{ css }}" />{% endfor %}{% endif %}
@@ -68,6 +70,9 @@
     <nav aria-label="Mobile">
       <a href="{{ base }}index.html">Home</a>
       <a href="{{ base }}ai-courses-in-gurgaon/index.html">Gurgaon</a>
+      <a href="{{ base }}ai-courses-in-delhi/index.html">Delhi</a>
+      <a href="{{ base }}ai-courses-in-noida/index.html">Noida</a>
+      <a href="{{ base }}ai-courses-in-ghaziabad/index.html">Ghaziabad</a>
       <a href="{{ base }}ai-courses-in-delhi-ncr/index.html">Delhi NCR</a>
       <a href="{{ base }}about-us/index.html">About us</a>
       <a href="{{ base }}courses/index.html">Courses offered</a>
@@ -99,6 +104,9 @@
       <div>
         <h4>Quick links</h4>
         <a href="{{ base }}ai-courses-in-gurgaon/index.html">AI institute in Gurgaon</a>
+        <a href="{{ base }}ai-courses-in-delhi/index.html">Delhi</a>
+        <a href="{{ base }}ai-courses-in-noida/index.html">Noida</a>
+        <a href="{{ base }}ai-courses-in-ghaziabad/index.html">Ghaziabad</a>
         <a href="{{ base }}ai-courses-in-delhi-ncr/index.html">Delhi NCR</a>
         <a href="{{ base }}about-us/index.html">About us</a>
         <a href="{{ base }}courses/index.html">Courses offered</a>

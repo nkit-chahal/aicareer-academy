@@ -32,7 +32,9 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Playfair+Display:ital,wght@1,600&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" /></noscript>
   <link rel="stylesheet" href="../../assets/css/base.css" />
   <link rel="stylesheet" href="../../assets/css/studio.css" />
   <link rel="stylesheet" href="../../assets/css/program.css" /><link rel="stylesheet" href="../../assets/css/content.css" />
@@ -66,6 +68,9 @@
     <nav aria-label="Mobile">
       <a href="../../index.html">Home</a>
       <a href="../../ai-courses-in-gurgaon/index.html">Gurgaon</a>
+      <a href="../../ai-courses-in-delhi/index.html">Delhi</a>
+      <a href="../../ai-courses-in-noida/index.html">Noida</a>
+      <a href="../../ai-courses-in-ghaziabad/index.html">Ghaziabad</a>
       <a href="../../ai-courses-in-delhi-ncr/index.html">Delhi NCR</a>
       <a href="../../about-us/index.html">About us</a>
       <a href="../../courses/index.html">Courses offered</a>
@@ -214,30 +219,30 @@
         
           
           
-          <button type="button" data-offer="1" class="is-on" role="tab">Module 1: Excel for analysis</button>
+          <button type="button" id="offer-tab-1" data-offer="1" class="is-on" role="tab" aria-selected="true" aria-controls="offer-1">Module 1: Excel for analysis</button>
           
           
-          <button type="button" data-offer="2" class="" role="tab">Module 2: SQL for analysts</button>
-          
-        
-      
-        
-          
-          
-          <button type="button" data-offer="3" class="" role="tab">Module 3: Pandas and cleaning</button>
-          
-          
-          <button type="button" data-offer="4" class="" role="tab">Module 4: EDA for business questions</button>
+          <button type="button" id="offer-tab-2" data-offer="2" class="" role="tab" aria-selected="false" aria-controls="offer-2">Module 2: SQL for analysts</button>
           
         
       
         
           
           
-          <button type="button" data-offer="5" class="" role="tab">Module 5: Power BI dashboards</button>
+          <button type="button" id="offer-tab-3" data-offer="3" class="" role="tab" aria-selected="false" aria-controls="offer-3">Module 3: Pandas and cleaning</button>
           
           
-          <button type="button" data-offer="6" class="" role="tab">Module 6: AI-assisted BI</button>
+          <button type="button" id="offer-tab-4" data-offer="4" class="" role="tab" aria-selected="false" aria-controls="offer-4">Module 4: EDA for business questions</button>
+          
+        
+      
+        
+          
+          
+          <button type="button" id="offer-tab-5" data-offer="5" class="" role="tab" aria-selected="false" aria-controls="offer-5">Module 5: Power BI dashboards</button>
+          
+          
+          <button type="button" id="offer-tab-6" data-offer="6" class="" role="tab" aria-selected="false" aria-controls="offer-6">Module 6: AI-assisted BI</button>
           
         
       
@@ -248,7 +253,7 @@
         
           
           
-          <div class="offer-panel" id="offer-1" >
+          <div class="offer-panel" id="offer-1" role="tabpanel" aria-labelledby="offer-tab-1" >
             <h3>Module 1: Excel for analysis</h3>
             <p class="offer-track">Spreadsheets and SQL</p>
             <p class="offer-lead">You start where most analyst jobs still start: a messy workbook, a stakeholder question, and a sheet that has to survive a review. Copilot is allowed as an accelerator once you can do the work by hand.</p>
@@ -303,7 +308,7 @@
           </div>
           
           
-          <div class="offer-panel" id="offer-2" hidden>
+          <div class="offer-panel" id="offer-2" role="tabpanel" aria-labelledby="offer-tab-2" hidden>
             <h3>Module 2: SQL for analysts</h3>
             <p class="offer-track">Spreadsheets and SQL</p>
             <p class="offer-lead">Hiring managers still ask you to pull a table. This module is selects, joins, and aggregations you can write on a whiteboard and in a notebook — not a DBA certification.</p>
@@ -362,7 +367,7 @@
         
           
           
-          <div class="offer-panel" id="offer-3" hidden>
+          <div class="offer-panel" id="offer-3" role="tabpanel" aria-labelledby="offer-tab-3" hidden>
             <h3>Module 3: Pandas and cleaning</h3>
             <p class="offer-track">Python for analysis</p>
             <p class="offer-lead">Spreadsheets stop being enough. You move the same tables into Pandas so you can clean, merge, and shape them without clicking yourself into a corner.</p>
@@ -417,7 +422,7 @@
           </div>
           
           
-          <div class="offer-panel" id="offer-4" hidden>
+          <div class="offer-panel" id="offer-4" role="tabpanel" aria-labelledby="offer-tab-4" hidden>
             <h3>Module 4: EDA for business questions</h3>
             <p class="offer-track">Python for analysis</p>
             <p class="offer-lead">EDA here is not a gallery of plots. It is a sequence: question, cut, distribution, exception, sentence a stakeholder can use.</p>
@@ -476,7 +481,7 @@
         
           
           
-          <div class="offer-panel" id="offer-5" hidden>
+          <div class="offer-panel" id="offer-5" role="tabpanel" aria-labelledby="offer-tab-5" hidden>
             <h3>Module 5: Power BI dashboards</h3>
             <p class="offer-track">Power BI (the catalog’s only BI visualizer)</p>
             <p class="offer-lead">This is the only BI visualizer on the catalog. You model the data, write DAX that matches the grain, and publish a report someone can filter without calling you.</p>
@@ -531,7 +536,7 @@
           </div>
           
           
-          <div class="offer-panel" id="offer-6" hidden>
+          <div class="offer-panel" id="offer-6" role="tabpanel" aria-labelledby="offer-tab-6" hidden>
             <h3>Module 6: AI-assisted BI</h3>
             <p class="offer-track">Power BI (the catalog’s only BI visualizer)</p>
             <p class="offer-lead">Copilot and NLQ on Power BI are part of the job now. You will use them, then check them, then ship a dashboard you can defend without the assistant in the room.</p>
@@ -668,6 +673,9 @@
       <div>
         <h4>Quick links</h4>
         <a href="../../ai-courses-in-gurgaon/index.html">AI institute in Gurgaon</a>
+        <a href="../../ai-courses-in-delhi/index.html">Delhi</a>
+        <a href="../../ai-courses-in-noida/index.html">Noida</a>
+        <a href="../../ai-courses-in-ghaziabad/index.html">Ghaziabad</a>
         <a href="../../ai-courses-in-delhi-ncr/index.html">Delhi NCR</a>
         <a href="../../about-us/index.html">About us</a>
         <a href="../../courses/index.html">Courses offered</a>

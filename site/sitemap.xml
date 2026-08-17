@@ -2,217 +2,232 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aicareer.academy/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/courses/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/hire-from-us/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/contact-us/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/ai-courses-in-delhi-ncr/</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/ai-courses-in-gurgaon/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://aicareer.academy/ai-courses-in-delhi/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://aicareer.academy/ai-courses-in-noida/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://aicareer.academy/ai-courses-in-ghaziabad/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://aicareer.academy/about-us/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/enterprise-ai-upskilling/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/privacy-policy/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/terms-and-conditions/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/refund-policy/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/register/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/mentors/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/courses/data-analytics-course-with-placement/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/courses/data-science-course/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/courses/ai-developers-course/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/courses/generative-ai-course/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/courses/mlops-course/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/courses/llmops-course/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/courses/java-course/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/courses/devops-course/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/courses/frontend-course/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/roadmaps/data-science-roadmap/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/roadmaps/ai-developer-roadmap/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/roadmaps/ai-engineer-roadmap/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/roadmaps/ml-engineer-roadmap/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/roadmaps/generative-ai-roadmap/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/comparisons/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/comparisons/ai-developer-vs-data-scientist/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/comparisons/ai-developer-vs-ai-engineer/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/comparisons/ai-engineer-vs-ml-engineer/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/comparisons/genai-vs-ai-developer-vs-agentic-ai/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/comparisons/mlops-vs-llmops-vs-aiops/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/comparisons/prompt-engineer-vs-ai-developer/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/comparisons/mlops-engineer-vs-ml-engineer/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/comparisons/rag-vs-fine-tuning/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/comparisons/rag-vs-agentic-rag/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/comparisons/langchain-vs-langgraph/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/comparisons/crewai-vs-autogen-vs-langgraph/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/comparisons/mcp-vs-acp/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/blogs/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/blogs/blog/ai-engineer-roadmap-2026/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aicareer.academy/blogs/blog/data-science-tools-for-2026/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>

@@ -29,12 +29,48 @@ MAPS_EMBED = (
 )
 MAPS_PLACE = f"https://www.google.com/maps/search/?api=1&query={GEO_LAT}%2C{GEO_LNG}"
 GURGAON_CANONICAL_PATH = "/ai-courses-in-gurgaon/"
-# Search aliases → one canonical URL (301). Do not add a doorway farm.
+DELHI_PATH = "/ai-courses-in-delhi/"
+NOIDA_PATH = "/ai-courses-in-noida/"
+GHAZIABAD_PATH = "/ai-courses-in-ghaziabad/"
+# (source path without trailing slash, canonical destination)
 LOCAL_REDIRECTS = [
-    "/ai-institute-in-gurgaon",
-    "/ai-institute-in-gurugram",
-    "/ai-courses-in-gurugram",
-    "/ai-training-in-gurgaon",
+    ("/ai-institute-in-gurgaon", GURGAON_CANONICAL_PATH),
+    ("/ai-institute-in-gurugram", GURGAON_CANONICAL_PATH),
+    ("/ai-courses-in-gurugram", GURGAON_CANONICAL_PATH),
+    ("/ai-training-in-gurgaon", GURGAON_CANONICAL_PATH),
+    ("/best-ai-institute-in-gurgaon", GURGAON_CANONICAL_PATH),
+    ("/best-ai-institute-in-gurugram", GURGAON_CANONICAL_PATH),
+    ("/best-ai-institute-in-gurgaon-with-fees", GURGAON_CANONICAL_PATH),
+    ("/best-ai-institute-in-gurgaon-placement", GURGAON_CANONICAL_PATH),
+    ("/ai-course-in-gurgaon-fees", GURGAON_CANONICAL_PATH),
+    ("/ai-course-in-gurgaon-offline", GURGAON_CANONICAL_PATH),
+    ("/ai-courses-in-gurgaon-sector-14", GURGAON_CANONICAL_PATH),
+    ("/artificial-intelligence-course-in-gurgaon-for-freshers", GURGAON_CANONICAL_PATH),
+    ("/generative-ai-course-in-gurgaon", GURGAON_CANONICAL_PATH),
+    ("/ai-institute-in-delhi", DELHI_PATH),
+    ("/best-ai-institute-in-delhi", DELHI_PATH),
+    ("/best-ai-institute-in-delhi-with-fees", DELHI_PATH),
+    ("/best-ai-institute-in-delhi-placement", DELHI_PATH),
+    ("/ai-course-in-delhi-fees", DELHI_PATH),
+    ("/ai-course-in-delhi-offline", DELHI_PATH),
+    ("/generative-ai-course-in-delhi", DELHI_PATH),
+    ("/artificial-intelligence-course-in-delhi-for-freshers", DELHI_PATH),
+    ("/ai-institute-in-noida", NOIDA_PATH),
+    ("/best-ai-institute-in-noida", NOIDA_PATH),
+    ("/best-ai-institute-in-noida-with-fees", NOIDA_PATH),
+    ("/best-ai-institute-in-noida-placement", NOIDA_PATH),
+    ("/ai-course-in-noida-fees", NOIDA_PATH),
+    ("/ai-course-in-noida-offline", NOIDA_PATH),
+    ("/generative-ai-course-in-noida", NOIDA_PATH),
+    ("/artificial-intelligence-course-in-noida-for-freshers", NOIDA_PATH),
+    ("/ai-institute-in-ghaziabad", GHAZIABAD_PATH),
+    ("/best-ai-institute-in-ghaziabad", GHAZIABAD_PATH),
+    ("/best-ai-institute-in-ghaziabad-with-fees", GHAZIABAD_PATH),
+    ("/best-ai-institute-in-ghaziabad-placement", GHAZIABAD_PATH),
+    ("/ai-course-in-ghaziabad-fees", GHAZIABAD_PATH),
+    ("/ai-course-in-ghaziabad-offline", GHAZIABAD_PATH),
+    ("/generative-ai-course-in-ghaziabad", GHAZIABAD_PATH),
+    ("/artificial-intelligence-course-in-ghaziabad-for-freshers", GHAZIABAD_PATH),
 ]
 
 SEO_OVERRIDES = {
@@ -89,6 +125,43 @@ SEO_OVERRIDES = {
             "Searchers looking for an AI institute in Gurugram / Gurgaon land here. "
             "The studio desk is on Sohna Road (Badshahpur, Sector 68). Batches are live online. "
             "Come in for a career call; join class from home."
+        ),
+    },
+    "delhi": {
+        "title": f"AI institute in Delhi — fees, GenAI, placement support | {BRAND}",
+        "description": (
+            f"AI and GenAI courses for Delhi learners. Published fees from ₹35,000. "
+            f"Live online cohorts; counselling desk at {NAP_LINE}. Freshers welcome. "
+            f"{CONTACT_NAME} {PHONE_DISPLAY}."
+        ),
+        "hero_title": "AI courses in Delhi — live online, Gurugram desk",
+        "hero_sub": (
+            "Same catalog as Gurgaon: published fees, GenAI tracks, placement support. "
+            "You join from Delhi. Walk-in counselling is Sector 68, Gurugram — not a Connaught Place classroom."
+        ),
+    },
+    "noida": {
+        "title": f"AI institute in Noida — fees, GenAI, placement support | {BRAND}",
+        "description": (
+            f"AI and GenAI courses for Noida and Greater Noida. Fees on the page. "
+            f"Live online; desk at {NAP_LINE}. Freshers welcome. {CONTACT_NAME} {PHONE_DISPLAY}."
+        ),
+        "hero_title": "AI courses in Noida — live online, Gurugram desk",
+        "hero_sub": (
+            "Sector 62 / 18 / 137 searchers join the same live cohort. "
+            "The pin is Sector 68 Gurugram for counselling — classes are not a Noida classroom batch."
+        ),
+    },
+    "ghaziabad": {
+        "title": f"AI institute in Ghaziabad — fees, GenAI, placement support | {BRAND}",
+        "description": (
+            f"AI and GenAI courses for Ghaziabad (Vaishali, Indirapuram, Raj Nagar). "
+            f"Published fees, live online, placement support. Desk: {NAP_LINE}. {CONTACT_NAME} {PHONE_DISPLAY}."
+        ),
+        "hero_title": "AI courses in Ghaziabad — live online, Gurugram desk",
+        "hero_sub": (
+            "Join from Vaishali, Indirapuram, or Kaushambi. "
+            "Counselling is at the Gurugram Sector 68 desk. Batches are live online, same fees as the catalog."
         ),
     },
     "enterprise": {
@@ -227,6 +300,30 @@ ABOUT_SECTIONS = [
     },
 ]
 
+PROGRAM_HREFS = [
+    {"href": "courses/data-analytics-course-with-placement/index.html", "title": "Data Analytics with AI — 5 months — ₹40,000"},
+    {"href": "courses/data-science-course/index.html", "title": "Data Science Gen AI — 6 months — ₹55,000"},
+    {"href": "courses/ai-developers-course/index.html", "title": "Gen AI for Developers — 3 months — ₹40,000"},
+    {"href": "courses/generative-ai-course/index.html", "title": "Generative AI Specialization — 5 months — ₹64,999"},
+    {"href": "courses/mlops-course/index.html", "title": "MLOps — 6 months — ₹60,000"},
+    {"href": "courses/llmops-course/index.html", "title": "LLMOps — 3 months — ₹35,000"},
+    {"href": "courses/java-course/index.html", "title": "Java — 3 months — ₹40,000"},
+    {"href": "courses/devops-course/index.html", "title": "DevOps — 6 months — ₹60,000"},
+    {"href": "courses/frontend-course/index.html", "title": "Frontend — 3 months — ₹40,000"},
+]
+
+FEE_LINES = [
+    "Data Analytics with AI — 5 months — ₹40,000",
+    "Data Science Gen AI — 6 months — ₹55,000 (₹65,000 listed, ₹10,000 off)",
+    "Gen AI for Developers — 3 months — ₹40,000",
+    "Generative AI Specialization — 5 months — ₹64,999",
+    "MLOps — 6 months — ₹60,000",
+    "LLMOps — 3 months — ₹35,000",
+    "Java — 3 months — ₹40,000",
+    "DevOps — 6 months — ₹60,000",
+    "Frontend — 3 months — ₹40,000",
+]
+
 NCR_PAGE = {
     "sections": [
         {
@@ -296,6 +393,9 @@ NCR_PAGE = {
         {"href": "courses/devops-course/index.html", "title": "DevOps"},
         {"href": "courses/frontend-course/index.html", "title": "Frontend"},
         {"href": "ai-courses-in-gurgaon/index.html", "title": "AI institute in Gurgaon (Gurugram desk)"},
+        {"href": "ai-courses-in-delhi/index.html", "title": "AI courses in Delhi"},
+        {"href": "ai-courses-in-noida/index.html", "title": "AI courses in Noida"},
+        {"href": "ai-courses-in-ghaziabad/index.html", "title": "AI courses in Ghaziabad"},
         {"href": "contact-us/index.html", "title": "Gurugram desk + map"},
         {"href": "register/index.html", "title": "Book a career call"},
     ],
@@ -304,86 +404,213 @@ NCR_PAGE = {
 GURGAON_PAGE = {
     "sections": [
         {
-            "heading": "The Gurgaon pin Google is looking for",
+            "heading": "Best AI institute in Gurgaon — how to judge, not a slogan",
             "content": (
-                f"{BRAND} (also searched as AI Career Academy Gurgaon / Gurugram) sits at {NAP_LINE}. "
-                "That is a real desk on the Sohna Road / Badshahpur belt — counselling, career calls with Prerna, and paperwork. "
-                "It is not a rented classroom you attend five days a week. Batches are live online, same fee as the catalog."
+                f"{BRAND} is an AI institute in Gurgaon at {NAP_LINE}. "
+                "“Best” on Google is a search phrase, not a trophy we print. Judge us on published fees, live cohorts, and a career call that can say no. "
+                "We do not buy review counts or paste another centre’s placement wall."
             ),
         },
         {
-            "heading": "Who this page is for",
+            "heading": "AI course in Gurgaon fees",
             "content": (
-                "People typing “AI institute in Gurgaon”, “AI courses in Gurugram”, or “data science training near Sohna Road”. "
-                "If you live in Sector 65–69, Badshahpur, Sohna Road, Golf Course Extn, or can reach 68 Avenue, you can walk in Mon–Sat, 10am–7pm IST. "
-                "If you live elsewhere in NCR, you still join the same live cohort — you do not need a second campus."
+                "Fees are on each program page before WhatsApp. Current catalog: Analytics ₹40,000 · Data Science ₹55,000 · "
+                "Gen AI for Developers ₹40,000 · Generative AI Specialization ₹64,999 · MLOps ₹60,000 · LLMOps ₹35,000 · "
+                "Java ₹40,000 · DevOps ₹60,000 · Frontend ₹40,000. Same number for Delhi, Noida, and Ghaziabad learners."
             ),
         },
         {
-            "heading": "What you get vs a typical Gurgaon training centre",
+            "heading": "Placement support — not a Gurgaon job guarantee",
             "content": (
-                "Nine published programs: Data Analytics with AI, Data Science Gen AI, Gen AI for Developers, Gen AI Specialization, MLOps, LLMOps, Java, DevOps, Frontend. "
-                "Fees are on the program page before WhatsApp. Placement support, a certificate, and internships — not a fabricated “100% placement in Cyber City” line, and not someone else’s review count."
+                "Searches for “best AI institute in Gurgaon placement” usually want a percentage. We do not invent one. "
+                "Every live program includes placement support, a course certificate, and internship opportunities. "
+                "Cyber City hiring is a labour market, not our alumni list."
+            ),
+        },
+        {
+            "heading": "Artificial Intelligence course in Gurgaon for freshers",
+            "content": (
+                "Freshers and career-switchers take the same live online batches. The 15-minute call maps background to Analytics, "
+                "Data Science, GenAI, Java, DevOps, or Frontend — or says wait. There is no separate “fresher dump.”"
+            ),
+        },
+        {
+            "heading": "Generative AI course in Gurgaon",
+            "content": (
+                "Two GenAI tracks: Gen AI for Developers (₹40,000, 3 months — APIs, RAG, agents, FastAPI) and "
+                "Generative AI Specialization (₹64,999, 5 months — architectures, fine-tuning, multimodal). "
+                "Neither is a recorded ChatGPT tutorial."
+            ),
+        },
+        {
+            "heading": "AI course in Gurgaon offline vs Sector 14",
+            "content": (
+                "Classes are live online. Walk-in counselling is Sector 68 (Sohna Road / Badshahpur), Mon–Sat 10am–7pm. "
+                "We are not an Old DLF Sector 14 classroom and we are not DataMites. If a map pin says Sector 14, that is another institute."
             ),
         },
         {
             "heading": "How to visit",
             "content": (
                 f"Address: {NAP_LINE}. Phone {PHONE_DISPLAY}. WhatsApp {CONTACT_NAME}. "
-                "Ask for AI Career Academy at 68 Avenue. Bring 20 minutes for a career call — background plus the role you want — then we map a sequence or say none fits yet."
-            ),
-        },
-        {
-            "heading": "Next step",
-            "content": (
-                "Open a program below, register your interest, or walk in. "
-                "Google Maps: search “AI Career Academy Sector 68 Gurugram” after the Business Profile is live — until then the pin on this page is the desk."
+                "Bring 20 minutes: background plus the role you want."
             ),
         },
     ],
     "faqs": [
         {
-            "question": "Is AI Career Academy an AI institute in Gurgaon?",
+            "question": "Which is the best AI institute in Gurgaon?",
             "answer": (
-                f"Yes. The studio desk is at {NAP_LINE}. "
-                "Counselling is on-site. Classes are live online so you are not tied to a daily classroom."
+                f"Compare published fees, whether class is actually live, and whether placement is a method or a percentage. "
+                f"{BRAND} is at {NAP_LINE}: live online cohorts, fees on the page, placement support without a fabricated rate."
             ),
         },
         {
-            "question": "Do I have to attend class in Sector 68?",
-            "answer": "No. Cohorts are live online. Visit the Gurugram desk for counselling, doubts about fees, or paperwork.",
+            "question": "What are AI course fees in Gurgaon at AI Career Academy?",
+            "answer": "₹35,000–₹64,999 depending on program. LLMOps ₹35,000; Analytics, Gen AI for Developers, Java, Frontend ₹40,000; Data Science ₹55,000; MLOps and DevOps ₹60,000; Gen AI Specialization ₹64,999.",
         },
         {
-            "question": "What AI courses do you offer in Gurugram?",
-            "answer": "All nine catalog programs: Data Analytics with AI, Data Science Gen AI, Gen AI for Developers, Gen AI Specialization, MLOps, LLMOps, Java, DevOps, and Frontend. Fees and modules are on each program page.",
+            "question": "Do you offer placement after an AI course in Gurgaon?",
+            "answer": "Placement support, a certificate, and internships are included. We do not guarantee a Cyber City job or publish a placement percentage.",
         },
         {
-            "question": "Are you the same as School of CORE AI or other Sohna Road institutes?",
-            "answer": "No. AI Career Academy is a separate studio at 68 Avenue, Sector 68. Compare published fees and curriculum on this site — do not assume another institute’s reviews apply here.",
+            "question": "Is there an AI course in Gurgaon for freshers?",
+            "answer": "Yes. Freshers join the same live online catalog. The career call decides which sequence fits — Analytics, Data Science, GenAI, or a software track.",
         },
         {
-            "question": "Do you guarantee a job in Gurgaon / Cyber City?",
-            "answer": "No. We offer placement support, a certificate, and internship opportunities. We do not invent a placement rate or a hiring-partner wall.",
+            "question": "Is the AI course in Gurgaon offline?",
+            "answer": "Counselling is on-site at Sector 68. Batches are live online. There is no daily classroom in Sector 14 or Cyber Hub.",
         },
         {
-            "question": "What are the desk hours?",
-            "answer": "Monday to Saturday, 10am–7pm IST. Closed Sunday. Call or WhatsApp before you come if you want a booked slot.",
+            "question": "Do you run AI courses in Gurgaon Sector 14?",
+            "answer": "No. The desk is 68 Avenue, Sector 68, Badshahpur — not Old DLF Sector 14. Searchers comparing Sector 14 centres should check the pin before travelling.",
+        },
+        {
+            "question": "Do you teach a Generative AI course in Gurgaon?",
+            "answer": "Yes. Gen AI for Developers (₹40,000, 3 months) and Generative AI Specialization (₹64,999, 5 months). Links are on this page.",
+        },
+        {
+            "question": "Are you DataMites Gurgaon?",
+            "answer": "No. AI Career Academy is a separate studio at Sector 68. Do not treat another brand’s reviews or fees as ours.",
         },
     ],
-    "page_links": [
-        {"href": "courses/data-analytics-course-with-placement/index.html", "title": "Data Analytics with AI"},
-        {"href": "courses/data-science-course/index.html", "title": "Data Science Gen AI"},
-        {"href": "courses/ai-developers-course/index.html", "title": "Gen AI for Developers"},
-        {"href": "courses/generative-ai-course/index.html", "title": "Gen AI Specialization"},
-        {"href": "courses/mlops-course/index.html", "title": "MLOps"},
-        {"href": "courses/llmops-course/index.html", "title": "LLMOps"},
-        {"href": "courses/java-course/index.html", "title": "Java"},
-        {"href": "courses/devops-course/index.html", "title": "DevOps"},
-        {"href": "courses/frontend-course/index.html", "title": "Frontend"},
+    "lists": [FEE_LINES],
+    "page_links": PROGRAM_HREFS
+    + [
+        {"href": "ai-courses-in-delhi/index.html", "title": "AI courses in Delhi"},
+        {"href": "ai-courses-in-noida/index.html", "title": "AI courses in Noida"},
+        {"href": "ai-courses-in-ghaziabad/index.html", "title": "AI courses in Ghaziabad"},
         {"href": "ai-courses-in-delhi-ncr/index.html", "title": "AI courses in Delhi NCR"},
         {"href": "contact-us/index.html", "title": "Map, phone, walk-in hours"},
         {"href": "register/index.html", "title": "Book a career call"},
     ],
+}
+
+
+def ncr_city_hub(city: str, areas: str, commute: str) -> dict:
+    """Indexed landing page for a city that shares the Gurugram desk + live online catalog."""
+    return {
+        "sections": [
+            {
+                "heading": f"Best AI institute in {city} — same catalog, honest pin",
+                "content": (
+                    f"People searching “best AI institute in {city}” want fees, placement, and whether they must sit in a classroom. "
+                    f"{BRAND} teaches live online. The walk-in desk is {NAP_LINE}. {areas} "
+                    f"{commute}"
+                ),
+            },
+            {
+                "heading": f"AI course in {city} fees",
+                "content": (
+                    "Same published fees as Gurgaon — not a city surcharge. "
+                    "Analytics ₹40,000 · Data Science ₹55,000 · Gen AI for Developers ₹40,000 · "
+                    "Generative AI Specialization ₹64,999 · MLOps ₹60,000 · LLMOps ₹35,000 · Java ₹40,000 · DevOps ₹60,000 · Frontend ₹40,000."
+                ),
+            },
+            {
+                "heading": f"Placement after an AI course in {city}",
+                "content": (
+                    "Placement support, certificate, internships — included. No invented “100% placement in NCR” line. "
+                    "NCR product, IT services, and captives hire these roles; that is labour-market context, not our alumni wall."
+                ),
+            },
+            {
+                "heading": f"Artificial Intelligence course in {city} for freshers",
+                "content": (
+                    f"Freshers in {city} join the same live batches. A 15-minute call with {CONTACT_NAME} maps a sequence or says none fits yet."
+                ),
+            },
+            {
+                "heading": f"Generative AI course in {city}",
+                "content": (
+                    "Gen AI for Developers (₹40,000, 3 months) and Generative AI Specialization (₹64,999, 5 months). "
+                    "Live instructor-led, not a recorded prompt course."
+                ),
+            },
+            {
+                "heading": f"AI course in {city} offline",
+                "content": (
+                    f"There is no {city} classroom campus. Offline means you can visit the Gurugram Sector 68 desk for counselling. "
+                    "Class itself is live online from {city}."
+                ),
+            },
+        ],
+        "faqs": [
+            {
+                "question": f"Which is the best AI institute in {city}?",
+                "answer": (
+                    f"Use fees on the page, live vs recorded, and placement method. {BRAND} is live online with a Gurugram desk at {NAP_LINE}. "
+                    f"{city} learners join the same cohort."
+                ),
+            },
+            {
+                "question": f"What are AI course fees in {city}?",
+                "answer": f"₹35,000–₹64,999. Exact number is on each program page. No different {city} price list.",
+            },
+            {
+                "question": f"Do you offer placement after an AI course in {city}?",
+                "answer": "Placement support, certificate, internships. No job guarantee and no fabricated percentage.",
+            },
+            {
+                "question": f"Is there an AI course in {city} for freshers?",
+                "answer": f"Yes. Freshers in {city} take the live online catalog after a career call.",
+            },
+            {
+                "question": f"Is the AI course in {city} offline?",
+                "answer": f"Class is live online. Visit Sector 68 Gurugram if you want an in-person counselling slot.",
+            },
+            {
+                "question": f"Do you teach a Generative AI course in {city}?",
+                "answer": "Yes — Gen AI for Developers and Generative AI Specialization. Same fees as the Gurgaon catalog.",
+            },
+        ],
+        "lists": [FEE_LINES],
+        "page_links": PROGRAM_HREFS
+        + [
+            {"href": "ai-courses-in-gurgaon/index.html", "title": "AI institute in Gurgaon (the desk)"},
+            {"href": "ai-courses-in-delhi-ncr/index.html", "title": "Delhi NCR overview"},
+            {"href": "contact-us/index.html", "title": "Map and walk-in hours"},
+            {"href": "register/index.html", "title": "Book a career call"},
+        ],
+    }
+
+
+CITY_PAGES = {
+    "delhi": ncr_city_hub(
+        "Delhi",
+        "South Delhi, Dwarka, Rohini, and East Delhi learners are in the same batch.",
+        "Do not expect a Connaught Place classroom; expect a screen plus a Gurugram desk if you want to visit.",
+    ),
+    "noida": ncr_city_hub(
+        "Noida",
+        "Sector 18, 62, 137, and Greater Noida learners join from home or office.",
+        "The Noida Expressway commute is for a counselling visit, not a daily lecture.",
+    ),
+    "ghaziabad": ncr_city_hub(
+        "Ghaziabad",
+        "Vaishali, Indirapuram, Kaushambi, and Raj Nagar Extension are in range for a weekend desk visit.",
+        "Weekday class is live online so you are not stuck on NH-9 for a 7pm lecture.",
+    ),
 }
 
 
@@ -552,12 +779,23 @@ def apply_overrides(page: dict, data: dict) -> dict:
         data["sections"] = GURGAON_PAGE["sections"]
         data["faqs"] = GURGAON_PAGE["faqs"]
         data["page_links"] = GURGAON_PAGE["page_links"]
+        data["lists"] = GURGAON_PAGE.get("lists") or []
         data["raw_html"] = ""
-        data["lists"] = []
+        data["images"] = []
+    if page["id"] in CITY_PAGES:
+        hub = CITY_PAGES[page["id"]]
+        data["sections"] = hub["sections"]
+        data["faqs"] = hub["faqs"]
+        data["page_links"] = hub["page_links"]
+        data["lists"] = hub.get("lists") or []
+        data["raw_html"] = ""
         data["images"] = []
     if page["id"] == "contact-us":
         data["page_links"] = [
             {"href": "ai-courses-in-gurgaon/index.html", "title": "AI institute in Gurgaon — full local page"},
+            {"href": "ai-courses-in-delhi/index.html", "title": "AI courses in Delhi"},
+            {"href": "ai-courses-in-noida/index.html", "title": "AI courses in Noida"},
+            {"href": "ai-courses-in-ghaziabad/index.html", "title": "AI courses in Ghaziabad"},
             {"href": "ai-courses-in-delhi-ncr/index.html", "title": "AI courses in Delhi NCR"},
             {"href": "register/index.html", "title": "Book a career call"},
         ]
@@ -864,19 +1102,22 @@ def json_ld(page: dict, data: dict, fees=None) -> list:
                 ],
             }
         )
-    if page.get("id") == "gurgaon":
+    if page.get("id") in ("gurgaon", "delhi", "noida", "ghaziabad"):
+        served = {
+            "gurgaon": [{"@type": "City", "name": "Gurugram"}, {"@type": "City", "name": "Gurgaon"}],
+            "delhi": [{"@type": "City", "name": "New Delhi"}, {"@type": "City", "name": "Delhi"}],
+            "noida": [{"@type": "City", "name": "Noida"}, {"@type": "City", "name": "Greater Noida"}],
+            "ghaziabad": [{"@type": "City", "name": "Ghaziabad"}],
+        }[page["id"]]
         graph.append(
             {
                 "@type": "WebPage",
                 "@id": canonical_url(page) + "#webpage",
-                "name": data.get("hero_title") or "AI institute in Gurgaon",
+                "name": data.get("hero_title") or page["id"],
                 "url": canonical_url(page),
                 "about": {"@id": PLACE_ID},
                 "primaryImageOfPage": f"{SITE_ORIGIN}/assets/img/og-gurugram.png",
-                "areaServed": [
-                    {"@type": "City", "name": "Gurugram"},
-                    {"@type": "City", "name": "Gurgaon"},
-                ],
+                "areaServed": served,
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", ".center-copy"],
@@ -886,7 +1127,7 @@ def json_ld(page: dict, data: dict, fees=None) -> list:
     faqs = data.get("faqs") or []
     if faqs and (
         page.get("type") in ("program", "comparison", "blog")
-        or page.get("id") in ("ncr", "gurgaon", "contact-us")
+        or page.get("id") in ("ncr", "gurgaon", "delhi", "noida", "ghaziabad", "contact-us")
     ):
         graph.append(
             {
@@ -906,9 +1147,8 @@ def json_ld(page: dict, data: dict, fees=None) -> list:
 
 
 def _local_redirect_rules() -> list[dict]:
-    dest = GURGAON_CANONICAL_PATH
     rules = []
-    for src in LOCAL_REDIRECTS:
+    for src, dest in LOCAL_REDIRECTS:
         rules.append({"source": src, "destination": dest, "permanent": True})
         if not src.endswith("/"):
             rules.append({"source": src + "/", "destination": dest, "permanent": True})
@@ -928,7 +1168,15 @@ def write_robots_and_sitemap(site: Path, pages: list[dict]) -> None:
             continue
         loc = canonical_url(page)
         pid = page.get("id", "")
-        priority = "1.0" if pid in ("home", "gurgaon") else "0.8" if pid in ("ncr", "courses", "contact-us") else "0.6"
+        priority = (
+            "1.0"
+            if pid in ("home", "gurgaon")
+            else "0.9"
+            if pid in ("delhi", "noida", "ghaziabad", "ncr")
+            else "0.8"
+            if pid in ("courses", "contact-us")
+            else "0.6"
+        )
         urls.append(
             "  <url>\n"
             f"    <loc>{loc}</loc>\n"
@@ -945,10 +1193,10 @@ def write_robots_and_sitemap(site: Path, pages: list[dict]) -> None:
     (site / "sitemap.xml").write_text(xml, encoding="utf-8")
     host = SITE_ORIGIN.replace("https://", "").replace("http://", "")
     netlify_lines = [f"https://www.{host}/* https://{host}/:splat 301"]
-    for src in LOCAL_REDIRECTS:
-        netlify_lines.append(f"{src} {GURGAON_CANONICAL_PATH} 301")
+    for src, dest in LOCAL_REDIRECTS:
+        netlify_lines.append(f"{src} {dest} 301")
         if not src.endswith("/"):
-            netlify_lines.append(f"{src}/ {GURGAON_CANONICAL_PATH} 301")
+            netlify_lines.append(f"{src}/ {dest} 301")
     (site / "_redirects").write_text("\n".join(netlify_lines) + "\n", encoding="utf-8")
     (site / "_headers").write_text(
         "/*\n"
@@ -965,7 +1213,11 @@ def write_robots_and_sitemap(site: Path, pages: list[dict]) -> None:
             {
                 "source": "/google114699eecbb71cd9.html/",
                 "destination": "/google114699eecbb71cd9.html",
-            }
+            },
+            {
+                "source": "/llms.txt/",
+                "destination": "/llms.txt",
+            },
         ],
         "headers": [
             {
@@ -979,6 +1231,30 @@ def write_robots_and_sitemap(site: Path, pages: list[dict]) -> None:
         ],
     }
     (site / "vercel.json").write_text(json.dumps(vercel, indent=2) + "\n", encoding="utf-8")
+    (site / "llms.txt").write_text(
+        "\n".join(
+            [
+                f"# {BRAND}",
+                "",
+                f"> Live online AI, data, and engineering programs. Desk at {NAP_LINE}. Counselling Mon–Sat 10:00–19:00 IST. Classes are live online.",
+                "",
+                f"- [Home]({SITE_ORIGIN}/)",
+                f"- [AI institute in Gurgaon]({SITE_ORIGIN}{GURGAON_CANONICAL_PATH})",
+                f"- [AI courses in Delhi]({SITE_ORIGIN}{DELHI_PATH})",
+                f"- [AI courses in Noida]({SITE_ORIGIN}{NOIDA_PATH})",
+                f"- [AI courses in Ghaziabad]({SITE_ORIGIN}{GHAZIABAD_PATH})",
+                f"- [AI courses in Delhi NCR]({SITE_ORIGIN}/ai-courses-in-delhi-ncr/)",
+                f"- [Programs]({SITE_ORIGIN}/courses/)",
+                f"- [Book a career call]({SITE_ORIGIN}/register/)",
+                f"- [Contact]({SITE_ORIGIN}/contact-us/)",
+                f"- [WhatsApp {CONTACT_NAME}]({WA_ME})",
+                "",
+                f"Admissions: {CONTACT_NAME}, {PHONE_DISPLAY}, {EMAIL}.",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
 
 
 def write_404(site: Path, html: str) -> None:

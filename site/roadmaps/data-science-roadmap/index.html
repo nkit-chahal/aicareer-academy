@@ -32,7 +32,9 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Playfair+Display:ital,wght@1,600&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" /></noscript>
   <link rel="stylesheet" href="../../assets/css/base.css" />
   <link rel="stylesheet" href="../../assets/css/studio.css" />
   <link rel="stylesheet" href="../../assets/css/content.css" />
@@ -66,6 +68,9 @@
     <nav aria-label="Mobile">
       <a href="../../index.html">Home</a>
       <a href="../../ai-courses-in-gurgaon/index.html">Gurgaon</a>
+      <a href="../../ai-courses-in-delhi/index.html">Delhi</a>
+      <a href="../../ai-courses-in-noida/index.html">Noida</a>
+      <a href="../../ai-courses-in-ghaziabad/index.html">Ghaziabad</a>
       <a href="../../ai-courses-in-delhi-ncr/index.html">Delhi NCR</a>
       <a href="../../about-us/index.html">About us</a>
       <a href="../../courses/index.html">Courses offered</a>
@@ -112,39 +117,39 @@
         
           
           
-          <button type="button" data-offer="1" class="is-on" role="tab">Python Essentials</button>
+          <button type="button" id="offer-tab-1" data-offer="1" class="is-on" role="tab" aria-selected="true" aria-controls="offer-1">Python Essentials</button>
           
           
-          <button type="button" data-offer="2" class="" role="tab">Developer tooling</button>
+          <button type="button" id="offer-tab-2" data-offer="2" class="" role="tab" aria-selected="false" aria-controls="offer-2">Developer tooling</button>
           
           
-          <button type="button" data-offer="3" class="" role="tab">Python data libraries</button>
-          
-        
-      
-        
-          
-          
-          <button type="button" data-offer="4" class="" role="tab">Math and statistics foundations</button>
-          
-          
-          <button type="button" data-offer="5" class="" role="tab">SQL and databases</button>
-          
-          
-          <button type="button" data-offer="6" class="" role="tab">Cleaning and EDA</button>
+          <button type="button" id="offer-tab-3" data-offer="3" class="" role="tab" aria-selected="false" aria-controls="offer-3">Python data libraries</button>
           
         
       
         
           
           
-          <button type="button" data-offer="7" class="" role="tab">Machine learning foundations</button>
+          <button type="button" id="offer-tab-4" data-offer="4" class="" role="tab" aria-selected="false" aria-controls="offer-4">Math and statistics foundations</button>
           
           
-          <button type="button" data-offer="8" class="" role="tab">Evaluation and improvement</button>
+          <button type="button" id="offer-tab-5" data-offer="5" class="" role="tab" aria-selected="false" aria-controls="offer-5">SQL and databases</button>
           
           
-          <button type="button" data-offer="9" class="" role="tab">Deployment thinking</button>
+          <button type="button" id="offer-tab-6" data-offer="6" class="" role="tab" aria-selected="false" aria-controls="offer-6">Cleaning and EDA</button>
+          
+        
+      
+        
+          
+          
+          <button type="button" id="offer-tab-7" data-offer="7" class="" role="tab" aria-selected="false" aria-controls="offer-7">Machine learning foundations</button>
+          
+          
+          <button type="button" id="offer-tab-8" data-offer="8" class="" role="tab" aria-selected="false" aria-controls="offer-8">Evaluation and improvement</button>
+          
+          
+          <button type="button" id="offer-tab-9" data-offer="9" class="" role="tab" aria-selected="false" aria-controls="offer-9">Deployment thinking</button>
           
         
       
@@ -155,7 +160,7 @@
         
           
           
-          <div class="offer-panel" id="offer-1" >
+          <div class="offer-panel" id="offer-1" role="tabpanel" aria-labelledby="offer-tab-1" >
             <h3>Python Essentials</h3>
             <p class="offer-track">Python and programming foundations</p>
             
@@ -174,7 +179,7 @@
           </div>
           
           
-          <div class="offer-panel" id="offer-2" hidden>
+          <div class="offer-panel" id="offer-2" role="tabpanel" aria-labelledby="offer-tab-2" hidden>
             <h3>Developer tooling</h3>
             <p class="offer-track">Python and programming foundations</p>
             
@@ -193,7 +198,7 @@
           </div>
           
           
-          <div class="offer-panel" id="offer-3" hidden>
+          <div class="offer-panel" id="offer-3" role="tabpanel" aria-labelledby="offer-tab-3" hidden>
             <h3>Python data libraries</h3>
             <p class="offer-track">Python and programming foundations</p>
             
@@ -216,7 +221,7 @@
         
           
           
-          <div class="offer-panel" id="offer-4" hidden>
+          <div class="offer-panel" id="offer-4" role="tabpanel" aria-labelledby="offer-tab-4" hidden>
             <h3>Math and statistics foundations</h3>
             <p class="offer-track">Math, SQL, and data</p>
             
@@ -235,7 +240,7 @@
           </div>
           
           
-          <div class="offer-panel" id="offer-5" hidden>
+          <div class="offer-panel" id="offer-5" role="tabpanel" aria-labelledby="offer-tab-5" hidden>
             <h3>SQL and databases</h3>
             <p class="offer-track">Math, SQL, and data</p>
             
@@ -254,7 +259,7 @@
           </div>
           
           
-          <div class="offer-panel" id="offer-6" hidden>
+          <div class="offer-panel" id="offer-6" role="tabpanel" aria-labelledby="offer-tab-6" hidden>
             <h3>Cleaning and EDA</h3>
             <p class="offer-track">Math, SQL, and data</p>
             
@@ -277,7 +282,7 @@
         
           
           
-          <div class="offer-panel" id="offer-7" hidden>
+          <div class="offer-panel" id="offer-7" role="tabpanel" aria-labelledby="offer-tab-7" hidden>
             <h3>Machine learning foundations</h3>
             <p class="offer-track">Models and projects</p>
             
@@ -296,7 +301,7 @@
           </div>
           
           
-          <div class="offer-panel" id="offer-8" hidden>
+          <div class="offer-panel" id="offer-8" role="tabpanel" aria-labelledby="offer-tab-8" hidden>
             <h3>Evaluation and improvement</h3>
             <p class="offer-track">Models and projects</p>
             
@@ -315,7 +320,7 @@
           </div>
           
           
-          <div class="offer-panel" id="offer-9" hidden>
+          <div class="offer-panel" id="offer-9" role="tabpanel" aria-labelledby="offer-tab-9" hidden>
             <h3>Deployment thinking</h3>
             <p class="offer-track">Models and projects</p>
             
@@ -562,6 +567,9 @@ Explore AIOps Path</p>
       <div>
         <h4>Quick links</h4>
         <a href="../../ai-courses-in-gurgaon/index.html">AI institute in Gurgaon</a>
+        <a href="../../ai-courses-in-delhi/index.html">Delhi</a>
+        <a href="../../ai-courses-in-noida/index.html">Noida</a>
+        <a href="../../ai-courses-in-ghaziabad/index.html">Ghaziabad</a>
         <a href="../../ai-courses-in-delhi-ncr/index.html">Delhi NCR</a>
         <a href="../../about-us/index.html">About us</a>
         <a href="../../courses/index.html">Courses offered</a>

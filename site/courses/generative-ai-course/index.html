@@ -32,7 +32,9 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Playfair+Display:ital,wght@1,600&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" /></noscript>
   <link rel="stylesheet" href="../../assets/css/base.css" />
   <link rel="stylesheet" href="../../assets/css/studio.css" />
   <link rel="stylesheet" href="../../assets/css/program.css" /><link rel="stylesheet" href="../../assets/css/content.css" />
@@ -66,6 +68,9 @@
     <nav aria-label="Mobile">
       <a href="../../index.html">Home</a>
       <a href="../../ai-courses-in-gurgaon/index.html">Gurgaon</a>
+      <a href="../../ai-courses-in-delhi/index.html">Delhi</a>
+      <a href="../../ai-courses-in-noida/index.html">Noida</a>
+      <a href="../../ai-courses-in-ghaziabad/index.html">Ghaziabad</a>
       <a href="../../ai-courses-in-delhi-ncr/index.html">Delhi NCR</a>
       <a href="../../about-us/index.html">About us</a>
       <a href="../../courses/index.html">Courses offered</a>
@@ -205,27 +210,27 @@
         
           
           
-          <button type="button" data-offer="1" class="is-on" role="tab">Module 1: LLM architectures</button>
+          <button type="button" id="offer-tab-1" data-offer="1" class="is-on" role="tab" aria-selected="true" aria-controls="offer-1">Module 1: LLM architectures</button>
           
           
-          <button type="button" data-offer="2" class="" role="tab">Module 2: Multimodal systems</button>
-          
-        
-      
-        
-          
-          
-          <button type="button" data-offer="3" class="" role="tab">Module 3: RAG design</button>
-          
-          
-          <button type="button" data-offer="4" class="" role="tab">Module 4: Fine-tuning</button>
+          <button type="button" id="offer-tab-2" data-offer="2" class="" role="tab" aria-selected="false" aria-controls="offer-2">Module 2: Multimodal systems</button>
           
         
       
         
           
           
-          <button type="button" data-offer="5" class="" role="tab">Module 5: Agentic deployment</button>
+          <button type="button" id="offer-tab-3" data-offer="3" class="" role="tab" aria-selected="false" aria-controls="offer-3">Module 3: RAG design</button>
+          
+          
+          <button type="button" id="offer-tab-4" data-offer="4" class="" role="tab" aria-selected="false" aria-controls="offer-4">Module 4: Fine-tuning</button>
+          
+        
+      
+        
+          
+          
+          <button type="button" id="offer-tab-5" data-offer="5" class="" role="tab" aria-selected="false" aria-controls="offer-5">Module 5: Agentic deployment</button>
           
         
       
@@ -236,7 +241,7 @@
         
           
           
-          <div class="offer-panel" id="offer-1" >
+          <div class="offer-panel" id="offer-1" role="tabpanel" aria-labelledby="offer-tab-1" >
             <h3>Module 1: LLM architectures</h3>
             <p class="offer-track">Model foundations</p>
             <p class="offer-lead">Specialization starts under the API. You need enough transformer literacy to choose context, tokenize honestly, and know why a model refuses a long doc.</p>
@@ -291,7 +296,7 @@
           </div>
           
           
-          <div class="offer-panel" id="offer-2" hidden>
+          <div class="offer-panel" id="offer-2" role="tabpanel" aria-labelledby="offer-tab-2" hidden>
             <h3>Module 2: Multimodal systems</h3>
             <p class="offer-track">Model foundations</p>
             <p class="offer-lead">Text-only is not the whole job. You will wire vision-language pieces into a workflow you can describe, not a research bake-off.</p>
@@ -350,7 +355,7 @@
         
           
           
-          <div class="offer-panel" id="offer-3" hidden>
+          <div class="offer-panel" id="offer-3" role="tabpanel" aria-labelledby="offer-tab-3" hidden>
             <h3>Module 3: RAG design</h3>
             <p class="offer-track">Applied GenAI</p>
             <p class="offer-lead">RAG here is design patterns and evaluation, not a single vendor tutorial. You will choose chunking, retrieval, and grounding like an engineer.</p>
@@ -405,7 +410,7 @@
           </div>
           
           
-          <div class="offer-panel" id="offer-4" hidden>
+          <div class="offer-panel" id="offer-4" role="tabpanel" aria-labelledby="offer-tab-4" hidden>
             <h3>Module 4: Fine-tuning</h3>
             <p class="offer-track">Applied GenAI</p>
             <p class="offer-lead">PEFT when prompting is not enough. You will run a LoRA/QLoRA-class job, measure it, and know when to throw it away.</p>
@@ -464,7 +469,7 @@
         
           
           
-          <div class="offer-panel" id="offer-5" hidden>
+          <div class="offer-panel" id="offer-5" role="tabpanel" aria-labelledby="offer-tab-5" hidden>
             <h3>Module 5: Agentic deployment</h3>
             <p class="offer-track">Deployment</p>
             <p class="offer-lead">Serving, cost, and agents that are allowed in production. Deeper than the three-month developer slab; still not LLMOps as a full ops career.</p>
@@ -599,6 +604,9 @@
       <div>
         <h4>Quick links</h4>
         <a href="../../ai-courses-in-gurgaon/index.html">AI institute in Gurgaon</a>
+        <a href="../../ai-courses-in-delhi/index.html">Delhi</a>
+        <a href="../../ai-courses-in-noida/index.html">Noida</a>
+        <a href="../../ai-courses-in-ghaziabad/index.html">Ghaziabad</a>
         <a href="../../ai-courses-in-delhi-ncr/index.html">Delhi NCR</a>
         <a href="../../about-us/index.html">About us</a>
         <a href="../../courses/index.html">Courses offered</a>

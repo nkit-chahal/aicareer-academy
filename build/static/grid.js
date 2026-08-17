@@ -11,21 +11,25 @@
   var rows = 0;
   var cells = [];
   var t0 = performance.now();
+  var cssW = 0;
+  var cssH = 0;
+  var resizeTimer = 0;
 
   function seedKey(c, r) {
     return (c * 92821 + r * 1327) % 97;
   }
 
   function rebuild() {
-    var rect = field.getBoundingClientRect();
+    cssW = field.offsetWidth;
+    cssH = field.offsetHeight;
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = Math.floor(rect.width * dpr);
-    canvas.height = Math.floor(rect.height * dpr);
-    canvas.style.width = rect.width + "px";
-    canvas.style.height = rect.height + "px";
+    canvas.width = Math.floor(cssW * dpr);
+    canvas.height = Math.floor(cssH * dpr);
+    canvas.style.width = cssW + "px";
+    canvas.style.height = cssH + "px";
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    cols = Math.ceil(rect.width / CELL) + 1;
-    rows = Math.ceil(rect.height / CELL) + 1;
+    cols = Math.ceil(cssW / CELL) + 1;
+    rows = Math.ceil(cssH / CELL) + 1;
     cells = [];
     var c, r, k;
     for (r = 0; r < rows; r++) {
@@ -61,8 +65,8 @@
   }
 
   function tick(now) {
-    var w = canvas.clientWidth;
-    var h = canvas.clientHeight;
+    var w = cssW;
+    var h = cssH;
     var i, cell, bob, x, y;
     ctx.clearRect(0, 0, w, h);
     ctx.strokeStyle = "#ececec";
@@ -90,11 +94,13 @@
     requestAnimationFrame(tick);
   }
 
-  field.addEventListener("pointermove", function (e) {
-    var rect = canvas.getBoundingClientRect();
-    paintAt(e.clientX - rect.left, e.clientY - rect.top);
+  canvas.addEventListener("pointermove", function (e) {
+    paintAt(e.offsetX, e.offsetY);
+  }, { passive: true });
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(rebuild, 120);
   });
-  window.addEventListener("resize", rebuild);
   rebuild();
   requestAnimationFrame(tick);
 })();

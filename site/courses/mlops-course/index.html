@@ -32,7 +32,9 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Playfair+Display:ital,wght@1,600&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&family=Playfair+Display:ital,wght@1,600&display=swap" /></noscript>
   <link rel="stylesheet" href="../../assets/css/base.css" />
   <link rel="stylesheet" href="../../assets/css/studio.css" />
   <link rel="stylesheet" href="../../assets/css/program.css" /><link rel="stylesheet" href="../../assets/css/content.css" />
@@ -66,6 +68,9 @@
     <nav aria-label="Mobile">
       <a href="../../index.html">Home</a>
       <a href="../../ai-courses-in-gurgaon/index.html">Gurgaon</a>
+      <a href="../../ai-courses-in-delhi/index.html">Delhi</a>
+      <a href="../../ai-courses-in-noida/index.html">Noida</a>
+      <a href="../../ai-courses-in-ghaziabad/index.html">Ghaziabad</a>
       <a href="../../ai-courses-in-delhi-ncr/index.html">Delhi NCR</a>
       <a href="../../about-us/index.html">About us</a>
       <a href="../../courses/index.html">Courses offered</a>
@@ -212,27 +217,27 @@
         
           
           
-          <button type="button" data-offer="1" class="is-on" role="tab">Module 1: Containers</button>
+          <button type="button" id="offer-tab-1" data-offer="1" class="is-on" role="tab" aria-selected="true" aria-controls="offer-1">Module 1: Containers</button>
           
           
-          <button type="button" data-offer="2" class="" role="tab">Module 2: Versioning</button>
-          
-        
-      
-        
-          
-          
-          <button type="button" data-offer="3" class="" role="tab">Module 3: CI/CD for ML</button>
-          
-          
-          <button type="button" data-offer="4" class="" role="tab">Module 4: Kubernetes for ML services</button>
+          <button type="button" id="offer-tab-2" data-offer="2" class="" role="tab" aria-selected="false" aria-controls="offer-2">Module 2: Versioning</button>
           
         
       
         
           
           
-          <button type="button" data-offer="5" class="" role="tab">Module 5: Monitoring</button>
+          <button type="button" id="offer-tab-3" data-offer="3" class="" role="tab" aria-selected="false" aria-controls="offer-3">Module 3: CI/CD for ML</button>
+          
+          
+          <button type="button" id="offer-tab-4" data-offer="4" class="" role="tab" aria-selected="false" aria-controls="offer-4">Module 4: Kubernetes for ML services</button>
+          
+        
+      
+        
+          
+          
+          <button type="button" id="offer-tab-5" data-offer="5" class="" role="tab" aria-selected="false" aria-controls="offer-5">Module 5: Monitoring</button>
           
         
       
@@ -243,7 +248,7 @@
         
           
           
-          <div class="offer-panel" id="offer-1" >
+          <div class="offer-panel" id="offer-1" role="tabpanel" aria-labelledby="offer-tab-1" >
             <h3>Module 1: Containers</h3>
             <p class="offer-track">Packaging ML</p>
             <p class="offer-lead">If it is not in an image, it is not a release. You will containerize training and serving so ‘works on my laptop’ stops being a strategy.</p>
@@ -298,7 +303,7 @@
           </div>
           
           
-          <div class="offer-panel" id="offer-2" hidden>
+          <div class="offer-panel" id="offer-2" role="tabpanel" aria-labelledby="offer-tab-2" hidden>
             <h3>Module 2: Versioning</h3>
             <p class="offer-track">Packaging ML</p>
             <p class="offer-lead">Models without data versions are folklore. You will version data and models so a rollback is a checkout, not a memory.</p>
@@ -357,7 +362,7 @@
         
           
           
-          <div class="offer-panel" id="offer-3" hidden>
+          <div class="offer-panel" id="offer-3" role="tabpanel" aria-labelledby="offer-tab-3" hidden>
             <h3>Module 3: CI/CD for ML</h3>
             <p class="offer-track">Release discipline</p>
             <p class="offer-lead">Training is a build. You will gate on metrics, fail the pipeline, and refuse to ‘just ship the pickle’.</p>
@@ -412,7 +417,7 @@
           </div>
           
           
-          <div class="offer-panel" id="offer-4" hidden>
+          <div class="offer-panel" id="offer-4" role="tabpanel" aria-labelledby="offer-tab-4" hidden>
             <h3>Module 4: Kubernetes for ML services</h3>
             <p class="offer-track">Release discipline</p>
             <p class="offer-lead">Serving is a workload. You will put a model behind an API on Kubernetes with the boring pieces: probes, resources, and more than one replica.</p>
@@ -469,7 +474,7 @@
         
           
           
-          <div class="offer-panel" id="offer-5" hidden>
+          <div class="offer-panel" id="offer-5" role="tabpanel" aria-labelledby="offer-tab-5" hidden>
             <h3>Module 5: Monitoring</h3>
             <p class="offer-track">Operate</p>
             <p class="offer-lead">Ops dashboards here are Prometheus/Grafana-style. Power BI is not on this syllabus. You will watch data drift, latency, and the metric that pays the bills.</p>
@@ -604,6 +609,9 @@
       <div>
         <h4>Quick links</h4>
         <a href="../../ai-courses-in-gurgaon/index.html">AI institute in Gurgaon</a>
+        <a href="../../ai-courses-in-delhi/index.html">Delhi</a>
+        <a href="../../ai-courses-in-noida/index.html">Noida</a>
+        <a href="../../ai-courses-in-ghaziabad/index.html">Ghaziabad</a>
         <a href="../../ai-courses-in-delhi-ncr/index.html">Delhi NCR</a>
         <a href="../../about-us/index.html">About us</a>
         <a href="../../courses/index.html">Courses offered</a>

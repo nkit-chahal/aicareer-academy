@@ -237,6 +237,44 @@ def prepare_sections(data: dict, salaries) -> list:
     return prepared
 
 
+def compress_offer_images(src_img: Path, img_dir: Path) -> None:
+    """Resize offer PNGs to display size and emit WebP (cuts ~8MB homepage payload)."""
+    try:
+        from PIL import Image
+    except ImportError:
+        print("  Skip WebP (Pillow not installed)")
+        return
+    names = (
+        "offer-live.png",
+        "offer-whatsapp.png",
+        "offer-curriculum.png",
+        "offer-projects.png",
+        "offer-career.png",
+    )
+    img_dir.mkdir(parents=True, exist_ok=True)
+    for name in names:
+        src = src_img / name
+        if not src.exists():
+            src = img_dir / name
+        if not src.exists():
+            continue
+        dest = img_dir / (src.stem + ".webp")
+        im = Image.open(src)
+        if im.mode in ("RGBA", "P"):
+            rgba = im.convert("RGBA")
+            bg = Image.new("RGB", rgba.size, (247, 241, 228))
+            bg.paste(rgba, mask=rgba.split()[-1])
+            im = bg
+        else:
+            im = im.convert("RGB")
+        im.thumbnail((800, 600), Image.Resampling.LANCZOS)
+        im.save(dest, "WEBP", quality=78, method=6)
+        png_out = img_dir / name
+        if png_out.exists() and png_out.stat().st_size > 200_000:
+            png_out.unlink()
+        print(f"  WebP: {dest.name} ({dest.stat().st_size // 1024} KiB)")
+
+
 def setup_assets():
     assets = SITE / "assets"
     css_dir = assets / "css"
@@ -325,6 +363,7 @@ def setup_assets():
                 shutil.copy(src, assets / "og.png")
                 shutil.copy(src, BUILD / "og.png")
     write_employer_stamps(img_dir / "stamps")
+    compress_offer_images(src_img, img_dir)
     for verify in src_img.glob("google*.html"):
         shutil.copy(verify, SITE / verify.name)
 
@@ -373,7 +412,7 @@ def generate():
         description = meta_description(data, page)
         canon = canonical_url(page)
         og_image = f"{SITE_ORIGIN}/assets/og.png"
-        if page.get("id") in ("ncr", "gurgaon"):
+        if page.get("id") in ("ncr", "gurgaon", "delhi", "noida", "ghaziabad"):
             og_image = f"{SITE_ORIGIN}/assets/img/og-gurugram.png"
         ctx = {
             "page_title": page_title,
@@ -1015,7 +1054,6 @@ NAV_JS = """
 HOME_JS = """
 (function () {
   var stage = document.querySelector('.chart-stage');
-  var listbox = document.querySelector('.lanes');
   var towers = Array.prototype.slice.call(document.querySelectorAll('.lane'));
   var readoutTitle = document.getElementById('readoutTitle');
   var readoutBody = document.getElementById('readoutBody');
@@ -1047,14 +1085,13 @@ HOME_JS = """
   function selectTower(btn, focus) {
     towers.forEach(function (t) {
       t.classList.toggle('is-on', t === btn);
-      t.setAttribute('aria-selected', t === btn ? 'true' : 'false');
+      t.setAttribute('aria-pressed', t === btn ? 'true' : 'false');
     });
     var fact = facts[btn.getAttribute('data-id')];
     if (fact && readoutTitle && readoutBody) {
       readoutTitle.textContent = fact.title;
       readoutBody.textContent = fact.body;
     }
-    if (listbox) listbox.setAttribute('aria-activedescendant', btn.id);
     if (focus) btn.focus();
   }
 
@@ -1184,10 +1221,10 @@ document.querySelectorAll('.filter-pill').forEach(function(pill) {{
   pill.addEventListener('click', function() {{
     document.querySelectorAll('.filter-pill').forEach(function(p) {{
       p.classList.remove('active');
-      p.setAttribute('aria-selected', 'false');
+      p.setAttribute('aria-pressed', 'false');
     }});
     pill.classList.add('active');
-    pill.setAttribute('aria-selected', 'true');
+    pill.setAttribute('aria-pressed', 'true');
     applyFilter(pill.dataset.filter);
   }});
 }});

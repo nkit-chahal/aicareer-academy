@@ -128,6 +128,7 @@ body.studio .ticker { display: none; }
   font-size: clamp(1.55rem, 4vw, 3rem);
   line-height: 1.25;
 }
+h1.mix { font-weight: 400; letter-spacing: 0; }
 .mix em { font-family: var(--st-serif); font-style: italic; font-weight: 600; }
 .mix.ringed {
   display: inline-block;
@@ -241,9 +242,9 @@ body.studio .ticker { display: none; }
   margin: 4px 0;
   border-radius: 10px;
 }
-.offer-five .c1 { background: #2f5aa8; }
+.offer-five .c1 { background: #0d47a1; }
 .offer-five .c2 { background: #f5c400; color: #111; }
-.offer-five .c3 { background: #2e7d32; }
+.offer-five .c3 { background: #1b5e20; }
 .offer-five .c4 { background: #e57373; color: #111; }
 .offer-five .c5 { background: #263238; }
 .mat-cta { display: flex; justify-content: center; margin-top: 28px; }
@@ -278,10 +279,10 @@ body.studio .ticker { display: none; }
   animation: bob 3.2s ease-in-out infinite;
 }
 .why-pills span:nth-child(odd) { animation-delay: .4s; }
-.p-red { background: #e23b2b; }
-.p-yel { background: #ef6c00; }
-.p-grn { background: #2e7d32; }
-.p-blu { background: #1565c0; }
+.p-red { background: #b71c1c; }
+.p-yel { background: #f5c400; color: #111; }
+.p-grn { background: #1b5e20; }
+.p-blu { background: #0d47a1; }
 
 .course-row {
   display: grid;
@@ -302,11 +303,11 @@ body.studio .ticker { display: none; }
 .course-card h3 { margin: 0 0 6px; }
 .course-card .sub { margin: 0 0 12px; font-weight: 700; opacity: .92; }
 .course-card ul { margin: 0 0 16px; padding-left: 1.1rem; flex: 1; }
-.course-card.red { background: #e23b2b; }
-.course-card.green { background: #2e7d32; }
+.course-card.red { background: #b71c1c; }
+.course-card.green { background: #1b5e20; }
 .course-card.yellow { background: #f5c400; color: #111; }
-.course-card.blue { background: #1565c0; }
-.course-card.orange { background: #ef6c00; }
+.course-card.blue { background: #0d47a1; }
+.course-card.orange { background: #e65100; color: #111; }
 .course-card.navy { background: #1a237e; }
 .course-card.teal { background: #00695c; }
 .course-card.purple { background: #6a1b9a; }
@@ -318,17 +319,32 @@ body.studio .ticker { display: none; }
   display: grid;
   grid-template-columns: repeat(4, minmax(0,1fr));
   gap: 10px;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
 }
-.sched div {
+.sched thead, .sched tbody, .sched tr { display: contents; }
+.sched th, .sched td {
   border: 2px solid #111; border-radius: 14px; box-shadow: var(--st-hard);
   padding: 12px 8px; text-align: center; font-weight: 800; background: #fff;
 }
-.sched .h.b { background: #1565c0; color: #fff; }
-.sched .h.y { background: #f5c400; }
-.sched .h.g { background: #2e7d32; color: #fff; }
-.sched .h.o { background: #e23b2b; color: #fff; }
-.sched .green-t { color: #2e7d32; }
-.sched .blue-t { color: #1565c0; }
+.sched .h.b { background: #0d47a1; color: #fff; }
+.sched .h.y { background: #f5c400; color: #111; }
+.sched .h.g { background: #1b5e20; color: #fff; }
+.sched .h.o { background: #b71c1c; color: #fff; }
+.sched .green-t { color: #1b5e20; }
+.sched .blue-t { color: #0d47a1; }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 .hire-heading {
   font-size: clamp(1.85rem, 4.2vw, 2.75rem);
