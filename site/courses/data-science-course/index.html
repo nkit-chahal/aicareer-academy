@@ -130,6 +130,8 @@
     
     <a href="#curriculum">Curriculum</a>
     
+    <a href="#projects">Projects</a>
+    
     <a href="#faq">FAQ</a>
     
   </div>
@@ -600,6 +602,179 @@
   </div>
 </section>
 
+
+<section class="capstone-section" id="projects">
+  <div class="container">
+    <div class="capstone-header">
+      <span class="capstone-eyebrow">Not toy projects</span>
+      <h2 class="capstone-title">Industry-Grade Capstone Projects</h2>
+      <p class="capstone-subtitle">Every project mirrors a real production problem from a real company vertical. You ship code that could go live — not a Titanic CSV with 90% accuracy.</p>
+    </div>
+
+    <div class="capstone-grid">
+
+      <!-- Project 1: RAG Chatbot -->
+      <div class="capstone-card">
+        <div class="capstone-card-accent capstone-card-accent--blue"></div>
+        <div class="capstone-card-body">
+          <span class="capstone-card-domain">Enterprise AI</span>
+          <h3 class="capstone-card-title">RAG Chatbot for Enterprise Knowledge Base</h3>
+          <p class="capstone-card-desc">Build a production-grade RAG chatbot that ingests company documents — PDFs, Confluence pages, Notion exports — chunks and embeds them into a vector store, retrieves relevant context, and generates accurate answers with source citations. Handle multi-turn conversations, hallucination guardrails, and a simple eval pipeline to measure answer quality.</p>
+          <div class="capstone-card-stack">
+            <span class="capstone-tag">LangChain</span>
+            <span class="capstone-tag">OpenAI API</span>
+            <span class="capstone-tag">ChromaDB</span>
+            <span class="capstone-tag">FastAPI</span>
+            <span class="capstone-tag">Streamlit</span>
+          </div>
+          <p class="capstone-card-outcome">Deployed chatbot with source citations, eval metrics, and a live Streamlit demo — portfolio ready.</p>
+        </div>
+      </div>
+
+      <!-- Project 2: Satellite Object Detection -->
+      <div class="capstone-card">
+        <div class="capstone-card-accent capstone-card-accent--green"></div>
+        <div class="capstone-card-body">
+          <span class="capstone-card-domain">GeoAI / Defence</span>
+          <h3 class="capstone-card-title">Satellite Imagery Object Detection</h3>
+          <p class="capstone-card-desc">Detect and classify objects — buildings, vehicles, ships, aircraft — from satellite imagery using deep learning. Fine-tune a pre-trained detection model on geospatial data, handle large tile images with a sliding window approach, and output geo-referenced bounding boxes that can be visualized on a map.</p>
+          <div class="capstone-card-stack">
+            <span class="capstone-tag">YOLOv8</span>
+            <span class="capstone-tag">PyTorch</span>
+            <span class="capstone-tag">Rasterio</span>
+            <span class="capstone-tag">GeoPandas</span>
+            <span class="capstone-tag">OpenCV</span>
+          </div>
+          <p class="capstone-card-outcome">Object detection pipeline on satellite tiles with map visualization — a rare, high-impact portfolio piece.</p>
+        </div>
+      </div>
+
+      <!-- Project 3: Personal Chatbot Assistant Agent -->
+      <div class="capstone-card">
+        <div class="capstone-card-accent capstone-card-accent--purple"></div>
+        <div class="capstone-card-body">
+          <span class="capstone-card-domain">AI Agents</span>
+          <h3 class="capstone-card-title">Personal AI Assistant Agent</h3>
+          <p class="capstone-card-desc">Build an autonomous AI assistant that manages your calendar, drafts emails, summarizes meeting notes, and executes multi-step tasks using tool calling. Wire up function calling with real APIs — Google Calendar, Gmail, Notion — and implement memory so the agent remembers context across sessions.</p>
+          <div class="capstone-card-stack">
+            <span class="capstone-tag">LLM Agents</span>
+            <span class="capstone-tag">Function Calling</span>
+            <span class="capstone-tag">LangGraph</span>
+            <span class="capstone-tag">OAuth2</span>
+            <span class="capstone-tag">Python</span>
+          </div>
+          <p class="capstone-card-outcome">Multi-tool AI agent with persistent memory — demonstrates agentic AI skills interviewers are hiring for.</p>
+        </div>
+      </div>
+
+      <!-- Project 4: Text-to-Image Generation -->
+      <div class="capstone-card">
+        <div class="capstone-card-accent capstone-card-accent--orange"></div>
+        <div class="capstone-card-body">
+          <span class="capstone-card-domain">Creative AI</span>
+          <h3 class="capstone-card-title">Text-to-Image Generation Platform</h3>
+          <p class="capstone-card-desc">Build an image generation app using Stable Diffusion and diffusion model APIs. Implement prompt engineering techniques, negative prompts, style transfer, and image-to-image workflows. Add a web UI where users type a prompt and get styled outputs — with safety filters and cost controls for API usage.</p>
+          <div class="capstone-card-stack">
+            <span class="capstone-tag">Stable Diffusion</span>
+            <span class="capstone-tag">Diffusers</span>
+            <span class="capstone-tag">DALL·E API</span>
+            <span class="capstone-tag">Gradio</span>
+            <span class="capstone-tag">PyTorch</span>
+          </div>
+          <p class="capstone-card-outcome">Working image generation app with prompt controls and style presets — visual, shareable, impressive.</p>
+        </div>
+      </div>
+
+      <!-- Project 5: AI Travel Agent -->
+      <div class="capstone-card">
+        <div class="capstone-card-accent capstone-card-accent--red"></div>
+        <div class="capstone-card-body">
+          <span class="capstone-card-domain">GenAI Project</span>
+          <h3 class="capstone-card-title">AI Travel Agent — Flights, Hotels & Itineraries</h3>
+          <p class="capstone-card-desc">Build an AI-powered travel planner that takes a natural language trip request — "5 days in Bali, budget ₹80k, adventure + relaxation" — and autonomously searches flights, compares hotels, and generates a day-by-day itinerary. Uses tool calling to hit real travel APIs and returns structured, bookable recommendations.</p>
+          <div class="capstone-card-stack">
+            <span class="capstone-tag">LLM Agents</span>
+            <span class="capstone-tag">Tool Calling</span>
+            <span class="capstone-tag">Travel APIs</span>
+            <span class="capstone-tag">FastAPI</span>
+            <span class="capstone-tag">Streamlit</span>
+          </div>
+          <p class="capstone-card-outcome">End-to-end AI agent that plans trips with real data — a demo that wows in any interview.</p>
+        </div>
+      </div>
+
+      <!-- Project 6: AI Resume Screener (added) -->
+      <div class="capstone-card">
+        <div class="capstone-card-accent capstone-card-accent--teal"></div>
+        <div class="capstone-card-body">
+          <span class="capstone-card-domain">HR Tech</span>
+          <h3 class="capstone-card-title">AI Resume Screening & Ranking System</h3>
+          <p class="capstone-card-desc">Build an intelligent resume screener that parses PDFs, extracts skills and experience using NLP, matches candidates against a job description using semantic similarity, and ranks them with explainable scores. Handle edge cases — career gaps, non-standard formats, multilingual CVs — and output a recruiter-ready shortlist.</p>
+          <div class="capstone-card-stack">
+            <span class="capstone-tag">Sentence Transformers</span>
+            <span class="capstone-tag">spaCy</span>
+            <span class="capstone-tag">LLM APIs</span>
+            <span class="capstone-tag">Pandas</span>
+            <span class="capstone-tag">Streamlit</span>
+          </div>
+          <p class="capstone-card-outcome">Automated screening pipeline with ranking dashboard — solves a real hiring bottleneck.</p>
+        </div>
+      </div>
+
+      <!-- Project 7: Real-Time Fraud Detection (added) -->
+      <div class="capstone-card">
+        <div class="capstone-card-accent capstone-card-accent--blue"></div>
+        <div class="capstone-card-body">
+          <span class="capstone-card-domain">FinTech</span>
+          <h3 class="capstone-card-title">Real-Time Transaction Fraud Detection</h3>
+          <p class="capstone-card-desc">Build a fraud detection system that scores transactions in real-time. Engineer behavioral features from transaction sequences, handle extreme class imbalance, train an ensemble model, and serve predictions via API with sub-100ms latency. Add an LLM layer that generates human-readable fraud explanations for the ops team.</p>
+          <div class="capstone-card-stack">
+            <span class="capstone-tag">XGBoost</span>
+            <span class="capstone-tag">Feature Engineering</span>
+            <span class="capstone-tag">FastAPI</span>
+            <span class="capstone-tag">LLM Explainer</span>
+            <span class="capstone-tag">Docker</span>
+          </div>
+          <p class="capstone-card-outcome">Real-time scoring API with explainability — classic ML + GenAI in one production system.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Company collaboration strip -->
+    <div class="collab-strip">
+      <p class="collab-label">Project data & problem statements sourced from</p>
+      <div class="collab-logos">
+        <span class="collab-logo">
+          <span class="collab-logo-icon" style="background:#0d47a1;">S</span>
+          SkyLens GeoAI
+        </span>
+        <span class="collab-logo">
+          <span class="collab-logo-icon" style="background:#6a1b9a;">V</span>
+          VoyageAI Labs
+        </span>
+        <span class="collab-logo">
+          <span class="collab-logo-icon" style="background:#ef6c00;">P</span>
+          PixelForge Studio
+        </span>
+        <span class="collab-logo">
+          <span class="collab-logo-icon" style="background:#2e7d32;">H</span>
+          HireStack
+        </span>
+        <span class="collab-logo">
+          <span class="collab-logo-icon" style="background:#00695c;">K</span>
+          KnowledgeHub AI
+        </span>
+        <span class="collab-logo">
+          <span class="collab-logo-icon" style="background:#c62828;">F</span>
+          FinShield
+        </span>
+      </div>
+      <p class="collab-note">Startups and enterprises contribute anonymized datasets and real problem statements. You solve their actual business challenge as your capstone.</p>
+    </div>
+
+  </div>
+</section>
 
 
 <section class="prog-sections" id="related">

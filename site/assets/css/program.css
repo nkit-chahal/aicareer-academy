@@ -17,7 +17,7 @@
   border: 3px solid var(--accent);
   background: #09090B;
 }
-#fees, #salary, #curriculum, #faq { scroll-margin-top: calc(var(--header-h) + 56px); }
+#fees, #salary, #curriculum, #projects, #faq { scroll-margin-top: calc(var(--header-h) + 56px); }
 
 .prog-jump {
   position: sticky;
