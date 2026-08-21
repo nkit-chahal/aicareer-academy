@@ -6,6 +6,639 @@
   "outputDirectory": "site",
   "trailingSlash": true,
   "cleanUrls": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.aicareer.academy"
+        }
+      ],
+      "destination": "https://aicareer.academy/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/courses/index.html",
+      "destination": "/courses/",
+      "permanent": true
+    },
+    {
+      "source": "/hire-from-us/index.html",
+      "destination": "/hire-from-us/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/index.html",
+      "destination": "/contact-us/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-courses-in-delhi-ncr/index.html",
+      "destination": "/ai-courses-in-delhi-ncr/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-courses-in-gurgaon/index.html",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-courses-in-delhi/index.html",
+      "destination": "/ai-courses-in-delhi/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-courses-in-noida/index.html",
+      "destination": "/ai-courses-in-noida/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-courses-in-ghaziabad/index.html",
+      "destination": "/ai-courses-in-ghaziabad/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/index.html",
+      "destination": "/about-us/",
+      "permanent": true
+    },
+    {
+      "source": "/enterprise-ai-upskilling/index.html",
+      "destination": "/enterprise-ai-upskilling/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy/index.html",
+      "destination": "/privacy-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions/index.html",
+      "destination": "/terms-and-conditions/",
+      "permanent": true
+    },
+    {
+      "source": "/refund-policy/index.html",
+      "destination": "/refund-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/register/index.html",
+      "destination": "/register/",
+      "permanent": true
+    },
+    {
+      "source": "/mentors/index.html",
+      "destination": "/mentors/",
+      "permanent": true
+    },
+    {
+      "source": "/courses/data-analytics-course-with-placement/index.html",
+      "destination": "/courses/data-analytics-course-with-placement/",
+      "permanent": true
+    },
+    {
+      "source": "/courses/data-science-course/index.html",
+      "destination": "/courses/data-science-course/",
+      "permanent": true
+    },
+    {
+      "source": "/courses/ai-developers-course/index.html",
+      "destination": "/courses/ai-developers-course/",
+      "permanent": true
+    },
+    {
+      "source": "/courses/generative-ai-course/index.html",
+      "destination": "/courses/generative-ai-course/",
+      "permanent": true
+    },
+    {
+      "source": "/courses/mlops-course/index.html",
+      "destination": "/courses/mlops-course/",
+      "permanent": true
+    },
+    {
+      "source": "/courses/llmops-course/index.html",
+      "destination": "/courses/llmops-course/",
+      "permanent": true
+    },
+    {
+      "source": "/courses/java-course/index.html",
+      "destination": "/courses/java-course/",
+      "permanent": true
+    },
+    {
+      "source": "/courses/devops-course/index.html",
+      "destination": "/courses/devops-course/",
+      "permanent": true
+    },
+    {
+      "source": "/courses/frontend-course/index.html",
+      "destination": "/courses/frontend-course/",
+      "permanent": true
+    },
+    {
+      "source": "/roadmaps/data-science-roadmap/index.html",
+      "destination": "/roadmaps/data-science-roadmap/",
+      "permanent": true
+    },
+    {
+      "source": "/roadmaps/ai-developer-roadmap/index.html",
+      "destination": "/roadmaps/ai-developer-roadmap/",
+      "permanent": true
+    },
+    {
+      "source": "/roadmaps/ai-engineer-roadmap/index.html",
+      "destination": "/roadmaps/ai-engineer-roadmap/",
+      "permanent": true
+    },
+    {
+      "source": "/roadmaps/ml-engineer-roadmap/index.html",
+      "destination": "/roadmaps/ml-engineer-roadmap/",
+      "permanent": true
+    },
+    {
+      "source": "/roadmaps/generative-ai-roadmap/index.html",
+      "destination": "/roadmaps/generative-ai-roadmap/",
+      "permanent": true
+    },
+    {
+      "source": "/comparisons/index.html",
+      "destination": "/comparisons/",
+      "permanent": true
+    },
+    {
+      "source": "/comparisons/ai-developer-vs-data-scientist/index.html",
+      "destination": "/comparisons/ai-developer-vs-data-scientist/",
+      "permanent": true
+    },
+    {
+      "source": "/comparisons/ai-developer-vs-ai-engineer/index.html",
+      "destination": "/comparisons/ai-developer-vs-ai-engineer/",
+      "permanent": true
+    },
+    {
+      "source": "/comparisons/ai-engineer-vs-ml-engineer/index.html",
+      "destination": "/comparisons/ai-engineer-vs-ml-engineer/",
+      "permanent": true
+    },
+    {
+      "source": "/comparisons/genai-vs-ai-developer-vs-agentic-ai/index.html",
+      "destination": "/comparisons/genai-vs-ai-developer-vs-agentic-ai/",
+      "permanent": true
+    },
+    {
+      "source": "/comparisons/mlops-vs-llmops-vs-aiops/index.html",
+      "destination": "/comparisons/mlops-vs-llmops-vs-aiops/",
+      "permanent": true
+    },
+    {
+      "source": "/comparisons/prompt-engineer-vs-ai-developer/index.html",
+      "destination": "/comparisons/prompt-engineer-vs-ai-developer/",
+      "permanent": true
+    },
+    {
+      "source": "/comparisons/mlops-engineer-vs-ml-engineer/index.html",
+      "destination": "/comparisons/mlops-engineer-vs-ml-engineer/",
+      "permanent": true
+    },
+    {
+      "source": "/comparisons/rag-vs-fine-tuning/index.html",
+      "destination": "/comparisons/rag-vs-fine-tuning/",
+      "permanent": true
+    },
+    {
+      "source": "/comparisons/rag-vs-agentic-rag/index.html",
+      "destination": "/comparisons/rag-vs-agentic-rag/",
+      "permanent": true
+    },
+    {
+      "source": "/comparisons/langchain-vs-langgraph/index.html",
+      "destination": "/comparisons/langchain-vs-langgraph/",
+      "permanent": true
+    },
+    {
+      "source": "/comparisons/crewai-vs-autogen-vs-langgraph/index.html",
+      "destination": "/comparisons/crewai-vs-autogen-vs-langgraph/",
+      "permanent": true
+    },
+    {
+      "source": "/comparisons/mcp-vs-acp/index.html",
+      "destination": "/comparisons/mcp-vs-acp/",
+      "permanent": true
+    },
+    {
+      "source": "/blogs/index.html",
+      "destination": "/blogs/",
+      "permanent": true
+    },
+    {
+      "source": "/blogs/blog/ai-engineer-roadmap-2026/index.html",
+      "destination": "/blogs/blog/ai-engineer-roadmap-2026/",
+      "permanent": true
+    },
+    {
+      "source": "/blogs/blog/data-science-tools-for-2026/index.html",
+      "destination": "/blogs/blog/data-science-tools-for-2026/",
+      "permanent": true
+    },
+    {
+      "source": "/data-science-course-in-delhi/index.html",
+      "destination": "/data-science-course-in-delhi/",
+      "permanent": true
+    },
+    {
+      "source": "/data-science-course-in-bangalore/index.html",
+      "destination": "/data-science-course-in-bangalore/",
+      "permanent": true
+    },
+    {
+      "source": "/data-science-course-in-hyderabad/index.html",
+      "destination": "/data-science-course-in-hyderabad/",
+      "permanent": true
+    },
+    {
+      "source": "/data-science-course-in-pune/index.html",
+      "destination": "/data-science-course-in-pune/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-institute-in-gurgaon",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-institute-in-gurgaon/",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-institute-in-gurugram",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-institute-in-gurugram/",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-courses-in-gurugram",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-courses-in-gurugram/",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-training-in-gurgaon",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-training-in-gurgaon/",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-gurgaon",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-gurgaon/",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-gurugram",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-gurugram/",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-gurgaon-with-fees",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-gurgaon-with-fees/",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-gurgaon-placement",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-gurgaon-placement/",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-course-in-gurgaon-fees",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-course-in-gurgaon-fees/",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-course-in-gurgaon-offline",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-course-in-gurgaon-offline/",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-courses-in-gurgaon-sector-14",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-courses-in-gurgaon-sector-14/",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/artificial-intelligence-course-in-gurgaon-for-freshers",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/artificial-intelligence-course-in-gurgaon-for-freshers/",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/generative-ai-course-in-gurgaon",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/generative-ai-course-in-gurgaon/",
+      "destination": "/ai-courses-in-gurgaon/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-institute-in-delhi",
+      "destination": "/ai-courses-in-delhi/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-institute-in-delhi/",
+      "destination": "/ai-courses-in-delhi/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-delhi",
+      "destination": "/ai-courses-in-delhi/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-delhi/",
+      "destination": "/ai-courses-in-delhi/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-delhi-with-fees",
+      "destination": "/ai-courses-in-delhi/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-delhi-with-fees/",
+      "destination": "/ai-courses-in-delhi/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-delhi-placement",
+      "destination": "/ai-courses-in-delhi/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-delhi-placement/",
+      "destination": "/ai-courses-in-delhi/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-course-in-delhi-fees",
+      "destination": "/ai-courses-in-delhi/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-course-in-delhi-fees/",
+      "destination": "/ai-courses-in-delhi/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-course-in-delhi-offline",
+      "destination": "/ai-courses-in-delhi/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-course-in-delhi-offline/",
+      "destination": "/ai-courses-in-delhi/",
+      "permanent": true
+    },
+    {
+      "source": "/generative-ai-course-in-delhi",
+      "destination": "/ai-courses-in-delhi/",
+      "permanent": true
+    },
+    {
+      "source": "/generative-ai-course-in-delhi/",
+      "destination": "/ai-courses-in-delhi/",
+      "permanent": true
+    },
+    {
+      "source": "/artificial-intelligence-course-in-delhi-for-freshers",
+      "destination": "/ai-courses-in-delhi/",
+      "permanent": true
+    },
+    {
+      "source": "/artificial-intelligence-course-in-delhi-for-freshers/",
+      "destination": "/ai-courses-in-delhi/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-institute-in-noida",
+      "destination": "/ai-courses-in-noida/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-institute-in-noida/",
+      "destination": "/ai-courses-in-noida/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-noida",
+      "destination": "/ai-courses-in-noida/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-noida/",
+      "destination": "/ai-courses-in-noida/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-noida-with-fees",
+      "destination": "/ai-courses-in-noida/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-noida-with-fees/",
+      "destination": "/ai-courses-in-noida/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-noida-placement",
+      "destination": "/ai-courses-in-noida/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-noida-placement/",
+      "destination": "/ai-courses-in-noida/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-course-in-noida-fees",
+      "destination": "/ai-courses-in-noida/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-course-in-noida-fees/",
+      "destination": "/ai-courses-in-noida/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-course-in-noida-offline",
+      "destination": "/ai-courses-in-noida/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-course-in-noida-offline/",
+      "destination": "/ai-courses-in-noida/",
+      "permanent": true
+    },
+    {
+      "source": "/generative-ai-course-in-noida",
+      "destination": "/ai-courses-in-noida/",
+      "permanent": true
+    },
+    {
+      "source": "/generative-ai-course-in-noida/",
+      "destination": "/ai-courses-in-noida/",
+      "permanent": true
+    },
+    {
+      "source": "/artificial-intelligence-course-in-noida-for-freshers",
+      "destination": "/ai-courses-in-noida/",
+      "permanent": true
+    },
+    {
+      "source": "/artificial-intelligence-course-in-noida-for-freshers/",
+      "destination": "/ai-courses-in-noida/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-institute-in-ghaziabad",
+      "destination": "/ai-courses-in-ghaziabad/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-institute-in-ghaziabad/",
+      "destination": "/ai-courses-in-ghaziabad/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-ghaziabad",
+      "destination": "/ai-courses-in-ghaziabad/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-ghaziabad/",
+      "destination": "/ai-courses-in-ghaziabad/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-ghaziabad-with-fees",
+      "destination": "/ai-courses-in-ghaziabad/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-ghaziabad-with-fees/",
+      "destination": "/ai-courses-in-ghaziabad/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-ghaziabad-placement",
+      "destination": "/ai-courses-in-ghaziabad/",
+      "permanent": true
+    },
+    {
+      "source": "/best-ai-institute-in-ghaziabad-placement/",
+      "destination": "/ai-courses-in-ghaziabad/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-course-in-ghaziabad-fees",
+      "destination": "/ai-courses-in-ghaziabad/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-course-in-ghaziabad-fees/",
+      "destination": "/ai-courses-in-ghaziabad/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-course-in-ghaziabad-offline",
+      "destination": "/ai-courses-in-ghaziabad/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-course-in-ghaziabad-offline/",
+      "destination": "/ai-courses-in-ghaziabad/",
+      "permanent": true
+    },
+    {
+      "source": "/generative-ai-course-in-ghaziabad",
+      "destination": "/ai-courses-in-ghaziabad/",
+      "permanent": true
+    },
+    {
+      "source": "/generative-ai-course-in-ghaziabad/",
+      "destination": "/ai-courses-in-ghaziabad/",
+      "permanent": true
+    },
+    {
+      "source": "/artificial-intelligence-course-in-ghaziabad-for-freshers",
+      "destination": "/ai-courses-in-ghaziabad/",
+      "permanent": true
+    },
+    {
+      "source": "/artificial-intelligence-course-in-ghaziabad-for-freshers/",
+      "destination": "/ai-courses-in-ghaziabad/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/google114699eecbb71cd9.html/",
@@ -16,23 +649,31 @@
       "destination": "/llms.txt"
     }
   ],
-  "redirects": [
-    { "source": "/ai-institute-in-gurgaon", "destination": "/ai-courses-in-gurgaon/", "permanent": true },
-    { "source": "/ai-institute-in-gurgaon/", "destination": "/ai-courses-in-gurgaon/", "permanent": true },
-    { "source": "/ai-institute-in-gurugram", "destination": "/ai-courses-in-gurgaon/", "permanent": true },
-    { "source": "/ai-institute-in-gurugram/", "destination": "/ai-courses-in-gurgaon/", "permanent": true },
-    { "source": "/ai-courses-in-gurugram", "destination": "/ai-courses-in-gurgaon/", "permanent": true },
-    { "source": "/ai-courses-in-gurugram/", "destination": "/ai-courses-in-gurgaon/", "permanent": true },
-    { "source": "/ai-training-in-gurgaon", "destination": "/ai-courses-in-gurgaon/", "permanent": true },
-    { "source": "/ai-training-in-gurgaon/", "destination": "/ai-courses-in-gurgaon/", "permanent": true }
-  ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/experiments/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
       ]
     }
   ]

@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 import json
+import posixpath
 import re
 import shutil
 from pathlib import Path
+from urllib.parse import urlsplit, urlunsplit
 from xml.sax.saxutils import escape as xml_escape
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -452,7 +454,7 @@ def generate():
         }
 
         html = template.render(**ctx)
-        html = rewrite_internal_links(html, base)
+        html = rewrite_internal_links(html, page["output"])
         html = post_process_html(html)
 
         out_path = SITE / page["output"]
@@ -486,6 +488,7 @@ def generate():
         maps_embed=MAPS_EMBED,
         maps_place=MAPS_PLACE,
     )
+    not_found = rewrite_internal_links(not_found, "404.html")
     write_404(SITE, post_process_html(not_found))
     print(f"\nDone: {generated} pages generated, {skipped} skipped")
 
@@ -571,26 +574,42 @@ def post_process_html(html: str) -> str:
         flags=re.DOTALL | re.IGNORECASE,
     )
     html = re.sub(r"<img[^>]*>", add_lazy, html, flags=re.IGNORECASE)
+    html = re.sub(r"[ \t]+$", "", html, flags=re.MULTILINE)
     return html
 
 
-def rewrite_internal_links(html: str, base: str) -> str:
-    """Fix absolute paths to work as static files."""
+def rewrite_internal_links(html: str, output: str) -> str:
+    """Normalize internal links to the same clean URLs used by canonicals."""
     live = {p["slug"] for p in load_programs()}
+    output_dir = posixpath.dirname("/" + output.lstrip("/")) or "/"
 
     def repl_href(m):
-        path = m.group(1)
-        if path.startswith("http") or path.startswith("mailto:") or path.startswith("tel:") or path.startswith("#") or path.startswith("https://wa.me"):
+        href = m.group(1)
+        parsed = urlsplit(href)
+        if parsed.scheme or parsed.netloc or not parsed.path:
             return m.group(0)
-        if path == "/":
-            return f'href="{base}index.html"'
-        clean = path.strip("/")
-        parts = [p for p in clean.split("/") if p]
-        if len(parts) >= 2 and parts[0] == "courses" and parts[1] not in live:
-            return f'href="{base}courses/index.html"'
-        return f'href="{base}{clean}/index.html"'
 
-    html = re.sub(r'href="(/[^"]*)"', repl_href, html)
+        if parsed.path.startswith("/"):
+            path = posixpath.normpath(parsed.path)
+        else:
+            path = posixpath.normpath(posixpath.join(output_dir, parsed.path))
+        path = "/" + path.lstrip("/")
+
+        if path == "/index.html":
+            path = "/"
+        elif path.endswith("/index.html"):
+            path = path[: -len("index.html")]
+
+        parts = [p for p in path.strip("/").split("/") if p]
+        if len(parts) >= 2 and parts[0] == "courses" and parts[1] not in live:
+            path = "/courses/"
+        elif path != "/" and not path.endswith("/") and "." not in parts[-1]:
+            path += "/"
+
+        normalized = urlunsplit(("", "", path, parsed.query, parsed.fragment))
+        return f'href="{normalized}"'
+
+    html = re.sub(r'href="([^"]*)"', repl_href, html)
     return html
 
 

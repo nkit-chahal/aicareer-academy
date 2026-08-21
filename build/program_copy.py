@@ -91,9 +91,9 @@ PROGRAM_COPY = {
         ],
     },
     "prog-generative-ai": {
-        "title": "Gen AI Specialization — AI Career Academy",
-        "description": "Live 5-month GenAI engineering path: transformers, RAG, LoRA/QLoRA, multimodal models, agents, quantization, and serving. Fee ₹64,999. Not a BI dashboard course.",
-        "hero_title": "Gen AI Specialization",
+        "title": "Generative AI Specialization | AI Career Academy",
+        "description": "Live 5-month Generative AI course covering transformers, RAG, LoRA/QLoRA, multimodal models, agents, quantization, and serving. Fee ₹64,999.",
+        "hero_title": "Generative AI Specialization",
         "hero_sub": "Five months live from model foundations to shipping GenAI systems: transformers and LLMs, RAG design, fine-tuning (LoRA/QLoRA), multimodal workflows, agents, quantization, and serving. Deeper than Gen AI for Developers. Not a Power BI class.",
         "sections": [
             {

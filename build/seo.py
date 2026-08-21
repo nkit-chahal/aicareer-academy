@@ -114,17 +114,15 @@ SEO_OVERRIDES = {
         "hero_sub": "The classroom is a screen. The desk is in Gurugram. Learners across Delhi, Gurugram, Noida, Faridabad, and Ghaziabad join the same live cohort.",
     },
     "gurgaon": {
-        "title": f"AI institute in Gurgaon (Gurugram) — {BRAND} | Sector 68",
+        "title": f"Generative AI Course in Gurgaon | {BRAND}",
         "description": (
-            f"AI Career Academy is an AI institute in Gurgaon: {NAP_LINE}. "
-            "Live online AI, Data Science, GenAI, MLOps, Java, DevOps, and Frontend. "
-            f"Walk-in counselling Mon–Sat 10am–7pm. {CONTACT_NAME} {PHONE_DISPLAY}."
+            "Join a live Generative AI course in Gurgaon covering RAG, agents, fine-tuning, and model systems. "
+            f"Compare GenAI tracks and fees; counselling at {BRAND}, {NAP_LINE}."
         ),
-        "hero_title": "AI institute in Gurgaon — Sector 68 desk, live online classes",
+        "hero_title": "Generative AI course in Gurgaon — live cohorts, Sector 68 desk",
         "hero_sub": (
-            "Searchers looking for an AI institute in Gurugram / Gurgaon land here. "
-            "The studio desk is on Sohna Road (Badshahpur, Sector 68). Batches are live online. "
-            "Come in for a career call; join class from home."
+            "Choose a three-month developer track or a five-month Generative AI specialization. "
+            "Classes are live online; visit our Sohna Road desk in Badshahpur, Sector 68 for counselling."
         ),
     },
     "delhi": {
@@ -1155,6 +1153,33 @@ def _local_redirect_rules() -> list[dict]:
     return rules
 
 
+def _index_redirect_rules(pages: list[dict]) -> list[dict]:
+    """Redirect generated file URLs to the clean canonical directory URLs."""
+    rules = []
+    for page in pages:
+        output = str(page.get("output", ""))
+        if output == "index.html" or output.endswith("/index.html"):
+            rules.append(
+                {
+                    "source": "/" + output.lstrip("/"),
+                    "destination": pretty_path(output),
+                    "permanent": True,
+                }
+            )
+    return rules
+
+
+def _vercel_redirect_rules(pages: list[dict]) -> list[dict]:
+    return [
+        {
+            "source": "/:path*",
+            "has": [{"type": "host", "value": "www.aicareer.academy"}],
+            "destination": f"{SITE_ORIGIN}/:path*",
+            "permanent": True,
+        }
+    ] + _index_redirect_rules(pages) + _local_redirect_rules()
+
+
 def write_robots_and_sitemap(site: Path, pages: list[dict]) -> None:
     sitemap_url = f"{SITE_ORIGIN}/sitemap.xml"
     (site / "robots.txt").write_text(
@@ -1193,6 +1218,10 @@ def write_robots_and_sitemap(site: Path, pages: list[dict]) -> None:
     (site / "sitemap.xml").write_text(xml, encoding="utf-8")
     host = SITE_ORIGIN.replace("https://", "").replace("http://", "")
     netlify_lines = [f"https://www.{host}/* https://{host}/:splat 301"]
+    for page in pages:
+        output = str(page.get("output", ""))
+        if output == "index.html" or output.endswith("/index.html"):
+            netlify_lines.append(f"/{output.lstrip('/')} {pretty_path(output)} 301")
     for src, dest in LOCAL_REDIRECTS:
         netlify_lines.append(f"{src} {dest} 301")
         if not src.endswith("/"):
@@ -1202,13 +1231,15 @@ def write_robots_and_sitemap(site: Path, pages: list[dict]) -> None:
         "/*\n"
         "  X-Frame-Options: DENY\n"
         "  X-Content-Type-Options: nosniff\n"
-        "  Referrer-Policy: strict-origin-when-cross-origin\n",
+        "  Referrer-Policy: strict-origin-when-cross-origin\n"
+        "/experiments/*\n"
+        "  X-Robots-Tag: noindex, nofollow\n",
         encoding="utf-8",
     )
     vercel = {
         "trailingSlash": True,
         "cleanUrls": False,
-        "redirects": _local_redirect_rules(),
+        "redirects": _vercel_redirect_rules(pages),
         "rewrites": [
             {
                 "source": "/google114699eecbb71cd9.html/",
@@ -1227,10 +1258,25 @@ def write_robots_and_sitemap(site: Path, pages: list[dict]) -> None:
                     {"key": "X-Content-Type-Options", "value": "nosniff"},
                     {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
                 ],
-            }
+            },
+            {
+                "source": "/experiments/:path*",
+                "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}],
+            },
         ],
     }
     (site / "vercel.json").write_text(json.dumps(vercel, indent=2) + "\n", encoding="utf-8")
+    root_vercel = {
+        "$schema": "https://openapi.vercel.sh/vercel.json",
+        "framework": None,
+        "installCommand": "",
+        "buildCommand": "exit 0",
+        "outputDirectory": "site",
+        **vercel,
+    }
+    (site.parent / "vercel.json").write_text(
+        json.dumps(root_vercel, indent=2) + "\n", encoding="utf-8"
+    )
     (site / "llms.txt").write_text(
         "\n".join(
             [
@@ -1239,7 +1285,7 @@ def write_robots_and_sitemap(site: Path, pages: list[dict]) -> None:
                 f"> Live online AI, data, and engineering programs. Desk at {NAP_LINE}. Counselling Mon–Sat 10:00–19:00 IST. Classes are live online.",
                 "",
                 f"- [Home]({SITE_ORIGIN}/)",
-                f"- [AI institute in Gurgaon]({SITE_ORIGIN}{GURGAON_CANONICAL_PATH})",
+                f"- [Generative AI course in Gurgaon]({SITE_ORIGIN}{GURGAON_CANONICAL_PATH})",
                 f"- [AI courses in Delhi]({SITE_ORIGIN}{DELHI_PATH})",
                 f"- [AI courses in Noida]({SITE_ORIGIN}{NOIDA_PATH})",
                 f"- [AI courses in Ghaziabad]({SITE_ORIGIN}{GHAZIABAD_PATH})",

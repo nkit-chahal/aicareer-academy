@@ -24,6 +24,9 @@
       </div>
       {% endif %}
       {% if data.hero_sub %}<p class="prog-hero-sub">{{ data.hero_sub }}</p>{% endif %}
+      {% if page_id == 'prog-generative-ai' %}
+      <p class="prog-hero-sub"><a href="{{ base }}ai-courses-in-gurgaon/index.html">Compare our Generative AI course in Gurgaon</a>, including both live tracks, published fees, and Sector 68 counselling.</p>
+      {% endif %}
       <div class="prog-cta-row">
         <a href="{{ base }}register/index.html{% if course_slug %}?course={{ course_slug }}{% endif %}" class="btn-yellow">Book a session</a>
         <a href="{{ wa_url }}" class="btn-black" data-wa-course="{{ program.title if program else data.hero_title }}">Chat on WhatsApp</a>
