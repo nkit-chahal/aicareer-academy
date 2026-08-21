@@ -8,14 +8,14 @@
   "cleanUrls": false,
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "www.aicareer.academy"
         }
       ],
-      "destination": "https://aicareer.academy/:path*",
+      "destination": "https://aicareer.academy/$1",
       "permanent": true
     },
     {
@@ -651,6 +651,15 @@
   ],
   "headers": [
     {
+      "source": "/experiments/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
       "source": "/(.*)",
       "headers": [
         {
@@ -664,15 +673,6 @@
         {
           "key": "Referrer-Policy",
           "value": "strict-origin-when-cross-origin"
-        }
-      ]
-    },
-    {
-      "source": "/experiments/:path*",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, nofollow"
         }
       ]
     }

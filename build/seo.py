@@ -1172,9 +1172,9 @@ def _index_redirect_rules(pages: list[dict]) -> list[dict]:
 def _vercel_redirect_rules(pages: list[dict]) -> list[dict]:
     return [
         {
-            "source": "/:path*",
+            "source": "/(.*)",
             "has": [{"type": "host", "value": "www.aicareer.academy"}],
-            "destination": f"{SITE_ORIGIN}/:path*",
+            "destination": f"{SITE_ORIGIN}/$1",
             "permanent": True,
         }
     ] + _index_redirect_rules(pages) + _local_redirect_rules()
@@ -1252,16 +1252,16 @@ def write_robots_and_sitemap(site: Path, pages: list[dict]) -> None:
         ],
         "headers": [
             {
+                "source": "/experiments/(.*)",
+                "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}],
+            },
+            {
                 "source": "/(.*)",
                 "headers": [
                     {"key": "X-Frame-Options", "value": "DENY"},
                     {"key": "X-Content-Type-Options", "value": "nosniff"},
                     {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
                 ],
-            },
-            {
-                "source": "/experiments/:path*",
-                "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}],
             },
         ],
     }
